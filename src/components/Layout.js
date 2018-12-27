@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from "gatsby"
+import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 
 import Navbar from '../components/Navbar'
 import './all.sass'
