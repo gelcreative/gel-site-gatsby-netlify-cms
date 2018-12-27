@@ -56,6 +56,7 @@ const TemplateWrapper = ({ children }) => (
   />
 )
 
+// TODO Figure out if this is the correct way to get this to work
 const WrappedWithThemeProvider = ({ children }) => (
   <ThemeProvider theme={ theme }>
     <TemplateWrapper children={children} />
