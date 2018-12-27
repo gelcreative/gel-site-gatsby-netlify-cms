@@ -1,9 +1,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from "gatsby"
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import './all.sass'
 
 // Gel site theme settings
@@ -51,6 +52,7 @@ const TemplateWrapper = ({ children }) => (
         <GlobalStyle />
         <Navbar />
         <div>{children}</div>
+        <Footer />
       </div>
     )}
   />
@@ -61,6 +63,6 @@ const WrappedWithThemeProvider = ({ children }) => (
   <ThemeProvider theme={ theme }>
     <TemplateWrapper children={children} />
   </ThemeProvider>
-);
+)
 
 export default WrappedWithThemeProvider
