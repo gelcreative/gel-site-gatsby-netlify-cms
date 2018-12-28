@@ -9,7 +9,11 @@ import './all.sass'
 
 // Gel site theme settings
 const theme = {
-  darkGrey: '#434244',
+  typeGrey: '#434244',
+  darkGrey: '#434345',
+  orange: '#f26339',
+  blue: '#00abc6',
+  lightGrey: '#dadfe1',
 }
 
 const GlobalStyle = createGlobalStyle`
