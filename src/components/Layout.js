@@ -17,8 +17,23 @@ const theme = {
 }
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'futura';
+  html {
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 2;
+    font-family: 'futura-pt';
+  }
+  a {
+    text-decoration: none;
+    color: ${ theme.black };
   }
 `;
 
@@ -38,6 +53,7 @@ const TemplateWrapper = ({ children }) => (
       <div>
         <Helmet>
           <html lang="en" />
+
           <title>{data.site.siteMetadata.title}</title>
           <meta name="description" content={data.site.siteMetadata.description} />
           
@@ -52,6 +68,9 @@ const TemplateWrapper = ({ children }) => (
           <meta property="og:title" content={data.site.siteMetadata.title} />
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.jpg" />
+
+          <link rel="stylesheet" href="https://use.typekit.net/hfk4yqa.css" />
+
         </Helmet>
         <GlobalStyle />
         <Navbar />
