@@ -16,27 +16,6 @@ const theme = {
   lightGrey: '#dadfe1',
 }
 
-const GlobalStyle = createGlobalStyle`
-  html {
-    box-sizing: border-box;
-    font-size: 10px;
-  }
-  *, *::before, *::after {
-    box-sizing: inherit;
-  }
-  body {
-    padding: 0;
-    margin: 0;
-    font-size: 1.5rem;
-    line-height: 2;
-    font-family: 'futura-pt';
-  }
-  a {
-    text-decoration: none;
-    color: ${ theme.black };
-  }
-`;
-
 const TemplateWrapper = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -72,7 +51,6 @@ const TemplateWrapper = ({ children }) => (
           <link rel="stylesheet" href="https://use.typekit.net/hfk4yqa.css" />
 
         </Helmet>
-        <GlobalStyle />
         <Navbar />
         <div>{children}</div>
         <Footer />
