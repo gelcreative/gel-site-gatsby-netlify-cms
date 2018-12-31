@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import logo from '../img/logo.svg'
+import logo from '../img/gel-logo-footer.svg'
 
 const StyledFooter = styled.footer`
   margin-bottom: 50px;
