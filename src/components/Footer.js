@@ -23,7 +23,7 @@ const StyledFooterInner = styled.div`
 `
 const FooterItemContainer = styled.div`
   margin: 1em;
-  min-width: 33%;
+  min-width: 30%;
   max-width: 300px;
   flex-grow: 1;
 `
@@ -35,6 +35,23 @@ const StyledAddress = styled.address`
 const StyledFooterNav = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+const SocialIconList = styled.ul`
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  li {
+    flex-grow: 1;
+    a {
+      display: inline-block;
+      img {
+        width: 40px;
+      }
+    }
+  }
 `;
 
 const Footer = () => (
@@ -73,7 +90,12 @@ const Footer = () => (
         </StyledFooterNav>
       </FooterItemContainer>
       <FooterItemContainer>
-
+        <SocialIconList>
+          <li><a href="https://www.instagram.com/gelcreative/" target="_blank" rel="noopener noreferrer"><img src="../img/instagram-simple.svg" /></a></li>
+          <li><a href="https://www.facebook.com/GelCreates/" target="_blank" rel="noopener noreferrer"><img src="../img/facebook-no-box.svg" /></a></li>
+          <li><a href="https://twitter.com/gelcreative" target="_blank" rel="noopener noreferrer"><img src="../img/twitter-silhouette.svg" /></a></li>
+          <li><a href="https://www.linkedin.com/company/gel-creative/?originalSubdomain=ca" target="_blank" rel="noopener noreferrer"><img src="../img/linkedin-logo.svg" /></a></li>
+        </SocialIconList>
       </FooterItemContainer>
     </StyledFooterInner>
   </StyledFooter>
