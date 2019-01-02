@@ -34,71 +34,87 @@ const StyledAddress = styled.address`
 
 const StyledFooterNav = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  div {
+    margin: 0 30px;
+  }
+  @media (max-width: 440px) {
+    justify-content: space-between;
+    div {
+      flex-grow: 1;
+      flex-shrink: 1;
+      margin: 0 30px 0 0;
+    }
+  }
 `;
 
 const SocialIconList = styled.ul`
   list-style-type: none;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-end;
   flex-wrap: wrap;
   li {
-    flex-grow: 1;
+    margin-right: 20px;
     a {
       display: inline-block;
       img {
-        width: 40px;
+        width: 30px;
       }
     }
+  }
+  @media (max-width: 899px) {
+    justify-content: flex-start;
   }
 `;
 
 const Footer = () => (
-  <StyledFooter>
-    <FooterTop>
-      <FooterItemContainer>
-        <Link to="/" className="navbar-item" title="Logo">
-          <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-        </Link>
-      </FooterItemContainer>
-    </FooterTop>
-    <StyledFooterInner>
-      <FooterItemContainer>
-        <StyledAddress>
-          89 Collier Street, Suite 201 <br />
-          Barrie, ON L4M 1H2
-        </StyledAddress>
-        <div><a href="mailto:connect@gelmarketing.ca">connect@gelmarketing.ca</a></div>
-        <div><a href="tel:+17057277980">705.727.7980</a></div>
-      </FooterItemContainer>
-      <FooterItemContainer>
-        <StyledFooterNav>
-          <div>
-            <ul>
-              <li>home</li>
-              <li>portfolio</li>
-              <li>about</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li>blog</li>
-              <li>contact</li>
-            </ul>
-          </div>
-        </StyledFooterNav>
-      </FooterItemContainer>
-      <FooterItemContainer>
-        <SocialIconList>
-          <li><a href="https://www.instagram.com/gelcreative/" target="_blank" rel="noopener noreferrer"><img src="../img/instagram-simple.svg" /></a></li>
-          <li><a href="https://www.facebook.com/GelCreates/" target="_blank" rel="noopener noreferrer"><img src="../img/facebook-no-box.svg" /></a></li>
-          <li><a href="https://twitter.com/gelcreative" target="_blank" rel="noopener noreferrer"><img src="../img/twitter-silhouette.svg" /></a></li>
-          <li><a href="https://www.linkedin.com/company/gel-creative/?originalSubdomain=ca" target="_blank" rel="noopener noreferrer"><img src="../img/linkedin-logo.svg" /></a></li>
-        </SocialIconList>
-      </FooterItemContainer>
-    </StyledFooterInner>
-  </StyledFooter>
+  <div className="container">
+    <StyledFooter>
+      <FooterTop>
+        <FooterItemContainer>
+          <Link to="/" title="Logo">
+            <img src={logo} alt="Gel" style={{ width: '100px' }} />
+          </Link>
+        </FooterItemContainer>
+      </FooterTop>
+      <StyledFooterInner>
+        <FooterItemContainer>
+          <StyledAddress>
+            89 Collier Street, Suite 201 <br />
+            Barrie, ON L4M 1H2
+          </StyledAddress>
+          <div><a href="mailto:connect@gelmarketing.ca">connect@gelmarketing.ca</a></div>
+          <div><a href="tel:+17057277980">705.727.7980</a></div>
+        </FooterItemContainer>
+        <FooterItemContainer>
+          <StyledFooterNav>
+            <div>
+              <ul>
+                <li>home</li>
+                <li>portfolio</li>
+                <li>about</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>blog</li>
+                <li>contact</li>
+              </ul>
+            </div>
+          </StyledFooterNav>
+        </FooterItemContainer>
+        <FooterItemContainer>
+          <SocialIconList>
+            <li><a href="https://www.instagram.com/gelcreative/" target="_blank" rel="noopener noreferrer"><img src="../img/instagram-simple.svg" alt="Gel Instagram" /></a></li>
+            <li><a href="https://www.facebook.com/GelCreates/" target="_blank" rel="noopener noreferrer"><img src="../img/facebook-no-box.svg" alt="Gel Facebook" /></a></li>
+            <li><a href="https://twitter.com/gelcreative" target="_blank" rel="noopener noreferrer"><img src="../img/twitter-silhouette.svg" alt="Gel Twitter" /></a></li>
+            <li><a href="https://www.linkedin.com/company/gel-creative/?originalSubdomain=ca" target="_blank" rel="noopener noreferrer"><img src="../img/linkedin-logo.svg" alt="Gel LinkedIn" /></a></li>
+          </SocialIconList>
+        </FooterItemContainer>
+      </StyledFooterInner>
+    </StyledFooter>
+  </div>
 )
 
 export default Footer;
