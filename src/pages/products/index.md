@@ -51,7 +51,7 @@ main:
     journey. We personally visit each farm to make sure the conditions are
     optimal for the plants, farmers and the local environment.
   image1:
-    alt: A close-up of a paper filter filled with ground coffee
+    alt: A close-up of a paper filter filled with ground coffee butt
     image: /img/products-grid3.jpg
   image2:
     alt: A green cup of a coffee on a wooden table
