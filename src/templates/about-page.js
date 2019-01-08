@@ -58,8 +58,21 @@ export const AboutPageTemplate = ({
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
+  about_intro: PropTypes.string,
+  main: PropTypes.shape({
+    tom: PropTypes.shape({
+      image1: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      tom_bio: PropTypes.string,
+    }),
+    shannon: PropTypes.shape({
+      image2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      shannon_bio: PropTypes.string,
+    }),
+    approach: PropTypes.shape({
+      heading: PropTypes.string,
+      text: PropTypes.string,
+    }),
+  }),
 }
 
 const AboutPage = ({ data }) => {
