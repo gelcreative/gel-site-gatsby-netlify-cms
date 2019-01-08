@@ -23,17 +23,17 @@ export const AboutPageTemplate = ({
             </div>
           </div>
         </div>
-        <div className="columns">
-          <div className="column">
-            <PreviewCompatibleImage imageInfo={main.tom.image1} />
-          </div>
+        <div className="columns gel-bio-row">
+            <div className="column">
+              <PreviewCompatibleImage imageInfo={main.tom.image1} />
+            </div>
           <div className="column">
             <div class="section">
               <p>{main.tom.tom_bio}</p>
             </div>
           </div>
         </div>
-        <div className="columns">
+        <div className="columns gel-bio-row">
           <div className="column">
             <div className="section">
               <p>{main.shannon.shannon_bio}</p>
