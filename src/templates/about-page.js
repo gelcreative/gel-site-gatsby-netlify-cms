@@ -28,7 +28,7 @@ export const AboutPageTemplate = ({
               <PreviewCompatibleImage imageInfo={main.tom.image1} />
             </div>
           <div className="column">
-            <div class="section">
+            <div className="section">
               <p>{main.tom.tom_bio}</p>
             </div>
           </div>

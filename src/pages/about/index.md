@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 title: About
-about_intro: >
+about_intro: |
   Loremipsumdolorsitamet,consecteturadipiscingelit.Sedfaucibus
   velitsedvestibulumconsectetur.Nulaornaremetusinnunccongue
   facilisis.Nulafacilisi.Curabiturquismalesuadaerat.Namplacerat pulvinargravida.
