@@ -1,31 +1,21 @@
 ---
 templateKey: about-page
 title: About
-intro: |
-  Loremipsumdolorsitamet,consecteturadipiscingelit.Sedfaucibus velitsedvestibulumconsectetur.Nulaornaremetusinnunccongue
-
-  facilisis.Nulafacilisi.Curabiturquismalesuadaerat.Namplacerat pulvinargravida.Aeneanturpisaugue,dictumetaugueid,matis
-
-  aliquetorci.Fusceseddapibuseros.Duisinrhoncuserat,utvivera tortor.Fuscesedenimfinibus,imperdietnulaposuere,molisodio.
-
-  Crassagitismatisluctus.
+intro: >
+  Loremipsumdolorsitamet,consecteturadipiscingelit.Sedfaucibus velitsedvestibulumconsectetur.Nulaornaremetusinnunccongue facilisis.Nulafacilisi.Curabiturquismalesuadaerat.Namplacerat pulvinargravida.Aeneanturpisaugue,dictumetaugueid,matis aliquetorci.Fusceseddapibuseros.Duisinrhoncuserat,utvivera tortor.Fuscesedenimfinibus,imperdietnulaposuere,molisodio. Crassagitismatisluctus.
 main:
   tom:
     image1:
       image: /img/tom-ambeau-headshot.jpg
       alt: Tom Ambeau
     tom_bio: >
-      Loremipsumdolorsitamet,consecteturadipiscing elit.Sedfaucibusvelitsedvestibulumconsectetur. Nulaornaremetusinnuncconguefacilisis.Nula facilisi.Curabiturquismalesuadaerat.Nam placeratpulvinargravida.Aeneanturpisaugue, dictumetaugueid,matisaliquetorci.Fuscesed dapibuseros.Duisinrhoncuserat,utviveratortor.
-
-      erdietnulaposuere, molisodio.Crassagitismatisluctus
+      Loremipsumdolorsitamet,consecteturadipiscing elit.Sedfaucibusvelitsedvestibulumconsectetur. Nulaornaremetusinnuncconguefacilisis.Nula facilisi.Curabiturquismalesuadaerat.Nam placeratpulvinargravida.Aeneanturpisaugue, dictumetaugueid matisaliquetorci.Fuscesed dapibuseros.Duisinrhoncuserat,utviveratortor. erdietnulaposuere, molisodio.Crassagitismatisluctus
   shannon:
     image2:
       image: /img/shannon-ambeau-headshot.jpg
       alt: Shannon Ambeau
     shannon_bio: >
-      Loremipsumdolorsitamet,consecteturadipiscing elit.Sedfaucibusvelitsedvestibulumconsectetur. Nulaornaremetusinnuncconguefacilisis.Nula facilisi.Curabiturquismalesuadaerat.Nam placeratpulvinargravida.Aeneanturpisaugue, dictumetaugueid,matisaliquetorci.Fuscesed dapibuseros.Duisinrhoncuserat,utviveratortor. 
-
-      erdietnulaposuere, molisodio.Crassagitismatisluctus
+      Loremipsumdolorsitamet,consecteturadipiscing elit.Sedfaucibusvelitsedvestibulumconsectetur. Nulaornaremetusinnuncconguefacilisis.Nula facilisi.Curabiturquismalesuadaerat.Nam placeratpulvinargravida.Aeneanturpisaugue, dictumetaugueid matisaliquetorci.Fuscesed dapibuseros.Duisinrhoncuserat,utviveratortor. erdietnulaposuere, molisodio.Crassagitismatisluctus
 approach:
   heading: Our Approach
   text: >
