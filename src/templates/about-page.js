@@ -18,14 +18,8 @@ export const AboutPageTemplate = ({
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <p>ID: {id}</p>
-              <ul>
-                <li>{intro}</li>
-                <li>{approach.heading}</li>
-              </ul>
+              <h1 className="visually-hidden">{title}</h1>
+              <p>{intro}</p>
             </div>
           </div>
         </div>
@@ -34,10 +28,30 @@ export const AboutPageTemplate = ({
             <PreviewCompatibleImage imageInfo={main.tom.image1} />
           </div>
           <div className="column">
-            <p>{main.tom.tom_bio}</p>
+            <div class="section">
+              <p>{main.tom.tom_bio}</p>
+            </div>
+          </div>
+        </div>
+        <div className="columns">
+          <div className="column">
+            <div className="section">
+              <p>{main.shannon.shannon_bio}</p>
+            </div>
+          </div>
+          <div className="column">
+            <PreviewCompatibleImage imageInfo={main.shannon.image2} />
           </div>
         </div>
       </div>
+      <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <div className="section">
+              <h2>{approach.heading}</h2>
+              <p>{approach.text}</p>
+            </div>
+          </div>
+        </div>
     </section>
   )
 }
@@ -90,6 +104,19 @@ export const aboutPageQuery = graphql`
               alt
             }
             tom_bio
+          }
+          shannon {
+            image2 {
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 600, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              alt
+            }
+            shannon_bio
           }
         }
         approach {

@@ -10,13 +10,13 @@ main:
       image: /img/tom-ambeau-headshot.jpg
       alt: Tom Ambeau
     tom_bio: >
-      Loremipsumdolorsitamet,consecteturadipiscing elit.Sedfaucibusvelitsedvestibulumconsectetur. Nulaornaremetusinnuncconguefacilisis.Nula facilisi.Curabiturquismalesuadaerat.Nam placeratpulvinargravida.Aeneanturpisaugue, dictumetaugueid matisaliquetorci.Fuscesed dapibuseros.Duisinrhoncuserat,utviveratortor. erdietnulaposuere, molisodio.Crassagitismatisluctus
+      Tom Loremipsumdolorsitamet,consecteturadipiscing elit.Sedfaucibusvelitsedvestibulumconsectetur. Nulaornaremetusinnuncconguefacilisis.Nula facilisi.Curabiturquismalesuadaerat.Nam placeratpulvinargravida.Aeneanturpisaugue, dictumetaugueid matisaliquetorci.Fuscesed dapibuseros.Duisinrhoncuserat,utviveratortor. erdietnulaposuere, molisodio.Crassagitismatisluctus
   shannon:
     image2:
       image: /img/shannon-ambeau-headshot.jpg
       alt: Shannon Ambeau
     shannon_bio: >
-      Loremipsumdolorsitamet,consecteturadipiscing elit.Sedfaucibusvelitsedvestibulumconsectetur. Nulaornaremetusinnuncconguefacilisis.Nula facilisi.Curabiturquismalesuadaerat.Nam placeratpulvinargravida.Aeneanturpisaugue, dictumetaugueid matisaliquetorci.Fuscesed dapibuseros.Duisinrhoncuserat,utviveratortor. erdietnulaposuere, molisodio.Crassagitismatisluctus
+      Shannon Loremipsumdolorsitamet,consecteturadipiscing elit.Sedfaucibusvelitsedvestibulumconsectetur. Nulaornaremetusinnuncconguefacilisis.Nula facilisi.Curabiturquismalesuadaerat.Nam placeratpulvinargravida.Aeneanturpisaugue, dictumetaugueid matisaliquetorci.Fuscesed dapibuseros.Duisinrhoncuserat,utviveratortor. erdietnulaposuere, molisodio.Crassagitismatisluctus
 approach:
   heading: Our Approach
   text: >
