@@ -1,8 +1,9 @@
 ---
 templateKey: about-page
 title: About
-about_intro: >
-  Loremipsumdolorsitamet,consecteturadipiscingelit.Sedfaucibus velitsedvestibulumconsectetur.Nulaornaremetusinnunccongue facilisis.Nulafacilisi.Curabiturquismalesuadaerat.Namplacerat pulvinargravida.Aeneanturpisaugue,dictumetaugueid,matis aliquetorci.Fusceseddapibuseros.Duisinrhoncuserat,utvivera tortor.Fuscesedenimfinibus,imperdietnulaposuere,molisodio. Crassagitismatisluctus.
+about_intro: |
+  <p>Loremipsumdolorsitamet,consecteturadipiscingelit.Sedfaucibus velitsedvestibulumconsectetur.Nulaornaremetusinnunccongue facilisis.Nulafacilisi.Curabiturquismalesuadaerat.Namplacerat pulvinargravida.</p>
+  <p>Aeneanturpisaugue,dictumetaugueid,matis aliquetorci.Fusceseddapibuseros.Duisinrhoncuserat,utvivera tortor.Fuscesedenimfinibus,imperdietnulaposuere,molisodio. Crassagitismatisluctus.</p>
 main:
   tom:
     image1:
