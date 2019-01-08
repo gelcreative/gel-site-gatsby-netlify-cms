@@ -2,13 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import Content, { HTMLContent } from '../components/Content'
 
-export const AboutPageTemplate = ({
-  title,
-  intro, 
-  main,
-  approach,
-}) => {
+export const AboutPageTemplate = ({ title, content, contentComponent }) => {
+  const PageContent = contentComponent || Content
 
   return (
     <section className="section section--gradient">
@@ -19,10 +16,7 @@ export const AboutPageTemplate = ({
               <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                 {title}
               </h2>
-              <ul>
-                <li>{intro}</li>
-                <li>{approach.heading}</li>
-              </ul>
+              <PageContent className="content" content={content} />
             </div>
           </div>
         </div>
@@ -38,15 +32,14 @@ AboutPageTemplate.propTypes = {
 }
 
 const AboutPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { markdownRemark: post } = data
 
   return (
     <Layout>
       <AboutPageTemplate
-        title={frontmatter.title}
-        intro={frontmatter.intro}
-        main={frontmatter.main}
-        approach={frontmatter.approach}
+        contentComponent={HTMLContent}
+        title={post.frontmatter.title}
+        content={post.html}
       />
     </Layout>
   )
@@ -61,27 +54,9 @@ export default AboutPage
 export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
+      html
       frontmatter {
         title
-        about_intro
-        main {
-          tom {
-            image1 {
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 600, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              alt
-            }
-          }
-        }
-        approach {
-          heading
-          text
-        }
       }
     }
   }
