@@ -93,8 +93,12 @@ a:hover
 .navbar-menu
   height: 0
   opacity: 0
-  transition: opacity 300ms
 
+.navbar-menu.is-active
+  height: 100%
+  opacity: 1
+  transition: opacity 300ms
+  
 .navbar-start
   text-align: center
   display: block
@@ -102,9 +106,7 @@ a:hover
 .navbar-item
   display: block
 
-.navbar-menu.is-active
-  height: 100%
-  opacity: 1
+
 
 .navbar-burger
   display: block
