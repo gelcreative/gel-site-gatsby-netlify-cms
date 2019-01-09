@@ -137,12 +137,22 @@ a:hover
   width: 500px
   max-width: 90%
 
+.gel-nav-active + div:first-of-type
+  margin-top: 90px
+
 .navbar p
   font-size: 4rem
   color: #9a989c
   font-weight: 600
   line-height: 1.2
 
+@media (min-width: 1088px)
+  .gel-nav-active .container
+    max-width: 100%
+
+  .gel-nav-active .navbar-brand
+    margin-left: 0
+    padding: 0 2%
 
 /* About Page */
 
