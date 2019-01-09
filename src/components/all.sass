@@ -90,12 +90,13 @@ svg.gel-header-logo
 
 svg.gel-header-logo #Grey_-fixed_-_heavy path,
 svg.gel-header-logo #Grey_-fixed_-_heavy polygon
-  transition: 300ms
+  // transition: 300ms
 
 svg.gel-header-logo:hover #Grey_-fixed_-_heavy path,
 svg.gel-header-logo:hover #Grey_-fixed_-_heavy polygon
-  fill: #f26339
-  fill: #00abc6
+  animation: gelHoverColors
+  animation-duration: 2s
+  animation-fill-mode: forwards
 
 .navbar > .container
   display: block
@@ -176,11 +177,30 @@ svg.gel-header-logo:hover #Grey_-fixed_-_heavy polygon
   width: 100px
 
 .gel-footer-logo:hover circle
-  animation: gelHover
+  animation: gelHoverColors
   animation-duration: 2s
   animation-fill-mode: forwards
 
-@keyframes gelHover
+.gel-footer-logo:hover .gel-logo-letter 
+  animation: gelLetterScale
+  animation-duration: 2s
+  animation-fill-mode: forwards
+  transform-origin: center
+
+@keyframes gelLetterScale 
+  0% 
+      transform: scale(1)
+  
+  25% 
+      transform: scale(0)
+  
+  75% 
+      transform: scale(2)
+  
+  100% 
+      transform: scale(1)
+    
+@keyframes gelHoverColors
   0%
       fill: #434345
   50%
