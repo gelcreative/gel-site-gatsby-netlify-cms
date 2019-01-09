@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/gel-logo-header.svg'
+// import logo from '../img/gel-logo-header.svg'
+import HeaderLogo from './svg/HeaderLogo'
 
 const Navbar = class extends React.Component {
 
@@ -39,7 +39,7 @@ const Navbar = class extends React.Component {
     <div className="container">
       <div className="navbar-brand">
         <Link to="/" title="Logo">
-          <img src={logo} alt="Gel" style={{ width: '150px' }} />
+          <HeaderLogo />
         </Link>
         {/* Hamburger menu */}
         <div className="navbar-burger burger" data-target="navMenu">

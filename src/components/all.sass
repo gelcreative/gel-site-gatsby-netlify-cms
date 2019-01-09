@@ -84,6 +84,19 @@ a:hover
   margin-top: 30px
   
 // These nav styles to overwrite styles
+
+svg.gel-header-logo
+  width: 150px
+
+svg.gel-header-logo #Grey_-fixed_-_heavy path,
+svg.gel-header-logo #Grey_-fixed_-_heavy polygon
+  transition: 300ms
+
+svg.gel-header-logo:hover #Grey_-fixed_-_heavy path,
+svg.gel-header-logo:hover #Grey_-fixed_-_heavy polygon
+  fill: #f26339
+  fill: #00abc6
+
 .navbar > .container
   display: block
 
@@ -105,8 +118,6 @@ a:hover
 
 .navbar-item
   display: block
-
-
 
 .navbar-burger
   display: block
@@ -153,10 +164,26 @@ a:hover
     max-width: 100%
     width: 1344px
 
-  .gel-nav-active.navbar > .container .navbar-brand
-    max-width: 1344px
+.gel-nav-active.navbar > .container .navbar-brand
+  max-width: 1344px
 
 /* About Page */
 
 .gel-bio-row .column
     padding: 0
+
+.gel-footer-logo
+  width: 100px
+
+.gel-footer-logo:hover circle
+  animation: gelHover
+  animation-duration: 2s
+  animation-fill-mode: forwards
+
+@keyframes gelHover
+  0%
+      fill: #434345
+  50%
+      fill: #00abc6
+  100%
+      fill: #f26339

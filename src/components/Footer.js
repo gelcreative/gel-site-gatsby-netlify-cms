@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import logo from '../img/gel-logo-footer.svg'
+import FooterLogo from './svg/FooterLogo'
 
 const StyledFooter = styled.footer`
   margin-bottom: 50px;
@@ -74,7 +74,7 @@ const Footer = () => (
       <FooterTop>
         <FooterItemContainer>
           <Link to="/" title="Logo">
-            <img src={logo} alt="Gel" style={{ width: '100px' }} />
+            <FooterLogo alt="Gel" style={{ width: '100px' }} />
           </Link>
         </FooterItemContainer>
       </FooterTop>
