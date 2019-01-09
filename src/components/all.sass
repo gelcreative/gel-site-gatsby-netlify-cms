@@ -91,7 +91,9 @@ a:hover
   width: 100%
 
 .navbar-menu
-  display: none
+  height: 0
+  opacity: 0
+  transition: opacity 300ms
 
 .navbar-start
   text-align: center
@@ -101,7 +103,8 @@ a:hover
   display: block
 
 .navbar-menu.is-active
-  display: block
+  height: 100%
+  opacity: 1
 
 .navbar-burger
   display: block
@@ -113,10 +116,13 @@ a:hover
 .navbar .container 
   position: relative
 
+.gel-nav-active .navbar-brand
+  position: relative
+  z-index: 1
 
 .navbar-menu.is-active 
   position: fixed
-  top: 150px
+  top: 0
   bottom: 0
   left: 0
   right: 0
@@ -125,10 +131,17 @@ a:hover
   justify-content: center
   background-color: rgba(255, 255, 255, 0.95)
 
-
 .navbar-menu.is-active .navbar-start 
   justify-content: center
   margin-right: unset
+  width: 500px
+  max-width: 90%
+
+.navbar p
+  font-size: 4rem
+  color: #9a989c
+  font-weight: 600
+  line-height: 1.2
 
 
 /* About Page */
