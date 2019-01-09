@@ -34,7 +34,7 @@ const StyledAddress = styled.address`
 
 const StyledFooterNav = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   div {
     margin: 0 30px;
   }
