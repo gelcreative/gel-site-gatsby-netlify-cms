@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const PortfolioPageTemplate = ({
   title,
@@ -13,7 +14,7 @@ export const PortfolioPageTemplate = ({
   return (
     <section className="section">
       <h1>{title}</h1>
-
+      <PreviewCompatibleImage imageInfo={headerImage} />
     </section>
   )
 }
@@ -46,11 +47,14 @@ export const portfolioQuery = graphql`
     frontmatter {
       title
       header_image {
-        childImageSharp {
-          fluid(maxWidth: 1920, quality: 100) {
-            ...GatsbyImageSharpFluid
+        image {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
+        alt
       }
       project_intro
       project_images_1 {

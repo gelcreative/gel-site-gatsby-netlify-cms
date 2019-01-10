@@ -1,7 +1,9 @@
 ---
 templateKey: portfolio-entry
 title: Kenmore Electrolux
-header_image: /img/kenmore-electrolux-masthead.jpg
+header_image:
+  alt: Kenmore and Electrolux Logos
+  image: /img/kenmore-electrolux-masthead.jpg
 project_intro: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit
   sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis. Nulla
