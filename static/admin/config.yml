@@ -18,6 +18,19 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "src/pages/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Temlpate Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Header Image", name: "header_image", widget: image}
+      - {label: "Project Intro", name: "project_intro", widtet: text}
+      - {label: "Project Image Section 1", name: "project_images_1", widget: list, fields: [{label: "Image", name: "image", widget: "image"}]}
+      - {label: "Main", name: "main", widget: "object", fields: [{label: "Detail Text", name: "detail_text", widget: "text"}, {label: "Image", name: "image", widget: "image"}]}
+      - {label: "Project Image Section 2", name: "project_images_2", widget: list, fields: [{label: "Image", name: "image", widget: "image"}]}
 
   - name: "pages"
     label: "Pages"
