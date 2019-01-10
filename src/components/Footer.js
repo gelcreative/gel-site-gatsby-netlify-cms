@@ -3,6 +3,9 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import FooterLogo from './svg/FooterLogo'
+import SocialIcons from './SocialIcons'
+
+import Facebook from './svg/Facebook'
 
 const StyledFooter = styled.footer`
   margin-bottom: 50px;
@@ -48,32 +51,13 @@ const StyledFooterNav = styled.div`
   }
 `;
 
-const SocialIconList = styled.ul`
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  li {
-    margin-right: 20px;
-    a {
-      display: inline-block;
-      img {
-        width: 30px;
-      }
-    }
-  }
-  @media (max-width: 899px) {
-    justify-content: flex-start;
-  }
-`;
 
 const Footer = () => (
   <div className="container">
     <StyledFooter>
       <FooterTop>
         <FooterItemContainer>
-          <Link to="/" title="Logo">
+          <Link to="/" title="Home Page">
             <FooterLogo alt="Gel" style={{ width: '100px' }} />
           </Link>
         </FooterItemContainer>
@@ -105,12 +89,7 @@ const Footer = () => (
           </StyledFooterNav>
         </FooterItemContainer>
         <FooterItemContainer>
-          <SocialIconList>
-            <li><a href="https://www.instagram.com/gelcreative/" target="_blank" rel="noopener noreferrer"><img src="../img/instagram-simple.svg" alt="Gel Instagram" /></a></li>
-            <li><a href="https://www.facebook.com/GelCreates/" target="_blank" rel="noopener noreferrer"><img src="../img/facebook-no-box.svg" alt="Gel Facebook" /></a></li>
-            <li><a href="https://twitter.com/gelcreative" target="_blank" rel="noopener noreferrer"><img src="../img/twitter-silhouette.svg" alt="Gel Twitter" /></a></li>
-            <li><a href="https://www.linkedin.com/company/gel-creative/?originalSubdomain=ca" target="_blank" rel="noopener noreferrer"><img src="../img/linkedin-logo.svg" alt="Gel LinkedIn" /></a></li>
-          </SocialIconList>
+          <SocialIcons />
         </FooterItemContainer>
       </StyledFooterInner>
     </StyledFooter>
