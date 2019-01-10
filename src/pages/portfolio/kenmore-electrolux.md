@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: portfolio-entry
 title: Kenmore Electrolux
 header_image: /img/kenmore-electrolux-masthead.jpg
 project_intro: >-
