@@ -10,7 +10,7 @@ project_intro: >-
   Duis in rhoncus erat, ut viverra tortor. Fusce sed enim finibus, imperdiet
   nulla posuere, mollis odio. Cras sagittis mattis luctus.
 project_images_1:
-  - {}
+  - image: /img/kenmore-cover-tiles.jpg
 main: {}
 project_images_2:
   - {}
