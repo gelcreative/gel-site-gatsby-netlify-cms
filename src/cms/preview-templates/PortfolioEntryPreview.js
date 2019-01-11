@@ -28,7 +28,7 @@ const PortfolioEntryPreview = ({entry, getAsset}) => {
 }
 
 PortfolioEntryPreview.propTypes = {
-  entry: PropTypes.shape(j{
+  entry: PropTypes.shape({
     getIn: PropTypes.func
   }),
   getAsset: PropTypes.func,
