@@ -24,7 +24,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Temlpate Key", name: "templateKey", widget: "hidden", default: "portfolio-entry"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "portfolio-entry"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Header Image", name: "header_image", widget: "object", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}
       - {label: "Project Intro", name: "project_intro", widtet: text}

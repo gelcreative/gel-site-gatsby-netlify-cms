@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
-export const PortfolioPageTemplate = ({
+export const PortfolioEntryTemplate = ({
   title,
   headerImage,
   projectIntro,
@@ -53,9 +53,9 @@ export const PortfolioPageTemplate = ({
   )
 }
 
-PortfolioPageTemplate.propTypes = {}
+PortfolioEntryTemplate.propTypes = {}
 
-const PortfolioPage = ({ data }) => {
+const PortfolioEntry = ({ data }) => {
   const { frontmatter: portfolioEntry } = data.markdownRemark
   return (
     <Layout>
@@ -71,9 +71,9 @@ const PortfolioPage = ({ data }) => {
   )
 }
 
-PortfolioPage.propTypes = {}
+PortfolioEntry.propTypes = {}
 
-export default PortfolioPage
+export default PortfolioEntry
 
 // export const portfolioQuery = graphql`
 //   query PortfolioEntryByID($id: String!) {
@@ -83,7 +83,7 @@ export default PortfolioPage
 //   }
 // `;
 
-export const portfolioQuery = graphql`
+export const portfolioEntryQuery = graphql`
   query PortfolioEntryByID($id: String!) {
     markdownRemark(id: {eq: $id}) {
     id

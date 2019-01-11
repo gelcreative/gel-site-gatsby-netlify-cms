@@ -56,7 +56,6 @@ $body-color: #333
 	width: 1px !important 
 	overflow: hidden
 
-
 body
   padding: 0
   margin: 0
@@ -113,6 +112,7 @@ svg.gel-header-logo:hover #Grey_-fixed_-_heavy polygon
 .navbar-menu
   height: 0
   opacity: 0
+  overflow: hidden
 
 .navbar-menu.is-active
   height: 100%
@@ -193,6 +193,15 @@ svg.gel-header-logo:hover #Grey_-fixed_-_heavy polygon
   animation-fill-mode: forwards
   transform-origin: center
 
+// PORTFOLIO ENTRY TEMPLATE
+
+.gel-project-image-inner + .gel-project-image-inner
+  margin-top: 5px
+
+// end portfolio entry template
+
+// ANIMATIONS
+
 @keyframes gelHeaderLogo
   0%
       transform: scale(1)
@@ -221,3 +230,5 @@ svg.gel-header-logo:hover #Grey_-fixed_-_heavy polygon
       fill: #00abc6
   100%
       fill: #f26339
+
+// end animations
