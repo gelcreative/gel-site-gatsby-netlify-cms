@@ -26,3 +26,5 @@ const PortfolioEntryPreview = ({entry, getAsset}) => {
     />
   )
 }
+
+export default PortfolioEntryPreview
