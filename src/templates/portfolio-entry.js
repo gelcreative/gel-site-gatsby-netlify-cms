@@ -30,7 +30,7 @@ export const PortfolioEntryTemplate = ({
               <p>{main.detail_text}</p>
             </div>
             <div className="column">
-              <PreviewCompatibleImage imageInfo={main.image} />
+              <PreviewCompatibleImage imageInfo={main} />
             </div>
           </div>
         </section>
