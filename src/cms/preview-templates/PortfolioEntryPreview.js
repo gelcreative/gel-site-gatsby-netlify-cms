@@ -20,7 +20,7 @@ const PortfolioEntryPreview = ({entry, getAsset}) => {
       projectImages1={{projectImages1}}
       main={{
         detailText: entry.getIn(['data', 'main', 'detail_text']),
-        image: getAsset(entry.getIn('data', 'main', image))
+        image: getAsset(entry.getIn('data', 'main', 'image'))
       }}
       projectImages2={{projectImages2}}
     />

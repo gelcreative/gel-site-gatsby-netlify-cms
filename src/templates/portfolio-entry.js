@@ -21,13 +21,12 @@ export const PortfolioEntryTemplate = ({
           <p>{projectIntro}</p>
         </section>
         <section className="section gel-portfolio-images-1">
-          {projectImages1.map(image => {
-            return (
-              <div key={image.text} className="gel-project-image-inner">
-                <PreviewCompatibleImage imageInfo={image} />
+          {projectImages1.map(image => (
+              <div className="gel-project-image-inner">
+                <PreviewCompatibleImage imageInfo={image} key={image.id}  />
               </div>
             )
-          })}
+          )}
         </section>
         <section className="section gel-portfolio-entry-main">
           <div className="columns">
@@ -42,7 +41,7 @@ export const PortfolioEntryTemplate = ({
         <section className="section gel-portfolio-images-2">
           {projectImages2.map(image => {
             return (
-              <div key={image.text} className="gel-project-image-inner">
+              <div key={image.id} className="gel-project-image-inner">
                 <PreviewCompatibleImage imageInfo={image} />
               </div>
             )
@@ -71,17 +70,15 @@ const PortfolioEntry = ({ data }) => {
   )
 }
 
-PortfolioEntry.propTypes = {}
+PortfolioEntry.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  })
+}
 
 export default PortfolioEntry
-
-// export const portfolioQuery = graphql`
-//   query PortfolioEntryByID($id: String!) {
-//     markdownRemark(id: {eq: $id}) {
-//     id
-//     }
-//   }
-// `;
 
 export const portfolioEntryQuery = graphql`
   query PortfolioEntryByID($id: String!) {
@@ -102,6 +99,7 @@ export const portfolioEntryQuery = graphql`
       project_intro
       project_images_1 {
         image {
+          id
           childImageSharp {
             fluid(maxWidth: 1920, quality: 100) {
               ...GatsbyImageSharpFluid
@@ -121,6 +119,7 @@ export const portfolioEntryQuery = graphql`
       }
       project_images_2 {
         image {
+          id
           childImageSharp {
             fluid(maxWidth: 1920, quality: 100) {
               ...GatsbyImageSharpFluid

@@ -46,7 +46,7 @@ const SocialIcons = class extends Component {
       item.addEventListener('mouseover', () => {
         const thisItem = item;
         socialListItems.forEach(listitem => {
-          if(listitem != thisItem) {
+          if(listitem !== thisItem) {
             listitem.classList.add('social-hover')
           }
         })

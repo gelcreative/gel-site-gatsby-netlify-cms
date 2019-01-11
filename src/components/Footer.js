@@ -5,8 +5,6 @@ import styled from 'styled-components'
 import FooterLogo from './svg/FooterLogo'
 import SocialIcons from './SocialIcons'
 
-import Facebook from './svg/Facebook'
-
 const StyledFooter = styled.footer`
   margin-bottom: 50px;
 `;
