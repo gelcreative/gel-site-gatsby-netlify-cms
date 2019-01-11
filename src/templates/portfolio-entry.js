@@ -7,15 +7,49 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 export const PortfolioPageTemplate = ({
   title,
   headerImage,
+  projectIntro,
   projectImages1,
   main,
   projectImages2,
 }) => {
   return (
-    <section className="section">
-      <h1>{title}</h1>
-      <PreviewCompatibleImage imageInfo={headerImage} />
-    </section>
+    <main role="main">
+      <div className="container">
+        <section className="section">
+          <h1 className="visually-hidden">{title}</h1>
+          <PreviewCompatibleImage imageInfo={headerImage} />
+          <p>{projectIntro}</p>
+        </section>
+        <section className="section gel-portfolio-images-1">
+          {projectImages1.map(image => {
+            return (
+              <div key={image.text} className="gel-project-image-inner">
+                <PreviewCompatibleImage imageInfo={image} />
+              </div>
+            )
+          })}
+        </section>
+        <section className="section gel-portfolio-entry-main">
+          <div className="columns">
+            <div className="column">
+              <p>{main.detail_text}</p>
+            </div>
+            <div className="column">
+              <PreviewCompatibleImage imageInfo={main.image} />
+            </div>
+          </div>
+        </section>
+        <section className="section gel-portfolio-images-2">
+          {projectImages2.map(image => {
+            return (
+              <div key={image.text} className="gel-project-image-inner">
+                <PreviewCompatibleImage imageInfo={image} />
+              </div>
+            )
+          })}
+        </section>
+      </div>
+    </main>
   )
 }
 
@@ -28,6 +62,7 @@ const PortfolioPage = ({ data }) => {
       <PortfolioPageTemplate
         title={portfolioEntry.title}
         headerImage={portfolioEntry.header_image}
+        projectIntro={portfolioEntry.project_intro}
         projectImages1={portfolioEntry.project_images_1}
         main={portfolioEntry.main}
         projectImages2={portfolioEntry.project_images_2}
