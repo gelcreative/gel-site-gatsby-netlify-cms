@@ -35,13 +35,7 @@ export const PortfolioEntryTemplate = ({
           </div>
         </section>
         <section className="section gel-portfolio-images-2">
-          {projectImages2.map(image => {
-            return (
-              <div key={image.id} className="gel-project-image-inner">
-                <PreviewCompatibleImage imageInfo={image} />
-              </div>
-            )
-          })}
+          <PortfolioEntryImages portfolioImages={projectImages2} />
         </section>
       </div>
     </main>

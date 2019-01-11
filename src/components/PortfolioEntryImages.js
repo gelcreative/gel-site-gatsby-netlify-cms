@@ -5,7 +5,7 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 const PortfolioEntryImages = ({portfolioImages}) => {
   return (
     portfolioImages.map(image => (
-      <div className="gel-project-image-inner">
+      <div key={image.image.id} className="gel-project-image-inner">
         <PreviewCompatibleImage imageInfo={image}/>
       </div>
     ))
