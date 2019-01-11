@@ -59,7 +59,7 @@ const PortfolioEntry = ({ data }) => {
   const { frontmatter: portfolioEntry } = data.markdownRemark
   return (
     <Layout>
-      <PortfolioPageTemplate
+      <PortfolioEntryTemplate
         title={portfolioEntry.title}
         headerImage={portfolioEntry.header_image}
         projectIntro={portfolioEntry.project_intro}
