@@ -22,7 +22,7 @@ export const PortfolioPageTemplate = ({
 PortfolioPageTemplate.propTypes = {}
 
 const PortfolioPage = ({ data }) => {
-  const { markdownRemark: portfolioEntry } = data
+  const { frontmatter: portfolioEntry } = data.markdownRemark
   return (
     <Layout>
       <PortfolioPageTemplate
@@ -36,9 +36,17 @@ const PortfolioPage = ({ data }) => {
   )
 }
 
-PortfolioPage.PropTypes = {}
+PortfolioPage.propTypes = {}
 
 export default PortfolioPage
+
+// export const portfolioQuery = graphql`
+//   query PortfolioEntryByID($id: String!) {
+//     markdownRemark(id: {eq: $id}) {
+//     id
+//     }
+//   }
+// `;
 
 export const portfolioQuery = graphql`
   query PortfolioEntryByID($id: String!) {
