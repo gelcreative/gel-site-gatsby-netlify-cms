@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import PortfolioEntryImages from '../components/PortfolioEntryImages'
 
 export const PortfolioEntryTemplate = ({
   title,
@@ -21,12 +22,7 @@ export const PortfolioEntryTemplate = ({
           <p>{projectIntro}</p>
         </section>
         <section className="section gel-portfolio-images-1">
-          {projectImages1.map(image => (
-              <div className="gel-project-image-inner">
-                <PreviewCompatibleImage imageInfo={image} key={image.id}  />
-              </div>
-            )
-          )}
+          <PortfolioEntryImages portfolioImages={projectImages1} />
         </section>
         <section className="section gel-portfolio-entry-main">
           <div className="columns">
@@ -52,7 +48,17 @@ export const PortfolioEntryTemplate = ({
   )
 }
 
-PortfolioEntryTemplate.propTypes = {}
+PortfolioEntryTemplate.propTypes = {
+  title: PropTypes.string,
+  headerImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  projectIntro: PropTypes.string,
+  projectImages1: PropTypes.array,
+  main: PropTypes.shape({
+    detail_text: PropTypes.string,
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+  }),
+  projectImages2: PropTypes.array,
+}
 
 const PortfolioEntry = ({ data }) => {
   const { frontmatter: portfolioEntry } = data.markdownRemark
