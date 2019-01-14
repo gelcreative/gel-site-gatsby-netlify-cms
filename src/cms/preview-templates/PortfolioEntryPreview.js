@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PortfolioEntry from '../../templates/portfolio-entry'
+import { PortfolioEntryTemplate } from '../../templates/portfolio-entry'
 
-const PortfolioEntryPreview = ({entry, getAsset}) => {
+const PortfolioEntryPreview = ({entry, getAsset, widgetsFor}) => {
   const entryProjectImages1 = entry.getIn(['data', 'project_images_1'])
   const projectImages1 = entryProjectImages1 ? entryProjectImages1.toJS() : []
 
@@ -10,19 +10,20 @@ const PortfolioEntryPreview = ({entry, getAsset}) => {
   const projectImages2 = entryProjectImages2 ? entryProjectImages2.toJS() : []
 
   return (
-    <PortfolioEntry
+    <PortfolioEntryTemplate
       title={entry.getIn(['data', 'title'])}
       headerImage={{
-        image: getAsset(entry.getIn(['data', 'header_image', 'image'])),
+        image: entry.getIn(['data', 'header_image', 'image']),
         alt: entry.getIn(['data', 'header_image', 'alt'])
       }}
       projectIntro={entry.getIn(['data', 'project_intro'])}
-      projectImages1={{projectImages1}}
+      projectImages1={projectImages1}
       main={{
-        detailText: entry.getIn(['data', 'main', 'detail_text']),
-        image: getAsset(entry.getIn('data', 'main', 'image'))
+        // detail_text: entry.getIn(['data','main', 'detail_text'] || 'Poo'),
+        detail_text: entry.getIn(['data','main','detail_text']),
+        image: entry.getIn(['data', 'main', 'image']),
       }}
-      projectImages2={{projectImages2}}
+      projectImages2={projectImages2}
     />
   )
 }

@@ -55,16 +55,16 @@ PortfolioEntryTemplate.propTypes = {
 }
 
 const PortfolioEntry = ({ data }) => {
-  const { frontmatter: portfolioEntry } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark
   return (
     <Layout>
       <PortfolioEntryTemplate
-        title={portfolioEntry.title}
-        headerImage={portfolioEntry.header_image}
-        projectIntro={portfolioEntry.project_intro}
-        projectImages1={portfolioEntry.project_images_1}
-        main={portfolioEntry.main}
-        projectImages2={portfolioEntry.project_images_2}
+        title={frontmatter.title}
+        headerImage={frontmatter.header_image}
+        projectIntro={frontmatter.project_intro}
+        projectImages1={frontmatter.project_images_1}
+        main={frontmatter.main}
+        projectImages2={frontmatter.project_images_2}
       />
     </Layout>
   )
@@ -80,7 +80,7 @@ PortfolioEntry.propTypes = {
 
 export default PortfolioEntry
 
-export const portfolioEntryQuery = graphql`
+export const pageQuery = graphql`
   query PortfolioEntryByID($id: String!) {
     markdownRemark(id: {eq: $id}) {
     id
