@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { kebabCase } from 'lodash'
-import PreviewCompatbleImage from '../components/PreviewCompatibleImage'
 
 const PortfolioGrid = ({ data }) => {
   const edges = data.allMarkdownRemark.edges
@@ -10,10 +9,11 @@ const PortfolioGrid = ({ data }) => {
   return (
     <div className="gel-portfolio-grid columns">
       {edges.map(edge => (
-        <div className="column gel-portfolio-grid-item">
-          <div className="gel-portfolio-grid-item-inner" style={{backgroundImage: `url(${edge.frontmatter.bw_grid_image})`}}>
-            <Link to={`/portfolio/${kebabCase(edge.node.frontmatter.title)}`}>
-              <p>{edge.node.frontmatter.title}</p>
+        <div key={edge.node.id} className="column is-half gel-portfolio-grid-item">
+          <div className="gel-portfolio-grid-item-inner" style={{backgroundImage: `url(${edge.node.frontmatter.bw_grid_image.childImageSharp ? edge.node.frontmatter.bw_grid_image.childImageSharp.fluid.src : edge.node.frontmatter.bw_grid_image})`}}>
+          <div className="gel-portfolio-grid-item-colour-image" style={{backgroundImage: `url(${edge.node.frontmatter.colour_grid_image.childImageSharp ? edge.node.frontmatter.colour_grid_image.childImageSharp.fluid.src : edge.node.frontmatter.colour_grid_image})`}}></div>
+            <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`}>
+              {edge.node.frontmatter.project_type} for <br />{edge.node.frontmatter.title}
             </Link>
           </div>
         </div>
@@ -21,10 +21,9 @@ const PortfolioGrid = ({ data }) => {
       }
     </div>
   )
-
 }
 
-PortfolioGrid.PropTypes = {
+PortfolioGrid.propTypes = {
   data: PropTypes.object,
 }
 
@@ -43,6 +42,21 @@ export const portfolioGridQuery = graphql`
         id
         frontmatter {
           title
+          project_type
+          colour_grid_image {
+            childImageSharp {
+              fluid(maxWidth: 900, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          bw_grid_image {
+            childImageSharp {
+              fluid(maxWidth: 900, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

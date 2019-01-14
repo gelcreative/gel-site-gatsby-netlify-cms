@@ -200,6 +200,44 @@ svg.gel-header-logo:hover #Grey_-fixed_-_heavy polygon
 
 // end portfolio entry template
 
+// PORTFOLIO PAGE
+
+.gel-portfolio-grid-item 
+    min-height: 700px
+
+.gel-portfolio-grid-item-inner 
+    position: relative
+    height: 100%
+    width: 100%
+    vertical-align: middle
+
+.gel-portfolio-grid-item-colour-image
+    opacity: 0
+    transition: opacity 300ms
+
+.gel-portfolio-grid-item:hover .gel-portfolio-grid-item-colour-image 
+    opacity: 1
+
+.gel-portfolio-grid-item-inner div,
+.gel-portfolio-grid-item-inner a 
+    display: inline-block
+    height: 100%
+    width: 100%
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    text-align: center
+    vertical-align: middle
+
+.column.is-half.gel-portfolio-grid-item div 
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+
+// end portfolio page
+
 // ANIMATIONS
 
 @keyframes gelHeaderLogo
