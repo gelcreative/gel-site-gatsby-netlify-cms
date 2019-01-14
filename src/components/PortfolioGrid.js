@@ -6,13 +6,17 @@ import PreviewCompatbleImage from '../components/PreviewCompatibleImage'
 
 const PortfolioGrid = ({ data }) => {
   const edges = data.allMarkdownRemark.edges
+  const counter = 0;
   return (
-    <div className="gel-portfolio-grid">
+    <div className="gel-portfolio-grid columns">
       {edges.map(edge => (
-        <ul>
-          <li>Title: {edge.node.frontmatter.title}</li>
-          <li>Link: <Link to={`/portfolio/${kebabCase(edge.node.frontmatter.title)}`}>{edge.node.frontmatter.title}</Link></li>
-        </ul>
+        <div className="column gel-portfolio-grid-item">
+          <div className="gel-portfolio-grid-item-inner" style={{backgroundImage: `url(${edge.frontmatter.bw_grid_image})`}}>
+            <Link to={`/portfolio/${kebabCase(edge.node.frontmatter.title)}`}>
+              <p>{edge.node.frontmatter.title}</p>
+            </Link>
+          </div>
+        </div>
       ))
       }
     </div>
@@ -26,12 +30,12 @@ PortfolioGrid.PropTypes = {
 
 export default props => (
   <StaticQuery
-    query={pageQuery}
+    query={portfolioGridQuery}
     render={data=> <PortfolioGrid data={data} {...props} />}
   />
 )
 
-export const pageQuery = graphql`
+export const portfolioGridQuery = graphql`
   query PortfolioGrid {
     allMarkdownRemark (filter: {frontmatter: {templateKey: {eq: "portfolio-entry"}}}) {
     edges {

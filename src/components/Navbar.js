@@ -49,7 +49,7 @@ componentDidMount() {
       </div>
       <div id="navMenu" className="navbar-menu">
         <div className="navbar-start has-text-centered">
-        <p>Learn <Link className="gel-navbar-item" to="/about">about</Link> Gel, consider our work, <Link className="gel-navbar-item" to="/contact">connect</Link> with us, and read our blog.</p>
+        <p>Learn <Link to="/about">about</Link> Gel, consider our <Link to="/portfolio">work</Link>, <Link to="/contact">connect</Link> with us, and read our blog.</p>
         </div>
       </div>
     </div>
