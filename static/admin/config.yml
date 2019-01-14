@@ -18,9 +18,9 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-  - name: "portfolio"
-    label: "Portfolio"
-    folder: "src/pages/portfolio"
+  - name: "portfolio-entry"
+    label: "Portfolio Entries"
+    folder: "src/pages/portfolio-entries"
     create: true
     slug: "{{slug}}"
     fields:

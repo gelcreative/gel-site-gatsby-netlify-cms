@@ -8,4 +8,4 @@ import PortfolioEntryPreview from './preview-templates/PortfolioEntryPreview'
 CMS.registerPreviewTemplate('about', AboutPagePreview)
 CMS.registerPreviewTemplate('products', ProductPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
-CMS.registerPreviewTemplate('portfolio', PortfolioEntryPreview)
+CMS.registerPreviewTemplate('portfolio-entry', PortfolioEntryPreview)
