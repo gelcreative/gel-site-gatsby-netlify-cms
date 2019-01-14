@@ -64,4 +64,4 @@ collections:
           fields:
             - {label: "Template Key", name: "templateKey", widget: "hidden", default: "portfolio"}
             - {label: Title, name: title, widget: string}
-            - {label: "Intro", name: "intro", widget: string}
+            - {label: "Intro", name: "portfolio_intro", widget: string}
