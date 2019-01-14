@@ -5,13 +5,18 @@ import Layout from '../components/Layout'
 import PortfolioGrid from '../components/PortfolioGrid'
 
 export const PortfolioPageTemplate = ({
-  title
+  title,
+  portfolioIntro
 }) => {
   return (
     <main role="main">
       <div className="container">
         <section className="section">
-          <h1>{title}</h1>
+          <h1 className="visually-hidden">{title}</h1>
+          <p>{portfolioIntro}</p>
+        </section>
+        <section className="section">
+          <PortfolioGrid />
         </section>
       </div>
     </main>
@@ -19,7 +24,8 @@ export const PortfolioPageTemplate = ({
 }
 
 PortfolioPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  portfolioIntro: PropTypes.string,
 }
 
 const PortfolioPage = ({ data }) => {
@@ -28,6 +34,7 @@ const PortfolioPage = ({ data }) => {
     <Layout>
       <PortfolioPageTemplate
         title={frontmatter.title}
+        portfolioIntro={frontmatter.portfolio_intro}
       />
     </Layout>
   )
@@ -44,6 +51,7 @@ export const portfolioPageQuery = graphql`
     markdownRemark(id: {eq: $id}) {
       frontmatter {
         title
+        portfolio_intro
       }
     }
   }
