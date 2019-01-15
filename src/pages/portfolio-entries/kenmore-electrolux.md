@@ -2,7 +2,6 @@
 templateKey: portfolio-entry
 title: Kenmore Electrolux
 project_type: Visual Identity
-client_logo: /img/kenmore-electrolux-masthead.jpg
 colour_grid_image: /img/kenmore-cover-tile-crop-1x1-colour.jpg
 bw_grid_image: /img/kenmore-cover-tile-crop-1x1-bw.jpg
 header_image:

@@ -27,7 +27,6 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "portfolio-entry"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Project Type (e.g. Visual Identity)", name: "project_type", widget: "string"}
-      - {label: "Client Logo", name: "client_logo", widget: "image"}
       - {label: "Colour Grid Image (for grid on portfolio page)", name: "colour_grid_image", widget: "image"}
       - {label: "Greyscale Grid Image (for grid on portfolio page)", name: "bw_grid_image", widget: "image"}
       - {label: "Header Image", name: "header_image", widget: "object", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}

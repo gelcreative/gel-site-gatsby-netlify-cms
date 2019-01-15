@@ -78,7 +78,7 @@ const StyledPortfolioGrid = styled.section`
 
   .gel-portfolio-grid-item-inner a p {
     font-size: 3rem;
-  } 
+  }
 `
 
 const PortfolioGrid = ({ data }) => {
