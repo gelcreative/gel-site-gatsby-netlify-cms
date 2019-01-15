@@ -5,8 +5,13 @@ import { kebabCase } from 'lodash'
 import styled from 'styled-components'
 
 const StyledPortfolioGrid = styled.section`
+  .gel-portfolio-grid {
+    flex-wrap: wrap;
+  }
+
   .gel-portfolio-grid-item {
-    min-height: 700px;
+    min-height: 600px;
+    min-width: 600px;
   }
 
   .gel-portfolio-grid-item-inner {
@@ -52,6 +57,7 @@ const StyledPortfolioGrid = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
   }
 
   .gel-portfolio-item-text-container {
@@ -72,12 +78,14 @@ const StyledPortfolioGrid = styled.section`
     opacity: 1;
   }
 
-  .gel-portfolio-grid-item-inner a {
-    text-decoration: none;
-  }
-
   .gel-portfolio-grid-item-inner a p {
     font-size: 3rem;
+  }
+
+  @media (max-width: 1471px) {
+    .gel-portfolio-grid {
+      justify-content: center;
+    }
   }
 `
 
@@ -86,10 +94,10 @@ const PortfolioGrid = ({ data }) => {
   return (
     <StyledPortfolioGrid>
       <div className="gel-portfolio-grid columns is-gapless">
-        {edges.map(edge => {
+        {edges.map((edge, i) => {
           return (
             <div key={edge.node.id} className="column is-half gel-portfolio-grid-item">
-              <div className="gel-portfolio-grid-item-inner" style={{backgroundImage: `url(${edge.node.frontmatter.bw_grid_image.childImageSharp ? edge.node.frontmatter.bw_grid_image.childImageSharp.fluid.src : edge.node.frontmatter.bw_grid_image})`}}>
+              <div  className="gel-portfolio-grid-item-inner" style={{backgroundImage: `url(${edge.node.frontmatter.bw_grid_image.childImageSharp ? edge.node.frontmatter.bw_grid_image.childImageSharp.fluid.src : edge.node.frontmatter.bw_grid_image})`}}>
                 <div className="gel-portfolio-grid-item-colour-image" style={{backgroundImage: `url(${edge.node.frontmatter.colour_grid_image.childImageSharp ? edge.node.frontmatter.colour_grid_image.childImageSharp.fluid.src : edge.node.frontmatter.colour_grid_image})`}}></div>
                 <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`}>
                   <div className="gel-portfolio-item-text-container">

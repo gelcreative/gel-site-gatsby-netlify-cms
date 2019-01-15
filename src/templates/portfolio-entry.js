@@ -33,7 +33,7 @@ export const PortfolioEntryTemplate = ({
         </section>
         <section className="section gel-portfolio-entry-main">
           <div className="columns">
-            <div className="column">
+            <div className="column gel-portfolio-entry-main-text">
               <p>{main.detail_text}</p>
             </div>
             <div className="column">
