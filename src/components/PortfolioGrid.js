@@ -66,8 +66,8 @@ const StyledPortfolioGrid = styled.section`
   }
 
   .gel-portfolio-grid-item:hover .gel-portfolio-item-text-container {
-    max-width: 70%;
-    max-height: 70%;
+    width: 70%;
+    height: 70%;
     border-radius: 50%;
     opacity: 1;
   }
