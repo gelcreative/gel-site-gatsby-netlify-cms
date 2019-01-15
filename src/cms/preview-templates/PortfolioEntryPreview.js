@@ -19,7 +19,6 @@ const PortfolioEntryPreview = ({entry, getAsset, widgetsFor}) => {
       projectIntro={entry.getIn(['data', 'project_intro'])}
       projectImages1={projectImages1}
       main={{
-        // detail_text: entry.getIn(['data','main', 'detail_text'] || 'Poo'),
         detail_text: entry.getIn(['data','main','detail_text']),
         image: entry.getIn(['data', 'main', 'image']),
       }}
