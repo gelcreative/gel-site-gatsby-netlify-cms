@@ -3,13 +3,16 @@ import PropTypes from 'prop-types'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const PortfolioEntryImages = ({portfolioImages}) => {
-  return (
-    portfolioImages.map(image => (
-      <div key={image.image.id} className="gel-project-image-inner">
-        <PreviewCompatibleImage imageInfo={image}/>
-      </div>
-    ))
-  )
+  if(portfolioImages[0].length) {
+      return (
+        portfolioImages.map(image => (
+          <div key={image.image.id} className="gel-project-image-inner">
+            <PreviewCompatibleImage imageInfo={image}/>
+          </div>
+        ))
+      )
+  };
+  return null;
 }
 
 PortfolioEntryImages.propTypes = {
