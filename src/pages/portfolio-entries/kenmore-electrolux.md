@@ -6,7 +6,7 @@ colour_grid_image: /img/kenmore-cover-tile-crop-1x1-colour.jpg
 bw_grid_image: /img/kenmore-cover-tile-crop-1x1-bw.jpg
 header_image:
   alt: Kenmore and Electrolux Logos
-  image: /img/kenmore-electrolux-masthead.jpg
+  image: /img/kenmore-logo-masthead.jpg
 project_intro: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit
   sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis. Nulla
