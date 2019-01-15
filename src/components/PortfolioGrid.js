@@ -5,20 +5,22 @@ import { kebabCase } from 'lodash'
 
 const PortfolioGrid = ({ data }) => {
   const edges = data.allMarkdownRemark.edges
-  const counter = 0;
   return (
     <div className="gel-portfolio-grid columns">
-      {edges.map(edge => (
-        <div key={edge.node.id} className="column is-half gel-portfolio-grid-item">
-          <div className="gel-portfolio-grid-item-inner" style={{backgroundImage: `url(${edge.node.frontmatter.bw_grid_image.childImageSharp ? edge.node.frontmatter.bw_grid_image.childImageSharp.fluid.src : edge.node.frontmatter.bw_grid_image})`}}>
-          <div className="gel-portfolio-grid-item-colour-image" style={{backgroundImage: `url(${edge.node.frontmatter.colour_grid_image.childImageSharp ? edge.node.frontmatter.colour_grid_image.childImageSharp.fluid.src : edge.node.frontmatter.colour_grid_image})`}}></div>
-            <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`}>
-              {edge.node.frontmatter.project_type} for <br />{edge.node.frontmatter.title}
-            </Link>
+      {edges.map(edge => {
+        return (
+          <div key={edge.node.id} className="column is-half gel-portfolio-grid-item">
+            <div className="gel-portfolio-grid-item-inner" style={{backgroundImage: `url(${edge.node.frontmatter.bw_grid_image.childImageSharp ? edge.node.frontmatter.bw_grid_image.childImageSharp.fluid.src : edge.node.frontmatter.bw_grid_image})`}}>
+              <div className="gel-portfolio-grid-item-colour-image" style={{backgroundImage: `url(${edge.node.frontmatter.colour_grid_image.childImageSharp ? edge.node.frontmatter.colour_grid_image.childImageSharp.fluid.src : edge.node.frontmatter.colour_grid_image})`}}></div>
+              <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`}>
+                <div className="gel-portfolio-item-text-container">
+                  <p>{edge.node.frontmatter.project_type} for <br />{edge.node.frontmatter.title}</p>
+                </div>
+              </Link>
+            </div>
           </div>
-        </div>
-      ))
-      }
+        )
+      })}
     </div>
   )
 }
