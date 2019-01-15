@@ -61,7 +61,7 @@ const StyledPortfolioGrid = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 300ms;
+    transition: 300ms ease-in-out;
     opacity: 0;
   }
 
