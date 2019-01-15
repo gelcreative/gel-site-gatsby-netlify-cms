@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import PortfolioEntryImages from '../components/PortfolioEntryImages'
@@ -16,9 +17,15 @@ export const PortfolioEntryTemplate = ({
   return (
     <main role="main">
       <div className="container">
+        <section className="section gel-portfolio-entry-masthead">
+          <div className="columns">
+            <div className="column has-text-centered">
+              <h1 className="visually-hidden">{title}</h1>
+              <Img fixed={headerImage.image.childImageSharp.fixed} />
+            </div>
+          </div>
+        </section>
         <section className="section">
-          <h1 className="visually-hidden">{title}</h1>
-          <PreviewCompatibleImage imageInfo={headerImage} />
           <p>{projectIntro}</p>
         </section>
         <section className="section gel-portfolio-images-1">
@@ -89,8 +96,8 @@ export const pageQuery = graphql`
       header_image {
         image {
           childImageSharp {
-            fluid(maxWidth: 1920, quality: 100) {
-              ...GatsbyImageSharpFluid
+            fixed(height: 300) {
+              ...GatsbyImageSharpFixed
             }
           }
         }

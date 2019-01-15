@@ -85,7 +85,7 @@ const PortfolioGrid = ({ data }) => {
   const edges = data.allMarkdownRemark.edges
   return (
     <StyledPortfolioGrid>
-      <div className="gel-portfolio-grid columns">
+      <div className="gel-portfolio-grid columns is-gapless">
         {edges.map(edge => {
           return (
             <div key={edge.node.id} className="column is-half gel-portfolio-grid-item">

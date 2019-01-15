@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const PortfolioEntryImages = ({portfolioImages}) => {
-  console.log()
-  if(typeof portfolioImages[0].image === 'string') {
+  if(typeof portfolioImages[0].image === 'string' || typeof portfolioImages[0].image === 'object') {
       return (
         portfolioImages.map(image => (
           <div key={image.image.id} className="gel-project-image-inner">
@@ -12,6 +11,8 @@ const PortfolioEntryImages = ({portfolioImages}) => {
           </div>
         ))
       )
+  } else {
+    console.log(portfolioImages);
   };
   return null;
 }
