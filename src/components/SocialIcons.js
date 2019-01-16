@@ -26,7 +26,8 @@ const SocialIconList = styled.ul`
       }
     }
   }
-  li:hover svg path {
+  li:hover svg path,
+  li:hover svg circle {
     animation: gelHoverColors;
     animation-duration: 300ms;
     animation-fill-mode: forwards;
