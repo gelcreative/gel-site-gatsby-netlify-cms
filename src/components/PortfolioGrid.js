@@ -84,7 +84,7 @@ const PortfolioGrid = ({ data }) => {
   return (
     <StyledPortfolioGrid>
       <div className="gel-portfolio-grid columns is-gapless">
-        {edges.map((edge, i) => {
+        {edges.map((edge) => {
           return (
             <div key={edge.node.id} className="column is-half gel-portfolio-grid-item">
               <PreviewCompatibleImage imageInfo={edge.node.frontmatter.bw_grid_image} />
