@@ -24,6 +24,10 @@ const Styled404 = styled.main`
   .gel-404-columns .column:first-child p:last-child {
       font-size: 2rem;
   }
+
+  a {
+    margin-top: 50px;
+  }
 `;
 
 const NotFoundPage = () => (
