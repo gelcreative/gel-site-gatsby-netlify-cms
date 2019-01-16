@@ -166,13 +166,29 @@ svg.gel-header-logo:hover #Grey_-fixed_-_heavy polygon
   font-weight: 600
   line-height: 1.2
 
-@media (min-width: 1088px)
+.gel-nav-active .container 
+  max-width: 100%
+
+@media (min-width: 1088px) and (max-width: 1279px) 
+  .gel-nav-active .container 
+    width: 960px
+  
+  .gel-nav-active.navbar > .container .navbar-brand 
+    max-width: 960px
+    
+@media (min-width: 1280px) and (max-width: 1471px)
   .gel-nav-active .container
-    max-width: 100%
+    width: 1152px
+
+  .gel-nav-active.navbar > .container .navbar-brand
+    max-width: 1152px
+
+@media (min-width: 1472px)
+  .gel-nav-active .container
     width: 1344px
 
-.gel-nav-active.navbar > .container .navbar-brand
-  max-width: 1344px
+  .gel-nav-active.navbar > .container .navbar-brand
+    max-width: 1344px
 
 /* About Page */
 
