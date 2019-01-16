@@ -79,7 +79,7 @@ const StyledPortfolioGrid = styled.section`
   }
 `
 
-const PortfolioGrid = ({ data }) => {
+const PortfolioGridTemplate = ({ data }) => {
   const edges = data.allMarkdownRemark.edges
   return (
     <StyledPortfolioGrid>
@@ -102,16 +102,18 @@ const PortfolioGrid = ({ data }) => {
   )
 }
 
-PortfolioGrid.propTypes = {
+PortfolioGridTemplate.propTypes = {
   data: PropTypes.object,
 }
 
-export default props => (
+const PortfolioGrid = props => (
   <StaticQuery
     query={portfolioGridQuery}
-    render={data=> <PortfolioGrid data={data} {...props} />}
+    render={data=> <PortfolioGridTemplate data={data} {...props} />}
   />
 )
+
+export default PortfolioGrid
 
 export const portfolioGridQuery = graphql`
   query PortfolioGrid {
