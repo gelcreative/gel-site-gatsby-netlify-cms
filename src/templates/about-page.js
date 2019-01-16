@@ -16,7 +16,7 @@ export const AboutPageTemplate = ({
     <section className="section section--gradient">
       <div className="container">
         <div className="columns">
-          <div className="column is-10 is-offset-1">
+          <div className="column">
             <div className="section">
               <h1 className="visually-hidden">{title}</h1>
               <p>{intro}</p>
@@ -24,9 +24,9 @@ export const AboutPageTemplate = ({
           </div>
         </div>
         <div className="columns gel-bio-row">
-            <div className="column">
-              <PreviewCompatibleImage imageInfo={main.tom.image1} />
-            </div>
+          <div className="column">
+            <PreviewCompatibleImage imageInfo={main.tom.image1} />
+          </div>
           <div className="column">
             <div className="section">
               <p>{main.tom.tom_bio}</p>
@@ -43,15 +43,15 @@ export const AboutPageTemplate = ({
             <PreviewCompatibleImage imageInfo={main.shannon.image2} />
           </div>
         </div>
-      </div>
-      <div className="columns">
-          <div className="column is-10 is-offset-1">
+        <div className="columns">
+          <div className="column">
             <div className="section">
               <h2>{approach.heading}</h2>
               <p>{approach.text}</p>
             </div>
           </div>
         </div>
+      </div>
     </section>
   )
 }

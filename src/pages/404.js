@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 import FooterLogo from '../components/svg/FooterLogo'
 
@@ -34,6 +35,7 @@ const NotFoundPage = () => (
           <p>Oops! Something went wrong and we can't find that page.</p>
           <h1><strong>404 Error</strong></h1>
           <p>At least we found this fun animation!</p>
+          <Link to={"/"} title="home page" className="button is-dark is-large gel-button-1">Home</Link>
         </section>
         <section className="column is-two-fifths">
           <FooterLogo />
