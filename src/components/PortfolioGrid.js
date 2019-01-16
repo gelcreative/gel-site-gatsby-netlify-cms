@@ -50,6 +50,7 @@ const StyledPortfolioGrid = styled.section`
   .gel-portfolio-item-text-container p {
     font-size: 3rem;
     text-align: center;
+    line-height: 1.2
   }
 
   @media (min-width: 769px) {
