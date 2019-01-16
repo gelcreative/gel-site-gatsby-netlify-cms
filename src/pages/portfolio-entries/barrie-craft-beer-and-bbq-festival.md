@@ -3,7 +3,9 @@ templateKey: portfolio-entry
 title: Barrie Craft Beer and BBQ Festival
 project_type: Visual Identity
 colour_grid_image: /img/craft-beer-festival_portfolio-color.jpg
-bw_grid_image: /img/craft-beer-festival_portfolio-bw.jpg
+bw_grid_image: 
+  image: /img/craft-beer-festival_portfolio-bw.jpg
+  alt: Barrie Craft Beer and BBQ Festival Logo
 header_image:
   alt: Downtown Barrie Craft Beer and BBQ Festival
   image: /img/craft-beer-logo-masthead.jpg

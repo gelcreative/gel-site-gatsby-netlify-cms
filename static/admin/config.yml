@@ -28,7 +28,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Project Type (e.g. Visual Identity)", name: "project_type", widget: "string"}
       - {label: "Colour Grid Image (for grid on portfolio page)", name: "colour_grid_image", widget: "image"}
-      - {label: "Greyscale Grid Image (for grid on portfolio page)", name: "bw_grid_image", widget: "image"}
+      - {label: "Greyscale Grid Image (for grid on portfolio page)", name: "bw_grid_image", widget: "object", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}
       - {label: "Header Image", name: "header_image", widget: "object", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}
       - {label: "Project Intro", name: "project_intro", widtet: text}
       - {label: "Project Image Section 1", name: "project_images_1", widget: list, fields: [{label: "Image", name: "image", widget: "image"}]}
