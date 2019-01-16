@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { kebabCase } from 'lodash'
 import styled from 'styled-components'
@@ -79,71 +78,63 @@ const StyledPortfolioGrid = styled.section`
   }
 `
 
-const PortfolioGridTemplate = ({ data }) => {
-  const edges = data.allMarkdownRemark.edges
-  return (
-    <StyledPortfolioGrid>
-      <div className="gel-portfolio-grid columns is-gapless">
-        {edges.map((edge) => {
-          return (
-            <div key={edge.node.id} className="column is-half gel-portfolio-grid-item">
-              <PreviewCompatibleImage imageInfo={edge.node.frontmatter.bw_grid_image} />
-              <PreviewCompatibleImage imageInfo={edge.node.frontmatter.colour_grid_image} />
-              <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`}>
-                <div className="gel-portfolio-item-text-container">
-                  <p>{edge.node.frontmatter.project_type} for <br />{edge.node.frontmatter.title}</p>
-                </div>
-              </Link>
-            </div>
-          )
-        })}
-      </div>
-    </StyledPortfolioGrid>
-  )
-}
-
-PortfolioGridTemplate.propTypes = {
-  data: PropTypes.object,
-}
-
-const PortfolioGrid = props => (
+const PortfolioGrid = () => (
   <StaticQuery
-    query={portfolioGridQuery}
-    render={data=> <PortfolioGridTemplate data={data} {...props} />}
-  />
-)
-
-export default PortfolioGrid
-
-export const portfolioGridQuery = graphql`
-  query PortfolioGrid {
-    allMarkdownRemark (filter: {frontmatter: {templateKey: {eq: "portfolio-entry"}}}) {
-    edges {
-      node {
-        id
-        frontmatter {
-          title
-          project_type
-          colour_grid_image {
-            childImageSharp {
-              fluid(maxWidth: 900, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          bw_grid_image {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 900, quality: 100) {
-                  ...GatsbyImageSharpFluid
+    query={graphql`
+    query PortfolioGrid {
+      allMarkdownRemark (filter: {frontmatter: {templateKey: {eq: "portfolio-entry"}}}) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              project_type
+              colour_grid_image {
+                childImageSharp {
+                  fluid(maxWidth: 900, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
+              bw_grid_image {
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 900, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+                alt
+              }
             }
-            alt
           }
         }
       }
     }
-  }
-}
-`;
+  `}
+    render={data=> {
+      const edges = data.allMarkdownRemark.edges
+      return (
+        <StyledPortfolioGrid>
+          <div className="gel-portfolio-grid columns is-gapless">
+            {edges.map((edge) => {
+              return (
+                <div key={edge.node.id} className="column is-half gel-portfolio-grid-item">
+                  <PreviewCompatibleImage imageInfo={edge.node.frontmatter.bw_grid_image} />
+                  <PreviewCompatibleImage imageInfo={edge.node.frontmatter.colour_grid_image} />
+                  <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`}>
+                    <div className="gel-portfolio-item-text-container">
+                      <p>{edge.node.frontmatter.project_type} for <br />{edge.node.frontmatter.title}</p>
+                    </div>
+                  </Link>
+                </div>
+              )
+            })}
+          </div>
+        </StyledPortfolioGrid>
+      )
+    }}
+  />
+)
+
+export default PortfolioGrid
