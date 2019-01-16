@@ -11,9 +11,7 @@ const PortfolioEntryImages = ({portfolioImages}) => {
           </div>
         ))
       )
-  } else {
-    console.log(portfolioImages);
-  };
+  }
   return null;
 }
 
