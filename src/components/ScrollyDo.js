@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import SocialIcons from './SocialIcons'
+import { scrollIt } from '../util/scrollIt'
 
 const ScrollyDoContainer = styled.div`
   transition: opacity 300ms;
@@ -44,8 +45,11 @@ class ScrollyDo extends Component {
     scrollLink.addEventListener('click', e => {
       e.preventDefault();
       const scrollyPosition = scrollyContainer.offsetTop;
-      window.scroll(0, scrollyPosition + 30);
-      console.log(scrollyPosition)
+      // window.scroll(0, scrollyPosition + 30);
+      const targetPosition = scrollyPosition + 30;
+
+      scrollIt(targetPosition, 1000, 'easeInOutQuint');
+      
     })
     window.addEventListener('scroll', () => {
       const scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
