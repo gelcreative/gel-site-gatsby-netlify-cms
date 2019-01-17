@@ -3,16 +3,18 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import SocialIcons from './SocialIcons'
 
-const ScollyDoContainer = styled.div``
+const ScrollyDoContainer = styled.div`
+  display: block;
+`
 
-class ScrollyDo extends React {
+class ScrollyDo extends Component {
   componentDidMount() {
-
+    console.log('scrollydo mounted!')
   }
-  render ({icons}) {
+  render () {
     return (
       <ScrollyDoContainer>
-
+        <p>Social is {this.props.social ? 'boobies' : 'no boobies'}</p>
       </ScrollyDoContainer>
     )
   }
