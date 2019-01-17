@@ -5,6 +5,8 @@ import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import PortfolioEntryImages from '../components/PortfolioEntryImages'
 
+import ScrollyDo from '../components/ScrollyDo'
+
 export const PortfolioEntryTemplate = ({
   title,
   headerImage,
@@ -24,6 +26,7 @@ export const PortfolioEntryTemplate = ({
             </div>
           </div>
         </section>
+          <ScrollyDo social={true} />
         <section className="section">
           <p>{projectIntro}</p>
         </section>

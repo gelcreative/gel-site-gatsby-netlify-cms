@@ -8,7 +8,7 @@ import LinkedIn from './svg/LinkedIn'
 
 
 const SocialIconList = styled.ul`
-  list-style-type: none;
+  list-style: none !important;
   display: flex;
   align-items: center;
   justify-content: flex-end;
