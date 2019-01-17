@@ -1,11 +1,20 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import SocialIcons from './SocialIcons'
 
 const ScrollyDoContainer = styled.div`
-  transition: opacity 500ms;
+  transition: opacity 300ms;
   background-color: white;
+  ${props => props.fullHeight && css`
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 95%;
+    margin: 0 auto;
+    padding-bottom: 20px;`
+  }
 
   .scrolly-container-inner {
     display: flex;
@@ -49,12 +58,12 @@ class ScrollyDo extends Component {
   }
   render () {
     return (
-      <ScrollyDoContainer className="scrolly-container" >
+      <ScrollyDoContainer className="scrolly-container" fullHeight={this.props.fullHeight} >
         <div className="scrolly-container-inner">
           <a href="#next" title="Scroll to the next section. 👇">
             <img src="/img/scrolly.gif" alt="" aria-hidden="true" />
           </a>
-          <p>{this.props.social}</p>
+          {!!this.props.socialIcons && <SocialIcons />}
         </div>
       </ScrollyDoContainer>
     )
@@ -62,7 +71,8 @@ class ScrollyDo extends Component {
 }
 
 ScrollyDo.propTypes = {
-  social: PropTypes.string,
+  socialIcons: PropTypes.bool,
+  fullHeight: PropTypes.bool
 }
 
 export default ScrollyDo

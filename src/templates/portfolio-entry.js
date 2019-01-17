@@ -26,7 +26,7 @@ export const PortfolioEntryTemplate = ({
             </div>
           </div>
         </section>
-          <ScrollyDo social={true} />
+          <ScrollyDo socialIcons={true} fullHeight={true} />
         <section className="section">
           <p>{projectIntro}</p>
         </section>
