@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import Icon from '-!svg-react-loader?name=GelLogo!../../img/gel-logo-header.svg'
 
 const HeaderLogoContainer = styled.div`
+  max-width: 150px;
+
+  .gel-header-logo {
+    width: 150px;
+  }
+
   .gel-header-logo:hover {
     animation: gelHeaderLogo;
     animation-duration: 1s;
