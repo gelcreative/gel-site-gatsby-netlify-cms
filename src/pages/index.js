@@ -7,6 +7,7 @@ import ScrollyDo from '../components/ScrollyDo'
 
 const FullHeightSection = styled.section`
   min-height: 100vh;
+
 `
 
 
@@ -29,6 +30,12 @@ export default class IndexPage extends React.Component {
               <p style={{fontSize: '2.5rem'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis. Nulla facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar gravida. Aenean turpis augue, dictum et augue id, mattis aliquet orci. Fusce sed dapibus eros. Duis in rhoncus erat, ut viverra tortor. Fusce sed enim finibus.</p>
             </FullHeightSection>
             <section className="gel-home-case-studies">
+              <article className="columns is-centered">
+                <div className="column"><img src="/img/" alt=""/></div>
+              </article>
+              <article className="columns is-centered">
+                <div className="column"><img src="" alt=""/></div>
+              </article>
             </section>
           </div>
         </main>
