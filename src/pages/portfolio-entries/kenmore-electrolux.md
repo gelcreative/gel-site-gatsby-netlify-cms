@@ -1,7 +1,7 @@
 ---
 templateKey: portfolio-entry
 title: Kenmore Electrolux
-project_type: Visual Identity
+project_type: Kenmore Major Appliances &bsp;Product Catalogues
 home_page_featured:
   featured_image:
     alt: Kenmore Example Image

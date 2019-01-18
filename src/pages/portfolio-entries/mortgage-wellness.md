@@ -1,7 +1,7 @@
 ---
 templateKey: portfolio-entry
 title: Mortgage Wellness
-project_type: Brand Identity
+project_type: Brand Identity for Mortgage Wellness
 home_page_featured:
   featured_image:
     alt: Mortgage Wellness Project Example

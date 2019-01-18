@@ -20,6 +20,7 @@ const StyledFeaturesSection = styled.section`
       h2 {
       color: #ffffff;
       font-size: 3.5rem;
+      margin-bottom: 2em;
     }
   }
 
