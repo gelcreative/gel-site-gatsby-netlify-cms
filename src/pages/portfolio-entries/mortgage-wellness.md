@@ -6,6 +6,7 @@ home_page_featured:
   featured_image:
     alt: Mortgage Wellness Project Example
     image: /img/mortgage-wellness-project-cover.jpg
+  is_featured: true
 colour_grid_image: /img/mortgage-wellness_portfolio-color.jpg
 bw_grid_image:
   alt: Mortgage Wellness Wordmark
