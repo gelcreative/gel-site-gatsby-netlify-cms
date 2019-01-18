@@ -21,6 +21,8 @@ const StyledFeaturesSection = styled.section`
       color: #ffffff;
       font-size: 3.5rem;
       margin-bottom: 2em;
+      text-align: center;
+      line-height: 1.3;
     }
   }
 
@@ -64,7 +66,7 @@ const HomePagePortfolioFeatures = () => (
               <div className="column">
                 <PreviewCompatibleImage imageInfo={edge.node.frontmatter.home_page_featured.featured_image} />
                 <div className="gel-homepage-featured-text-container">
-                  <h2>{edge.node.frontmatter.project_type}</h2>
+                  <h2 dangerouslySetInnerHTML={{__html: edge.node.frontmatter.project_type}} />
                   <Link className="button gel-button-1 is-large is-dark" to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`}>View Case Study</Link>
                 </div>
               </div>
