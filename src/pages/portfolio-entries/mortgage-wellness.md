@@ -2,10 +2,14 @@
 templateKey: portfolio-entry
 title: Mortgage Wellness
 project_type: Brand Identity
+home_page_featured:
+  featured_image:
+    alt: Mortgage Wellness Project Example
+    image: /img/mortgage-wellness-project-cover.jpg
 colour_grid_image: /img/mortgage-wellness_portfolio-color.jpg
-bw_grid_image: 
-  image: /img/mortgage-wellness_portfolio-bw.jpg
+bw_grid_image:
   alt: Mortgage Wellness Wordmark
+  image: /img/mortgage-wellness_portfolio-bw.jpg
 header_image:
   alt: Mortgage Wellness Logo
   image: /img/mortgage-wellness-logo-masthead.jpg
