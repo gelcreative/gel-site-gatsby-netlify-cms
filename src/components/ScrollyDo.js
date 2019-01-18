@@ -36,6 +36,16 @@ const ScrollyDoContainer = styled.div`
     top: 0;
     bottom: 0;
   }
+
+  @media (max-width: 669px) {
+    .scrolly-container-inner {
+      flex-direction: column;
+    }
+
+    ul {
+      position: relative;
+    }
+  }
 `
 
 class ScrollyDo extends Component {

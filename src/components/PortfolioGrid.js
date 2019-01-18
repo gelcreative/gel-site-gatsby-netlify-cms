@@ -124,7 +124,7 @@ const PortfolioGrid = () => (
                   <PreviewCompatibleImage imageInfo={edge.node.frontmatter.colour_grid_image} />
                   <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`}>
                     <div className="gel-portfolio-item-text-container">
-                      <p>{edge.node.frontmatter.project_type}</p>
+                      <p dangerouslySetInnerHTML={{__html: edge.node.frontmatter.project_type}} />
                     </div>
                   </Link>
                 </div>
