@@ -1,7 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
 import Layout from '../components/Layout'
+import ScrollyDo from '../components/ScrollyDo'
+
+const FullHeightSection = styled.section`
+  min-height: 100vh;
+`
+
 
 export default class IndexPage extends React.Component {
   render() {
@@ -10,37 +17,22 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <section className="section">
+        <main role="main">
           <div className="container">
-            <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-            </div>
-            {posts
-              .map(({ node: post }) => (
-                <div
-                  className="content"
-                  style={{ border: '1px solid #333', padding: '2em 4em' }}
-                  key={post.id}
-                >
-                  <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <small>{post.frontmatter.date}</small>
-                  </p>
-                  <p>
-                    {post.excerpt}
-                    <br />
-                    <br />
-                    <Link className="button is-small" to={post.fields.slug}>
-                      Keep Reading →
-                    </Link>
-                  </p>
-                </div>
-              ))}
+            <FullHeightSection className="gel-home-masthead columns is-centered">
+              <div className="column has-text-centered">
+                <img src="/img/gel-logo-footer.svg" title="Gel Logo" width="500" />
+              </div>
+            </FullHeightSection>
+            <ScrollyDo socialIcons={true} fullHeight={true}></ScrollyDo>
+            <FullHeightSection className="gel-home-intro-text has-text-centered">
+              <p style={{fontSize: '2.5rem'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis. Nulla facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar gravida. Aenean turpis augue, dictum et augue id, mattis aliquet orci. Fusce sed dapibus eros. Duis in rhoncus erat, ut viverra tortor. Fusce sed enim finibus.</p>
+            </FullHeightSection>
+            <section className="gel-home-case-studies">
+            </section>
           </div>
-        </section>
+        </main>
+        
       </Layout>
     )
   }

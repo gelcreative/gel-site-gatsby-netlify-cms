@@ -5,8 +5,6 @@ import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import PortfolioEntryImages from '../components/PortfolioEntryImages'
 
-import ScrollyDo from '../components/ScrollyDo'
-
 export const PortfolioEntryTemplate = ({
   title,
   headerImage,
