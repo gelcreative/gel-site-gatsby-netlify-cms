@@ -25,7 +25,11 @@ const StyledFeaturesSection = styled.section`
       line-height: 1.3;
     }
   }
-
+  @media (max-width: 439px) {
+    .gel-homepage-featured-text-container h2 {
+      font-size: 2.5rem;
+    }
+  }
 `
 
 const HomePagePortfolioFeatures = () => (
