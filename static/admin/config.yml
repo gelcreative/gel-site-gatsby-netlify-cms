@@ -27,7 +27,7 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "portfolio-entry"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Project Type (e.g. Visual Identity)", name: "project_type", widget: "string"}
-      - {label: "Home Page Feaured Image", name: "home_page_featured", widget: "object", fields [{label: "Featured Image", name: "featured_image", widget: "object", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}, {label: "Is Featured?", name: "is_featured", widget: "boolean"}]}
+      - {label: "Home Page Featured Image", name: "home_page_featured", widget: "object", fields: [{label: "Featured Image", name: "featured_image", widget: "object", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}, {label: "Is Featured?", name: "is_featured", widget: "boolean"}]}
       - {label: "Colour Grid Image (for grid on portfolio page)", name: "colour_grid_image", widget: "image"}
       - {label: "Greyscale Grid Image (for grid on portfolio page)", name: "bw_grid_image", widget: "object", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}
       - {label: "Header Image", name: "header_image", widget: "object", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}
