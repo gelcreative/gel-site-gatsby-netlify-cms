@@ -11,6 +11,7 @@ const HomePagePortfolioFeatures = () => (
         allMarkdownRemark (filter: {frontmatter: {home_page_featured: {is_featured: {eq: true}}}}) {
           edges {
             node {
+              id
               frontmatter {
                 home_page_featured {
                   featured_image {
@@ -35,7 +36,7 @@ const HomePagePortfolioFeatures = () => (
       return (
         edges.map(edge => {
           return (
-            <section className="gel-homepage-featured columns">
+            <section key={edge.node.id} className="gel-homepage-featured columns">
               <div className="column">  
                 <PreviewCompatibleImage imageInfo={edge.node.frontmatter.home_page_featured.featured_image} />
               </div>
