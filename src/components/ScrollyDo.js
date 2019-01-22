@@ -71,8 +71,6 @@ class ScrollyDo extends Component {
       const scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
       const scrollyDoPosition = scrollyContainer.offsetTop;
       const windowHeight = window.innerHeight;
-
-      console.log(scrollTop, scrollyDoPosition)
       if((scrollTop + windowHeight) >= scrollyDoPosition + 400) {
         scrollyContainer.style.opacity = 0;
       } else {
