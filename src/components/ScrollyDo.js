@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
 import SocialIcons from './SocialIcons'
 import { scrollIt } from '../util/scrollIt'
 
@@ -56,8 +57,8 @@ const ScrollyDoContainer = styled.div`
 class ScrollyDo extends Component {
 
   componentDidMount() {
-    const scrollyContainer = document.querySelector('.scrolly-container')
-    const scrollLink = document.querySelector('.scrolly-container-inner > a')
+    const scrollyContainer = ReactDOM.findDOMNode(this)
+    const scrollLink = scrollyContainer.querySelector('a')
     scrollLink.addEventListener('click', e => {
       e.preventDefault();
       const targetContainer = document.querySelector(`#${this.props.targetId}`);
@@ -68,7 +69,8 @@ class ScrollyDo extends Component {
     })
     window.addEventListener('scroll', () => {
       const scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-      if(scrollTop >= 100) {
+      const scrollyDoPosition = scrollyContainer.offsetTop;
+      if(scrollTop >= scrollyDoPosition + 100) {
         scrollyContainer.style.opacity = 0;
       } else {
         scrollyContainer.style.opacity = 1;

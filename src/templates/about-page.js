@@ -1,9 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 import Layout from '../components/Layout'
 import ScrollyDo from '../components/ScrollyDo'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+
+const FullHeightSection = styled.section`
+  min-height: 100vh;
+  padding-bottom: 200px;
+  .column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gel-about-intro-section-text-container {
+    width: 1000px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .gel-about-intro-text {
+    font-size: 2.5rem;
+  }
+  .gel-approach-section h2 {
+    font-size: 2.5rem;
+  }
+  .gel-approach-section p {
+    font-size: 2rem;
+  }
+`
 
 export const AboutPageTemplate = ({
   id,
@@ -16,44 +41,46 @@ export const AboutPageTemplate = ({
   return (
     <section className="section section--gradient">
       <div className="container">
-        <div className="columns">
-          <div className="column">
-            <div className="section">
+        <FullHeightSection className="columns is-centered gel-about-intro-section">
+          <div className="column has-text-centered">
+            <div className="gel-about-intro-section-text-container">
               <h1 className="visually-hidden">{title}</h1>
-              <p>{intro}</p>
+              <p className="gel-about-intro-text">{intro}</p>
             </div>
           </div>
-        </div>
-        <ScrollyDo />
-        <div className="columns gel-bio-row">
-          <div className="column">
-            <PreviewCompatibleImage imageInfo={main.tom.image1} />
-          </div>
-          <div className="column">
-            <div className="section">
-              <p>{main.tom.tom_bio}</p>
+        </FullHeightSection>
+        <ScrollyDo targetId="gel-bio-section" fullHeight={true} />
+        <FullHeightSection id="gel-bio-section">
+          <div className="columns gel-bio-row">
+            <div className="column">
+              <PreviewCompatibleImage imageInfo={main.tom.image1} />
+            </div>
+            <div className="column">
+              <div className="section">
+                <p>{main.tom.tom_bio}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="columns gel-bio-row">
-          <div className="column">
-            <div className="section">
-              <p>{main.shannon.shannon_bio}</p>
+          <div className="columns gel-bio-row">
+            <div className="column">
+              <div className="section">
+                <p>{main.shannon.shannon_bio}</p>
+              </div>
+            </div>
+            <div className="column">
+              <PreviewCompatibleImage imageInfo={main.shannon.image2} />
             </div>
           </div>
-          <div className="column">
-            <PreviewCompatibleImage imageInfo={main.shannon.image2} />
-          </div>
-        </div>
-        <ScrollyDo />
-        <div className="columns">
-          <div className="column">
+        </FullHeightSection>
+        <ScrollyDo targetId="gel-approach-section"/>
+        <FullHeightSection className="columns is-centered gel-approach-section" id="gel-approach-section">
+          <div className="column has-text-centered">
             <div className="section">
               <h2>{approach.heading}</h2>
               <p>{approach.text}</p>
             </div>
           </div>
-        </div>
+        </FullHeightSection>
       </div>
     </section>
   )
