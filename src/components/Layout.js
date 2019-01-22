@@ -1,11 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from "gatsby"
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import './all.sass'
+import './styles/all.sass'
+import './styles/gel-styles.sass'
 
 // Gel site theme settings
 const theme = {

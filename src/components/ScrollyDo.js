@@ -62,7 +62,7 @@ class ScrollyDo extends Component {
     scrollLink.addEventListener('click', e => {
       e.preventDefault();
       const targetContainer = document.querySelector(`#${this.props.targetId}`);
-      const targetPosition = targetContainer.offsetTop;
+      const targetPosition = targetContainer.offsetTop + 50;
 
       scrollIt(targetPosition, 1000, 'easeInOutQuint');
       

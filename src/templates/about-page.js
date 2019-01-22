@@ -9,10 +9,16 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 const FullHeightSection = styled.section`
   min-height: 100vh;
   padding-bottom: 200px;
-  .column {
+  & > .column {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  &.gel-approach-section h2 {
+    font-size: 2.5rem;
+  }
+  &.gel-approach-section p {
+    font-size: 2rem;
   }
   .gel-about-intro-section-text-container {
     width: 1000px;
@@ -21,12 +27,6 @@ const FullHeightSection = styled.section`
   }
   .gel-about-intro-text {
     font-size: 2.5rem;
-  }
-  .gel-approach-section h2 {
-    font-size: 2.5rem;
-  }
-  .gel-approach-section p {
-    font-size: 2rem;
   }
 `
 
