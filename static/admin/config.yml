@@ -35,12 +35,6 @@ collections:
       - {label: "Project Image Section 1", name: "project_images_1", widget: list, fields: [{label: "Image", name: "image", widget: "image"}]}
       - {label: "Main", name: "main", widget: "object", fields: [{label: "Detail Text", name: "detail_text", widget: "text"}, {label: "Image", name: "image", widget: "image"}]}
       - {label: "Project Image Section 2", name: "project_images_2", widget: list, fields: [{label: "Image", name: "image", widget: "image"}]}
-  - name: "client-logos"
-    label: "Client Logos"
-    folder: "src/pages/client-logos"
-    create: false
-    fields:
-      - {label: "Client Logo", name: "client_logo", widget: "list", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]} 
   - name: "pages"
     label: "Pages"
     files:
@@ -74,3 +68,10 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "portfolio"}
           - {label: Title, name: title, widget: string}
           - {label: "Intro", name: "portfolio_intro", widget: string}
+      - file: "src/pages/home/content.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index"}
+          - {label: "Intro Text", name: "home_intro", widtet: "text"}
+          - {label: "Client Logos", name: "client_logo", widget: "list", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}

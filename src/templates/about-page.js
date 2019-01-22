@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import ScrollyDo from '../components/ScrollyDo'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const AboutPageTemplate = ({
@@ -23,6 +24,7 @@ export const AboutPageTemplate = ({
             </div>
           </div>
         </div>
+        <ScrollyDo />
         <div className="columns gel-bio-row">
           <div className="column">
             <PreviewCompatibleImage imageInfo={main.tom.image1} />
@@ -43,6 +45,7 @@ export const AboutPageTemplate = ({
             <PreviewCompatibleImage imageInfo={main.shannon.image2} />
           </div>
         </div>
+        <ScrollyDo />
         <div className="columns">
           <div className="column">
             <div className="section">

@@ -6,8 +6,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
@@ -37,13 +35,6 @@ module.exports = {
         path: `${__dirname}/src/img`,
         name: 'images',
       },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/client-logos`,
-        name: 'client-logos'
-      }
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -79,6 +70,8 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-purgecss', // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array

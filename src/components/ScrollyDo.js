@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import SocialIcons from './SocialIcons'
 import { scrollIt } from '../util/scrollIt'
 
+
 const ScrollyDoContainer = styled.div`
   transition: opacity 300ms;
   background-color: white;
@@ -46,17 +47,21 @@ const ScrollyDoContainer = styled.div`
       position: relative;
     }
   }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `
 
 class ScrollyDo extends Component {
+
   componentDidMount() {
     const scrollyContainer = document.querySelector('.scrolly-container')
     const scrollLink = document.querySelector('.scrolly-container-inner > a')
     scrollLink.addEventListener('click', e => {
       e.preventDefault();
-      const scrollyPosition = scrollyContainer.offsetTop;
-      // window.scroll(0, scrollyPosition + 30);
-      const targetPosition = scrollyPosition + 30;
+      const targetContainer = document.querySelector(`#${this.props.targetId}`);
+      const targetPosition = targetContainer.offsetTop;
 
       scrollIt(targetPosition, 1000, 'easeInOutQuint');
       
@@ -86,7 +91,8 @@ class ScrollyDo extends Component {
 
 ScrollyDo.propTypes = {
   socialIcons: PropTypes.bool,
-  fullHeight: PropTypes.bool
+  fullHeight: PropTypes.bool,
+  targetId: PropTypes.string.isRequired,
 }
 
 export default ScrollyDo
