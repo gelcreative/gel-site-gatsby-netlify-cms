@@ -1,15 +1,12 @@
 ---
 templateKey: about-page
 title: About
-about_intro: |
-  Loremipsumdolorsitamet,consecteturadipiscingelit.Sedfaucibus
-  velitsedvestibulumconsectetur.Nulaornaremetusinnunccongue
-  facilisis.Nulafacilisi.Curabiturquismalesuadaerat.Namplacerat pulvinargravida.
-
-  Aeneanturpisaugue,dictumetaugueid,matis
-  aliquetorci.Fusceseddapibuseros.Duisinrhoncuserat,utvivera
-  tortor.Fuscesedenimfinibus,imperdietnulaposuere,molisodio.
-  Crassagitismatisluctus.
+about_intro: >
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos rem nobis
+  provident totam sed neque placeat, consequuntur modi dicta earum unde in
+  quibusdam aperiam alias quisquam veniam a libero odit repudiandae repellendus
+  mollitia nostrum, reprehenderit ut sit! Dolor aliquam aut perspiciatis!
+  Cupiditate aliquam nostrum ex dolor natus perspiciatis modi fuga.
 main:
   shannon:
     image2:
