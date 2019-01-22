@@ -14,9 +14,9 @@ const FullHeightSection = styled.section`
     align-items: center;
     justify-content: center;
   }
-  &.gel-approach-section h2 {
-    font-size: 2.5rem;
-  }
+  .gel-about-intro-text {
+      font-size: 2.5rem;
+    }
   &.gel-approach-section p {
     font-size: 2rem;
   }
@@ -25,8 +25,13 @@ const FullHeightSection = styled.section`
     max-width: 90%;
     margin: 0 auto;
   }
-  .gel-about-intro-text {
-    font-size: 2.5rem;
+  @media (max-width: 450px) {
+    .gel-about-intro-text {
+      font-size: 1.5rem;
+    }
+    &.gel-approach-section p {
+      font-size: 1.5rem;
+    }
   }
 `
 
