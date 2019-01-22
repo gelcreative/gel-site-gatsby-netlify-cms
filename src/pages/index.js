@@ -17,16 +17,16 @@ const FullHeightSection = styled.section`
     align-items: center;
     justify-content: center;
   }
-  #gel-home-intro-section p {
+  &.gel-home-intro-text p {
       font-size: 2.5rem;
   }
 
   @media (max-width: 450px) {
-    #gel-home-intro-section .column {
+    &.gel-home-intro-text .column {
       max-width: 90%;
     }
-    #gel-home-intro-section p {
-      font-size: 0.9rem;
+    &.gel-home-intro-text p {
+      font-size: 1.5rem;
     }
   }
 `
