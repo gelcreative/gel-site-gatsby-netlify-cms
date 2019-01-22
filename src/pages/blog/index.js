@@ -4,23 +4,40 @@ import styled from 'styled-components'
 import Layout from '../../components/Layout'
 
 const BlogSection = styled.section`
-  display: flex;
   flex-wrap: wrap;
+  &.gel-blog-container-outer {
+    margin-top: 150px;
+  }
+
+  .column:first-of-type {
+    height: 640px;
+  }
 
   .column {
-    height: 200px;
+    height: 420px;
+    justify-content: stretch;
   }
 
-  .is-full {
-      background: yellow;
+  .column:nth-child(odd) .gel-blog-item-inner {
+    background-color: ${props => props.theme.typeGrey}
   }
 
-  .is-one-third {
-      background: blue;
+  .column:nth-child(even) .gel-blog-item-inner {
+    background-color: ${props => props.theme.lightGrey}
   }
 
-  .is-two-thirds {
-      background: red;
+  .gel-blog-item-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 30px 3%;
+  }
+
+  h2 {
+    font-family: "futura-pt";
+    color: #ffffff;
+    text-align: center;
   }
 `
 
@@ -50,12 +67,6 @@ const BlogPage = ({data}) => {
               if((i + 1) > 5) {
                 columnCounter =  (i + 1) - (5 * timesFive)
               }
-              
-              // if ((i + 1) >= 10) {
-              //   columnCounter = (i + 2) - (5 * timesFive)
-              // }
-
-              console.log(i, columnCounter, timesFive)
 
               switch(columnCounter) {
                 case 1:
@@ -78,7 +89,11 @@ const BlogPage = ({data}) => {
               }
 
               return (
-                <div className={"column" + columnClass } key={edge.node.id}>{edge.node.frontmatter.title}</div>
+                <article className={"column" + columnClass } key={edge.node.id}>
+                  <div className="gel-blog-item-inner">
+                    <h2>{edge.node.frontmatter.title}</h2>
+                  </div>
+                </article>
               )
             })}
         </BlogSection>

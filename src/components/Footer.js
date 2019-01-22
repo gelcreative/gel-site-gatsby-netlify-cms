@@ -7,6 +7,7 @@ import SocialIcons from './SocialIcons'
 
 const StyledFooter = styled.footer`
   margin-bottom: 50px;
+  margin-top: 100px;
 `;
 
 const FooterTop = styled.div`
