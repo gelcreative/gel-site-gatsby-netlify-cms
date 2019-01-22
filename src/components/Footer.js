@@ -51,47 +51,48 @@ const StyledFooterNav = styled.div`
 
 
 const Footer = () => (
-  <div className="container">
     <StyledFooter>
-      <FooterTop>
-        <FooterItemContainer>
-          <Link to="/" title="Home Page">
-            <FooterLogo alt="Gel" style={{ width: '100px' }} />
-          </Link>
-        </FooterItemContainer>
-      </FooterTop>
-      <StyledFooterInner>
-        <FooterItemContainer>
-          <StyledAddress>
-            89 Collier Street, Suite 201 <br />
-            Barrie, ON L4M 1H2
-          </StyledAddress>
-          <div><a href="mailto:connect@gelmarketing.ca">connect@gelmarketing.ca</a></div>
-          <div><a href="tel:+17057277980">705.727.7980</a></div>
-        </FooterItemContainer>
-        <FooterItemContainer>
-          <StyledFooterNav>
-            <div>
-              <ul>
-                <li>home</li>
-                <li>portfolio</li>
-                <li>about</li>
-              </ul>
-            </div>
-            <div>
-              <ul>
-                <li>blog</li>
-                <li>contact</li>
-              </ul>
-            </div>
-          </StyledFooterNav>
-        </FooterItemContainer>
-        <FooterItemContainer>
-          <SocialIcons />
-        </FooterItemContainer>
-      </StyledFooterInner>
+      <div className="container">
+        <FooterTop>
+          <FooterItemContainer>
+            <Link to="/" title="Home Page">
+              <FooterLogo alt="Gel" style={{ width: '100px' }} />
+            </Link>
+          </FooterItemContainer>
+        </FooterTop>
+        <StyledFooterInner>
+          <FooterItemContainer>
+            <StyledAddress>
+              89 Collier Street, Suite 201 <br />
+              Barrie, ON L4M 1H2
+            </StyledAddress>
+            <div><a href="mailto:connect@gelmarketing.ca">connect@gelmarketing.ca</a></div>
+            <div><a href="tel:+17057277980">705.727.7980</a></div>
+          </FooterItemContainer>
+          <FooterItemContainer>
+            <StyledFooterNav>
+              <div>
+                <ul>
+                  <li>home</li>
+                  <li>portfolio</li>
+                  <li>about</li>
+                </ul>
+              </div>
+              <div>
+                <ul>
+                  <li>blog</li>
+                  <li>contact</li>
+                </ul>
+              </div>
+            </StyledFooterNav>
+          </FooterItemContainer>
+          <FooterItemContainer>
+            <SocialIcons />
+          </FooterItemContainer>
+        </StyledFooterInner>
+      </div>
+
     </StyledFooter>
-  </div>
 )
 
 export default Footer;

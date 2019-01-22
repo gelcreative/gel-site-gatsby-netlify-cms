@@ -39,23 +39,20 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <main role="main">
-          <div className="container">
-            <FullHeightSection className="gel-home-masthead columns is-centered">
-              <div className="column has-text-centered">
-                <img src="/img/gel-logo-footer.svg" title="Gel Logo" width="500" />
-              </div>
-            </FullHeightSection>
-            <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-intro-section"></ScrollyDo>
-            <FullHeightSection className="gel-home-intro-text has-text-centered" id="gel-home-intro-section">
-              <div className="column has-text-centered">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis. Nulla facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar gravida. Aenean turpis augue, dictum et augue id, mattis aliquet orci. Fusce sed dapibus eros. Duis in rhoncus erat, ut viverra tortor. Fusce sed enim finibus.</p>
-              </div>
-            </FullHeightSection>
-            <HomePagePortfolioFeatures />
-          </div>
-        </main>
-        
+        <div className="container">
+          <FullHeightSection className="gel-home-masthead columns is-centered">
+            <div className="column has-text-centered">
+              <img src="/img/gel-logo-footer.svg" title="Gel Logo" width="500" />
+            </div>
+          </FullHeightSection>
+          <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-intro-section"></ScrollyDo>
+          <FullHeightSection className="gel-home-intro-text has-text-centered" id="gel-home-intro-section">
+            <div className="column has-text-centered">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis. Nulla facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar gravida. Aenean turpis augue, dictum et augue id, mattis aliquet orci. Fusce sed dapibus eros. Duis in rhoncus erat, ut viverra tortor. Fusce sed enim finibus.</p>
+            </div>
+          </FullHeightSection>
+          <HomePagePortfolioFeatures />
+        </div>        
       </Layout>
     )
   }

@@ -9,7 +9,6 @@ export const PortfolioPageTemplate = ({
   portfolioIntro
 }) => {
   return (
-    <main role="main">
       <div className="container">
         <section className="section">
           <h1 className="visually-hidden">{title}</h1>
@@ -19,7 +18,6 @@ export const PortfolioPageTemplate = ({
           <PortfolioGrid />
         </section>
       </div>
-    </main>
   )
 }
 

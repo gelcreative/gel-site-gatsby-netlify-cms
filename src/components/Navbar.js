@@ -33,27 +33,28 @@ componentDidMount() {
  
  render() {
    return (
-  
-  <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
-    <div className="container">
-      <div className="navbar-brand">
-        <Link to="/" title="Logo">
-          <HeaderLogo />
-        </Link>
-        {/* Hamburger menu */}
-        <div className="navbar-burger burger" data-target="navMenu">
-          <span></span>
-          <span></span>
-          <span></span>
+    <header>
+      <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
+        <div className="container">
+          <div className="navbar-brand">
+            <Link to="/" title="Logo">
+              <HeaderLogo />
+            </Link>
+            {/* Hamburger menu */}
+            <div className="navbar-burger burger" data-target="navMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div id="navMenu" className="navbar-menu">
+            <div className="navbar-start has-text-centered">
+            <p>Learn <Link to="/about">about</Link> Gel, consider our <Link to="/portfolio">work</Link>, <Link to="/contact">connect</Link> with us, and read our blog.</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div id="navMenu" className="navbar-menu">
-        <div className="navbar-start has-text-centered">
-        <p>Learn <Link to="/about">about</Link> Gel, consider our <Link to="/portfolio">work</Link>, <Link to="/contact">connect</Link> with us, and read our blog.</p>
-        </div>
-      </div>
-    </div>
-  </nav>
+      </nav>
+    </header>
   )}
 }
 

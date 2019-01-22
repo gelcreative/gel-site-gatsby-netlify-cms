@@ -14,7 +14,6 @@ export const PortfolioEntryTemplate = ({
   projectImages2,
 }) => {
   return (
-    <main role="main">
       <div className="container">
         <section className="section gel-portfolio-entry-masthead">
           <div className="columns is-centered">
@@ -44,7 +43,6 @@ export const PortfolioEntryTemplate = ({
           <PortfolioEntryImages portfolioImages={projectImages2} />
         </section>
       </div>
-    </main>
   )
 }
 

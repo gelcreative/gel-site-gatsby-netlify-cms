@@ -70,7 +70,10 @@ class ScrollyDo extends Component {
     window.addEventListener('scroll', () => {
       const scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
       const scrollyDoPosition = scrollyContainer.offsetTop;
-      if(scrollTop >= scrollyDoPosition + 100) {
+      const windowHeight = window.innerHeight;
+
+      console.log(scrollTop, scrollyDoPosition)
+      if(scrollTop >= (scrollyDoPosition - windowHeight) + 100) {
         scrollyContainer.style.opacity = 0;
       } else {
         scrollyContainer.style.opacity = 1;
