@@ -73,7 +73,7 @@ class ScrollyDo extends Component {
       const windowHeight = window.innerHeight;
 
       console.log(scrollTop, scrollyDoPosition)
-      if(scrollTop >= (scrollyDoPosition - windowHeight) + 100) {
+      if((scrollTop + windowHeight) >= scrollyDoPosition + 400) {
         scrollyContainer.style.opacity = 0;
       } else {
         scrollyContainer.style.opacity = 1;
