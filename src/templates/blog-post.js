@@ -3,9 +3,31 @@ import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
+import styled from 'styled-components'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Content, { HTMLContent } from '../components/Content'
+
+const StyledBlogPost = styled.section`
+  .gel-blog-post-info {
+    margin-bottom: 4rem;
+  }
+  .gel-blog-meta span {
+    font-family: ${props => props.theme.boldFont};
+  }
+  .styled-slashes {
+    color: ${props => props.theme.orange};
+    margin: 0 2%;
+  }
+  .gel-blog-post-description {
+    font-size: 2.5rem;
+    line-height: 1.5;
+  }
+  .gatsby-image-wrapper {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+`
 
 export const BlogPostTemplate = ({
   id,
@@ -15,33 +37,36 @@ export const BlogPostTemplate = ({
   tags,
   title,
   author,
+  date,
   featuredImage,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
 
   return (
-    <section className="section">
+    <StyledBlogPost className="section">
       {helmet || ''}
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1 has-text-centered">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-              <p className="gel-blog-meta">  
-                {tags && tags.length ? (
-                  <>
-                    <span>Category </span>
-                      <Link key={tags[0] + `tag`} to={`/tags/${kebabCase(tags[0])}/`}>{tags[0]}</Link>
-                  </>
-                ) : null}
-                <span className="styled-slashes">//</span>
-                <span>Author</span>
-                <span className="styled-slashes">//</span>
-                <span>Date</span>
-              </p>
-            <p>{description}</p>
+            <div className="gel-blog-post-info">
+              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+                {title}
+              </h1>
+                <p className="gel-blog-meta">  
+                  {tags && tags.length ? (
+                    <>
+                      <span>Category </span>
+                        <Link key={tags[0] + `tag`} to={`/tags/${kebabCase(tags[0])}/`}>{tags[0]}</Link>
+                    </>
+                  ) : null}
+                  <span className="styled-slashes">//</span>
+                  <span>Author </span>{author}
+                  <span className="styled-slashes">//</span>
+                  <span>Date </span>{date}
+                </p>
+            </div>
+            <p className="gel-blog-post-description">{description}</p>
           </div>
         </div>
         <PreviewCompatibleImage imageInfo={featuredImage} />
@@ -51,7 +76,7 @@ export const BlogPostTemplate = ({
           </div>
         </div>
       </div>
-    </section>
+    </StyledBlogPost>
   )
 }
 
@@ -83,6 +108,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         author={post.frontmatter.author}
+        date={post.frontmatter.date}
         featuredImage={post.frontmatter.featured_image}
       />
     </Layout>
@@ -103,7 +129,7 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MM.DD.YY")
         title
         author
         featured_image {
