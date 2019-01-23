@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import ScrollyDo from '../components/ScrollyDo'
 import HomePagePortfolioFeatures from '../components/HomePagePortfolioFeatures'
+import ClientLogoGrid from '../components/ClientLogoGrid'
 
 const FullHeightSection = styled.section`
   min-height: 100vh;
@@ -52,6 +53,7 @@ export default class IndexPage extends React.Component {
             </div>
           </FullHeightSection>
           <HomePagePortfolioFeatures />
+          <ClientLogoGrid />
         </div>        
       </Layout>
     )
