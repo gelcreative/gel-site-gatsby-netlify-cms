@@ -1,10 +1,11 @@
-import { React } from 'react'
+import React from 'react'
 import Img from 'gatsby-image'
 import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
 const StyledLogoGrid = styled.section`
   background: #fff;
+  flex-wrap: wrap;
 `
 
 const ClientLogoGrid = () =>  (
@@ -25,17 +26,16 @@ const ClientLogoGrid = () =>  (
       }`
     }
     render={ data => {
-      const { edges: logos } = data.allFiles
+      const { edges: logos } = data.allFile
       return (
         <StyledLogoGrid className="columns">
-          <h2>Hiya</h2>
-          <ul>
             {logos.map(logo => {
               return (
-                <Img imageInfo={logo.node.childImageSharp.fluid} />  
+                <div key={logo.node.id} className="column is-one-quarter">
+                  <Img fluid={logo.node.childImageSharp.fluid} />  
+                </div>
               )
             })}
-          </ul>
         </StyledLogoGrid>
       )
     }}
