@@ -74,15 +74,15 @@ const Footer = () => (
             <StyledFooterNav>
               <div>
                 <ul>
-                  <li>home</li>
-                  <li>portfolio</li>
-                  <li>about</li>
+                  <li><Link to="/">home</Link></li>
+                  <li><Link to="/portfolio/">portfolio</Link></li>
+                  <li><Link to="/about/">about</Link></li>
                 </ul>
               </div>
               <div>
                 <ul>
-                  <li>blog</li>
-                  <li>contact</li>
+                  <li><Link to="/blog/">blog</Link></li>
+                  <li><Link to="/contact/">contact</Link></li>
                 </ul>
               </div>
             </StyledFooterNav>
