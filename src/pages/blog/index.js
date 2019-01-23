@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-import { kebabCase } from 'lodash'
 import Layout from '../../components/Layout'
 
 const BlogSection = styled.section`
@@ -21,7 +20,6 @@ const BlogSection = styled.section`
 
   .column:nth-child(odd) .gel-blog-item-inner {
     background-color: ${props => props.theme.typeGrey};
-    transition: 300ms;
   }
 
   .column:nth-child(odd) .gel-blog-item-inner:hover {
@@ -30,7 +28,6 @@ const BlogSection = styled.section`
 
   .column:nth-child(even) .gel-blog-item-inner {
     background-color: ${props => props.theme.lightGrey};
-    transition: 300ms;
   }
 
   .column:nth-child(even) .gel-blog-item-inner:hover {
@@ -43,6 +40,10 @@ const BlogSection = styled.section`
     justify-content: center;
     height: 100%;
     padding: 30px 3%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 300ms;
   }
 
   .gel-blog-item-inner a {
@@ -104,7 +105,15 @@ const BlogPage = ({data}) => {
 
               return (
                 <article className={"column" + columnClass } key={edge.node.id}>
-                  <div className="gel-blog-item-inner">
+                  <div 
+                    className="gel-blog-item-inner" 
+                    style={{
+                      backgroundImage: `url(${
+                        edge.node.frontmatter.featured_image.image.childImageSharp
+                          ? edge.node.frontmatter.featured_image.image.childImageSharp.fluid.src
+                          : edge.node.frontmatter.featured_image.image
+                      })`,
+                  }}>
                     <Link to={edge.node.fields.slug}>
                       <h2>{edge.node.frontmatter.title}</h2>
                     </Link>
@@ -138,6 +147,16 @@ export const pageQuery = graphql`
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            featured_image {
+              alt
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1920, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
           }
         }
       }

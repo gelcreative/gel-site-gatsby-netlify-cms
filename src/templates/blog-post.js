@@ -14,6 +14,8 @@ export const BlogPostTemplate = ({
   description,
   tags,
   title,
+  author,
+  featuredImage,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
@@ -42,9 +44,9 @@ export const BlogPostTemplate = ({
             <p>{description}</p>
           </div>
         </div>
-        <PreviewCompatibleImage imageInfo={} />
+        <PreviewCompatibleImage imageInfo={featuredImage} />
         <div className="columns">
-          <div className="column is-10 is-offset-1 has-text-centered">
+          <div className="column is-10 is-offset-1">
             <PostContent content={content} />
           </div>
         </div>
@@ -80,6 +82,8 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        author={post.frontmatter.author}
+        featuredImage={post.frontmatter.featured_image}
       />
     </Layout>
   )
@@ -101,6 +105,17 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        author
+        featured_image {
+          alt
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
         description
         tags
       }
