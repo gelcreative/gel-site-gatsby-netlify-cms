@@ -1,6 +1,7 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
+import { kebabCase } from 'lodash'
 import Layout from '../../components/Layout'
 
 const BlogSection = styled.section`
@@ -19,11 +20,21 @@ const BlogSection = styled.section`
   }
 
   .column:nth-child(odd) .gel-blog-item-inner {
-    background-color: ${props => props.theme.typeGrey}
+    background-color: ${props => props.theme.typeGrey};
+    transition: 300ms;
+  }
+
+  .column:nth-child(odd) .gel-blog-item-inner:hover {
+    background-color: ${props => props.theme.blue};
   }
 
   .column:nth-child(even) .gel-blog-item-inner {
-    background-color: ${props => props.theme.lightGrey}
+    background-color: ${props => props.theme.lightGrey};
+    transition: 300ms;
+  }
+
+  .column:nth-child(even) .gel-blog-item-inner:hover {
+    background-color: ${props => props.theme.orange};
   }
 
   .gel-blog-item-inner {
@@ -34,10 +45,20 @@ const BlogSection = styled.section`
     padding: 30px 3%;
   }
 
+  .gel-blog-item-inner a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+  }
+
   h2 {
     font-family: "futura-pt";
     color: #ffffff;
     text-align: center;
+    text-decoration: none;
   }
 `
 
@@ -84,7 +105,9 @@ const BlogPage = ({data}) => {
               return (
                 <article className={"column" + columnClass } key={edge.node.id}>
                   <div className="gel-blog-item-inner">
-                    <h2>{edge.node.frontmatter.title}</h2>
+                    <Link to={edge.node.fields.slug}>
+                      <h2>{edge.node.frontmatter.title}</h2>
+                    </Link>
                   </div>
                 </article>
               )
