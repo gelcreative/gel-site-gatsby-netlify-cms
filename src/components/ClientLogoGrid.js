@@ -16,8 +16,8 @@ const ClientLogoGrid = () =>  (
           edges {
             node {
               childImageSharp {
-                fluid(maxWidth: 300, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 300, quality: 100, grayscale: true) {
+                  ...GatsbyImageSharpFluid_tracedSVG
                 }
               }
             }
@@ -31,7 +31,7 @@ const ClientLogoGrid = () =>  (
         <StyledLogoGrid className="columns">
             {logos.map(logo => {
               return (
-                <div key={logo.node.id} className="column is-one-quarter">
+                <div className="column is-one-quarter" key={logo.node.id} >
                   <Img fluid={logo.node.childImageSharp.fluid} />  
                 </div>
               )

@@ -49,6 +49,9 @@ export default class IndexPage extends React.Component {
             </div>
           </FullHeightSection>
           <HomePagePortfolioFeatures />
+          <div className="columns is-centered">
+            <h2 className="column has-text-centered">We've worked with &hellip;</h2>
+          </div>
           <ClientLogoGrid />
         </div>        
       </Layout>
