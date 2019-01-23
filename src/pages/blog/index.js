@@ -46,7 +46,6 @@ const BlogPage = ({data}) => {
   const { edges: posts } = data.allMarkdownRemark
 
   let columnClass = ""
-  let timesFive = 0
   let columnCounter = 1
   
   return (
@@ -54,18 +53,10 @@ const BlogPage = ({data}) => {
       <div className="container">
         <BlogSection className="columns gel-blog-container-outer">
           <h1 className="visually-hidden">Gel's Blog</h1>
-            {posts.map((edge, i) => {
+            {posts.map(edge => {
 
-              if (columnCounter % 5  === 0) {
-                timesFive++
-              }
-
-              if((i + 1) <= 5) {
-                columnCounter = i + 1
-              }
-
-              if((i + 1) > 5) {
-                columnCounter =  (i + 1) - (5 * timesFive)
+              if(columnCounter > 5) {
+                columnCounter = 1
               }
 
               switch(columnCounter) {
@@ -88,6 +79,8 @@ const BlogPage = ({data}) => {
                   columnClass = " is-full"
               }
 
+              columnCounter++
+
               return (
                 <article className={"column" + columnClass } key={edge.node.id}>
                   <div className="gel-blog-item-inner">
@@ -95,6 +88,7 @@ const BlogPage = ({data}) => {
                   </div>
                 </article>
               )
+
             })}
         </BlogSection>
       </div>
