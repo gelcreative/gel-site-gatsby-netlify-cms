@@ -1,12 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import ScrollyDo from '../components/ScrollyDo'
 import HomePagePortfolioFeatures from '../components/HomePagePortfolioFeatures'
 import ClientLogoGrid from '../components/ClientLogoGrid'
+import footerLogo from '../img/logo.svg'
 
 const FullHeightSection = styled.section`
   min-height: 100vh;
@@ -46,7 +46,7 @@ export default class IndexPage extends React.Component {
         <div className="container">
           <FullHeightSection className="gel-home-masthead columns is-centered">
             <div className="column has-text-centered">
-              <img src={`/img/${data.file.relativePath}`} title="Gel Logo" width="500" />
+              <img src={footerLogo} title="Gel Logo" width="500" />
             </div>
           </FullHeightSection>
           <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-intro-section"></ScrollyDo>
@@ -73,9 +73,6 @@ export const pageQuery = graphql`
         title
         description
       }
-    }
-    file(name: {eq: "gel-logo-footer"}) {
-      relativePath
     }
   }
 `
