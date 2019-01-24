@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Layout from '../components/Layout'
@@ -32,6 +33,7 @@ const Styled404 = styled.main`
 
 const NotFoundPage = () => (
   <Layout>
+    <Helmet title="404 - Page Not Found | Gel Marketing" />
     <Styled404>
       <div className="container">
       <article className="columns gel-404-columns">
