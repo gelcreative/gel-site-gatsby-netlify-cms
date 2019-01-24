@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
@@ -12,9 +13,11 @@ export const PortfolioEntryTemplate = ({
   projectImages1,
   main,
   projectImages2,
+  helmet,
 }) => {
   return (
       <div className="container">
+        { helmet || '' }
         <section className="section gel-portfolio-entry-masthead">
           <div className="columns is-centered">
             <div className="column has-text-centered">
@@ -69,6 +72,14 @@ const PortfolioEntry = ({ data }) => {
         projectImages1={frontmatter.project_images_1}
         main={frontmatter.main}
         projectImages2={frontmatter.project_images_2}
+        helmet={
+          <Helmet
+            titleTemplate="%s | Gel Marketing"
+          >
+            <title>{`${frontmatter.title}`}</title>
+            <meta name="description" content={`${frontmatter.project_intro}`} />
+          </Helmet>
+        }
       />
     </Layout>
   )
