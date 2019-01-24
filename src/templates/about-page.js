@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
@@ -41,10 +42,12 @@ export const AboutPageTemplate = ({
   intro, 
   main,
   approach,
+  helmet,
 }) => {
 
   return (
     <section className="section section--gradient">
+      { helmet || '' }
       <div className="container">
         <FullHeightSection className="columns is-centered gel-about-intro-section">
           <div className="column has-text-centered">
@@ -121,6 +124,14 @@ const AboutPage = ({ data }) => {
         intro={frontmatter.about_intro}
         main={frontmatter.main}
         approach={frontmatter.approach}
+        helmet={
+          <Helmet 
+            titleTemplate="%s | Gel Marketing"
+          >
+            <title>{`${frontmatter.title}`}</title>
+            <meta name="description" content={`${frontmatter.about_intro}`} />
+          </Helmet>
+        }
       />
     </Layout>
   )
