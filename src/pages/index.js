@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import ScrollyDo from '../components/ScrollyDo'
@@ -45,7 +46,7 @@ export default class IndexPage extends React.Component {
         <div className="container">
           <FullHeightSection className="gel-home-masthead columns is-centered">
             <div className="column has-text-centered">
-              <img src="/img/gel-logo-footer.svg" title="Gel Logo" width="500" />
+              <Img fluid={data.file.childImageSharp.fluid} title="Gel Logo" width="500" />
             </div>
           </FullHeightSection>
           <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-intro-section"></ScrollyDo>
@@ -71,6 +72,13 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+      }
+    }
+    file (name: {eq: "gel-logo-footer.svg"}) {
+      childImageSharp {
+        fluid(maxWidth: 500, quality: 1000) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }
