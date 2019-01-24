@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import ScrollyDo from '../components/ScrollyDo'
 import HomePagePortfolioFeatures from '../components/HomePagePortfolioFeatures'
 import ClientLogoGrid from '../components/ClientLogoGrid'
-import footerLogo from '../img/logo.svg'
+import footerLogo from '../img/gel-logo-footer.svg'
 
 const FullHeightSection = styled.section`
   min-height: 100vh;
