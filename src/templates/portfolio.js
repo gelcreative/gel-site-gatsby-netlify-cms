@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
@@ -16,10 +17,12 @@ const StyledPortfolioPage = styled.article`
 
 export const PortfolioPageTemplate = ({
   title,
-  portfolioIntro
+  portfolioIntro,
+  helmet,
 }) => {
   return (
       <StyledPortfolioPage className="container">
+        { helmet || '' }
         <section className="section columns is-centered">
           <div className="column has-text-centered is-10 is-offset-1">
             <h1 className="visually-hidden">{title}</h1>
@@ -45,6 +48,14 @@ const PortfolioPage = ({ data }) => {
       <PortfolioPageTemplate
         title={frontmatter.title}
         portfolioIntro={frontmatter.portfolio_intro}
+        helmet={
+          <Helmet
+            titleTemplate="%s | Gel Marketing"
+          >
+            <title>{`${frontmatter.title}`}</title>
+            <meta name="description" content={`${frontmatter.portfolio_intro}`} />
+          </Helmet>
+        }
       />
     </Layout>
   )
