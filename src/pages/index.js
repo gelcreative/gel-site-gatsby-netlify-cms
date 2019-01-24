@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import ScrollyDo from '../components/ScrollyDo'
 import HomePagePortfolioFeatures from '../components/HomePagePortfolioFeatures'
 import ClientLogoGrid from '../components/ClientLogoGrid'
-import footerLogo from '../img/gel-logo-footer.svg'
+import FooterLogo from '../img/gel-logo-footer.svg'
 
 const FullHeightSection = styled.section`
   min-height: 100vh;
@@ -46,7 +46,7 @@ export default class IndexPage extends React.Component {
         <div className="container">
           <FullHeightSection className="gel-home-masthead columns is-centered">
             <div className="column has-text-centered">
-              <img src={footerLogo} title="Gel Logo" width="500" />
+              <FooterLogo title="Gel Logo" width="500" alt="gel logo" />
             </div>
           </FullHeightSection>
           <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-intro-section"></ScrollyDo>
