@@ -46,7 +46,7 @@ export default class IndexPage extends React.Component {
         <div className="container">
           <FullHeightSection className="gel-home-masthead columns is-centered">
             <div className="column has-text-centered">
-              <Img fluid={data.file.childImageSharp.fluid} title="Gel Logo" width="500" />
+              <img src={`/img/${data.file.relativePath}`} title="Gel Logo" width="500" />
             </div>
           </FullHeightSection>
           <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-intro-section"></ScrollyDo>
@@ -74,12 +74,8 @@ export const pageQuery = graphql`
         description
       }
     }
-    file (name: {eq: "gel-logo-footer.svg"}) {
-      childImageSharp {
-        fluid(maxWidth: 500, quality: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    file(name: {eq: "gel-logo-footer"}) {
+      relativePath
     }
   }
 `
