@@ -2,9 +2,54 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import PortfolioEntryImages from '../components/PortfolioEntryImages'
+
+const StyledPortfolioEntry = styled.div`
+  max-width: 960px;
+  width: 90%;
+  margin: 0 auto;
+  .gel-project-image-inner + .gel-project-image-inner {
+    margin-top: 5px;
+  }
+
+  .gel-portfolio-entry-main-text {
+    display: flex;
+    align-items: center;
+  }
+
+  .gel-portfolio-entry-masthead .column {
+    height: 300px;
+  }
+
+  .gel-portfolio-entry-masthead .gatsby-image-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .gel-portfolio-entry-masthead .gatsby-image-wrapper * {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+  }
+
+  .gel-portfolio-entry-masthead .gatsby-image-wrapper > div {
+    display: none;
+  }
+
+  .gel-portfolio-entry-masthead .gatsby-image-wrapper img {
+    width: auto !important;
+    max-height: 300px !important;
+  }
+`
 
 export const PortfolioEntryTemplate = ({
   title,
@@ -16,7 +61,7 @@ export const PortfolioEntryTemplate = ({
   helmet,
 }) => {
   return (
-      <div className="container">
+      <StyledPortfolioEntry className="container">
         { helmet || '' }
         <section className="section gel-portfolio-entry-masthead">
           <div className="columns is-centered">
@@ -45,7 +90,7 @@ export const PortfolioEntryTemplate = ({
         <section className="section gel-portfolio-images-2">
           <PortfolioEntryImages portfolioImages={projectImages2} />
         </section>
-      </div>
+      </StyledPortfolioEntry>
   )
 }
 
