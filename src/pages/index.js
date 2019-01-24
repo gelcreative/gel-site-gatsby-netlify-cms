@@ -1,4 +1,6 @@
 import React from 'react'
+import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import ScrollyDo from '../components/ScrollyDo'
@@ -33,9 +35,13 @@ const FullHeightSection = styled.section`
 
 export default class IndexPage extends React.Component {
   render() {
+    const { data } = this.props
 
     return (
       <Layout>
+        <Helmet title={`${data.site.siteMetadata.title}`}>
+          <meta name="description" content={`${data.site.siteMetadata.description}`} />
+        </Helmet>
         <div className="container">
           <FullHeightSection className="gel-home-masthead columns is-centered">
             <div className="column has-text-centered">
@@ -58,3 +64,14 @@ export default class IndexPage extends React.Component {
     )
   }
 }
+
+export const pageQuery = graphql`
+  query HomePage {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`
