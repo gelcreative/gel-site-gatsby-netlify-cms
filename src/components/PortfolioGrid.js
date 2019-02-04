@@ -110,6 +110,17 @@ const PortfolioGrid = () => (
           }
         }
       }
+      allFile(filter: {name: {regex: "/gel-logo-circle/"}}) {
+        edges {
+          node {
+            childImageSharp {
+              fluid(maxWidth: 900, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
     }
   `}
     render={data=> {
@@ -120,8 +131,8 @@ const PortfolioGrid = () => (
             {edges.map((edge) => {
               return (
                 <div key={edge.node.id} className="column is-half gel-portfolio-grid-item">
-                  <PreviewCompatibleImage imageInfo={edge.node.frontmatter.bw_grid_image} />
-                  <PreviewCompatibleImage imageInfo={edge.node.frontmatter.colour_grid_image} />
+                  <PreviewCompatibleImage imageInfo={(edge.node.frontmatter.bw_grid_image ? edge.node.frontmatter.bw_grid_image : data.allFile.edges[0].node)} />
+                  <PreviewCompatibleImage imageInfo={(edge.node.frontmatter.colour_grid_image ? edge.node.frontmatter.colour_grid_image : data.allFile.edges[1].node)} />
                   <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`}>
                     <div className="gel-portfolio-item-text-container">
                       <p dangerouslySetInnerHTML={{__html: edge.node.frontmatter.project_type}} />
