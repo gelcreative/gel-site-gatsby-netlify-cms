@@ -12,6 +12,11 @@ const StyledPortfolioEntry = styled.div`
       max-width: 600px;
       margin: 0 auto;
     }
+    .gel-portfolio-entry-main-text {
+      display: flex;
+      justify-content: center;
+      align-items: center
+    }
 `
 
 export const PortfolioEntryTemplate = ({
@@ -34,7 +39,7 @@ export const PortfolioEntryTemplate = ({
             </div>
           </div>
         </section>
-        <section className="section">
+        <section className="section has-text-centered">
           <p>{projectIntro}</p>
         </section>
         <section className="section gel-portfolio-images-1">
