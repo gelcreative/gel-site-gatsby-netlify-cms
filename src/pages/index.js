@@ -52,7 +52,7 @@ export default class IndexPage extends React.Component {
           <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-intro-section"></ScrollyDo>
           <FullHeightSection className="gel-home-intro-text has-text-centered" id="gel-home-intro-section">
             <div className="column has-text-centered">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis. Nulla facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar gravida. Aenean turpis augue, dictum et augue id, mattis aliquet orci. Fusce sed dapibus eros. Duis in rhoncus erat, ut viverra tortor. Fusce sed enim finibus.</p>
+              <p>Great! You found us. You’re looking for an agency partner. So you already know we’re a marketing communications agency. What you may not know is that our approach is different. It’s grounded in creative intelligence. It’s marketing with purpose. Get a sense of our capabilities--to see if we’re the right fit for you. When it fits, we Gel.</p>
             </div>
           </FullHeightSection>
           <HomePagePortfolioFeatures />
