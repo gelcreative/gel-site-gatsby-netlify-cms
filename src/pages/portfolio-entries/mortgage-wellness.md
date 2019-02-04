@@ -15,23 +15,23 @@ header_image:
   alt: Mortgage Wellness Logo
   image: /img/mortgage-wellness-logo-masthead.jpg
 project_intro: >-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit
-  sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis. Nulla
-  facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar gravida. Aenean
-  turpis augue, dictum et augue id, mattis aliquet orci. Fusce sed dapibus eros.
-  Duis in rhoncus erat, ut viverra tortor. Fusce sed enim finibus, imperdiet
-  nulla posuere, mollis odio. Cras sagittis mattis luctus.
+  Mortgage Wellness Group is a fast growing brokerage specializing in
+  residential mortgages. They reached out to Gel to guide them through a
+  rebrand. Beginning with a brand exploration process to unlock the DNA and get
+  to the essence of brand experience they wanted to share with their clients,
+  Gel then redesigned the logo mark, built a complete suite of branded
+  collaterals and ad creative. Gel also designed interior and exterior building
+  signage.
 project_images_1:
   - image: /img/mortgage-wellness-stationary.jpg
   - image: /img/mortgage-wellness-card-full-width.jpg
 main:
   detail_text: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit
-    sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis.
-    Nulla facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar
-    gravida. Aenean turpis augue, dictum et augue id, mattis aliquet orci. Fusce
-    sed dapibus eros. Duis in rhoncus erat, ut viverra tortor. Fusce sed enim
-    finibus, imperdiet nulla posuere, mollis odio. Cras sagittis mattis luctus.
+    Our client wanted to reposition themselves as a first choice alternative to
+    banks, rather than a lender of last resort. This strategic pivot would allow
+    Mortgage Wellness to expand its target demographic, mitigate risk, and grow
+    market share. They wanted to their brand identity to reflect the onus they
+    put on providing a premium client service journey.
   image: /img/mortgage-wellness-building-signage-v2.jpg
 project_images_2:
   - image: /img/mortgage-wellness-bus-stop.jpg
