@@ -22,6 +22,12 @@ const FullHeightSection = styled.section`
   &.gel-home-intro-text p {
       font-size: 2.5rem;
   }
+  &.gel-home-masthead {
+    svg {
+      width: 90%;
+      max-width: 500px;
+    }
+  }
 
   @media (max-width: 450px) {
     &.gel-home-intro-text .column {
@@ -46,7 +52,7 @@ export default class IndexPage extends React.Component {
         <div className="container">
           <FullHeightSection className="gel-home-masthead columns is-centered">
             <div className="column has-text-centered">
-              <FooterLogo title="Gel Logo" width="500" alt="gel logo" />
+              <FooterLogo title="Gel Logo" alt="gel logo" />
             </div>
           </FullHeightSection>
           <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-intro-section"></ScrollyDo>
