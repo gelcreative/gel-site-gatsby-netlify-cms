@@ -3,30 +3,27 @@ templateKey: portfolio-entry
 title: Barrie Craft Beer and BBQ Festival
 project_type: Visual Identity
 colour_grid_image: /img/craft-beer-festival_portfolio-color.jpg
-bw_grid_image: 
-  image: /img/craft-beer-festival_portfolio-bw.jpg
+bw_grid_image:
   alt: Barrie Craft Beer and BBQ Festival Logo
+  image: /img/craft-beer-festival_portfolio-bw.jpg
 header_image:
   alt: Downtown Barrie Craft Beer and BBQ Festival
   image: /img/craft-beer-logo-masthead.jpg
 project_intro: >-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit
-  sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis. Nulla
-  facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar gravida. Aenean
-  turpis augue, dictum et augue id, mattis aliquet orci. Fusce sed dapibus eros.
-  Duis in rhoncus erat, ut viverra tortor. Fusce sed enim finibus, imperdiet
-  nulla posuere, mollis odio. Cras sagittis mattis luctus.
+  The Barrie Craft Beer and BBQ Festival is a signature annual event of the
+  Downtown Barrie BIA. Gel built the whimsical website, designed the wayfinding
+  signage for the event space, and created multiple brand extensions to leverage
+  the events growing popularity.
 project_images_1:
   - image: /img/craft-beer-website-laptop.jpg
   - image: /img/craft-beer-staff-id.jpg
 main:
   detail_text: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit
-    sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis.
-    Nulla facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar
-    gravida. Aenean turpis augue, dictum et augue id, mattis aliquet orci. Fusce
-    sed dapibus eros. Duis in rhoncus erat, ut viverra tortor. Fusce sed enim
-    finibus, imperdiet nulla posuere, mollis odio. Cras sagittis mattis luctus.
+    The Downtown Barrie BIA tapped Gel to “recarbonate” one of its largest
+    annual event properties in an effort to compete with some of the larger food
+    and beverage festivals in the province. The campaign paid off with more than
+    a dozen brewers and cideries participating from across Ontario and in excess
+    of 15,000 visitors passing through the gates.
   image: /img/craft-beer-fest-mini-b.jpg
 project_images_2:
   - image: /img/craft-beer-beer-cans.jpg
