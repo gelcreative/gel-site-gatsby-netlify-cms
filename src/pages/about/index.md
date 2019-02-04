@@ -1,37 +1,34 @@
 ---
 templateKey: about-page
 title: About
-about_intro: >
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos rem nobis
-  provident totam sed neque placeat, consequuntur modi dicta earum unde in
-  quibusdam aperiam alias quisquam veniam a libero odit repudiandae repellendus
-  mollitia nostrum, reprehenderit ut sit! Dolor aliquam aut perspiciatis!
-  Cupiditate aliquam nostrum ex dolor natus perspiciatis modi fuga.
+about_intro: >-
+  It’s our team of strategists, marketers, designers, and developers who breathe
+  the creative intelligence into our campaigns. 
 main:
   shannon:
     image2:
       alt: Shannon Ambeau
       image: /img/shannon-ambeau-headshot.jpg
-    shannon_bio: >
-      Shannon Loremipsumdolorsitamet,consecteturadipiscing
-      elit.Sedfaucibusvelitsedvestibulumconsectetur.
-      Nulaornaremetusinnuncconguefacilisis.Nula
-      facilisi.Curabiturquismalesuadaerat.Nam
-      placeratpulvinargravida.Aeneanturpisaugue, dictumetaugueid
-      matisaliquetorci.Fuscesed dapibuseros.Duisinrhoncuserat,utviveratortor.
-      erdietnulaposuere, molisodio.Crassagitismatisluctus
+    shannon_bio: >-
+      After 20 years of corporate sales and marketing in the pharmaceutical
+      sector, Shannon decided to step out. Leaving at the top of her game,
+      having launched the most successful product in industry history, and after
+      managing many client side agency relationships, Shannon joined Gel as the
+      strategy partner. She  holds an MBA from the Schulich School of Business,
+      a BSc in Kinesiology from the University of Waterloo and is faculty in the
+      Georgian College Business and Management School.
   tom:
     image1:
       alt: Tom Ambeau
       image: /img/tom-ambeau-headshot.jpg
-    tom_bio: >
-      Tom Loremipsumdolorsitamet,consecteturadipiscing
-      elit.Sedfaucibusvelitsedvestibulumconsectetur.
-      Nulaornaremetusinnuncconguefacilisis.Nula
-      facilisi.Curabiturquismalesuadaerat.Nam
-      placeratpulvinargravida.Aeneanturpisaugue, dictumetaugueid
-      matisaliquetorci.Fuscesed dapibuseros.Duisinrhoncuserat,utviveratortor.
-      erdietnulaposuere, molisodio.Crassagitismatisluctus
+    tom_bio: >-
+      Tom is Gel’s founder. He is the source of the creative intelligence here.
+      He’s the reason our clients choose to work with us. He just gets it. He’s
+      been an entrepreneur for over 25 years. He co-launched a startup, took it
+      public, got squeezed out, bought an agency, and the beat goes on. Tom
+      holds a BA in Political Science from University of Western University, and
+      has public company Board experience and volunteer Board experience with
+      the Downtown Barrie BIA.
 approach:
   heading: Our Approach
   text: >
