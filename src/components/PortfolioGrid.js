@@ -125,14 +125,15 @@ const PortfolioGrid = () => (
   `}
     render={data=> {
       const edges = data.allMarkdownRemark.edges
+      const defaults = data.allFile.edges
       return (
         <StyledPortfolioGrid>
           <div className="gel-portfolio-grid columns is-gapless">
             {edges.map((edge) => {
               return (
                 <div key={edge.node.id} className="column is-half gel-portfolio-grid-item">
-                  <PreviewCompatibleImage imageInfo={(edge.node.frontmatter.bw_grid_image ? edge.node.frontmatter.bw_grid_image : data.allFile.edges[0].node)} />
-                  <PreviewCompatibleImage imageInfo={(edge.node.frontmatter.colour_grid_image ? edge.node.frontmatter.colour_grid_image : data.allFile.edges[1].node)} />
+                  <PreviewCompatibleImage imageInfo={(edge.node.frontmatter.bw_grid_image.image ? edge.node.frontmatter.bw_grid_image : defaults[0].node)} />
+                  <PreviewCompatibleImage imageInfo={(edge.node.frontmatter.colour_grid_image ? edge.node.frontmatter.colour_grid_image : defaults[1].node)} />
                   <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`}>
                     <div className="gel-portfolio-item-text-container">
                       <p dangerouslySetInnerHTML={{__html: edge.node.frontmatter.project_type}} />
