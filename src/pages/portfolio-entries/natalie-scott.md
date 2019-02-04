@@ -10,10 +10,10 @@ header_image:
   image: /img/natalie-scott-logo-masthead.jpg
 project_intro: >-
   The affable life coach, Natalie Scott, needed to take her aspirational brand
-  of on line. Gel helped her unpack her unique proposition so it could be
-  clearly communicated in a new brand identity including a simple, elegant word
-  mark logo. A website was created to capture Nat’s infectious, positive
-  energy--it features custom photography.
+  online. Gel helped her unpack her unique proposition so it could be clearly
+  communicated in a new brand identity including a simple, elegant word mark
+  logo. A website was created to capture Nat’s infectious, positive energy--it
+  features custom photography.
 project_images_1:
   - image: /img/nat-scott-website-macbook-gold.png
   - image: /img/nat-scott-full-width-branding.jpg
