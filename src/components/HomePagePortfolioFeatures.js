@@ -6,7 +6,7 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const StyledFeaturesSection = styled.section`
     position: relative;
-    margin-bottom: 100px !important;
+    margin-bottom: 50px !important;
     
   .gel-homepage-featured-text-container {
       display: flex;
