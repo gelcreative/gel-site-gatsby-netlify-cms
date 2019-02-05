@@ -23,10 +23,11 @@ const FullHeightSection = styled.section`
       font-size: 2.5rem;
   }
   &.gel-home-masthead {
+    margin-top: 50px;
     svg {
       width: 90%;
       max-width: 500px;
-    }
+    } 
   }
 
   @media (max-width: 450px) {
