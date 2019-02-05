@@ -14,6 +14,10 @@ const Navbar = class extends React.Component {
 componentDidMount() {
     // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  // Need to select the navbar too, for some Gel styles
+  const navBar = document.querySelector('.navbar');
+  const navMenu = document.querySelector('.navbar-menu')
+
     // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
 
@@ -23,8 +27,6 @@ componentDidMount() {
 
           // Get the target from the "data-target" attribute
           const target = el.dataset.target;
-          // Need to select the navbar too, for some Gel styles
-          const navBar = document.querySelector('.navbar');
           const $target = document.getElementById(target);
 
           // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
@@ -36,6 +38,25 @@ componentDidMount() {
         });
       });
     }
+
+    // Close menu if user hits ESC
+    window.addEventListener('keyup', (e) => {
+      if(e.keyCode === 27) {
+        if(navMenu.classList.contains('is-active')) {
+          navMenu.classList.toggle('is-active');
+          navBar.classList.toggle('gel-nav-active');
+        }
+      }
+    })
+
+    // Close the menu if user clicks on overlay
+    window.addEventListener('click', (e) => {
+      if(e.target === navMenu && navMenu.classList.contains('is-active')) {
+        navMenu.classList.toggle('is-active');
+        navBar.classList.toggle('gel-nav-active');
+      }
+    })
+
   }
  
  render() {
