@@ -7,8 +7,11 @@ import styled from 'styled-components'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Content, { HTMLContent } from '../components/Content'
+import NewsletterForm from '../components/NewsletterForm'
 
-const StyledBlogPost = styled.section`
+const StyledBlogPost = styled.article`
+  margin-top: 100px;
+
   .gel-blog-post-info {
     margin-bottom: 4rem;
   }
@@ -26,6 +29,53 @@ const StyledBlogPost = styled.section`
   .gatsby-image-wrapper {
     margin-top: 4rem;
     margin-bottom: 4rem;
+  }
+
+  .blog-newsletter-form-section {
+    margin-top: 50px;
+    background-color: #e6e7e8;
+    padding: 30px 7%;
+  }
+
+  .gel-newsletter-form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .field {
+    display: inline-block;
+  }
+
+  .email-input {
+    flex-grow: 2;
+    margin: 5px;
+  }
+
+  .send-button {
+    flex-grow: 1;
+    margin: 5px;
+  }
+
+  .send-button button[type="submit"] {
+    background-color: #00adc8;
+    width: 100%;
+  }
+
+  [type="email"] {
+    border-radius: 0;
+    height: 40px;
+    font-size: 1.6rem;
+    color: #434244;
+    text-transform: uppercase;
+  }
+
+  @media(min-width: 601px) {
+    .gel-blog-meta br {
+      display: none;
+    }
   }
 `
 
@@ -47,7 +97,7 @@ export const BlogPostTemplate = ({
     <StyledBlogPost className="section">
       {helmet || ''}
       <div className="container content">
-        <div className="columns">
+        <section className="columns">
           <div className="column is-10 is-offset-1 has-text-centered">
             <div className="gel-blog-post-info">
               <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
@@ -61,20 +111,28 @@ export const BlogPostTemplate = ({
                     </>
                   ) : null}
                   <span className="styled-slashes">&#47;&#47;</span>
+                  <br />
                   <span>Author </span>{author}
                   <span className="styled-slashes">&#47;&#47;</span>
+                  <br />
                   <span>Date </span>{date}
                 </p>
             </div>
             <p className="gel-blog-post-description">{description}</p>
           </div>
-        </div>
+        </section>
         <PreviewCompatibleImage imageInfo={featuredImage} />
-        <div className="columns">
+        <section className="columns">
           <div className="column is-10 is-offset-1">
             <PostContent content={content} />
           </div>
-        </div>
+        </section>
+        <section className="columns blog-newsletter-form-section is-centered">
+          <div className="column has-text-centered">
+          <h2>Picking up what we’re putting down? Get it straight to your inbox.</h2>
+            <NewsletterForm />
+          </div>
+        </section>
       </div>
     </StyledBlogPost>
   )

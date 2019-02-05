@@ -51,13 +51,13 @@ class NewsletterForm extends React.Component {
             <input name="bot-field" onChange={this.handleChange} />
           </label>
         </div>
-        <div className="field">
+        <div className="field email-input">
           <label className="label visually-hidden" htmlFor={"email"}>Email</label>
             <div className="control">
               <input className="input" type={"email"} name={"email"} onChange={this.handleChange} id={"email"} placeholder={"Email Address"} required={true} />
             </div>
         </div>
-        <div className="field">
+        <div className="field send-button">
           <button className="button is-dark is-large gel-button-1" type="submit">Send</button>
         </div>
       </form>
