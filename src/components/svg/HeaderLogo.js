@@ -22,6 +22,12 @@ const HeaderLogoContainer = styled.div`
     animation-duration: 1s;
     animation-fill-mode: forwards;
   }
+
+  @media(max-width: 460px) {
+    .gel-header-logo {
+      width: 100px;
+    }
+  }
 `
 export default class HeaderLogo extends Component {
   render() {
