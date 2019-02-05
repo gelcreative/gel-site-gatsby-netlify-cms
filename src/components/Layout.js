@@ -32,7 +32,7 @@ const TemplateWrapper = ({ children }) => (
         }
     `}
     render={data => (
-      <div>
+      <>
         <Helmet>
           <html lang="en" />
 
@@ -59,7 +59,7 @@ const TemplateWrapper = ({ children }) => (
           {children}
         </main>
         <Footer />
-      </div>
+      </>
     )}
   />
 )

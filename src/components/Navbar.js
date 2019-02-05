@@ -6,7 +6,112 @@ import HeaderLogo from './svg/HeaderLogo'
 const StyledHeader = styled.header`
   .navbar-brand {
     position: fixed;
+    width: 100vw;
   }
+
+  .navbar {
+    margin-top: 30px;
+  }
+
+  .navbar > .container {
+    display: block;
+  }
+
+  .navbar-menu {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  .navbar-menu.is-active {
+    height: 100%;
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+    
+  .navbar-start {
+    text-align: center;
+    display: block;
+  }
+
+  .navbar-item {
+    display: block;
+  }
+
+  .navbar-burger {
+    display: block;
+  }
+
+  .navbar-burger span {
+    height: 3px;
+    width: 20px;
+  }
+
+  .navbar .container  {
+    position: relative;
+  }
+
+  .gel-nav-active .navbar-brand {
+    z-index: 1;
+  }
+
+  .navbar-menu.is-active  {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .navbar-menu.is-active .navbar-start  {
+    justify-content: center;
+    margin-right: unset;
+    width: 500px;
+    max-width: 90%;
+  }
+
+  .gel-nav-active + div:first-of-type {
+    margin-top: 90px;
+  }
+
+  .navbar p {
+    font-size: 4rem;
+    color: #9a989c;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  @media screen and (max-width: 1087px) {
+    .navbar-brand {
+     padding: 0 5%;
+    }
+  }
+
+  @media screen and (min-width: 1088px) {
+    .navbar-brand {
+        max-width: 960px;
+        width: 960px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .navbar-brand {
+      max-width: 1152px;
+      width: 1152px;
+    }
+  }
+
+  @media screen and (min-width: 1472px) {
+    .navbar-brand {
+        max-width: 1344px;
+        width: 1344px;
+    }
+  }
+
 `
 
 const Navbar = class extends React.Component {
@@ -16,7 +121,8 @@ componentDidMount() {
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
   // Need to select the navbar too, for some Gel styles
   const navBar = document.querySelector('.navbar');
-  const navMenu = document.querySelector('.navbar-menu')
+  const navMenu = document.querySelector('.navbar-menu');
+  const navBurger = document.querySelector('.navbar-burger');
 
     // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
@@ -44,6 +150,7 @@ componentDidMount() {
       if(e.keyCode === 27) {
         if(navMenu.classList.contains('is-active')) {
           navMenu.classList.toggle('is-active');
+          navBurger.classList.toggle('is-active');
           navBar.classList.toggle('gel-nav-active');
         }
       }
@@ -53,6 +160,7 @@ componentDidMount() {
     window.addEventListener('click', (e) => {
       if(e.target === navMenu && navMenu.classList.contains('is-active')) {
         navMenu.classList.toggle('is-active');
+        navBurger.classList.toggle('is-active');
         navBar.classList.toggle('gel-nav-active');
       }
     })

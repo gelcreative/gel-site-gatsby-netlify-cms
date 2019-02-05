@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import Layout from '../../components/Layout'
 
 const StyledContactPage = styled.section`
-  background: #ffffff;
+  margin-top: 100px;
   address {
     font-style: normal;
     margin-top: 2rem;

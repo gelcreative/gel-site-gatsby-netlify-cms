@@ -7,8 +7,9 @@ import Layout from '../components/Layout'
 import PortfolioGrid from '../components/PortfolioGrid'
 
 const StyledPortfolioPage = styled.article`
+
   &.container {
-    margin-top: 50px;
+    margin-top: 100px;
   }
   .gel-portfolio-intro {
     font-size: 2rem;
