@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Icon from '-!svg-react-loader?name=GelLogo!../../img/gel-logo-header.svg'
+import Icon from '-!svg-react-loader?name=GelLogo!../../img/gel-logo-word.svg'
 
 const HeaderLogoContainer = styled.div`
   max-width: 150px;
