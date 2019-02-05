@@ -57,6 +57,24 @@ componentDidMount() {
       }
     })
 
+    // Close menu if user clicks on a nav link for the page they are already on
+    /* This script is prob overwrought, as you could prob just close the 
+    menu if you click on any of the links, but I wanted to try it out */
+    // 1. Select nav links
+    const navLinks = Array.prototype.slice.call(document.querySelectorAll('.navbar-start a'));
+    // 2. Add event listener to nav links
+    navLinks.forEach(link => {
+      const theLinkHref = link.href;
+      link.addEventListener('click', () => {
+        const windowLocationHref = window.location.href;
+        // 4. If nav link and slug are the same, close the nav
+        if(theLinkHref === windowLocationHref) {
+          navMenu.classList.toggle('is-active');
+          navBar.classList.toggle('gel-nav-active');
+        }
+      })
+    })
+
   }
  
  render() {
