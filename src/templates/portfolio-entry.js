@@ -7,7 +7,11 @@ import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import PortfolioEntryImages from '../components/PortfolioEntryImages'
 
-const StyledPortfolioEntry = styled.div`
+const StyledPortfolioEntry = styled.article`
+    &.container {
+      margin-top: 100px;
+    }
+
     .gel-portfolio-entry-masthead {
       max-width: 600px;
       margin: 0 auto;
