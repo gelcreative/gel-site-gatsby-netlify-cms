@@ -10,22 +10,32 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 const FullHeightSection = styled.section`
   min-height: 100vh;
   padding-bottom: 200px;
-  & > .column {
+
+  &.gel-full-height-vert-align {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .gel-about-intro-text {
       font-size: 2.5rem;
-    }
+  }
+
   &.gel-approach-section p {
     font-size: 2rem;
   }
+
+  .gel-bio-text {
+    display: flex;
+    align-items: center;
+  }
+
   .gel-about-intro-section-text-container {
-    width: 1000px;
-    max-width: 90%;
+    max-width: 1000px;
+    width: 90%;
     margin: 0 auto;
   }
+
   @media (max-width: 450px) {
     .gel-about-intro-text {
       font-size: 1.5rem;
@@ -49,7 +59,7 @@ export const AboutPageTemplate = ({
     <section className="section section--gradient">
       { helmet || '' }
       <div className="container">
-        <FullHeightSection className="columns is-centered gel-about-intro-section">
+        <FullHeightSection className="columns is-centered gel-about-intro-section gel-full-height-vert-align">
           <div className="column has-text-centered">
             <div className="gel-about-intro-section-text-container">
               <h1 className="visually-hidden">{title}</h1>
@@ -63,14 +73,14 @@ export const AboutPageTemplate = ({
             <div className="column">
               <PreviewCompatibleImage imageInfo={main.tom.image1} />
             </div>
-            <div className="column">
+            <div className="column gel-bio-text">
               <div className="section">
                 <p>{main.tom.tom_bio}</p>
               </div>
             </div>
           </div>
           <div className="columns gel-bio-row">
-            <div className="column">
+            <div className="column gel-bio-text">
               <div className="section">
                 <p>{main.shannon.shannon_bio}</p>
               </div>
@@ -81,7 +91,7 @@ export const AboutPageTemplate = ({
           </div>
         </FullHeightSection>
         <ScrollyDo targetId="gel-approach-section"/>
-        <FullHeightSection className="columns is-centered gel-approach-section" id="gel-approach-section">
+        <FullHeightSection className="columns is-centered gel-approach-section gel-full-height-vert-align" id="gel-approach-section">
           <div className="column has-text-centered">
             <div className="section">
               <h2>{approach.heading}</h2>
