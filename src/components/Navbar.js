@@ -1,6 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 import HeaderLogo from './svg/HeaderLogo'
+
+const StyledHeader = styled.header`
+  .navbar-brand {
+    position: fixed;
+  }
+`
 
 const Navbar = class extends React.Component {
 
@@ -33,7 +40,7 @@ componentDidMount() {
  
  render() {
    return (
-    <header>
+    <StyledHeader>
       <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
         <div className="container">
           <div className="navbar-brand">
@@ -54,7 +61,7 @@ componentDidMount() {
           </div>
         </div>
       </nav>
-    </header>
+    </StyledHeader>
   )}
 }
 
