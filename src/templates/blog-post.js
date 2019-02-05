@@ -60,9 +60,9 @@ export const BlogPostTemplate = ({
                         <Link key={tags[0] + `tag`} to={`/tags/${kebabCase(tags[0])}/`}>{tags[0]}</Link>
                     </>
                   ) : null}
-                  <span className="styled-slashes">//</span>
+                  <span className="styled-slashes">&#47;&#47;</span>
                   <span>Author </span>{author}
-                  <span className="styled-slashes">//</span>
+                  <span className="styled-slashes">&#47;&#47;</span>
                   <span>Date </span>{date}
                 </p>
             </div>
