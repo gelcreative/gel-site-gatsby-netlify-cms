@@ -1,5 +1,4 @@
 import React from "react";
-import { navigate } from "gatsby-link";
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
