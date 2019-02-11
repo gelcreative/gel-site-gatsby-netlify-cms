@@ -68,7 +68,6 @@ const Footer = () => (
                 href="https://www.google.com/maps/place/89+Collier+St,+Barrie,+ON+L4M+1H2/@44.3902458,-79.6868214,17z/data=!3m1!4b1!4m5!3m4!1s0x882aa32e300f8edf:0x696f3192d7cd8c25!8m2!3d44.3902458!4d-79.6846327"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="89 Collier Street on Google Maps"
               >  
                 89 Collier Street, Suite 201 <br />
                 Barrie, ON L4M 1H2
