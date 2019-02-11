@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom'
 import SocialIcons from './SocialIcons'
 import { scrollIt } from '../util/scrollIt'
 
-
 const ScrollyDoContainer = styled.div`
   transition: opacity 300ms;
   background-color: white;

@@ -44,6 +44,12 @@ const FullHeightSection = styled.section`
       font-size: 1.5rem;
     }
   }
+
+  @media(min-width: 769px) {
+    .gel-bio-text .section {
+      padding: 3rem 10%;
+    }
+  }
 `
 
 export const AboutPageTemplate = ({
