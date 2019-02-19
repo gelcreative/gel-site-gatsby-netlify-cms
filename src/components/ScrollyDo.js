@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
 import SocialIcons from './SocialIcons'
 import { scrollIt } from '../util/scrollIt'
+import scrolly from '../img/scrolly.gif'
 
 const ScrollyDoContainer = styled.div`
   transition: opacity 300ms;
@@ -82,7 +83,7 @@ class ScrollyDo extends Component {
       <ScrollyDoContainer className="scrolly-container" fullHeight={this.props.fullHeight} >
         <div className="scrolly-container-inner">
           <a href="#next" title="Scroll to the next section. 👇">
-            <img src="/img/scrolly.gif" alt="" aria-hidden="true" />
+            <img src={scrolly} alt="" aria-hidden="true" />
           </a>
           {!!this.props.socialIcons && <SocialIcons />}
         </div>
