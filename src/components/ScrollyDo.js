@@ -55,14 +55,15 @@ const ScrollyDoContainer = styled.div`
 
 class ScrollyDo extends Component {
 
-  componentDidMount() {
+  scrollBehaviour() {
     const scrollyContainer = ReactDOM.findDOMNode(this)
     const scrollLink = scrollyContainer.querySelector('a')
     scrollLink.addEventListener('click', e => {
       e.preventDefault();
       const targetContainer = document.querySelector(`#${this.props.targetId}`);
       const targetPosition = targetContainer.offsetTop + 50;
-
+  
+      // Smooth scroll function
       scrollIt(targetPosition, 1000, 'easeInOutQuint');
       
     })
@@ -77,6 +78,11 @@ class ScrollyDo extends Component {
       }
     })
   }
+
+  componentDidMount() {
+    this.scrollBehaviour()
+  }
+  
   render () {
     return (
       <ScrollyDoContainer className="scrolly-container" fullHeight={this.props.fullHeight} >
