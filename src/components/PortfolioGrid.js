@@ -81,62 +81,68 @@ const StyledPortfolioGrid = styled.section`
 const PortfolioGrid = () => (
   <StaticQuery
     query={graphql`
-    query PortfolioGrid {
-      allMarkdownRemark (filter: {frontmatter: {templateKey: {eq: "portfolio-entry"}}}) {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-              project_type
-              colour_grid_image {
-                childImageSharp {
-                  fluid(maxWidth: 900, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              bw_grid_image {
-                image {
+      query {
+        mainPortfolioQuery: allMarkdownRemark (filter: {frontmatter: {templateKey: {eq: "portfolio-entry"}}}) {
+          edges {
+            node {
+              id
+              frontmatter {
+                title
+                project_type
+                colour_grid_image {
                   childImageSharp {
                     fluid(maxWidth: 900, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
                 }
-                alt
               }
             }
           }
         }
-      }
-      allFile(filter: {name: {regex: "/gel-logo-circle/"}}) {
-        edges {
-          node {
-            childImageSharp {
-              fluid(maxWidth: 900, quality: 100) {
-                ...GatsbyImageSharpFluid
+        grayscaleGridImageQuery: allMarkdownRemark (filter: {frontmatter: {templateKey: {eq: "portfolio-entry"}}}) {
+          edges {
+            node {
+              frontmatter {
+                colour_grid_image {
+                  childImageSharp {
+                    fluid(maxWidth: 900, quality: 100, grayscale: true) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+          }
+        } 
+        allFile(filter: {name: {regex: "/gel-logo-circle/"}}) {
+          edges {
+            node {
+              childImageSharp {
+                fluid(maxWidth: 900, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }
         }
-      }
+      }`
     }
-  `}
     render={data=> {
-      const edges = data.allMarkdownRemark.edges
+      const { edges: portfolioEntries } = data.mainPortfolioQuery
+      const { edges: grayscaleGridImages } = data.grayscaleGridImageQuery
       const defaults = data.allFile.edges
       return (
         <StyledPortfolioGrid>
           <div className="gel-portfolio-grid columns is-gapless">
-            {edges.map((edge) => {
+            {portfolioEntries.map((portfolioEntry, i) => {
               return (
-                <div key={edge.node.id} className="column is-half gel-portfolio-grid-item">
-                  <PreviewCompatibleImage imageInfo={(edge.node.frontmatter.bw_grid_image.image ? edge.node.frontmatter.bw_grid_image : defaults[0].node)} />
-                  <PreviewCompatibleImage imageInfo={(edge.node.frontmatter.colour_grid_image ? edge.node.frontmatter.colour_grid_image : defaults[1].node)} />
-                  <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`}>
+                <div key={portfolioEntry.node.id} className="column is-half gel-portfolio-grid-item">
+                  <PreviewCompatibleImage imageInfo={(grayscaleGridImages[i].node.frontmatter.colour_grid_image ? grayscaleGridImages[i].node.frontmatter.colour_grid_image : defaults[0].node)} />
+                  <PreviewCompatibleImage imageInfo={(portfolioEntry.node.frontmatter.colour_grid_image ? portfolioEntry.node.frontmatter.colour_grid_image : defaults[1].node)} />
+                  <Link to={`/portfolio-entries/${kebabCase(portfolioEntry.node.frontmatter.title)}`}>
                     <div className="gel-portfolio-item-text-container">
-                      <p dangerouslySetInnerHTML={{__html: edge.node.frontmatter.project_type}} />
+                      <p dangerouslySetInnerHTML={{__html: portfolioEntry.node.frontmatter.project_type}} />
                     </div>
                   </Link>
                 </div>

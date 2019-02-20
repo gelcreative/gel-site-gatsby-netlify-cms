@@ -10,7 +10,6 @@ const StyledLogoGrid = styled.section`
 
   .gel-client-logos-container {
     position: relative;
-    height: 200px;
   }
 
   [class^="gel-client-logo"] {
@@ -18,7 +17,6 @@ const StyledLogoGrid = styled.section`
   }
 
   .gel-client-logo-color {
-      position: absolute !important;
       top: 0;
       right: 0;
       bottom: 0;
@@ -32,6 +30,7 @@ const StyledLogoGrid = styled.section`
       right: 0;
       bottom: 0;
       left: 0;
+      margin: 0.75rem;
   }
 
   .gel-client-logos-container:hover .gel-client-logo-color {
