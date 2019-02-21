@@ -4,6 +4,7 @@ title: Central South Regional Stroke Network
 project_type: Visual Identity for Central South Regional Stroke Network
 home_page_featured:
   featured_image: {}
+colour_grid_image: /img/central-south-stroke-network_portfolio-color.jpg
 bw_grid_image: {}
 header_image:
   alt: Central South Regional Stroke Network Logo
