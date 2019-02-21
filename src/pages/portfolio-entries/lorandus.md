@@ -4,7 +4,7 @@ title: Lorandus
 project_type: Website for Lorandus
 home_page_featured:
   featured_image: {}
-bw_grid_image: {}
+colour_grid_image: /img/lorandus_portfolio-color.jpg
 header_image:
   alt: Lorandus Logo
   image: /img/lorandus-logo-masthead.jpg
