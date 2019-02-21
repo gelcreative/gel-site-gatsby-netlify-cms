@@ -1,11 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import ScrollyDo from '../components/ScrollyDo'
 import HomePagePortfolioFeatures from '../components/HomePagePortfolioFeatures'
 import ClientLogoGrid from '../components/ClientLogoGrid'
-import FooterLogo from '../img/gel-logo-footer.svg'
 
 const FullHeightSection = styled.section`
   min-height: 100vh;
@@ -22,7 +22,6 @@ const FullHeightSection = styled.section`
       font-size: 2.5rem;
   }
   &.gel-home-masthead {
-    margin-top: 50px;
     svg {
       width: 90%;
       max-width: 500px;
@@ -52,7 +51,6 @@ export default class IndexPage extends React.Component {
         <div className="container">
           <FullHeightSection className="gel-home-masthead columns is-centered">
             <div className="column has-text-centered">
-              {/* <FooterLogo title="Gel Logo" alt="gel logo" /> */}
               <img src="/img/Gel_Whimsical_Colour_550x350_White_Background.gif" alt="Gel Logo Animation" />
             </div>
           </FullHeightSection>
