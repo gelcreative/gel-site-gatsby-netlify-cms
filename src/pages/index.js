@@ -1,6 +1,5 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import ScrollyDo from '../components/ScrollyDo'
@@ -53,7 +52,8 @@ export default class IndexPage extends React.Component {
         <div className="container">
           <FullHeightSection className="gel-home-masthead columns is-centered">
             <div className="column has-text-centered">
-              <FooterLogo title="Gel Logo" alt="gel logo" />
+              {/* <FooterLogo title="Gel Logo" alt="gel logo" /> */}
+              <img src="/img/Gel_Whimsical_Colour_550x350_White_Background.gif" alt="Gel Logo Animation" />
             </div>
           </FullHeightSection>
           <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-intro-section"></ScrollyDo>
