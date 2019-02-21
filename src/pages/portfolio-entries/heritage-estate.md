@@ -4,7 +4,7 @@ title: Heritage Estate
 project_type: Website for Heritage Estate
 home_page_featured:
   featured_image: {}
-bw_grid_image: {}
+colour_grid_image: /img/heritage-estate-winery_portfolio-color.jpg
 header_image:
   alt: Heritage Estate Logo
   image: /img/heritage-estate-log-masthead.jpg
