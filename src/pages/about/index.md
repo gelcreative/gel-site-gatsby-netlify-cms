@@ -8,7 +8,7 @@ main:
   shannon:
     image2:
       alt: Shannon Ambeau
-      image: /img/shannon-ambeau-headshot.jpg
+      image: /img/shannon-ambeau-headshot-2.jpg
     shannon_bio: >-
       After 20 years of corporate sales and marketing in the pharmaceutical
       sector, Shannon decided to step out. Leaving at the top of her game,
