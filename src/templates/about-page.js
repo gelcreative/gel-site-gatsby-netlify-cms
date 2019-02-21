@@ -7,6 +7,27 @@ import Layout from '../components/Layout'
 import ScrollyDo from '../components/ScrollyDo'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
+const StyledAboutPage = styled.article`
+  .gel-services-list {
+    font-size: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .gel-services-list li {
+      padding: 0 1em;
+      position: relative;
+  }
+
+  .gel-services-list li:nth-child(-n+2)::after {
+      content: '//';
+      color: ${props => props.theme.orange};
+      position: absolute;
+      right: 0;
+      transform: translateX(50%);
+  }
+`
+
 const FullHeightSection = styled.section`
   min-height: 100vh;
   padding-bottom: 200px;
@@ -36,25 +57,6 @@ const FullHeightSection = styled.section`
     margin: 0 auto;
   }
 
-  .gel-services-list {
-    font-size: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .gel-services-list li {
-      padding: 0 1em;
-      position: relative;
-  }
-
-  .gel-services-list li:nth-child(-n+2)::after {
-      content: '//';
-      color: orange;
-      position: absolute;
-      right: 0;
-      transform: translateX(50%);
-  }
-
   @media (max-width: 450px) {
     .gel-about-intro-text {
       font-size: 1.5rem;
@@ -82,7 +84,7 @@ export const AboutPageTemplate = ({
 }) => {
 
   return (
-    <section className="section section--gradient">
+    <StyledAboutPage className="section section--gradient">
       { helmet || '' }
       <div className="container">
         <FullHeightSection className="columns is-centered gel-about-intro-section gel-full-height-vert-align">
@@ -116,28 +118,27 @@ export const AboutPageTemplate = ({
             </div>
           </div>
         </FullHeightSection>
-        <ScrollyDo targetId="gel-approach-section"/>
-        <FullHeightSection className="columns is-centered gel-approach-section gel-full-height-vert-align" id="gel-approach-section">
+        <section className="columns is-centered gel-approach-section gel-full-height-vert-align" id="gel-approach-section">
           <div className="column has-text-centered">
             <div className="section">
               <h2>{approach.heading}</h2>
               <p>{approach.text}</p>
             </div>
-          </div>
-        </FullHeightSection>
-        <section className="columns is-centered">
-          <div className="column is-narrow has-text-centered">
-            <ul className="gel-services-list">
-              {services.map(service => {
-                return (
-                  <li>{service}</li>
-                )
-              })}
-            </ul>
+            <div className="columns is-centered">
+              <div className="column is-narrow has-text-centered">
+                <ul className="gel-services-list">
+                  {services.map(service => {
+                    return (
+                      <li>{service}</li>
+                    )
+                  })}
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
       </div>
-    </section>
+    </StyledAboutPage>
   )
 }
 
