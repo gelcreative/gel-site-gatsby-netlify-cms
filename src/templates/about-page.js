@@ -96,7 +96,7 @@ export const AboutPageTemplate = ({
           </div>
         </FullHeightSection>
         <ScrollyDo targetId="gel-bio-section" fullHeight={true} />
-        <FullHeightSection id="gel-bio-section">
+        <section id="gel-bio-section">
           <div className="columns gel-bio-row">
             <div className="column">
               <PreviewCompatibleImage imageInfo={main.tom.image1} />
@@ -117,7 +117,7 @@ export const AboutPageTemplate = ({
               <PreviewCompatibleImage imageInfo={main.shannon.image2} />
             </div>
           </div>
-        </FullHeightSection>
+        </section>
         <section className="columns is-centered gel-approach-section gel-full-height-vert-align" id="gel-approach-section">
           <div className="column has-text-centered">
             <div className="section">
