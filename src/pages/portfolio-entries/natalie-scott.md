@@ -4,7 +4,7 @@ title: Natalie Scott
 project_type: Website for Natalie Scott
 home_page_featured:
   featured_image: {}
-bw_grid_image: {}
+colour_grid_image: /img/nat-scott_portfolio-color.jpg
 header_image:
   alt: Natalie Scott Logo
   image: /img/natalie-scott-logo-masthead.jpg
