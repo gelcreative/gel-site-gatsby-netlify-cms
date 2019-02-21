@@ -36,6 +36,25 @@ const FullHeightSection = styled.section`
     margin: 0 auto;
   }
 
+  .gel-services-list {
+    font-size: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .gel-services-list li {
+      padding: 0 1em;
+      position: relative;
+  }
+
+  .gel-services-list li:nth-child(-n+2)::after {
+      content: '//';
+      color: orange;
+      position: absolute;
+      right: 0;
+      transform: translateX(50%);
+  }
+
   @media (max-width: 450px) {
     .gel-about-intro-text {
       font-size: 1.5rem;
@@ -58,6 +77,7 @@ export const AboutPageTemplate = ({
   intro, 
   main,
   approach,
+  services,
   helmet,
 }) => {
 
@@ -105,6 +125,17 @@ export const AboutPageTemplate = ({
             </div>
           </div>
         </FullHeightSection>
+        <section className="columns is-centered">
+          <div className="column is-narrow has-text-centered">
+            <ul className="gel-services-list">
+              {services.map(service => {
+                return (
+                  <li>{service}</li>
+                )
+              })}
+            </ul>
+          </div>
+        </section>
       </div>
     </section>
   )
@@ -140,6 +171,7 @@ const AboutPage = ({ data }) => {
         intro={frontmatter.about_intro}
         main={frontmatter.main}
         approach={frontmatter.approach}
+        services={frontmatter.services}
         helmet={
           <Helmet 
             titleTemplate="%s | Gel Marketing"
@@ -198,6 +230,7 @@ export const aboutPageQuery = graphql`
           heading
           text
         }
+        services
       }
     }
   }
