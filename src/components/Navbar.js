@@ -116,9 +116,11 @@ const StyledHeader = styled.header`
 
 const Navbar = class extends React.Component {
 
-
-
   componentDidMount() {
+    this.navBarBurger();
+  }
+
+  navBarBurger() {
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     // Need to select the navbar too, for some Gel styles
