@@ -8,6 +8,8 @@ import ScrollyDo from '../components/ScrollyDo'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 const StyledAboutPage = styled.article`
+    margin-top: 50px;
+
   .gel-services-list {
     font-size: 4rem;
     display: flex;
