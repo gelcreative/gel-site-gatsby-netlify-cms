@@ -26,6 +26,11 @@ const StyledAboutPage = styled.article`
       right: 0;
       transform: translateX(50%);
   }
+
+  .gel-bio-text {
+    display: flex;
+    align-items: center;
+  }
 `
 
 const FullHeightSection = styled.section`
@@ -44,11 +49,6 @@ const FullHeightSection = styled.section`
 
   &.gel-approach-section p {
     font-size: 2rem;
-  }
-
-  .gel-bio-text {
-    display: flex;
-    align-items: center;
   }
 
   .gel-about-intro-section-text-container {
