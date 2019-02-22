@@ -58,7 +58,7 @@ export default class Index extends React.Component {
               <div className="columns">
                 <h1 className="visually-hidden">Contact Gel</h1>
                 <div className="column">
-                  <a href="https://goo.gl/maps/ST3VQzgpiqP2" target="_blank">
+                  <a href="https://goo.gl/maps/ST3VQzgpiqP2" target="_blank" rel="noopener noreferrer">
                     <Img fluid={data.file.childImageSharp.fluid} />
                   </a>
                 </div>
