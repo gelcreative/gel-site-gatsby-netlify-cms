@@ -86,19 +86,29 @@ const StyledHeader = styled.header`
     line-height: 1.2;
   }
 
+  .gel-footer-logo {
+    width: 70px;
+  }
+
   @media(min-width: 770px) {
+    .gel-header-logo-link {
+      position: relative;
+    }
+
     .gel-circle-logo {
-      display: none;
+      position: absolute;
+      top: 0;
+    }
+
+    .gel-footer-logo {
+      opacity: 0;
+      width: 0;
     }
   }
 
   @media (max-width: 769px) {
     .gel-word-logo {
       display: none;
-    }
-
-    .gel-footer-logo {
-      width: 70px;
     }
   }
 
@@ -129,16 +139,36 @@ const StyledHeader = styled.header`
     }
   }
 
+  &.scrolled {
+    .gel-header-logo {
+      opacity: 0;
+      width: 0;
+    }
+
+    .gel-footer-logo {
+      opacity: 1;
+      width: 70px;
+    }
+  }
 `
 
 const Navbar = class extends React.Component {
 
   componentDidMount() {
     this.navBarBurger();
+    this.navBarScroll();
   }
 
   navBarScroll() {
-
+    window.addEventListener('scroll', function() {
+      const scrollFromTop = this.scrollY;
+      const theHeader = document.querySelector('header');
+      if(scrollFromTop > 100) {
+        theHeader.classList.add('scrolled');
+      } else {
+        theHeader.classList.remove('scrolled');
+      }
+    })
   }
 
   navBarBurger() {
@@ -215,7 +245,7 @@ const Navbar = class extends React.Component {
         <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
           <div className="container">
             <div className="navbar-brand">
-              <Link to="/" title="Logo">
+              <Link className="gel-header-logo-link" to="/" title="Logo">
                 <HeaderLogo />
                 <FooterLogo />
               </Link>
