@@ -128,9 +128,9 @@ export const AboutPageTemplate = ({
               <div className="column is-narrow has-text-centered">
                 <ul className="gel-services-list">
                   {services.map(service => {
-                    return (
-                      <li>{service}</li>
-                    )
+                      return (
+                        <li key={service}>{service}</li>
+                      )
                   })}
                 </ul>
               </div>
