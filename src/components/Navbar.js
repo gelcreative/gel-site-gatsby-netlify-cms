@@ -116,13 +116,15 @@ const StyledHeader = styled.header`
 
 const Navbar = class extends React.Component {
 
-componentDidMount() {
+
+
+  componentDidMount() {
     // Get all "navbar-burger" elements
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-  // Need to select the navbar too, for some Gel styles
-  const navBar = document.querySelector('.navbar');
-  const navMenu = document.querySelector('.navbar-menu');
-  const navBurger = document.querySelector('.navbar-burger');
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    // Need to select the navbar too, for some Gel styles
+    const navBar = document.querySelector('.navbar');
+    const navMenu = document.querySelector('.navbar-menu');
+    const navBurger = document.querySelector('.navbar-burger');
 
     // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
@@ -182,33 +184,32 @@ componentDidMount() {
         }
       })
     })
-
   }
- 
- render() {
-   return (
-    <StyledHeader>
-      <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" title="Logo">
-              <HeaderLogo />
-            </Link>
-            {/* Hamburger menu */}
-            <div className="navbar-burger burger" data-target="navMenu">
-              <span></span>
-              <span></span>
-              <span></span>
+
+  render() {
+    return (
+      <StyledHeader>
+        <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
+          <div className="container">
+            <div className="navbar-brand">
+              <Link to="/" title="Logo">
+                <HeaderLogo />
+              </Link>
+              {/* Hamburger menu */}
+              <div className="navbar-burger burger" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div id="navMenu" className="navbar-menu">
+              <div className="navbar-start has-text-centered">
+              <p>Learn <Link to="/about">about</Link> Gel, consider our <Link to="/portfolio">work</Link>, <Link to="/contact">connect</Link> with us, and read our <Link to="/blog">blog</Link>.</p>
+              </div>
             </div>
           </div>
-          <div id="navMenu" className="navbar-menu">
-            <div className="navbar-start has-text-centered">
-            <p>Learn <Link to="/about">about</Link> Gel, consider our <Link to="/portfolio">work</Link>, <Link to="/contact">connect</Link> with us, and read our <Link to="/blog">blog</Link>.</p>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </StyledHeader>
+        </nav>
+      </StyledHeader>
   )}
 }
 
