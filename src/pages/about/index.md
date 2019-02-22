@@ -44,5 +44,9 @@ approach:
     Aenean turpis augue, dictum et augue id, mattis aliquet orci. Fusce sed
     dapibus eros. Duis in rhoncus erat, ut viverra tortor. Fusce sed enim
     finibus, imperdiet nulla posuere, mollis odio. Cras sagittis mattis luctus.
+services:
+  - strategy
+  - branding
+  - marketing
 ---
 
