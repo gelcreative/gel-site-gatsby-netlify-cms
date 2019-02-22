@@ -38,6 +38,12 @@ const StyledHeader = styled.nav`
       width: 20px;
     }
   }
+
+  @media(max-width: 1087px) {
+    .gel-header-logo {
+      width: 100px;
+    }
+  }
 `
 
 const Navbar = class extends React.Component {
