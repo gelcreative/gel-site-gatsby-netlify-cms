@@ -4,16 +4,35 @@ import styled from 'styled-components'
 import HeaderLogo from './svg/HeaderLogo'
 import FooterLogo from './svg/FooterLogo'
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.nav`
   position: fixed;
   width: 100vw;
   background-color: #ffffff;
-  
+  padding-top: 2em;
+  z-index: 2;
+  min-height: 100px;
+  transition: 300ms;
+  margin-left: unset;
+
+  > .container {
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .navbar-menu {
+    &.is-active {
+      margin-top: -3px;
+    }
+  }
+
   .gel-footer-logo {
     width: 70px;
   }
 
   &.scrolled {
+    height: 90px;
+    padding: 0;
     .gel-header-logo {
       opacity: 0;
       width: 0;
@@ -22,6 +41,16 @@ const StyledHeader = styled.header`
     .gel-footer-logo {
       opacity: 1;
       width: 70px;
+      margin-top: 1rem;
+    }
+  }
+
+  .navbar-burger {
+    color: ${props => props.theme.typeGrey};
+    span {
+      display: inline-block;
+      height:3px;
+      width: 20px;
     }
   }
 
@@ -58,11 +87,11 @@ const Navbar = class extends React.Component {
   navBarScroll() {
     window.addEventListener('scroll', function() {
       const scrollFromTop = this.scrollY;
-      const theHeader = document.querySelector('header');
+      const theNavbar = document.querySelector('.navbar');
       if(scrollFromTop > 100) {
-        theHeader.classList.add('scrolled');
+        theNavbar.classList.add('scrolled');
       } else {
-        theHeader.classList.remove('scrolled');
+        theNavbar.classList.remove('scrolled');
       }
     })
   }
@@ -137,46 +166,43 @@ const Navbar = class extends React.Component {
 
   render() {
     return (
-      <StyledHeader>
-        <nav
-          className="navbar"
-          role="navigation"
-          aria-label="main-navigation"
-        >
-          <div className="container">
-            <div className="navbar-brand">
-              <Link className="gel-header-logo-link" to="/" title="Logo">
-                <HeaderLogo />
-                <FooterLogo />
-              </Link>
-              {/* Hamburger menu */}
-              <div className="navbar-burger burger" data-target="navMenu">
-                <span />
-                <span />
-                <span />
-              </div>
-            </div>
-            <div id="navMenu" className="navbar-menu">
-              <div className="navbar-start has-text-centered">
-                <Link className="navbar-item" to="/about">
-                  About
-                </Link>
-                <Link className="navbar-item" to="/products">
-                  Products
-                </Link>
-                <Link className="navbar-item" to="/blog">
-                  Blog
-                </Link>
-                <Link className="navbar-item" to="/contact">
-                  Contact
-                </Link>
-                <Link className="navbar-item" to="/contact/examples">
-                  Form Examples
-                </Link>
-              </div>
+      <StyledHeader 
+        className="navbar is-fixed-top"
+        role="navigation"
+        aria-label="main-navigation"
+      >
+        <div className="container">
+          <div className="navbar-brand">
+            <Link className="gel-header-logo-link" to="/" title="Logo">
+              <HeaderLogo />
+              <FooterLogo />
+            </Link>
+            {/* Hamburger menu */}
+            <div className="navbar-burger burger" data-target="navMenu">
+              <span />
+              <span />
+              <span />
             </div>
           </div>
-        </nav>
+          <div id="navMenu" className="navbar-menu">
+            <div className="navbar-start has-text-centered">
+            </div>
+            <div className="navbar-end has-text-centered">
+              <Link className="navbar-item" to="/about">
+                Our Story
+              </Link>
+              <Link className="navbar-item" to="/portfolio">
+                Our Work
+              </Link>
+              <Link className="navbar-item" to="/contact">
+                Connect
+              </Link>
+              <Link className="navbar-item" to="/blog">
+                Blog
+              </Link>
+            </div>
+          </div>
+        </div>
       </StyledHeader>
     )
   }
