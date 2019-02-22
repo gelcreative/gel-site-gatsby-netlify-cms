@@ -5,9 +5,12 @@ import HeaderLogo from './svg/HeaderLogo'
 import FooterLogo from './svg/FooterLogo'
 
 const StyledHeader = styled.header`
-  .navbar-brand {
-    position: fixed;
-    width: 100vw;
+  position: fixed;
+  width: 100vw;
+  background-color: #ffffff;
+
+  /* .navbar-brand {
+    z-index: 1;
   }
 
   .navbar {
@@ -86,32 +89,6 @@ const StyledHeader = styled.header`
     line-height: 1.2;
   }
 
-  .gel-footer-logo {
-    width: 70px;
-  }
-
-  @media(min-width: 770px) {
-    .gel-header-logo-link {
-      position: relative;
-    }
-
-    .gel-circle-logo {
-      position: absolute;
-      top: 0;
-    }
-
-    .gel-footer-logo {
-      opacity: 0;
-      width: 0;
-    }
-  }
-
-  @media (max-width: 769px) {
-    .gel-word-logo {
-      display: none;
-    }
-  }
-
   @media screen and (max-width: 1087px) {
     .navbar-brand {
       padding: 0 5%;
@@ -138,6 +115,11 @@ const StyledHeader = styled.header`
       width: 1344px;
     }
   }
+  */
+
+  .gel-footer-logo {
+    width: 70px;
+  }
 
   &.scrolled {
     .gel-header-logo {
@@ -148,6 +130,28 @@ const StyledHeader = styled.header`
     .gel-footer-logo {
       opacity: 1;
       width: 70px;
+    }
+  }
+
+  @media (max-width: 769px) {
+    .gel-word-logo {
+      display: none;
+    }
+  }
+
+  @media(min-width: 770px) {
+    .gel-header-logo-link {
+      position: relative;
+    }
+
+    .gel-circle-logo {
+      position: absolute;
+      top: 0;
+    }
+
+    .gel-footer-logo {
+      opacity: 0;
+      width: 0;
     }
   }
 `
@@ -239,10 +243,41 @@ const Navbar = class extends React.Component {
     })
   }
 
+  // render() {
+  //   return (
+  //     <StyledHeader>
+  //       <nav className="navbar" role="navigation" aria-label="main-navigation">
+  //         <div className="container">
+  //           <div className="navbar-brand">
+  //             <Link className="gel-header-logo-link" to="/" title="Logo">
+  //               <HeaderLogo />
+  //               <FooterLogo />
+  //             </Link>
+  //             {/* Hamburger menu */}
+  //             <div className="navbar-burger burger" data-target="navMenu">
+  //               <span></span>
+  //               <span></span>
+  //               <span></span>
+  //             </div>
+  //           </div>
+  //           <div id="navMenu" className="navbar-menu">
+  //             <div className="navbar-start has-text-centered">
+  //             <p>Learn <Link to="/about">about</Link> Gel, consider our <Link to="/portfolio">work</Link>, <Link to="/contact">connect</Link> with us, and read our <Link to="/blog">blog</Link>.</p>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </nav>
+  //     </StyledHeader>
+  // )}
+
   render() {
     return (
       <StyledHeader>
-        <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
+        <nav
+          className="navbar"
+          role="navigation"
+          aria-label="main-navigation"
+        >
           <div className="container">
             <div className="navbar-brand">
               <Link className="gel-header-logo-link" to="/" title="Logo">
@@ -251,20 +286,35 @@ const Navbar = class extends React.Component {
               </Link>
               {/* Hamburger menu */}
               <div className="navbar-burger burger" data-target="navMenu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span />
+                <span />
+                <span />
               </div>
             </div>
             <div id="navMenu" className="navbar-menu">
               <div className="navbar-start has-text-centered">
-              <p>Learn <Link to="/about">about</Link> Gel, consider our <Link to="/portfolio">work</Link>, <Link to="/contact">connect</Link> with us, and read our <Link to="/blog">blog</Link>.</p>
+                <Link className="navbar-item" to="/about">
+                  About
+                </Link>
+                <Link className="navbar-item" to="/products">
+                  Products
+                </Link>
+                <Link className="navbar-item" to="/blog">
+                  Blog
+                </Link>
+                <Link className="navbar-item" to="/contact">
+                  Contact
+                </Link>
+                <Link className="navbar-item" to="/contact/examples">
+                  Form Examples
+                </Link>
               </div>
             </div>
           </div>
         </nav>
       </StyledHeader>
-  )}
+    )
+  }
 }
 
 export default Navbar
