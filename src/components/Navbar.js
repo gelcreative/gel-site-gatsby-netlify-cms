@@ -5,34 +5,18 @@ import HeaderLogo from './svg/HeaderLogo'
 import FooterLogo from './svg/FooterLogo'
 
 const StyledHeader = styled.nav`
-  position: fixed;
-  width: 100vw;
-  background-color: #ffffff;
-  padding-top: 2em;
-  z-index: 2;
-  min-height: 100px;
-  transition: 300ms;
-  margin-left: unset;
+  padding: 1rem;
 
-  > .container {
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-  }
-
-  .navbar-menu {
-    &.is-active {
-      margin-top: -3px;
-    }
+  .gel-header-logo-link {
+    display: flex;
   }
 
   .gel-footer-logo {
+    opacity: 0;
     width: 70px;
   }
 
   &.scrolled {
-    height: 90px;
-    padding: 0;
     .gel-header-logo {
       opacity: 0;
       width: 0;
@@ -40,39 +24,18 @@ const StyledHeader = styled.nav`
 
     .gel-footer-logo {
       opacity: 1;
-      width: 70px;
-      margin-top: 1rem;
     }
+  }
+
+  .navbar-brand {
+    align-items: center;
   }
 
   .navbar-burger {
     color: ${props => props.theme.typeGrey};
     span {
-      display: inline-block;
       height:3px;
       width: 20px;
-    }
-  }
-
-  @media (max-width: 769px) {
-    .gel-word-logo {
-      display: none;
-    }
-  }
-
-  @media(min-width: 770px) {
-    .gel-header-logo-link {
-      position: relative;
-    }
-
-    .gel-circle-logo {
-      position: absolute;
-      top: 0;
-    }
-
-    .gel-footer-logo {
-      opacity: 0;
-      width: 0;
     }
   }
 `
@@ -88,10 +51,12 @@ const Navbar = class extends React.Component {
     window.addEventListener('scroll', function() {
       const scrollFromTop = this.scrollY;
       const theNavbar = document.querySelector('.navbar');
-      if(scrollFromTop > 100) {
+      if(scrollFromTop > 250) {
         theNavbar.classList.add('scrolled');
+        // theNavbar.classList.add('is-fixed-top');
       } else {
         theNavbar.classList.remove('scrolled');
+        // theNavbar.classList.remove('is-fixed-top');
       }
     })
   }
