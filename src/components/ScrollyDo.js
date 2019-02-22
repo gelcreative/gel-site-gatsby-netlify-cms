@@ -55,6 +55,10 @@ const ScrollyDoContainer = styled.div`
 
 class ScrollyDo extends Component {
 
+  componentDidMount() {
+    this.scrollBehaviour()
+  }
+
   scrollBehaviour() {
     const scrollyContainer = ReactDOM.findDOMNode(this)
     const scrollLink = scrollyContainer.querySelector('a')
@@ -77,10 +81,6 @@ class ScrollyDo extends Component {
         scrollyContainer.style.opacity = 1;
       }
     })
-  }
-
-  componentDidMount() {
-    this.scrollBehaviour()
   }
   
   render () {
