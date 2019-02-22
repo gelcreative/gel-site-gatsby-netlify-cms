@@ -5,6 +5,7 @@ import Icon from '-!svg-react-loader?name=GelLogo!../../img/gel-logo-footer.svg'
 const FooterLogoContainer = styled.div`
   .gel-footer-logo {
     width: 100px;
+    transition: 300ms;
   }
 
   .gel-footer-logo:hover circle {
@@ -24,7 +25,7 @@ const FooterLogoContainer = styled.div`
 export default class FooterLogo extends Component {
   render() {
     return (
-      <FooterLogoContainer>
+      <FooterLogoContainer className="gel-circle-logo">
         <Icon className="gel-footer-logo" />
       </FooterLogoContainer>
     )

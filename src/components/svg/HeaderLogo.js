@@ -7,6 +7,7 @@ const HeaderLogoContainer = styled.div`
 
   .gel-header-logo {
     width: 150px;
+    transition: 300ms;
   }
 
   .gel-header-logo:hover {
@@ -32,7 +33,7 @@ const HeaderLogoContainer = styled.div`
 export default class HeaderLogo extends Component {
   render() {
     return (
-      <HeaderLogoContainer>
+      <HeaderLogoContainer className="gel-word-logo">
         <Icon className="gel-header-logo" />
       </HeaderLogoContainer>
     )

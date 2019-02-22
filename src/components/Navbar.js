@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import HeaderLogo from './svg/HeaderLogo'
+import FooterLogo from './svg/FooterLogo'
 
 const StyledHeader = styled.header`
   .navbar-brand {
@@ -85,16 +86,32 @@ const StyledHeader = styled.header`
     line-height: 1.2;
   }
 
+  @media(min-width: 770px) {
+    .gel-circle-logo {
+      display: none;
+    }
+  }
+
+  @media (max-width: 769px) {
+    .gel-word-logo {
+      display: none;
+    }
+
+    .gel-footer-logo {
+      width: 70px;
+    }
+  }
+
   @media screen and (max-width: 1087px) {
     .navbar-brand {
-     padding: 0 5%;
+      padding: 0 5%;
     }
   }
 
   @media screen and (min-width: 1088px) {
     .navbar-brand {
-        max-width: 960px;
-        width: 960px;
+      max-width: 960px;
+      width: 960px;
     }
   }
 
@@ -107,8 +124,8 @@ const StyledHeader = styled.header`
 
   @media screen and (min-width: 1472px) {
     .navbar-brand {
-        max-width: 1344px;
-        width: 1344px;
+      max-width: 1344px;
+      width: 1344px;
     }
   }
 
@@ -118,6 +135,10 @@ const Navbar = class extends React.Component {
 
   componentDidMount() {
     this.navBarBurger();
+  }
+
+  navBarScroll() {
+
   }
 
   navBarBurger() {
@@ -196,6 +217,7 @@ const Navbar = class extends React.Component {
             <div className="navbar-brand">
               <Link to="/" title="Logo">
                 <HeaderLogo />
+                <FooterLogo />
               </Link>
               {/* Hamburger menu */}
               <div className="navbar-burger burger" data-target="navMenu">
