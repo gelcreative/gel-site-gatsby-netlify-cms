@@ -2,13 +2,19 @@
 templateKey: about-page
 title: About
 about_intro: >-
+  When we started Gel 15 years ago, we knew the type of agency we wanted to
+  create. One that nurtures relationships, fosters creativity, innovates
+  constantly, balances fun with profit and makes time for an apintment or two
+  along the way.
+
+
   It’s our team of strategists, marketers, designers, and developers who breathe
   the creative intelligence into our campaigns. 
 main:
   shannon:
     image2:
       alt: Shannon Ambeau
-      image: /img/shannon-ambeau-headshot-1.jpg
+      image: /img/shannon-ambeau-headshot.jpg
     shannon_bio: >-
       After 20 years of corporate sales and marketing in the pharmaceutical
       sector, Shannon decided to step out. Leaving at the top of her game,
@@ -38,9 +44,5 @@ approach:
     Aenean turpis augue, dictum et augue id, mattis aliquet orci. Fusce sed
     dapibus eros. Duis in rhoncus erat, ut viverra tortor. Fusce sed enim
     finibus, imperdiet nulla posuere, mollis odio. Cras sagittis mattis luctus.
-services:
-  - Strategy
-  - Branding
-  - Marketing
 ---
 
