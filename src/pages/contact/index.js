@@ -6,7 +6,8 @@ import Layout from '../../components/Layout';
 import NewsletterForm from '../../components/NewsletterForm'
 
 const StyledContactPage = styled.section`
-  margin-top: 100px;
+  margin-top: 150px;
+  
   address {
     font-style: normal;
     margin-top: 2rem;
