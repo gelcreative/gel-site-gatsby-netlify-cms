@@ -27,6 +27,14 @@ const StyledAboutPage = styled.article`
       transform: translateX(50%);
   }
 
+  #gel-approach-section {
+    margin-bottom: 100px;
+  }
+
+  #gel-bio-section {
+    margin-bottom: 100px;
+  }
+
   .gel-bio-text {
     display: flex;
     align-items: center;
@@ -96,6 +104,14 @@ export const AboutPageTemplate = ({
           </div>
         </FullHeightSection>
         <ScrollyDo targetId="gel-bio-section" fullHeight={true} />
+        <section className="columns is-centered gel-approach-section gel-full-height-vert-align" id="gel-approach-section">
+          <div className="column">
+            <div className="section">
+              <h2 className="has-text-centered">{approach.heading}</h2>
+              <p>{approach.text}</p>
+            </div>
+          </div>
+        </section>
         <section id="gel-bio-section">
           <div className="columns gel-bio-row">
             <div className="column">
@@ -118,23 +134,15 @@ export const AboutPageTemplate = ({
             </div>
           </div>
         </section>
-        <section className="columns is-centered gel-approach-section gel-full-height-vert-align" id="gel-approach-section">
-          <div className="column has-text-centered">
-            <div className="section">
-              <h2>{approach.heading}</h2>
-              <p>{approach.text}</p>
-            </div>
-            <div className="columns is-centered">
-              <div className="column is-narrow has-text-centered">
-                <ul className="gel-services-list">
-                  {services.map(service => {
-                      return (
-                        <li key={service}>{service}</li>
-                      )
-                  })}
-                </ul>
-              </div>
-            </div>
+        <section className="columns is-centered">
+          <div className="column is-narrow has-text-centered">
+            <ul className="gel-services-list">
+              {services.map(service => {
+                  return (
+                    <li key={service}>{service}</li>
+                  )
+              })}
+            </ul>
           </div>
         </section>
       </div>
