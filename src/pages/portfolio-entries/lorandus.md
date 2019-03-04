@@ -1,6 +1,7 @@
 ---
 templateKey: portfolio-entry
 title: Lorandus
+date: 2019-03-04T16:47:44.250Z
 project_type: Website for Lorandus
 home_page_featured:
   featured_image: {}
