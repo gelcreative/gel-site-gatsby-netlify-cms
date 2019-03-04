@@ -2,7 +2,7 @@
 templateKey: portfolio-entry
 title: Heritage Estate
 date: 2019-03-04T16:47:15.101Z
-project_type: Website for Heritage Estate
+project_type: Website for Heritage Estates Winery & Cidery
 home_page_featured:
   featured_image: {}
 colour_grid_image: /img/heritage-estate-winery_portfolio-color.jpg
@@ -10,19 +10,19 @@ header_image:
   alt: Heritage Estate Logo
   image: /img/heritage-estate-log-masthead.jpg
 project_intro: >-
-  Heritage Estates Winery produces cider and wine on the shores of Lake Simcoe
-  just outside of Barrie, Ontario. Working with its existing brand identity, Gel
-  developed a website to help promote its line of craft ciders.
+  Heritage Estates Winery & Cidery produces additive-free beverages, uniquely
+  crafted from 100% Ontario apples on the shores of Lake Simcoe just outside of
+  Barrie, Ontario. Working with its existing brand identity, Gel designed a
+  website to promote its line of craft ciders.
 project_images_1:
   - image: /img/full-width-heritage-estate-site.jpg
 main:
   detail_text: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit
-    sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis.
-    Nulla facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar
-    gravida. Aenean turpis augue, dictum et augue id, mattis aliquet orci. Fusce
-    sed dapibus eros. Duis in rhoncus erat, ut viverra tortor. Fusce sed enim
-    finibus, imperdiet nulla posuere, mollis odio. Cras sagittis mattis luctus.
+    Working with established brand specifications inspired by the popular
+    series, ‘Game of Thrones’, Gel designed and developed a website that honours
+    the heritage of this locally crafted cidery. Built to accommodate the
+    expansion into wine and other brand extensions, the site allows for online
+    purchasing of products as well as tour bookings.
   image: /img/vinyard-landscape.jpg
 project_images_2:
   - image: /img/full-width-ipads-heritage.jpg
