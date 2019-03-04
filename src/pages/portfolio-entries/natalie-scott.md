@@ -1,6 +1,7 @@
 ---
 templateKey: portfolio-entry
 title: Natalie Scott
+date: 2019-03-04T16:40:07.991Z
 project_type: Website for Natalie Scott
 home_page_featured:
   featured_image:
