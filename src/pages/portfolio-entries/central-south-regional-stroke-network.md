@@ -2,7 +2,7 @@
 templateKey: portfolio-entry
 title: Central South Regional Stroke Network
 date: 2019-03-04T16:46:28.724Z
-project_type: Visual Identity for Central South Regional Stroke Network
+project_type: Visual Identity & Website for Central South Regional Stroke Network
 home_page_featured:
   featured_image: {}
 colour_grid_image: /img/central-south-stroke-network_portfolio-color.jpg
@@ -10,22 +10,18 @@ header_image:
   alt: Central South Regional Stroke Network Logo
   image: /img/cssn-logo-masthead.jpg
 project_intro: >-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit
-  sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis. Nulla
-  facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar gravida. Aenean
-  turpis augue, dictum et augue id, mattis aliquet orci. Fusce sed dapibus eros.
-  Duis in rhoncus erat, ut viverra tortor. Fusce sed enim finibus, imperdiet
-  nulla posuere, mollis odio. Cras sagittis mattis luctus.
+  The Central South Regional Network located at Hamilton Health Sciences hired
+  Gel to design a visual identity and website to service their public with
+  timely medical information along the entire stroke continuum of care.
 project_images_1:
   - image: /img/central-south-full-width-website.jpg
 main:
   detail_text: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit
-    sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis.
-    Nulla facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar
-    gravida. Aenean turpis augue, dictum et augue id, mattis aliquet orci. Fusce
-    sed dapibus eros. Duis in rhoncus erat, ut viverra tortor. Fusce sed enim
-    finibus, imperdiet nulla posuere, mollis odio. Cras sagittis mattis luctus.
+    The brand mark was carefully designed with two primary objectives in mind:
+    to clearly identify  the therapeutic area and to illustrate the regional
+    interconnectivity of the network-wide stroke care partners. Design elements
+    such as the matrix within the brain were chosen as a way to communicate this
+    important message.
   image: /img/central-south-full-width-branding-icon.jpg
 project_images_2:
   - image: /img/central-south-full-width-website-page1.jpg
