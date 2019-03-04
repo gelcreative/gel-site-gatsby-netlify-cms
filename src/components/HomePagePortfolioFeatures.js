@@ -39,6 +39,7 @@ const HomePagePortfolioFeatures = () => (
       query HomePagePortfolioFeatures {
         allMarkdownRemark (
           filter: {frontmatter: {home_page_featured: {is_featured: {eq: true}}}}
+          sort: {fields: [frontmatter___date] order: DESC}
         ) {
           edges {
             node {
