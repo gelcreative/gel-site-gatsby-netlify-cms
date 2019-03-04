@@ -1,6 +1,7 @@
 ---
 templateKey: portfolio-entry
 title: Kenmore Electrolux
+date: 2019-03-04T16:39:36.456Z
 project_type: Kenmore Major Appliances <br />Product Catalogues
 home_page_featured:
   featured_image:
