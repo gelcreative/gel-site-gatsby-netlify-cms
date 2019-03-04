@@ -37,7 +37,9 @@ const HomePagePortfolioFeatures = () => (
   <StaticQuery
     query={graphql`
       query HomePagePortfolioFeatures {
-        allMarkdownRemark (filter: {frontmatter: {home_page_featured: {is_featured: {eq: true}}}}) {
+        allMarkdownRemark (
+          filter: {frontmatter: {home_page_featured: {is_featured: {eq: true}}}}
+        ) {
           edges {
             node {
               id
