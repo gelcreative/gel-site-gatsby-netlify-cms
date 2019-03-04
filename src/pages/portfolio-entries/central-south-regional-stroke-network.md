@@ -1,11 +1,11 @@
 ---
 templateKey: portfolio-entry
 title: Central South Regional Stroke Network
+date: 2019-03-04T16:46:28.724Z
 project_type: Visual Identity for Central South Regional Stroke Network
 home_page_featured:
   featured_image: {}
 colour_grid_image: /img/central-south-stroke-network_portfolio-color.jpg
-bw_grid_image: {}
 header_image:
   alt: Central South Regional Stroke Network Logo
   image: /img/cssn-logo-masthead.jpg
