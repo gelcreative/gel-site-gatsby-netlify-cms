@@ -3,7 +3,10 @@ templateKey: portfolio-entry
 title: Natalie Scott
 project_type: Website for Natalie Scott
 home_page_featured:
-  featured_image: {}
+  featured_image:
+    alt: Natalie Scott the Heart-Inspired Entrepreneur
+    image: /img/nat-scott_portfolio-color.jpg
+  is_featured: true
 colour_grid_image: /img/nat-scott_portfolio-color.jpg
 header_image:
   alt: Natalie Scott Logo
