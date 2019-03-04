@@ -2,7 +2,7 @@
 templateKey: portfolio-entry
 title: Kenmore Electrolux
 date: 2019-03-04T16:39:36.456Z
-project_type: Kenmore Major Appliances <br />Product Catalogues
+project_type: Print & Marketing Collaterals for Electrolux Major Appliances
 home_page_featured:
   featured_image:
     alt: Kenmore Example Image
@@ -15,20 +15,18 @@ header_image:
 project_intro: >-
   Electrolux Major Appliance is a manufacturing partner for the Kenmore brand of
   appliances. Gel developed the in-store collaterals to support the sales
-  associates at retail. The work ranged from product catalogues for the Cook,
-  Chill, and Sparkle categories, to POS materials on the floor.
+  associates at retail. The work ranged from product catalogues to POS
+  materials. 
 project_images_1:
   - image: /img/kenmore-cover-tiles.jpg
   - image: /img/kenmore-book-1-opt.jpg
 main:
   detail_text: >-
-    With a crowded retail environment, especially in the appliance categories,
-    Electrolux wanted to provide a suite of selling aides to help sales
-    associates quickly identify Kenmore as the go to brand to channel consumers
-    towards. A litany of product specifications, along with features and
-    benefits were cleverly laid out in a format that was quick to reference,
-    providing clear and accurate information to any consumer questions at the
-    point of sale.
+    With a crowded retail environment, Electrolux wanted to provide visual aids
+    to help sales associates position Kenmore as the preferred brand. A litany
+    of product specifications, along with features and benefits, were cleverly
+    laid out in a format that was quick to reference, providing sales associates
+    the tools they needed to grow sales at the POS level. 
   image: /img/kenmore-simple-care-opt.jpg
 project_images_2:
   - image: /img/kenmore-dish-1-opt.jpg
