@@ -17,13 +17,13 @@ project_images_1:
   - image: /img/annual-report-full-width.jpg
   - image: /img/full-width-prezi.jpg
 main:
-  detail_text: >
-    Gel built and manages all websites and manage content creation,event
-    marketing and, social media. We design the creative and manage ad campaigns.
-    We built the brand identity system as the organization expanded, including a
-    suite of individually branded events under the banner ‘Downtown Barrie
-    Events’. We are passionate about Barrie’s downtown and delight in seeing our
-    creativity come to life throughout its streets.  
+  detail_text: >-
+    Gel built and manages all websites, content creation, event marketing, and
+    social media. We also design the creative and manage ad campaigns. We built
+    the brand identity system as the organization expanded, including a suite of
+    individually branded events under the banner "Downtown Barrie Events." We
+    are passionate about Barrie’s downtown and delight in seeing our hard work
+    come to life throughout its streets. 
   image: /img/meridian-place-pan-night.jpg
 project_images_2:
   - image: /img/bbia-full-width-action-map.jpg
