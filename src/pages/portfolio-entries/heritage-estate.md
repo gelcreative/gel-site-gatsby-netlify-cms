@@ -19,7 +19,7 @@ project_images_1:
 main:
   detail_text: >-
     Working with established brand specifications inspired by the popular
-    series, ‘Game of Thrones’, Gel designed and developed a website that honours
+    series, “Game of Thrones,” Gel designed and developed a website that honours
     the heritage of this locally crafted cidery. Built to accommodate the
     expansion into wine and other brand extensions, the site allows for online
     purchasing of products as well as tour bookings.
