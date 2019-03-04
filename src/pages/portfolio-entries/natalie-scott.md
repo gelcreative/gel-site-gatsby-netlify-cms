@@ -5,7 +5,7 @@ project_type: Website for Natalie Scott
 home_page_featured:
   featured_image:
     alt: Natalie Scott the Heart-Inspired Entrepreneur
-    image: /img/nat-scott_portfolio-color.jpg
+    image: /img/nat-scott-full-width-branding.jpg
   is_featured: true
 colour_grid_image: /img/nat-scott_portfolio-color.jpg
 header_image:
