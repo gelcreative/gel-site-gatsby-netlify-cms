@@ -2,7 +2,7 @@
 templateKey: portfolio-entry
 title: Lorandus
 date: 2019-03-04T16:47:44.250Z
-project_type: Website for Lorandus
+project_type: 'Brand Identity, Website & Social Media Management for Lorandus'
 home_page_featured:
   featured_image: {}
 colour_grid_image: /img/lorandus_portfolio-color.jpg
@@ -10,22 +10,19 @@ header_image:
   alt: Lorandus Logo
   image: /img/lorandus-logo-masthead.jpg
 project_intro: >-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit
-  sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis. Nulla
-  facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar gravida. Aenean
-  turpis augue, dictum et augue id, mattis aliquet orci. Fusce sed dapibus eros.
-  Duis in rhoncus erat, ut viverra tortor. Fusce sed enim finibus, imperdiet
-  nulla posuere, mollis odio. Cras sagittis mattis luctus.
+  Lorandus is a corporate incentive travel company that curates memorable
+  meeting and conference experiences for global brands. Gel was tasked with
+  developing a brand identity, website and a social media strategy to elevate
+  the brand.
 project_images_1:
   - image: /img/lorandus-full-width-laptop.jpg
 main:
   detail_text: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus velit
-    sed vestibulum consectetur. Nulla ornare metus in nunc congue facilisis.
-    Nulla facilisi. Curabitur quis malesuada erat. Nam placerat pulvinar
-    gravida. Aenean turpis augue, dictum et augue id, mattis aliquet orci. Fusce
-    sed dapibus eros. Duis in rhoncus erat, ut viverra tortor. Fusce sed enim
-    finibus, imperdiet nulla posuere, mollis odio. Cras sagittis mattis luctus.
+    A social media strategy was delivered that encouraged the Lorandus sales
+    team to play virtual tour guide, capturing photography from around the globe
+    and sharing it with their followers. Gel created content and provided social
+    media management, increasing brand awareness and driving community
+    engagement.  
   image: /img/lorandus-image-one-instagram.jpg
 project_images_2:
   - image: /img/lorandus-ipad-pro-space-gray.png
