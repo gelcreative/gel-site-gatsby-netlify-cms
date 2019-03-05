@@ -74,7 +74,7 @@ export default class IndexPage extends React.Component {
             <div className="column has-text-centered">
               <h2 className="has-text-centered" style={{ marginBottom: '4rem' }}>Featured Portfolio Pieces</h2>
               <HomePagePortfolioFeatures />
-              <Link to="/portfolio/" class="button is-dark is-large gel-button-1">See more of our hard work</Link>
+              <Link to="/portfolio/" className="button is-dark is-large gel-button-1">See more of our hard work</Link>
             </div>
           </section>
           <div className="columns is-centered">
