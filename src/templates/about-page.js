@@ -12,6 +12,8 @@ const StyledAboutPage = styled.article`
 
   .gel-about-intro-text {
     color: ${props => props.theme.orange};
+    font-weight: 700;
+    /* font-style: italic; */
   }
 
   .gel-services-list {
