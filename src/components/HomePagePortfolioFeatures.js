@@ -4,7 +4,7 @@ import { kebabCase } from 'lodash'
 import styled from 'styled-components'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-const StyledFeaturesSection = styled.section`
+const StyledFeaturesSection = styled.div`
     position: relative;
     margin-bottom: 50px !important;
     

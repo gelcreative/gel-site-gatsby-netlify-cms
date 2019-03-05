@@ -60,7 +60,12 @@ export default class IndexPage extends React.Component {
               <p>You found us. Chances are you’re looking for an agency partner. Gel is a marketing communications agency fuelled by creative intelligence. It’s hard to explain why our clients choose us &mdash; we’re told it’s the way we make them feel. Huh?  Point is, it goes far beyond the work. It’s their realization that we get it. We’ve helped them unlock hidden value in their business. Through strategy, branding, and communications, we clarify their brand story and design the tools that empower our clients to tell it. </p>
             </div>
           </FullHeightSection>
-          <HomePagePortfolioFeatures />
+          <section className="columns">
+            <div className="column">
+              <h2>Featured Portfolio Pieces</h2>
+              <HomePagePortfolioFeatures />
+            </div>
+          </section>
           <div className="columns is-centered">
             <h2 className="column has-text-centered">We've worked with &hellip;</h2>
           </div>
