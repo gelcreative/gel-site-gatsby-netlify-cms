@@ -8,19 +8,19 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import PortfolioEntryImages from '../components/PortfolioEntryImages'
 
 const StyledPortfolioEntry = styled.article`
-    &.container {
-      margin-top: 100px;
-    }
+  &.container {
+    margin-top: 150px;
+  }
 
-    .gel-portfolio-entry-masthead {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .gel-portfolio-entry-main-text {
-      display: flex;
-      justify-content: center;
-      align-items: center
-    }
+  .gel-portfolio-entry-masthead {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .gel-portfolio-entry-main-text {
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
 `
 
 export const PortfolioEntryTemplate = ({
