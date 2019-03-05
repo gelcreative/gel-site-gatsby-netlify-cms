@@ -1,7 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
+
 import Layout from '../components/Layout'
 import ScrollyDo from '../components/ScrollyDo'
 import HomePagePortfolioFeatures from '../components/HomePagePortfolioFeatures'
@@ -10,6 +11,10 @@ import ClientLogoGrid from '../components/ClientLogoGrid'
 const StyledHomePage = styled.article`
   #gel-home-intro-section {
     padding: 10rem 0;
+  }
+
+  .gel-home-featured-section {
+    margin-bottom: 10rem;
   }
 
   .gel-home-masthead {
@@ -65,10 +70,11 @@ export default class IndexPage extends React.Component {
               <p>You found us. Chances are you’re looking for an agency partner. Gel is a marketing communications agency fuelled by creative intelligence. It’s hard to explain why our clients choose us &mdash; we’re told it’s the way we make them feel. Huh?  Point is, it goes far beyond the work. It’s their realization that we get it. We’ve helped them unlock hidden value in their business. Through strategy, branding, and communications, we clarify their brand story and design the tools that empower our clients to tell it. </p>
             </div>
           </section>
-          <section className="columns">
-            <div className="column">
+          <section className="columns is-centered gel-home-featured-section">
+            <div className="column has-text-centered">
               <h2 className="has-text-centered" style={{ marginBottom: '4rem' }}>Featured Portfolio Pieces</h2>
               <HomePagePortfolioFeatures />
+              <Link to="/portfolio/" class="button is-dark is-large gel-button-1">See more of our hard work</Link>
             </div>
           </section>
           <div className="columns is-centered">
