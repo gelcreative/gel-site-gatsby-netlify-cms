@@ -8,7 +8,11 @@ import ScrollyDo from '../components/ScrollyDo'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 const StyledAboutPage = styled.article`
-    margin-top: 50px;
+  margin-top: 50px;
+
+  .gel-about-intro-text {
+    color: ${props => props.theme.orange};
+  }
 
   .gel-services-list {
     font-size: 4rem;
