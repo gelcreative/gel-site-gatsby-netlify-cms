@@ -13,8 +13,23 @@ const StyledHomePage = styled.article`
     padding: 10rem 0;
   }
 
-  .gel-home-featured-section {
-    margin-bottom: 10rem !important;
+  .gel-services-list {
+    font-size: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .gel-services-list li {
+      padding: 0 1em;
+      position: relative;
+  }
+
+  .gel-services-list li:nth-child(-n+2)::after {
+      content: '//';
+      color: ${props => props.theme.orange};
+      position: absolute;
+      right: 0;
+      transform: translateX(50%);
   }
 
   .gel-home-masthead {
@@ -60,8 +75,17 @@ export default class IndexPage extends React.Component {
               <img src="/img/Gel_Whimsical_Colour_550x350_Transparent_Background.gif" alt="Gel Logo Animation" />
             </div>
           </section>
-          <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-intro-section"></ScrollyDo>
-          <section className="gel-home-intro-text has-text-centered" id="gel-home-intro-section">
+          <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-tags-section"></ScrollyDo>
+          <section class="columns is-centered gel-home-tags-section" id="gel-home-tags-section">
+            <div class="column is-narrow has-text-centered">
+              <ul class="gel-services-list">
+                <li>marketing</li>
+                <li>branding</li>
+                <li>strategy</li>
+              </ul>
+            </div>
+          </section>
+          <section className="gel-home-intro-text has-text-centered"  id="gel-home-intro-section">
             <div className="column has-text-centered">
               <p>You found us. Chances are you’re looking for an agency partner. Gel is a marketing communications agency fuelled by creative intelligence. It’s hard to explain why our clients choose us &mdash; we’re told it’s the way we make them feel. Huh?  Point is, it goes far beyond the work. It’s their realization that we get it. We’ve helped them unlock hidden value in their business. Through strategy, branding, and communications, we clarify their brand story and design the tools that empower our clients to tell it. </p>
             </div>
