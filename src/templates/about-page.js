@@ -125,6 +125,7 @@ export const AboutPageTemplate = ({
             </div>
             <div className="column gel-bio-text">
               <div className="section">
+                <h2>Meet Tom</h2>
                 <p>{main.tom.tom_bio}</p>
               </div>
             </div>
@@ -132,6 +133,7 @@ export const AboutPageTemplate = ({
           <div className="columns gel-bio-row">
             <div className="column gel-bio-text">
               <div className="section">
+                <h2>Meet Shannon</h2>
                 <p>{main.shannon.shannon_bio}</p>
               </div>
             </div>
