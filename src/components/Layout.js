@@ -14,7 +14,7 @@ const theme = {
   darkGrey: '#434345',
   orange: '#e9724c',
   blue: '#143358',
-  lightGrey: '#dadfe1',
+  lightGrey: '#dde2e3',
   regularFont: 'futura-pt',
   boldFont: 'futura-pt-bold',
 }
