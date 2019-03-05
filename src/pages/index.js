@@ -14,7 +14,7 @@ const StyledHomePage = styled.article`
   }
 
   .gel-home-featured-section {
-    margin-bottom: 10rem;
+    margin-bottom: 10rem !important;
   }
 
   .gel-home-masthead {
@@ -28,25 +28,21 @@ const StyledHomePage = styled.article`
       align-items: center;
       justify-content: center;
     }
-    &.gel-home-intro-text p {
-        font-size: 2.5rem;
-    }
-    &.gel-home-masthead {
-      svg {
-        width: 90%;
-        max-width: 500px;
-      } 
-    }
+  }
 
-    @media (max-width: 450px) {
-      &.gel-home-intro-text .column {
-        max-width: 90%;
-      }
-      &.gel-home-intro-text p {
-        font-size: 1.5rem;
-      }
+  .gel-home-intro-text p {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 450px) {
+    .gel-home-intro-text .column {
+      max-width: 90%;
+    }
+    .gel-home-intro-text p {
+      font-size: 1.5rem;
     }
   }
+
 `
 
 export default class IndexPage extends React.Component {
@@ -74,11 +70,11 @@ export default class IndexPage extends React.Component {
             <div className="column has-text-centered">
               <h2 className="has-text-centered" style={{ marginBottom: '4rem' }}>Featured Portfolio Pieces</h2>
               <HomePagePortfolioFeatures />
-              <Link to="/portfolio/" className="button is-dark is-large gel-button-1">See more of our hard work</Link>
+              <Link to="/portfolio/" className="button is-dark is-large gel-button-1">See more of our work</Link>
             </div>
           </section>
           <div className="columns is-centered">
-            <h2 className="column has-text-centered">We've worked with &hellip;</h2>
+            <h2 className="column has-text-centered">Brands we've worked with &hellip;</h2>
           </div>
           <ClientLogoGrid />
         </StyledHomePage>        
