@@ -12,8 +12,8 @@ import './styles/gel-styles.sass'
 const theme = {
   typeGrey: '#434244',
   darkGrey: '#434345',
-  orange: '#f26339',
-  blue: '#00abc6',
+  orange: '#e9724c',
+  blue: '#143358',
   lightGrey: '#dadfe1',
   regularFont: 'futura-pt',
   boldFont: 'futura-pt-bold',

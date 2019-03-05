@@ -57,7 +57,7 @@ export default class IndexPage extends React.Component {
         <StyledHomePage className="container">
           <section className="gel-home-masthead columns is-centered">
             <div className="column has-text-centered">
-              <img src="/img/Gel_Whimsical_Colour_550x350_White_Background.gif" alt="Gel Logo Animation" />
+              <img src="/img/Gel_Whimsical_Colour_550x350_Transparent_Background.gif" alt="Gel Logo Animation" />
             </div>
           </section>
           <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-intro-section"></ScrollyDo>
