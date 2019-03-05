@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import ScrollyDo from '../components/ScrollyDo'
@@ -141,6 +141,11 @@ export const AboutPageTemplate = ({
             </div>
             <div className="column">
               <PreviewCompatibleImage imageInfo={main.shannon.image2} />
+            </div>
+          </div>
+          <div className="columns is-centered">
+            <div className="column has-text-centered">
+              <Link to="/portfolio/" className="button gel-button-1 gel-button-bigger is-dark is-large">View our work</Link>
             </div>
           </div>
         </section>
