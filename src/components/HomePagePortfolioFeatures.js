@@ -5,20 +5,50 @@ import styled from 'styled-components'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const StyledFeaturesSection = styled.div`
+  position: relative;
+  margin-bottom: 50px !important;
+  overflow: hidden;
+
+  > .column {
     position: relative;
-    margin-bottom: 50px !important;
-    
+    &:hover {
+      .gel-homepage-featured-reveal-overlay {
+        transform: translateX(0);
+      }
+      .gel-homepage-featured-text-container {
+        transform: scale(1.05);
+      }
+    } 
+  }
+
+  .gel-homepage-featured-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
   .gel-homepage-featured-text-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 30em;
+    max-width: 95%;
+    margin: 0 auto;
+    transform: scale(1);
+    transition: 300ms ease-in-out;
+    transition-delay: 200ms; 
+    h2 {
       color: #ffffff;
       font-size: 3.5rem;
       margin-bottom: 2em;
@@ -26,6 +56,34 @@ const StyledFeaturesSection = styled.div`
       line-height: 1.3;
     }
   }
+
+  .gel-homepage-featured-contrast-overlay {
+    background-color: rgba(28,29,37,.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: 300ms;
+  }
+
+  .gel-homepage-featured-reveal-overlay {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#101b3b+0,143358+35,143358+35 */
+    background: #101b3b; /* Old browsers */
+    background: -moz-linear-gradient(left, #101b3b 0%, #143358 35%, #143358 35%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #101b3b 0%,#143358 35%,#143358 35%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #101b3b 0%,#143358 35%,#143358 35%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#101b3b', endColorstr='#143358',GradientType=1 ); /* IE6-9 */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: 300ms ease-in-out;
+    opacity: 0.7;
+    transform: translateX(-100%);
+  }
+
   @media (max-width: 439px) {
     .gel-homepage-featured-text-container h2 {
       font-size: 2.5rem;
@@ -72,11 +130,15 @@ const HomePagePortfolioFeatures = () => (
           return (
             <StyledFeaturesSection key={edge.node.id} className="gel-homepage-featured columns">
               <div className="column">
-                <PreviewCompatibleImage imageInfo={edge.node.frontmatter.home_page_featured.featured_image} />
-                <div className="gel-homepage-featured-text-container">
-                  <h2 dangerouslySetInnerHTML={{__html: edge.node.frontmatter.project_type}} />
-                  <Link className="button gel-button-1 is-large is-dark" to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`}>View Case Study</Link>
-                </div>
+                <PreviewCompatibleImage imageInfo={edge.node.frontmatter.home_page_featured.featured_image} className="gel-homepage-featured-image"/>
+                <div className="gel-homepage-featured-contrast-overlay"></div>
+                <div className="gel-homepage-featured-reveal-overlay"></div>
+                <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`} className="gel-homepage-featured-link">
+                  <div className="gel-homepage-featured-text-container">
+                    <h2 dangerouslySetInnerHTML={{__html: edge.node.frontmatter.project_type}} />
+                    <button className="button gel-button-1 is-large is-dark">See More</button>
+                  </div>
+                </Link>
               </div>
             </StyledFeaturesSection>
           )
