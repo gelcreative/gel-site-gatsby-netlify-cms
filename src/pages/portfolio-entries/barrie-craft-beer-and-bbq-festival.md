@@ -6,7 +6,7 @@ project_type: Branding & Event Marketing for Barrie Craft Beer & BBQ Festival
 home_page_featured:
   featured_image:
     alt: Barrie Craft Beer and BBQ Festival Website
-    image: /img/craft-beer-website-laptop.jpg
+    image: /img/craft-beer-staff-id.jpg
   is_featured: true
 colour_grid_image: /img/craft-beer-festival_portfolio-color.jpg
 header_image:
