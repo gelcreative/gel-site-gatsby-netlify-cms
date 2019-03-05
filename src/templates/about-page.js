@@ -105,7 +105,7 @@ export const AboutPageTemplate = ({
             </div>
           </div>
         </FullHeightSection>
-        <ScrollyDo targetId="gel-bio-section" fullHeight={true} />
+        <ScrollyDo targetId="gel-approach-section" fullHeight={true} />
         <section className="columns is-centered gel-approach-section gel-full-height-vert-align" id="gel-approach-section">
           <div className="column">
             <div className="section">
