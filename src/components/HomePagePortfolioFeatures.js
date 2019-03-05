@@ -136,7 +136,7 @@ const HomePagePortfolioFeatures = () => (
                 <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`} className="gel-homepage-featured-link">
                   <div className="gel-homepage-featured-text-container">
                     <h2 dangerouslySetInnerHTML={{__html: edge.node.frontmatter.project_type}} />
-                    <button className="button gel-button-1 is-large is-dark">See More</button>
+                    <button className="button gel-button-1 is-large is-light">See More</button>
                   </div>
                 </Link>
               </div>
