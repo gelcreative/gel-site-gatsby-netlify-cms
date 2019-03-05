@@ -43,6 +43,10 @@ const StyledAboutPage = styled.article`
     margin-bottom: 100px;
   }
 
+  .gel-bio-row:nth-last-child(2) {
+    margin-bottom: 10rem !important;
+  }
+
   .gel-bio-text {
     display: flex;
     align-items: center;
@@ -143,7 +147,7 @@ export const AboutPageTemplate = ({
               <PreviewCompatibleImage imageInfo={main.shannon.image2} />
             </div>
           </div>
-          <div className="columns is-centered">
+          <div className="columns is-centered portfolio-link-row">
             <div className="column has-text-centered">
               <Link to="/portfolio/" className="button gel-button-1 gel-button-bigger is-dark is-large">View our work</Link>
             </div>
