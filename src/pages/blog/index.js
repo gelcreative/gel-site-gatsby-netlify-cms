@@ -7,6 +7,9 @@ const BlogSection = styled.section`
   flex-wrap: wrap;
   &.gel-blog-container-outer {
     margin-top: 150px;
+    article {
+      overflow: hidden;
+    }
   }
 
   .column:first-of-type {
@@ -59,6 +62,10 @@ const BlogSection = styled.section`
     position: relative;
   }
 
+  .gel-blog-item-inner:hover {
+    transform: scale(1.1);
+  }
+
   .gel-blog-item-inner::before {
       content: '';
       display: inline-block;
@@ -79,6 +86,7 @@ const BlogSection = styled.section`
 
   h2 {
     font-family: "futura-pt";
+    font-size: 3rem;
     color: #ffffff;
     text-align: center;
     text-decoration: none;

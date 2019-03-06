@@ -10,7 +10,7 @@ import Content, { HTMLContent } from '../components/Content'
 import NewsletterForm from '../components/NewsletterForm'
 
 const StyledBlogPost = styled.article`
-  margin-top: 100px;
+  margin-top: 200px;
 
   .gel-blog-post-info {
     margin-bottom: 4rem;
