@@ -46,11 +46,18 @@ const StyledPortfolioGrid = styled.section`
     padding: 15px;
   }
 
-  .gel-portfolio-item-text-container p {
+  .gel-portfolio-item-text-container span {
+    font-size: 1.1em;
+    font-weight: 700;
     color: #ffffff;
+  }
+
+  .gel-portfolio-item-text-container p {
+    color: ${props => props.theme.orange};
     font-size: 3rem;
     text-align: center;
-    line-height: 1.2
+    line-height: 1.2;
+    width: 80%;
   }
 
   @media (min-width: 769px) {
