@@ -2,7 +2,7 @@
 templateKey: portfolio-entry
 title: Mortgage Wellness
 date: 2019-03-04T16:48:09.669Z
-project_type: Branding & Marketing for Mortgage Wellness
+project_type: Branding & Marketing
 home_page_featured:
   featured_image:
     alt: Mortgage Wellness Project Example
