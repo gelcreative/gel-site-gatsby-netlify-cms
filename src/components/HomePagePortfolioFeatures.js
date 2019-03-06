@@ -13,7 +13,7 @@ const StyledFeaturesSection = styled.div`
     position: relative;
     &:hover {
       .gel-homepage-featured-reveal-overlay {
-        transform: translateX(0);
+        transform: translateX(-13%) skewX(-30deg);
         opacity: 0.7;
       }
       .gel-homepage-featured-text-container {
@@ -86,9 +86,10 @@ const StyledFeaturesSection = styled.div`
     right: 0;
     bottom: 0;
     left: 0;
+    width: 135%;
     transition: 300ms ease-in-out;
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(-100%) skewX(-30deg);
   }
 
   @media (max-width: 439px) {
