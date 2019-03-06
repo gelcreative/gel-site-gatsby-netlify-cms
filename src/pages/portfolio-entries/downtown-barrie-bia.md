@@ -2,7 +2,7 @@
 templateKey: portfolio-entry
 title: Downtown Barrie BIA
 date: 2019-03-04T16:46:54.370Z
-project_type: Branding & Event Marketing for Downtown Barrie BIA
+project_type: Branding & Event Marketing
 colour_grid_image: /img/downtown-barrie_portfolio-color.jpg
 header_image:
   alt: Downtown Barrie BIA logo
