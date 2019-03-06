@@ -3,12 +3,16 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
+
 import Layout from '../components/Layout'
-import ScrollyDo from '../components/ScrollyDo'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 const StyledAboutPage = styled.article`
-  margin-top: 50px;
+  margin-top: 200px;
+
+  .gel-about-intro-section {
+    padding: 200px 0;
+  }
 
   .gel-about-intro-text {
     color: ${props => props.theme.orange};
@@ -51,23 +55,12 @@ const StyledAboutPage = styled.article`
     display: flex;
     align-items: center;
   }
-`
-
-const FullHeightSection = styled.section`
-  min-height: 100vh;
-  padding-bottom: 200px;
-
-  &.gel-full-height-vert-align {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
   .gel-about-intro-text {
       font-size: 2.5rem;
   }
 
-  &.gel-approach-section p {
+  .gel-approach-section p {
     font-size: 2rem;
   }
 
@@ -81,7 +74,7 @@ const FullHeightSection = styled.section`
     .gel-about-intro-text {
       font-size: 1.5rem;
     }
-    &.gel-approach-section p {
+    .gel-approach-section p {
       font-size: 1.5rem;
     }
   }
@@ -107,15 +100,14 @@ export const AboutPageTemplate = ({
     <StyledAboutPage className="section section--gradient">
       { helmet || '' }
       <div className="container">
-        <FullHeightSection className="columns is-centered gel-about-intro-section gel-full-height-vert-align">
+        <section className="columns is-centered gel-about-intro-section gel-full-height-vert-align">
           <div className="column has-text-centered">
             <div className="gel-about-intro-section-text-container">
               <h1 className="visually-hidden">{title}</h1>
               <p className="gel-about-intro-text">{intro}</p>
             </div>
           </div>
-        </FullHeightSection>
-        <ScrollyDo targetId="gel-approach-section" fullHeight={true} />
+        </section>
         <section className="columns is-centered gel-approach-section gel-full-height-vert-align" id="gel-approach-section">
           <div className="column">
             <div className="section">
