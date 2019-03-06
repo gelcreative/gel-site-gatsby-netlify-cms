@@ -20,9 +20,9 @@ project_intro: >-
   sessions, we were able to unpack her “why” and helped uncover the brand’s
   essence. 
 project_images_1:
-  - image: /img/nat-scott-website-macbook-gold.png
+  - image: /img/nat-scott-website-macbook-gold.jpg
   - image: /img/nat-scott-full-width-branding.jpg
-  - image: /img/nat-scott-website-ipad-rose-gold.png
+  - image: /img/nat-scott-website-ipad-rose-gold.jpg
 main:
   detail_text: >-
     Gel built the brand identity, positioning and messaging and brought the
@@ -31,7 +31,7 @@ main:
     featuring custom photography. The work has raised brand awareness and grown
     the business, connecting Nat to her “SoulTribe” and winning her new
     clients. 
-  image: /img/nat-scott-picture-frame.png
+  image: /img/nat-scott-picture-frame.jpg
 project_images_2:
   - image: /img/full-width_nat-scott-picture-frames.jpg
 ---

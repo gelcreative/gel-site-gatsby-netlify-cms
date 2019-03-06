@@ -25,7 +25,7 @@ main:
     engagement.  
   image: /img/lorandus-image-one-instagram.jpg
 project_images_2:
-  - image: /img/lorandus-ipad-pro-space-gray.png
+  - image: /img/lorandus-ipad-pro-space-gray.jpg
   - image: /img/lorandus-full-width-instagram-collage.jpg
 ---
 
