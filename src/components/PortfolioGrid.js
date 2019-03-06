@@ -35,18 +35,19 @@ const StyledPortfolioGrid = styled.section`
   }
 
   .gel-portfolio-item-text-container {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(28,29,37,.7);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 300ms;
     width: 100%;
     height: 100%;
-    opacity: 0;
+    opacity: 1;
     padding: 15px;
   }
 
   .gel-portfolio-item-text-container p {
+    color: #ffffff;
     font-size: 3rem;
     text-align: center;
     line-height: 1.2
@@ -55,13 +56,6 @@ const StyledPortfolioGrid = styled.section`
   @media (min-width: 769px) {
     .gel-portfolio-grid-item:hover .gatsby-image-wrapper:nth-of-type(2) {
         opacity: 0;
-    }
-
-    .gel-portfolio-grid-item:hover .gel-portfolio-item-text-container {
-      width: 70%;
-      height: 70%;
-      border-radius: 50%;
-      opacity: 1;
     }
   }
 
@@ -142,7 +136,7 @@ const PortfolioGrid = () => (
                   <PreviewCompatibleImage imageInfo={(portfolioEntry.node.frontmatter.colour_grid_image ? portfolioEntry.node.frontmatter.colour_grid_image : defaults[1].node)} />
                   <Link to={`/portfolio-entries/${kebabCase(portfolioEntry.node.frontmatter.title)}`}>
                     <div className="gel-portfolio-item-text-container">
-                      <p dangerouslySetInnerHTML={{__html: portfolioEntry.node.frontmatter.project_type}} />
+                      <p>{portfolioEntry.node.frontmatter.project_type} for <br /><span>{portfolioEntry.node.frontmatter.title}</span></p>
                     </div>
                   </Link>
                 </div>

@@ -49,6 +49,10 @@ const StyledHomePage = styled.article`
     font-size: 2.5rem;
   }
 
+  .columns.gel-home-featured-section {
+    margin-bottom: 10rem;
+  }
+
   @media (max-width: 450px) {
     .gel-home-intro-text .column {
       max-width: 90%;
@@ -94,7 +98,7 @@ export default class IndexPage extends React.Component {
             <div className="column has-text-centered">
               <h2 className="has-text-centered" style={{ marginBottom: '4rem' }}>Featured Portfolio Pieces</h2>
               <HomePagePortfolioFeatures />
-              <Link to="/portfolio/" className="button is-dark is-large gel-button-1">See more of our work</Link>
+              <Link to="/portfolio/" className="button is-dark is-large gel-button-1 gel-button-bigger">See more of our work</Link>
             </div>
           </section>
           <div className="columns is-centered">
