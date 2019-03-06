@@ -2,7 +2,7 @@
 templateKey: portfolio-entry
 title: Natalie Scott
 date: 2019-03-04T16:40:07.991Z
-project_type: Branding & Website for Natalie Scott
+project_type: Branding & Website
 home_page_featured:
   featured_image:
     alt: Natalie Scott the Heart-Inspired Entrepreneur
