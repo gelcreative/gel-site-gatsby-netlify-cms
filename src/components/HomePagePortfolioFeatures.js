@@ -9,6 +9,11 @@ const StyledFeaturesSection = styled.div`
   margin-bottom: 50px !important;
   overflow: hidden;
 
+  .gel-homepage-featured-text-container > button {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
   > .column {
     position: relative;
     &:hover {
@@ -18,6 +23,10 @@ const StyledFeaturesSection = styled.div`
       }
       .gel-homepage-featured-text-container {
         transform: scale(1.05);
+      }
+      button {
+        transform: translateY(0);
+        opacity: 1;
       }
     } 
   }

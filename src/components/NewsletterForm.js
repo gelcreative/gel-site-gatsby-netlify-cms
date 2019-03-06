@@ -58,7 +58,7 @@ class NewsletterForm extends React.Component {
             </div>
         </div>
         <div className="field send-button">
-          <button className="button is-dark is-large gel-button-1" type="submit">Send</button>
+          <button className="button is-dark is-large gel-button-1" type="submit">Subscribe</button>
         </div>
       </form>
     )
