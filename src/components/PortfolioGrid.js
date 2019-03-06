@@ -234,8 +234,6 @@ const PortfolioGrid = () => (
                             : defaults[1].node
                         })`,
                     }}></div>
-                    {/* <PreviewCompatibleImage imageInfo={(grayscaleGridImages[i].node.frontmatter.colour_grid_image ? grayscaleGridImages[i].node.frontmatter.colour_grid_image : defaults[0].node)} />
-                    <PreviewCompatibleImage imageInfo={(portfolioEntry.node.frontmatter.colour_grid_image ? portfolioEntry.node.frontmatter.colour_grid_image : defaults[1].node)} /> */}
                     <Link to={`/portfolio-entries/${kebabCase(portfolioEntry.node.frontmatter.title)}`}>
                       <div className="gel-portfolio-item-text-container">
                         <p>{portfolioEntry.node.frontmatter.project_type} for <br /><span>{portfolioEntry.node.frontmatter.title}</span></p>
