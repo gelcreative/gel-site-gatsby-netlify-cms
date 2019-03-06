@@ -55,6 +55,28 @@ const BlogSection = styled.section`
     text-decoration: none;
   }
 
+  .gel-blog-item-inner {
+    position: relative;
+  }
+
+  .gel-blog-item-inner::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(28,29,37,.7);
+      z-index: 1;
+      transition: 300ms ease-in-out;
+  }
+
+  .gel-blog-item-inner > a {
+      position: relative;
+      z-index: 2;
+  }
+
   h2 {
     font-family: "futura-pt";
     color: #ffffff;
@@ -66,9 +88,6 @@ const BlogSection = styled.section`
 const BlogPage = ({data}) => {
   
   const { edges: posts } = data.allMarkdownRemark
-
-  let columnClass = ""
-  let columnCounter = 1
   
   return (
     <Layout>
@@ -77,34 +96,8 @@ const BlogPage = ({data}) => {
           <h1 className="visually-hidden">Gel's Blog</h1>
             {posts.map(edge => {
 
-              if(columnCounter > 5) {
-                columnCounter = 1
-              }
-
-              switch(columnCounter) {
-                case 1:
-                  columnClass = " is-full"
-                  break;
-                case 2:
-                  columnClass = " is-one-third"
-                  break;
-                case 3:
-                  columnClass = " is-two-thirds"
-                  break;
-                case 4:
-                  columnClass = " is-two-thirds"
-                  break;
-                case 5:
-                  columnClass = " is-one-third"
-                  break;
-                default:
-                  columnClass = " is-full"
-              }
-
-              columnCounter++
-
               return (
-                <article className={"column" + columnClass } key={edge.node.id}>
+                <article className="column is-full" key={edge.node.id}>
                   <div 
                     className="gel-blog-item-inner" 
                     style={{
