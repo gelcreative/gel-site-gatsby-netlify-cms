@@ -2,7 +2,7 @@
 templateKey: portfolio-entry
 title: Kenmore Electrolux
 date: 2019-03-04T16:39:36.456Z
-project_type: Print & Marketing Collaterals for Electrolux Major Appliances
+project_type: Print & Marketing Collaterals
 home_page_featured:
   featured_image:
     alt: Kenmore Example Image
