@@ -50,11 +50,17 @@ const StyledFeaturesSection = styled.div`
     transition: 300ms ease-in-out;
     transition-delay: 200ms; 
     h2 {
-      color: #ffffff;
-      font-size: 3.5rem;
+      color: ${props => props.theme.orange};
+      font-size: 3rem;
+      font-weight: 500;
       margin-bottom: 2em;
       text-align: center;
       line-height: 1.3;
+      span {
+        font-size: 1.1em;
+        color: #ffffff;
+        font-weight: 700;
+      }
     }
   }
 
@@ -136,7 +142,7 @@ const HomePagePortfolioFeatures = () => (
                 <div className="gel-homepage-featured-reveal-overlay"></div>
                 <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`} className="gel-homepage-featured-link">
                   <div className="gel-homepage-featured-text-container">
-                    <h2 dangerouslySetInnerHTML={{__html: edge.node.frontmatter.project_type}} />
+                    <h2>{edge.node.frontmatter.project_type} for <br/><span>{edge.node.frontmatter.title}</span></h2>
                     <button className="button gel-button-1 gel-button-bigger is-large is-light">See More</button>
                   </div>
                 </Link>
