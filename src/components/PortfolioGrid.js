@@ -19,7 +19,7 @@ const StyledPortfolioGrid = styled.section`
       right: 0;
       top: 0;
       transition: 300ms;
-      opacity: 0;
+      opacity: 1;
   }
 
   .gel-portfolio-grid-item a {
@@ -54,7 +54,7 @@ const StyledPortfolioGrid = styled.section`
 
   @media (min-width: 769px) {
     .gel-portfolio-grid-item:hover .gatsby-image-wrapper:nth-of-type(2) {
-        opacity: 1;
+        opacity: 0;
     }
 
     .gel-portfolio-grid-item:hover .gel-portfolio-item-text-container {
