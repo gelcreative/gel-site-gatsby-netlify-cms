@@ -48,7 +48,7 @@ collections:
     fields:
       - {label: "Client Name", name: "clientName", widget: "string"}
       - {label: "Publish Date (Logos will be displayed according to date in descending order)", name: "date", widget: "datetime"}
-      - {label: "Logo", name: "logo", widget: "object", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}
+      - {label: "Logo", name: "logo", widget: "object", fields: [{label: "Image (400x200)", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}
   - name: "pages"
     label: "Pages"
     files:
