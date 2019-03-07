@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Kenmore Major Appliances Product Catalogues
+title: Kenmore Major Appliances Product Catalogues 2
 author: Shannon Ambeau
 date: 2019-01-23T16:20:10.570Z
 featured_image:
