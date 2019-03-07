@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { PortfolioEntryTemplate } from '../../templates/portfolio-entry'
 
-const PortfolioEntryPreview = ({entry, getAsset, widgetsFor}) => {
+const PortfolioEntryPreview = ({ entry }) => {
   const entryProjectImages1 = entry.getIn(['data', 'project_images_1'])
   const projectImages1 = entryProjectImages1 ? entryProjectImages1.toJS() : []
 
