@@ -15,8 +15,8 @@ const theme = {
   orange: '#e9724c',
   blue: '#143358',
   lightGrey: '#dde2e3',
-  regularFont: 'futura-pt',
-  boldFont: 'futura-pt-bold',
+  regularFont: 'IBM Plex Sans',
+  boldFont: 'IBM Plex Sans',
 }
 
 const TemplateWrapper = ({ children }) => (

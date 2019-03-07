@@ -85,7 +85,7 @@ const BlogSection = styled.section`
   }
 
   h2 {
-    font-family: "futura-pt";
+    font-family: ${props => props.theme.regularFont};
     font-size: 3rem;
     color: #ffffff;
     text-align: center;

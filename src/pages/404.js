@@ -17,7 +17,7 @@ const Styled404 = styled.main`
   }
 
   .gel-404-columns h1 {
-      font-family: 'futura-bold';
+      font-family: ${props => props.theme.regularFont};
       font-size: 6rem;
       text-transform: uppercase;
   }
