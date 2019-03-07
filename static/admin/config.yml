@@ -41,6 +41,16 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - file: "src/pages/index.md"
+        label: "Home"
+        name: "about"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Services", name: "services", widget: "list", required: true}
+          - {label: "Intro", name: "intro", widget: "text"}
+          - {label: "Featured Portfolio Pieces Title", name: "featuredPortfolioTitle", widget: "string"}
+          - {label: "Client List Title", name: "clientListTitle", widget: "string"}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
@@ -72,10 +82,3 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "portfolio"}
           - {label: Title, name: title, widget: string}
           - {label: "Intro", name: "portfolio_intro", widget: string}
-      - file: "src/pages/home/content.md"
-        label: "Home Page"
-        name: "home"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index"}
-          - {label: "Intro Text", name: "home_intro", widtet: "text"}
-          - {label: "Client Logos", name: "client_logo", widget: "list", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}
