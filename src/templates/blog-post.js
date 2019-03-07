@@ -88,7 +88,7 @@ export const BlogPostTemplate = ({
   title,
   author,
   date,
-  featuredImage,
+  bannerImage,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
@@ -121,7 +121,7 @@ export const BlogPostTemplate = ({
             <p className="gel-blog-post-description">{description}</p>
           </div>
         </section>
-        <PreviewCompatibleImage imageInfo={featuredImage} />
+        <PreviewCompatibleImage imageInfo={bannerImage} />
         <section className="columns">
           <div className="column is-10 is-offset-1">
             <PostContent content={content} />
@@ -167,7 +167,7 @@ const BlogPost = ({ data }) => {
         title={post.frontmatter.title}
         author={post.frontmatter.author}
         date={post.frontmatter.date}
-        featuredImage={post.frontmatter.featured_image}
+        bannerImage={post.frontmatter.banner_image}
       />
     </Layout>
   )
@@ -190,7 +190,7 @@ export const pageQuery = graphql`
         date(formatString: "MM.DD.YY")
         title
         author
-        featured_image {
+        banner_image {
           alt
           image {
             childImageSharp {
