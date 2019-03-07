@@ -7,7 +7,7 @@ import FooterLogo from '../components/svg/FooterLogo'
 
 const Styled404 = styled.main`
   .columns.gel-404-columns {
-    margin-top: 150px;
+    margin-top: 200px;
     margin-bottom: 150px;
   }
 
