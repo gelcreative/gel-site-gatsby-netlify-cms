@@ -43,7 +43,7 @@ collections:
     extension: "yml"
     label: "Client Logos"
     label_singular: "Client Logo"
-    folder: "static/client-logos"
+    folder: "static"
     create: true
     fields:
       - {label: "Client Name", name: "clientName", widget: "string"}

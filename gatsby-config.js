@@ -36,17 +36,16 @@ module.exports = {
         name: 'images',
       },
     },
-
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-transformer-yaml',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/client-logos`,
+        path: `${__dirname}/static/`,
         name: 'clientLogos',
       }
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
