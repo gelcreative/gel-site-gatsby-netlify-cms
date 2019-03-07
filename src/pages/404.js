@@ -44,7 +44,7 @@ const NotFoundPage = () => (
           <Link to={"/"} title="home page" className="button is-dark is-large gel-button-1">Home</Link>
         </section>
         <section className="column is-two-fifths">
-          <FooterLogo />
+          <img src="/img/Gel_Whimsical_Colour_550x350_Transparent_Background.gif" alt="Gel Logo Animation" />
         </section>
       </article>
       </div>
