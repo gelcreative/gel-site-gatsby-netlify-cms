@@ -6,7 +6,7 @@ const IndexPagePreview = ({ entry }) => {
   return (
     <IndexPageTemplate
       title={entry.getIn('data','title')}
-      services={entry.getIn('data','services')}
+      services={{services}}
       intro={entry.getIn('data','intro')}
       featuredPortfolioTitle={entry.getIn('data','featuredPortfolioTitle')}
       clientListTitle={entry.getIn('data','clientListTitle')}
