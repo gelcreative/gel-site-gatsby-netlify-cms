@@ -36,6 +36,12 @@ const StyledHeader = styled.nav`
     align-items: center;
   }
 
+  .navbar-item:hover {
+    text-decoration: none;
+    background-color: ${props => props.theme.lightGrey};
+    color: ${props => props.theme.orange};
+  }
+
   .navbar-burger {
     color: ${props => props.theme.typeGrey};
     span {

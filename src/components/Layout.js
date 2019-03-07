@@ -14,6 +14,7 @@ const theme = {
   darkGrey: '#434345',
   orange: '#e9724c',
   blue: '#143358',
+  yellow: '#ffc857',
   lightGrey: '#dde2e3',
   regularFont: 'IBM Plex Sans',
   boldFont: 'IBM Plex Sans',
