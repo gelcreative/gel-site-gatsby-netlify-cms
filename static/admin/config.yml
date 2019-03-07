@@ -38,6 +38,17 @@ collections:
       - {label: "Project Image Section 1", name: "project_images_1", widget: list, fields: [{label: "Image", name: "image", widget: "image"}]}
       - {label: "Main", name: "main", widget: "object", fields: [{label: "Detail Text", name: "detail_text", widget: "text"}, {label: "Image", name: "image", widget: "image"}]}
       - {label: "Project Image Section 2", name: "project_images_2", widget: list, fields: [{label: "Image", name: "image", widget: "image"}]}
+  - name: "client-logo"
+    identifier_field: "clientName"
+    extension: "yml"
+    label: "Client Logos"
+    label_singular: "Client Logo"
+    folder: "src/client-logos"
+    create: true
+    fields:
+      - {label: "Client Name", name: "clientName", widget: "string"}
+      - {label: "Publish Date (Logos will be displayed according to date in descending order)", name: "date", widget: "datetime"}
+      - {label: "Logo", name: "logo", widget: "object", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Alt", name: "alt", widget: "string"}]}
   - name: "pages"
     label: "Pages"
     files:

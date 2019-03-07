@@ -36,6 +36,14 @@ module.exports = {
         name: 'images',
       },
     },
+    'gatsby-transformer-yaml',
+    {
+      resolve: 'gatby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/client-logos`,
+        name: 'clientLogos',
+      }
+    },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
