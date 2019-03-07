@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Layout from '../components/Layout'
-import FooterLogo from '../components/svg/FooterLogo'
 
 const Styled404 = styled.main`
   .columns.gel-404-columns {
