@@ -101,6 +101,7 @@ const StyledPortfolioGrid = styled.section`
     font-size: 1.1em;
     font-weight: 700;
     color: #ffffff;
+    transition: 300ms ease-in-out;
   }
 
   .gel-portfolio-item-text-container p {
@@ -109,6 +110,7 @@ const StyledPortfolioGrid = styled.section`
     text-align: center;
     line-height: 1.2;
     width: 80%;
+    transition: 300ms ease-in-out;
   }
 
   .gel-portfolio-grid-item .gel-portfolio-item-colour-image {
@@ -121,6 +123,9 @@ const StyledPortfolioGrid = styled.section`
 
   .gel-portfolio-grid-item:hover .gel-portfolio-item-text-container {
     transform: scale(1.1);
+    p, span {
+      color: #ffc857;
+    }
   }
 `
 
