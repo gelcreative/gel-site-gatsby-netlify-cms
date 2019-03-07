@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 
@@ -61,58 +62,107 @@ const StyledHomePage = styled.article`
       font-size: 1.5rem;
     }
   }
-
 `
 
-export default class IndexPage extends React.Component {
-  render() {
-    const { data } = this.props
+export const IndexPageTemplate = ({
+  helmet,
+  title,
+  services,
+  intro,
+  featuredPortfolioTitle,
+  clientListTitle,
+}) => {
 
-    return (
-      <Layout>
-        <Helmet title={`${data.site.siteMetadata.title}`}>
-          <meta name="description" content={`${data.site.siteMetadata.description}`} />
-        </Helmet>
-        <StyledHomePage className="container">
-          <section className="gel-home-masthead columns is-centered">
-            <div className="column has-text-centered">
-              <img src="/img/Gel_Whimsical_Colour_550x350_Transparent_Background.gif" alt="Gel Logo Animation" />
-            </div>
-          </section>
-          <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-tags-section"></ScrollyDo>
-          <section class="columns is-centered gel-home-tags-section" id="gel-home-tags-section">
-            <div class="column is-narrow has-text-centered">
-              <ul class="gel-services-list">
-                <li>marketing</li>
-                <li>branding</li>
-                <li>strategy</li>
-              </ul>
-            </div>
-          </section>
-          <section className="gel-home-intro-text has-text-centered"  id="gel-home-intro-section">
-            <div className="column has-text-centered">
-              <p>You found us. Chances are you’re looking for an agency partner. Gel is a marketing communications agency fuelled by creative intelligence. It’s hard to explain why our clients choose us &mdash; we’re told it’s the way we make them feel. Huh?  Point is, it goes far beyond the work. It’s their realization that we get it. We’ve helped them unlock hidden value in their business. Through strategy, branding, and communications, we clarify their brand story and design the tools that empower our clients to tell it. </p>
-            </div>
-          </section>
-          <section className="columns is-centered gel-home-featured-section">
-            <div className="column has-text-centered">
-              <h2 className="has-text-centered" style={{ marginBottom: '4rem' }}>Featured Portfolio Pieces</h2>
-              <HomePagePortfolioFeatures />
-              <Link to="/portfolio/" className="button is-dark is-large gel-button-1 gel-button-bigger">See more of our work</Link>
-            </div>
-          </section>
-          <div className="columns is-centered">
-            <h2 className="column has-text-centered">Brands we've worked with &hellip;</h2>
-          </div>
-          <ClientLogoGrid />
-        </StyledHomePage>        
-      </Layout>
-    )
-  }
+  return (
+    <StyledHomePage className="container">
+      { helmet || '' }
+      <section className="gel-home-masthead columns is-centered">
+        <div className="column has-text-centered">
+          <h1 className="visually-hidden">{title}</h1>
+          <img src="/img/Gel_Whimsical_Colour_550x350_Transparent_Background.gif" alt="Gel Logo Animation" />
+        </div>
+      </section>
+      <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-tags-section"></ScrollyDo>
+      <section class="columns is-centered gel-home-tags-section" id="gel-home-tags-section">
+        <div class="column is-narrow has-text-centered">
+          <ul class="gel-services-list">
+            {services.map(service => {
+              return (
+                <li key={service}>{service}</li>
+              )
+            })}
+          </ul>
+        </div>
+      </section>
+      <section className="gel-home-intro-text has-text-centered"  id="gel-home-intro-section">
+        <div className="column has-text-centered">
+          <p>{intro}</p>
+        </div>
+      </section>
+      <section className="columns is-centered gel-home-featured-section">
+        <div className="column has-text-centered">
+          <h2 className="has-text-centered" style={{ marginBottom: '4rem' }}>{featuredPortfolioTitle}</h2>
+          <HomePagePortfolioFeatures />
+          <Link to="/portfolio/" className="button is-dark is-large gel-button-1 gel-button-bigger">See more of our work</Link>
+        </div>
+      </section>
+      <div className="columns is-centered">
+        <h2 className="column has-text-centered">{clientListTitle}</h2>
+      </div>
+      <ClientLogoGrid />
+    </StyledHomePage>        
+  )
 }
 
-export const pageQuery = graphql`
-  query HomePage {
+IndexPageTemplate.propTypes = {
+  helmet: PropTypes.object,
+  title: PropTypes.string,
+  services: PropTypes.array,
+  intro: PropTypes.string,
+  featuredPortfolioTitle: PropTypes.string,
+  clientListTitle: PropTypes.string,
+}
+
+
+const IndexPage = ({data}) => {
+  const { siteMetadata: metadata } = data.site
+  const { frontmatter } = data.markdownRemark
+
+  return (
+    <Layout>
+      <IndexPageTemplate 
+        helmet={
+          <Helmet title={`${metadata.title}`}>
+            <meta name="description" content={`${metadata.description}`} />
+          </Helmet>
+        }
+        title={frontmatter.title}
+        services={frontmatter.services}
+        intro={frontmatter.intro}
+        featuredPortfolioTitle={frontmatter.featuredPortfolioTitle}
+        clientListTitle={frontmatter.clientListTitle}
+      />
+    </Layout>
+  )
+}
+
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
+}
+
+export default IndexPage
+
+export const indexPageQuery = graphql`
+  query HomePage($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        title
+        services
+        intro
+        featuredPortfolioTitle
+        clientListTitle
+      }
+    }
     site {
       siteMetadata {
         title

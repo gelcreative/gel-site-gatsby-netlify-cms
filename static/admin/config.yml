@@ -43,7 +43,7 @@ collections:
     files:
       - file: "src/pages/index.md"
         label: "Home"
-        name: "about"
+        name: "home"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: "Title", name: "title", widget: "string"}
