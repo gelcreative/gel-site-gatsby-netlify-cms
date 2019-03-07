@@ -28,6 +28,7 @@ const AboutPagePreview = ({ entry, getAsset }) => {
         heading: entry.getIn(['data', 'approach', 'heading']),
         text: entry.getIn(['data', 'approach', 'text']),
       }}
+      services={entry.getIn('data', 'services')}
     />
   )
 }
