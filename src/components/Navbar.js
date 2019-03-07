@@ -9,6 +9,11 @@ const StyledHeader = styled.nav`
 
   .gel-header-logo-link {
     display: flex;
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .gel-footer-logo {
