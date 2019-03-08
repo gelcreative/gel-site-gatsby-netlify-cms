@@ -55,8 +55,8 @@ approach:
     We invite you to explore our work, discover our culture and connect with our
     story.
 services:
-  - marketing
-  - branding
   - strategy
+  - branding
+  - marketing
 ---
 
