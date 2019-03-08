@@ -37,7 +37,6 @@ const StyledContactPage = styled.section`
     border-radius: 0;
     margin-bottom: 10px;
     font-size: 2rem;
-    text-transform: uppercase;
     padding-left: 0;
   }
 `
