@@ -6,14 +6,8 @@ services:
   - branding
   - marketing
 intro: >-
-  You found us. Chances are you’re looking for an agency partner. Gel is a
-  marketing communications agency fuelled by creative intelligence. It’s hard to
-  explain why our clients choose us — we’re told it’s the way we make them feel.
-  Huh?  Point is, it goes far beyond the work. It’s their realization that we
-  get it. We’ve helped them unlock hidden value in their business. Through
-  strategy, branding, and communications, we clarify their brand story and
-  design the tools that empower our clients to tell it. 
-featuredPortfolioTitle: Featured Portfolio Pieces
+  You found us. Chances are you’re looking for an agency partner. We're Gel, a marketing communications agency fuelled by creative intelligence. It’s hard to explain why our clients choose to work with us. We’re told it’s the way we make them feel. Huh? Point is, it goes far beyond the work. It’s that we get it. We help them unlock hidden value in their business. We clarify the brand story, build the strategy and design the marketing campaigns that connect with their customers. 
+featuredPortfolioTitle: Featured Work
 clientListTitle: Brands we've worked with ...
 ---
 
