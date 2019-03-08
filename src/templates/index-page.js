@@ -79,7 +79,7 @@ export const IndexPageTemplate = ({
       <section className="gel-home-masthead columns is-centered">
         <div className="column has-text-centered">
           <h1 className="visually-hidden">{title}</h1>
-          <img src="/img/Gel_Whimsical_Colour_550x350_Transparent_Background.gif" alt="Gel Logo Animation" />
+          <img src="/img/Gel_Written_Whimsical_Colour_550x350_Transparent_Background.gif" alt="Gel Logo Animation" />
         </div>
       </section>
       <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-tags-section"></ScrollyDo>
@@ -95,7 +95,7 @@ export const IndexPageTemplate = ({
         </div>
       </section>
       <section className="gel-home-intro-text has-text-centered"  id="gel-home-intro-section">
-        <div className="column has-text-centered">
+        <div className="column is-9 is-offset-2 has-text-centered">
           <p>{intro}</p>
         </div>
       </section>
