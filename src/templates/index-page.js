@@ -126,7 +126,6 @@ export const indexPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        services
         intro
         featuredPortfolioTitle
         clientListTitle
