@@ -1,5 +1,13 @@
 import React from 'react';
 import { navigate } from "gatsby-link";
+import styled from 'styled-components'
+
+const StyledContactForm = styled.form`
+  [name="opt-in"] {
+    margin-right: 0.5em;
+    vertical-align: middle;
+  }
+`
 
 function encode(data) {
   return Object.keys(data)
@@ -34,7 +42,7 @@ class NewsletterForm extends React.Component {
 
   render() {
     return (
-      <form
+      <StyledContactForm
         name="contact"
         method="post"
         action="/contact/thanks/"
@@ -54,13 +62,18 @@ class NewsletterForm extends React.Component {
         <div className="field email-input">
           <label className="label visually-hidden" htmlFor={"email"}>Email</label>
             <div className="control">
+              <label htmlFor={"email"} className="visually-hidden">Your Email Address</label>
               <input className="input" type={"email"} name={"email"} onChange={this.handleChange} id={"email"} placeholder={"Email Address"} required={true} />
+              <div className="gel-checkbox-container">
+                <input type={"checkbox"} value={"true"} name={"opt-in"} onChange={this.handleChange} id={"opt-in"} required={true} />
+                <label htmlFor={"opt-in"} className="gel-optin-label"><small>By checking this box, I consent to receive email communications and promotions from Gel Agency.</small></label>
+              </div>
             </div>
         </div>
         <div className="field send-button">
           <button className="button is-dark is-large gel-button-1" type="submit">Subscribe</button>
         </div>
-      </form>
+      </StyledContactForm>
     )
   }
 
