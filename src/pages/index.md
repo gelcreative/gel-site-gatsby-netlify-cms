@@ -2,9 +2,9 @@
 templateKey: index-page
 title: Gel Agency Home Page
 services:
-  - marketing
-  - branding
   - strategy
+  - branding
+  - marketing
 intro: >-
   You found us. Chances are you’re looking for an agency partner. Gel is a
   marketing communications agency fuelled by creative intelligence. It’s hard to
