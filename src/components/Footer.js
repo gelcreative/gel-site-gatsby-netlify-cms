@@ -73,7 +73,7 @@ const Footer = () => (
                 Barrie, ON L4M 1H2
               </a>
             </StyledAddress>
-            <div><a href="mailto:connect@gelmarketing.ca">connect@gelmarketing.ca</a></div>
+            <div><a href="mailto:info@gelcreative.ca">info@gelcreative.ca</a></div>
             <div><a href="tel:+17057277980">705.727.7980</a></div>
           </FooterItemContainer>
           <FooterItemContainer>

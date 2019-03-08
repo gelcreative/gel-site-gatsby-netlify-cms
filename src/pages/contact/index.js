@@ -66,7 +66,7 @@ export default class Index extends React.Component {
                 <div className="column gel-contact-details-column">
                   <div className="gel-contact-details">
                     <h2>Become a client</h2>
-                    <a href="mailto:connect@gelmarketing.ca">connect@gelmarketing.ca</a>
+                    <a href="mailto:info@gelcreative.ca">info@gelcreative.ca</a>
                   </div>
                   <div className="gel-contact-details">
                     <h2>Contact us</h2>
