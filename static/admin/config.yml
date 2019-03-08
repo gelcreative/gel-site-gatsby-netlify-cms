@@ -58,7 +58,6 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Services", name: "services", widget: "list", required: true}
           - {label: "Intro", name: "intro", widget: "text"}
           - {label: "Featured Portfolio Pieces Title", name: "featuredPortfolioTitle", widget: "string"}
           - {label: "Client List Title", name: "clientListTitle", widget: "string"}
