@@ -66,7 +66,7 @@ class NewsletterForm extends React.Component {
               <input className="input" type={"email"} name={"email"} onChange={this.handleChange} id={"email"} placeholder={"Email Address"} required={true} />
               <div className="gel-checkbox-container">
                 <input type={"checkbox"} value={"true"} name={"opt-in"} onChange={this.handleChange} id={"opt-in"} required={true} />
-                <label htmlFor={"opt-in"} className="gel-optin-label"><small>By checking this box, I consent to receive email communications and promotions from Gel Agency.</small></label>
+                <label htmlFor={"opt-in"} className="gel-optin-label"><small>By checking this box, I consent to receiving email communication from Gel Agency.</small></label>
               </div>
             </div>
         </div>
