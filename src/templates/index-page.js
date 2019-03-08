@@ -94,8 +94,8 @@ export const IndexPageTemplate = ({
           </ul>
         </div>
       </section>
-      <section className="gel-home-intro-text has-text-centered"  id="gel-home-intro-section">
-        <div className="column is-9 is-offset-2 has-text-centered">
+      <section className="gel-home-intro-text is-centered has-text-centered"  id="gel-home-intro-section">
+        <div className="column is-10 is-offset-1 has-text-centered">
           <p>{intro}</p>
         </div>
       </section>
