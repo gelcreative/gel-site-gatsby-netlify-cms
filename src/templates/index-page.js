@@ -14,25 +14,6 @@ const StyledHomePage = styled.article`
     padding: 10rem 0;
   }
 
-  .gel-services-list {
-    font-size: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .gel-services-list li {
-      padding: 0 1em;
-      position: relative;
-  }
-
-  .gel-services-list li:nth-child(-n+2)::after {
-      content: '//';
-      color: ${props => props.theme.orange};
-      position: absolute;
-      right: 0;
-      transform: translateX(50%);
-  }
-
   .gel-home-masthead {
     min-height: 100vh;
     display: flex;
@@ -67,7 +48,6 @@ const StyledHomePage = styled.article`
 export const IndexPageTemplate = ({
   helmet,
   title,
-  services,
   intro,
   featuredPortfolioTitle,
   clientListTitle,
@@ -83,17 +63,6 @@ export const IndexPageTemplate = ({
         </div>
       </section>
       <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-tags-section"></ScrollyDo>
-      <section class="columns is-centered gel-home-tags-section" id="gel-home-tags-section">
-        <div class="column is-narrow has-text-centered">
-          <ul class="gel-services-list">
-            {services.map(service => {
-              return (
-                <li key={service}>{service}</li>
-              )
-            })}
-          </ul>
-        </div>
-      </section>
       <section className="gel-home-intro-text is-centered has-text-centered"  id="gel-home-intro-section">
         <div className="column is-10 is-offset-1 has-text-centered">
           <p>{intro}</p>

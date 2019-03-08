@@ -3,8 +3,10 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+
 import Layout from '../components/Layout'
 import PortfolioGrid from '../components/PortfolioGrid'
+import GelServices from '../components/GelServices'
 
 const StyledPortfolioPage = styled.article`
   &.container {
@@ -12,6 +14,9 @@ const StyledPortfolioPage = styled.article`
   }
   .gel-portfolio-intro {
     font-size: 2rem;
+  }
+  .gel-portfolio-grid-section {
+    margin-bottom: 5rem;
   }
 `
 
@@ -29,9 +34,10 @@ export const PortfolioPageTemplate = ({
             <p className="gel-portfolio-intro">{portfolioIntro}</p>
           </div>
         </section>
-        <section className="section">
+        <section className="section gel-portfolio-grid-section">
           <PortfolioGrid />
         </section>
+        <GelServices />
       </StyledPortfolioPage>
   )
 }
