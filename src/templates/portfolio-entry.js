@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
@@ -61,6 +61,11 @@ export const PortfolioEntryTemplate = ({
         </section>
         <section className="section gel-portfolio-images-2">
           <PortfolioEntryImages portfolioImages={projectImages2} />
+        </section>
+        <section className="columns is-centered">
+          <section className="column is-narrow">
+            <Link to="/portfolio/" className="button is-large is-dark gel-button-1 gel-button-bigger">Back to Our Work</Link>
+          </section>
         </section>
       </StyledPortfolioEntry>
   )
