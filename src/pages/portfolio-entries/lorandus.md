@@ -18,11 +18,11 @@ project_images_1:
   - image: /img/lorandus-full-width-laptop.jpg
 main:
   detail_text: >-
-    A social media strategy was delivered that encouraged the Lorandus sales
-    team to play virtual tour guide, capturing photography from around the globe
-    and sharing it with their followers. Gel created content and provided social
+    A social media strategy was created that encouraged the Lorandus sales team
+    to play virtual tour guide, capturing photography from around the globe and
+    sharing it with their followers. Gel designed content and provided social
     media management, increasing brand awareness and driving community
-    engagement.  
+    engagement.
   image: /img/lorandus-image-one-instagram.jpg
 project_images_2:
   - image: /img/lorandus-ipad-pro-space-gray.jpg
