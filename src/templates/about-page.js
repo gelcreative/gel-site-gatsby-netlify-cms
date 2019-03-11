@@ -6,6 +6,7 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import markdownToHtml from '../util/markdownToHtml'
 
 const StyledAboutPage = styled.article`
   margin-top: 200px;
