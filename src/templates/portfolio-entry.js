@@ -25,7 +25,10 @@ const StyledPortfolioEntry = styled.article`
   .gel-portfolio-entry-main-text {
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    p {
+      max-width: 500px;
+    }
   }
 `
 
