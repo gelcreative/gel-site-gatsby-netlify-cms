@@ -143,7 +143,7 @@ export const AboutPageTemplate = ({
             </div>
           </div>
         </section>
-        <section className="columns is-centered gel-approach-section" id="gel-approach-section">
+        <section className="columns is-centered gel-approach-section content" id="gel-approach-section">
           <div className="column">
             <div className="section">
               <h2 className="has-text-centered">{approach.heading}</h2>
