@@ -1,7 +1,7 @@
 ---
 templateKey: portfolio-entry
 title: Kenmore
-date: 2019-03-04T16:39:36.456Z
+date: 2019-03-04T16:54:36.456Z
 project_type: Print & Marketing Collaterals
 home_page_featured:
   featured_image:
