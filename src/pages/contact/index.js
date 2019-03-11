@@ -2,8 +2,10 @@ import React from "react";
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+
 import Layout from '../../components/Layout';
 import NewsletterForm from '../../components/NewsletterForm'
+import GelMap from '../../components/GelMap'
 
 const StyledContactPage = styled.section`
   margin-top: 150px;
@@ -55,6 +57,11 @@ export default class Index extends React.Component {
         <StyledContactPage className="section">
           <div className="container">
             <div className="content">
+              <div className="columns">
+                <div className="column">
+                  <GelMap />
+                </div>
+              </div>
               <div className="columns">
                 <h1 className="visually-hidden">Contact Gel</h1>
                 <div className="column">
