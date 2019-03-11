@@ -1,7 +1,7 @@
 ---
 templateKey: portfolio-entry
 title: Barrie Craft Beer and BBQ Festival
-date: 2019-03-04T16:46:05.799Z
+date: 2019-03-04T17:00:05.799Z
 project_type: Branding & Event Marketing
 home_page_featured:
   featured_image:
