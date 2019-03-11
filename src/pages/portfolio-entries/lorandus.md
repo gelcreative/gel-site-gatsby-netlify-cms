@@ -1,7 +1,7 @@
 ---
 templateKey: portfolio-entry
 title: Lorandus
-date: 2019-03-04T16:47:44.250Z
+date: 2019-03-04T16:57:44.250Z
 project_type: 'Brand Identity, Website, & Social Media Management'
 home_page_featured:
   featured_image: {}
