@@ -142,7 +142,7 @@ export const AboutPageTemplate = ({
           <div className="column is-10 is-offset-1">
             <div className="section">
               <h2 className="has-text-centered">{approach.heading}</h2>
-              <p>{approach.text}</p>
+              <p dangerouslySetInnerHTML={{ __html: markdownToHtml(approach.text)}} />
             </div>
           </div>
         </section>
