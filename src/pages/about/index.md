@@ -38,12 +38,7 @@ main:
 approach:
   heading: Our Approach
   text: >
-    Our approach to marketing is different. It’s grounded in Creative
-    Intelligence. This means starting every project, regardless of scope, with a
-    strategy discussion before we start crafting solutions. We challenge you. We
-    get to the root cause of your pain. We aren’t afraid to test your
-    assumptions, to ask the tough questions and at times, to be the contrarian.
-    This allows us to build better brands.
+    Our approach to marketing is different. It’s grounded in Creative Intelligence. This means beginning every project, regardless of scope, with a strategy discussion before we think about crafting solutions. We challenge you. We get to the root cause of your pain. We aren’t afraid to test your assumptions, to ask the tough questions and at times, to be the contrarian. This allows us to build better brands.
 
 
     Whether we’re helping you discover or refine your story, unlock untapped
