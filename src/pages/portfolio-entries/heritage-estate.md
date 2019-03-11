@@ -1,7 +1,7 @@
 ---
 templateKey: portfolio-entry
 title: Heritage Estate
-date: 2019-03-04T16:47:15.101Z
+date: 2019-03-04T16:53:15.101Z
 project_type: Website
 home_page_featured:
   featured_image: {}
