@@ -98,7 +98,7 @@ export default class Index extends React.Component {
 
 export const query = graphql`
   query {
-    file(relativePath: {eq: "gel-contact-map.jpg"}) {
+    file(relativePath: {eq: "gel-boardroom.jpg"}) {
       childImageSharp {
         fluid(maxWidth: 900, quality: 100) {
           ...GatsbyImageSharpFluid
