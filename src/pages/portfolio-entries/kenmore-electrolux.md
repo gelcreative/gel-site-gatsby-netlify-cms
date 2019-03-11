@@ -1,6 +1,6 @@
 ---
 templateKey: portfolio-entry
-title: Kenmore Electrolux
+title: Kenmore
 date: 2019-03-04T16:39:36.456Z
 project_type: Print & Marketing Collaterals
 home_page_featured:
