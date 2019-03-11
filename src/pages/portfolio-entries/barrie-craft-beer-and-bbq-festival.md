@@ -24,12 +24,10 @@ project_images_1:
   - image: /img/craft-beer-staff-id.jpg
 main:
   detail_text: >-
-    The focus was local craft beer, BBQ food and the downtown Barrie community.
-    Our team captured the moments with video and photography. We also created
-    brand extensions like the Craft Beer Trail, Brewmaster Sessions, and Beer
-    Dinners to increase engagement and it paid off, attracting more than a dozen
-    brewers and cideries from across Ontario to the festival and boosting event
-    attendance to over 15,000 visitors. 
+    We created brand extensions like the Craft Beer Trail, Brewmaster Sessions,
+    and Beer Dinners to increase visitor engagement. The strategy paid off,
+    attracting more than a dozen brewers and cideries from across Ontario to the
+    festival and boosting event attendance to over 15,000 visitors.
   image: /img/craft-beer-fest-mini-b.jpg
 project_images_2:
   - image: /img/craft-beer-beer-cans.jpg
