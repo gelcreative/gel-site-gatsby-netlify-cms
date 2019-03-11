@@ -17,6 +17,9 @@ const StyledContactPage = styled.section`
   .column {
     padding: 2rem;
   }
+  .columns.gel-map-row {
+    margin-bottom: 10rem;
+  }
   .gel-contact-details-column {
     display: flex;
     flex-direction: column;
@@ -57,7 +60,7 @@ export default class Index extends React.Component {
         <StyledContactPage className="section">
           <div className="container">
             <div className="content">
-              <div className="columns">
+              <div className="columns gel-map-row">
                 <div className="column">
                   <GelMap />
                 </div>
