@@ -16,9 +16,9 @@ main:
       After 20 years of corporate sales and marketing in the pharmaceutical
       sector, Shannon decided to step out. Leaving at the top of her game,
       having been part of the marketing team that launched the most successful
-      product in industry history, Shannon joined Gel as the strategy partner.
-      She holds an MBA from the Schulich School of Business, a BSc in
-      Kinesiology from the University of Waterloo and is faculty in the Georgian
+      product in industry history, Shannon Ambeau joined Gel as the strategy
+      partner. She holds an MBA from the Schulich School of Business, a BSc in
+      Kinesiology from the University of Waterloo and is faculty at the Georgian
       College Business and Management School. Shannon’s a blogger, writing about
       life, love, and tacos on the weekly. 
   tom:
@@ -26,15 +26,15 @@ main:
       alt: Tom Ambeau
       image: /img/tom-ambeau-headshot.jpg
     tom_bio: >
-      Tom is Gel’s founder. He is the source of the creative intelligence here.
-      He’s the main reason our clients choose to work with us. He just gets it.
-      He’s been an entrepreneur for over 25 years. He co-launched a startup,
-      took it public, got squeezed out, bought an agency, and the beat goes on.
-      Tom holds a BA in Political Science from University of Western University,
-      and has public company Board experience and volunteer Board experience
-      with the Downtown Barrie BIA. Tom’s that guy who plays any sport well, has
-      mastered freelance cooking, and anyone who knows him knows he’s a die hard
-      Leafs fan.  
+      Tom Ambeau is Gel's founder and managing partner. He is the source of the
+      creative intelligence here. He’s the main reason our clients choose to
+      work with us. He just gets it. He’s been an entrepreneur for over 25
+      years. He co-launched a startup, took it public, got squeezed out, bought
+      an agency, and the beat goes on. Tom holds a BA in Political Science from
+      the University of Western Ontario. He has public company Board experience
+      as well as volunteer Board experience with the Downtown Barrie BIA. Tom’s
+      that guy who plays any sport well, has mastered freelance cooking, and
+      anyone who knows him knows he’s a die hard Leafs fan.  
 approach:
   heading: Our Approach
   text: >-
