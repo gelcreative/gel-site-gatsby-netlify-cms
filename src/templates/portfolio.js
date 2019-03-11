@@ -29,8 +29,8 @@ export const PortfolioPageTemplate = ({
       <StyledPortfolioPage className="container">
         { helmet || '' }
         <section className="section columns is-centered">
-          <div className="column has-text-centered is-10 is-offset-1">
-            <h1 className="visually-hidden">{title}</h1>
+          <div className="column content has-text-centered is-10 is-offset-1">
+            <h1 className>{title}</h1>
             <p className="gel-portfolio-intro">{portfolioIntro}</p>
           </div>
         </section>

@@ -133,7 +133,10 @@ const PortfolioGrid = () => (
   <StaticQuery
     query={graphql`
       query {
-        mainPortfolioQuery: allMarkdownRemark (filter: {frontmatter: {templateKey: {eq: "portfolio-entry"}}}) {
+        mainPortfolioQuery: allMarkdownRemark (
+            filter: {frontmatter: {templateKey: {eq: "portfolio-entry"}}}, 
+            sort: {order: DESC, fields: [frontmatter___date]}
+          ) {
           edges {
             node {
               id
@@ -151,7 +154,10 @@ const PortfolioGrid = () => (
             }
           }
         }
-        grayscaleGridImageQuery: allMarkdownRemark (filter: {frontmatter: {templateKey: {eq: "portfolio-entry"}}}) {
+        grayscaleGridImageQuery: allMarkdownRemark (
+            filter: {frontmatter: {templateKey: {eq: "portfolio-entry"}}}, 
+            sort: {order: DESC, fields: [frontmatter___date]}
+          ) {
           edges {
             node {
               frontmatter {
@@ -241,7 +247,7 @@ const PortfolioGrid = () => (
                     }}></div>
                     <Link to={`/portfolio-entries/${kebabCase(portfolioEntry.node.frontmatter.title)}`}>
                       <div className="gel-portfolio-item-text-container">
-                        <p>{portfolioEntry.node.frontmatter.project_type} for <br /><span>{portfolioEntry.node.frontmatter.title}</span></p>
+                        <p>{portfolioEntry.node.frontmatter.project_type} <span className="visually-hidden">for </span><br /><span>{portfolioEntry.node.frontmatter.title}</span></p>
                       </div>
                     </Link>
                   </div>

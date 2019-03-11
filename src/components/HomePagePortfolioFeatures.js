@@ -152,7 +152,7 @@ const HomePagePortfolioFeatures = () => (
                 <div className="gel-homepage-featured-reveal-overlay"></div>
                 <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`} className="gel-homepage-featured-link">
                   <div className="gel-homepage-featured-text-container">
-                    <h2>{edge.node.frontmatter.project_type} for <br/><span>{edge.node.frontmatter.title}</span></h2>
+                    <h2>{edge.node.frontmatter.project_type} <span className="visually-hidden">for </span><br/><span>{edge.node.frontmatter.title}</span></h2>
                     <button className="button gel-button-1 gel-button-bigger is-large is-light">See More</button>
                   </div>
                 </Link>
