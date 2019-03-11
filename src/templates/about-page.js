@@ -65,10 +65,15 @@ const StyledAboutPage = styled.article`
     font-size: 2rem;
   }
 
-  .gel-about-intro-section-text-container {
+  .gel-about-intro-section-text-container,
+  .gel-approach-section {
     max-width: 1000px;
     width: 90%;
     margin: 0 auto;
+  }
+
+  .gel-approach-section-text > p {
+    margin-bottom: 1em;
   }
 
   @media (max-width: 450px) {
@@ -138,8 +143,8 @@ export const AboutPageTemplate = ({
             </div>
           </div>
         </section>
-        <section className="columns is-centered gel-approach-section gel-full-height-vert-align" id="gel-approach-section">
-          <div className="column is-10 is-offset-1">
+        <section className="columns is-centered gel-approach-section" id="gel-approach-section">
+          <div className="column">
             <div className="section">
               <h2 className="has-text-centered">{approach.heading}</h2>
               <div className="gel-approach-section-text" dangerouslySetInnerHTML={{ __html: markdownToHtml(approach.text)}} />
