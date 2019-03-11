@@ -12,6 +12,12 @@ const StyledPortfolioEntry = styled.article`
     margin-top: 150px;
   }
 
+  .gel-project-intro-section {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
   .gel-portfolio-entry-masthead {
     max-width: 600px;
     margin: 0 auto;
@@ -43,8 +49,12 @@ export const PortfolioEntryTemplate = ({
             </div>
           </div>
         </section>
-        <section className="section has-text-centered">
-          <p>{projectIntro}</p>
+        <section className="section has-text-centered gel-project-intro-section">
+          <div className="columns">
+            <div className="column">
+              <p>{projectIntro}</p>
+            </div>
+          </div>
         </section>
         <section className="section gel-portfolio-images-1">
           <PortfolioEntryImages portfolioImages={projectImages1} />
