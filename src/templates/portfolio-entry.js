@@ -42,45 +42,45 @@ export const PortfolioEntryTemplate = ({
   helmet,
 }) => {
   return (
-      <StyledPortfolioEntry className="container">
-        { helmet || '' }
-        <section className="section gel-portfolio-entry-masthead">
-          <div className="columns is-centered">
-            <div className="column has-text-centered">
-              <h1 className="visually-hidden">{title}</h1>
-              <PreviewCompatibleImage imageInfo={headerImage} />
-            </div>
+    <StyledPortfolioEntry className="container">
+      { helmet || '' }
+      <section className="section gel-portfolio-entry-masthead">
+        <div className="columns is-centered">
+          <div className="column has-text-centered">
+            <h1 className="visually-hidden">{title}</h1>
+            <PreviewCompatibleImage imageInfo={headerImage} />
           </div>
-        </section>
-        <section className="section has-text-centered gel-project-intro-section">
-          <div className="columns">
-            <div className="column">
-              <p>{projectIntro}</p>
-            </div>
+        </div>
+      </section>
+      <section className="section has-text-centered gel-project-intro-section">
+        <div className="columns">
+          <div className="column">
+            <p>{projectIntro}</p>
           </div>
-        </section>
-        <section className="section gel-portfolio-images-1">
-          <PortfolioEntryImages portfolioImages={projectImages1} />
-        </section>
-        <section className="section gel-portfolio-entry-main">
-          <div className="columns">
-            <div className="column gel-portfolio-entry-main-text">
-              <p>{main.detail_text}</p>
-            </div>
-            <div className="column">
-              <PreviewCompatibleImage imageInfo={main} />
-            </div>
+        </div>
+      </section>
+      <section className="section gel-portfolio-images-1">
+        <PortfolioEntryImages portfolioImages={projectImages1} />
+      </section>
+      <section className="section gel-portfolio-entry-main">
+        <div className="columns">
+          <div className="column gel-portfolio-entry-main-text">
+            <p>{main.detail_text}</p>
           </div>
+          <div className="column">
+            <PreviewCompatibleImage imageInfo={main} />
+          </div>
+        </div>
+      </section>
+      <section className="section gel-portfolio-images-2">
+        <PortfolioEntryImages portfolioImages={projectImages2} />
+      </section>
+      <section className="columns is-centered">
+        <section className="column is-narrow">
+          <Link to="/portfolio/" className="button is-large is-dark gel-button-1 gel-button-bigger">Back to Our Work</Link>
         </section>
-        <section className="section gel-portfolio-images-2">
-          <PortfolioEntryImages portfolioImages={projectImages2} />
-        </section>
-        <section className="columns is-centered">
-          <section className="column is-narrow">
-            <Link to="/portfolio/" className="button is-large is-dark gel-button-1 gel-button-bigger">Back to Our Work</Link>
-          </section>
-        </section>
-      </StyledPortfolioEntry>
+      </section>
+    </StyledPortfolioEntry>
   )
 }
 
