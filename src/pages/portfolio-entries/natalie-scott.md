@@ -24,12 +24,11 @@ project_images_1:
   - image: /img/nat-scott-website-ipad-rose-gold.jpg
 main:
   detail_text: >-
-    Gel built the brand identity, positioning and messaging and brought the
-    brand to life in an elegant wordmark that expresses its essence. We designed
-    and built a website that captures Nat’s infectious, positive energy,
-    featuring custom photography. The work has raised brand awareness and grown
-    the business, connecting Nat to her “SoulTribe” and winning her new
-    clients. 
+    Gel built the brand identity, positioning and messaging and brought it to
+    life in an elegant wordmark that expresses its essence. We designed and
+    built a website that captures Nat’s infectious, positive energy, featuring
+    custom photography. The work has raised brand awareness and grown the
+    business, connecting Nat to her “SoulTribe” and winning her new clients.
   image: /img/nat-scott-picture-frame.jpg
 project_images_2:
   - image: /img/full-width_nat-scott-picture-frames.jpg
