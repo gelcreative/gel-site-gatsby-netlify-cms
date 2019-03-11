@@ -108,14 +108,6 @@ export const AboutPageTemplate = ({
             </div>
           </div>
         </section>
-        <section className="columns is-centered gel-approach-section gel-full-height-vert-align" id="gel-approach-section">
-          <div className="column">
-            <div className="section">
-              <h2 className="has-text-centered">{approach.heading}</h2>
-              <p>{approach.text}</p>
-            </div>
-          </div>
-        </section>
         <section id="gel-bio-section">
           <div className="columns gel-bio-row">
             <div className="column">
@@ -142,6 +134,14 @@ export const AboutPageTemplate = ({
           <div className="columns is-centered portfolio-link-row">
             <div className="column has-text-centered">
               <Link to="/portfolio/" className="button gel-button-1 gel-button-bigger is-dark is-large">View our work</Link>
+            </div>
+          </div>
+        </section>
+        <section className="columns is-centered gel-approach-section gel-full-height-vert-align" id="gel-approach-section">
+          <div className="column is-10 is-offset-1">
+            <div className="section">
+              <h2 className="has-text-centered">{approach.heading}</h2>
+              <p>{approach.text}</p>
             </div>
           </div>
         </section>
