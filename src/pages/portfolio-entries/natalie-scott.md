@@ -14,23 +14,21 @@ header_image:
   image: /img/natalie-scott-logo-masthead.jpg
 project_intro: >-
   Natalie Scott, a Canadian business and life coach, was ready to establish her
-  professional brand and to take it online. Gel took
-  @theheartinspiredentrepreneur through our brand discovery process to bring
-  clarity to her professional coaching business. Through several strategy
-  sessions, we were able to unpack her “why” and helped uncover the brand’s
-  essence. 
+  professional brand and take it online. Gel took @theheartinspiredentrepreneur
+  through our brand discovery process to bring clarity to her professional
+  coaching business. Through several strategy sessions, we were able to unpack
+  her “why” and develop the brand.
 project_images_1:
   - image: /img/nat-scott-website-macbook-gold.jpg
   - image: /img/nat-scott-full-width-branding.jpg
   - image: /img/nat-scott-website-ipad-rose-gold.jpg
 main:
   detail_text: >-
-    Gel built the brand identity, positioning and messaging and brought the
-    brand to life in an elegant wordmark that expresses its essence. We designed
-    and built a website that captures Nat’s infectious, positive energy,
-    featuring custom photography. The work has raised brand awareness and grown
-    the business, connecting Nat to her “SoulTribe” and winning her new
-    clients. 
+    Gel built the brand identity, positioning and messaging and brought it to
+    life in an elegant wordmark that expresses its essence. We designed and
+    built a website that captures Nat’s infectious, positive energy, featuring
+    custom photography. The work has raised brand awareness and grown the
+    business, connecting Nat to her “SoulTribe” and winning her new clients.
   image: /img/nat-scott-picture-frame.jpg
 project_images_2:
   - image: /img/full-width_nat-scott-picture-frames.jpg
