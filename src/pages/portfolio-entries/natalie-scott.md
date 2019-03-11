@@ -8,7 +8,7 @@ home_page_featured:
     alt: Natalie Scott the Heart-Inspired Entrepreneur
     image: /img/nat-scott-full-width-branding.jpg
   is_featured: true
-colour_grid_image: /img/nat-scott_portfolio-color.jpg
+colour_grid_image: /img/nat-scott-full-width-branding.jpg
 header_image:
   alt: Natalie Scott Logo
   image: /img/natalie-scott-logo-masthead.jpg
