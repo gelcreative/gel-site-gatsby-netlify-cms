@@ -101,6 +101,21 @@ const StyledFeaturesSection = styled.div`
     transform: translateX(-100%) skewX(-30deg);
   }
 
+  @media (max-width: 768px) {
+    .gel-homepage-featured-text-container {
+      h2 {
+        margin-bottom: 1em;
+      }
+      
+      button {
+        opacity: 1;
+        transform: translateY(0);
+        font-size: 1.6rem;
+      }
+    }
+}
+
+
   @media (max-width: 439px) {
     .gel-homepage-featured-text-container h2 {
       font-size: 2.5rem;
