@@ -28,11 +28,13 @@ const StyledContactPage = styled.section`
     flex-direction: column;
     justify-content: space-between;
   }
+  
   .gel-contact-details {
     font-size: 2rem;
     margin-bottom: 2rem;
     line-height: 1.3;
   }
+
   .gel-contact-details h2 {
     font-size: 2rem;
     margin-bottom: 0;
@@ -46,6 +48,12 @@ const StyledContactPage = styled.section`
     margin-bottom: 10px;
     font-size: 2rem;
     padding-left: 0;
+  }
+
+  @media (max-width: 768px) {
+    .gel-contact-image-row img {
+      margin-top: 3rem;
+    }
   }
 
   @media (min-width: 769px) {
@@ -76,12 +84,12 @@ export default class Index extends React.Component {
               </div>
               <div className="columns">
                 <h1 className="visually-hidden">Contact Gel</h1>
-                <div className="column push">
+                <div className="column gel-contact-image-row">
                   <a href="https://goo.gl/maps/ST3VQzgpiqP2" target="_blank" rel="noopener noreferrer">
                     <Img fluid={data.file.childImageSharp.fluid} />
                   </a>
                 </div>
-                <div className="column gel-contact-details-column pull">
+                <div className="column gel-contact-details-column">
                   <div className="gel-contact-details">
                     <h2>Become a client</h2>
                     <a href="mailto:info@gelcreative.ca">info@gelcreative.ca</a>
