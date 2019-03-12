@@ -9,7 +9,7 @@ import PortfolioGrid from '../components/PortfolioGrid'
 import GelServices from '../components/GelServices'
 
 const StyledPortfolioPage = styled.article`
-  &.container {
+  > .container {
     margin-top: 150px;
   }
   .gel-portfolio-intro {
@@ -26,18 +26,20 @@ export const PortfolioPageTemplate = ({
   helmet,
 }) => {
   return (
-      <StyledPortfolioPage className="container">
+      <StyledPortfolioPage className="section">
         { helmet || '' }
-        <section className="section columns is-centered">
-          <div className="column content has-text-centered is-10 is-offset-1">
-            <h1 className>{title}</h1>
-            <p className="gel-portfolio-intro">{portfolioIntro}</p>
-          </div>
-        </section>
-        <section className="section gel-portfolio-grid-section">
-          <PortfolioGrid />
-        </section>
-        <GelServices />
+        <div className="container">
+          <section className="columns is-centered">
+            <div className="column content has-text-centered is-10 is-offset-1">
+              <h1 className>{title}</h1>
+              <p className="gel-portfolio-intro">{portfolioIntro}</p>
+            </div>
+          </section>
+          <section className="gel-portfolio-grid-section">
+            <PortfolioGrid />
+          </section>
+          <GelServices />
+        </div>
       </StyledPortfolioPage>
   )
 }

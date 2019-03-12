@@ -54,31 +54,33 @@ export const IndexPageTemplate = ({
 }) => {
 
   return (
-    <StyledHomePage className="container">
+    <StyledHomePage className="section">
       { helmet || '' }
-      <section className="gel-home-masthead columns is-centered">
-        <div className="column has-text-centered">
-          <h1 className="visually-hidden">{title}</h1>
-          <img src="/img/Gel_Written_Whimsical_Colour_550x350_Transparent_Background.gif" alt="Gel Logo Animation" />
+      <div className="container">
+        <section className="gel-home-masthead columns is-centered">
+          <div className="column has-text-centered">
+            <h1 className="visually-hidden">{title}</h1>
+            <img src="/img/Gel_Written_Whimsical_Colour_550x350_Transparent_Background.gif" alt="Gel Logo Animation" />
+          </div>
+        </section>
+        <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-tags-section"></ScrollyDo>
+        <section className="gel-home-intro-text is-centered"  id="gel-home-intro-section">
+          <div className="column is-10 is-offset-1">
+            <p>{intro}</p>
+          </div>
+        </section>
+        <section className="columns is-centered gel-home-featured-section">
+          <div className="column has-text-centered">
+            <h2 className="has-text-centered" style={{ marginBottom: '4rem' }}>{featuredPortfolioTitle}</h2>
+            <HomePagePortfolioFeatures />
+            <Link to="/portfolio/" className="button is-dark is-large gel-button-1 gel-button-bigger">See more work</Link>
+          </div>
+        </section>
+        <div className="columns is-centered">
+          <h2 className="column has-text-centered">{clientListTitle}</h2>
         </div>
-      </section>
-      <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-tags-section"></ScrollyDo>
-      <section className="gel-home-intro-text is-centered"  id="gel-home-intro-section">
-        <div className="column is-10 is-offset-1">
-          <p>{intro}</p>
-        </div>
-      </section>
-      <section className="columns is-centered gel-home-featured-section">
-        <div className="column has-text-centered">
-          <h2 className="has-text-centered" style={{ marginBottom: '4rem' }}>{featuredPortfolioTitle}</h2>
-          <HomePagePortfolioFeatures />
-          <Link to="/portfolio/" className="button is-dark is-large gel-button-1 gel-button-bigger">See more work</Link>
-        </div>
-      </section>
-      <div className="columns is-centered">
-        <h2 className="column has-text-centered">{clientListTitle}</h2>
+        <ClientLogoGrid />
       </div>
-      <ClientLogoGrid />
     </StyledHomePage>        
   )
 }
