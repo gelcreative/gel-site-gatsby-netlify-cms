@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 
-const Styled404 = styled.main`
+const Styled404 = styled.article`
   .columns.gel-404-columns {
-    margin-top: 200px;
+    margin-top: 150px;
     margin-bottom: 150px;
   }
 
@@ -32,21 +32,25 @@ const Styled404 = styled.main`
 
 const NotFoundPage = () => (
   <Layout>
+    <Styled404 className="section">
     <Helmet title="404 - Page Not Found | Gel Marketing" />
-    <Styled404>
-      <div className="container">
-      <article className="columns gel-404-columns">
-        <section className="column is-three-fifths">
-          <p>Oops! Something went wrong and we can't find that page.</p>
-          <h1><strong>404 Error</strong></h1>
-          <p>At least we found this fun animation!</p>
-          <Link to={"/"} title="home page" className="button is-dark is-large gel-button-1">Home</Link>
-        </section>
-        <section className="column is-two-fifths">
-          <img src="/img/Gel_Whimsical_Colour_550x350_Transparent_Background.gif" alt="Gel Logo Animation" />
-        </section>
-      </article>
-      </div>
+      <section className="container">
+        <div className="columns gel-404-columns">
+          <div className="column is-three-fifths">
+            <p>Oops! Something went wrong and we can't find that page.</p>
+            <h1><strong>404 Error</strong></h1>
+            <p>At least we found this fun animation!</p>
+          </div>
+          <div className="column is-two-fifths">
+            <img src="/img/Gel_Whimsical_Colour_550x350_Transparent_Background.gif" alt="Gel Logo Animation" />
+          </div>
+        </div>
+        <div className="columns">
+          <div className="column">
+            <Link to={"/"} title="home page" className="button is-dark is-large gel-button-1">Home</Link>
+          </div>
+        </div>
+      </section>
     </Styled404>
   </Layout>
 )
