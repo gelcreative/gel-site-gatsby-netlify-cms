@@ -6,6 +6,7 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import GelServices from '../components/GelServices'
 import markdownToHtml from '../util/markdownToHtml'
 
 const StyledAboutPage = styled.article`
@@ -19,25 +20,6 @@ const StyledAboutPage = styled.article`
     color: ${props => props.theme.orange};
     font-weight: 700;
     /* font-style: italic; */
-  }
-
-  .gel-services-list {
-    font-size: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .gel-services-list li {
-      padding: 0 1em;
-      position: relative;
-  }
-
-  .gel-services-list li:nth-child(-n+2)::after {
-      content: '//';
-      color: ${props => props.theme.orange};
-      position: absolute;
-      right: 0;
-      transform: translateX(50%);
   }
 
   #gel-approach-section {
@@ -151,17 +133,7 @@ export const AboutPageTemplate = ({
             </div>
           </div>
         </section>
-        <section className="columns is-centered">
-          <div className="column is-narrow has-text-centered">
-            <ul className="gel-services-list">
-              {services.map(service => {
-                  return (
-                    <li key={service}>{service}</li>
-                  )
-              })}
-            </ul>
-          </div>
-        </section>
+        <GelServices />
       </div>
     </StyledAboutPage>
   )

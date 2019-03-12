@@ -20,6 +20,24 @@ const StyledServices = styled.section`
     right: 0;
     transform: translateX(50%);
   }
+
+  @media (min-width: 320px) and (max-width: 489px) {
+    .gel-services-list {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 490px) and (max-width: 574px) {
+    .gel-services-list {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media(min-width: 575px) and (max-width: 760px) {
+    .gel-services-list {
+      font-size: 3rem;
+    }
+  }
 `
 
 const GelServices = () => {
