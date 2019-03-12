@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { kebabCase } from 'lodash'
 import styled from 'styled-components'
 
 const StyledPortfolioGrid = styled.section`
@@ -140,6 +139,9 @@ const PortfolioGrid = () => (
           edges {
             node {
               id
+              fields {
+                slug
+              }
               frontmatter {
                 title
                 project_type
@@ -245,7 +247,7 @@ const PortfolioGrid = () => (
                             : defaults[1].node
                         })`,
                     }}></div>
-                    <Link to={`/portfolio-entries/${kebabCase(portfolioEntry.node.frontmatter.title)}`}>
+                    <Link to={portfolioEntry.node.fields.slug}>
                       <div className="gel-portfolio-item-text-container">
                         <p>{portfolioEntry.node.frontmatter.project_type} <span className="visually-hidden">for </span><br /><span>{portfolioEntry.node.frontmatter.title}</span></p>
                       </div>
