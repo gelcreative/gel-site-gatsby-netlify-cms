@@ -40,7 +40,7 @@ const StyledHomePage = styled.article`
       max-width: 90%;
     }
     .gel-home-intro-text p {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
   }
 `
