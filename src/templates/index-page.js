@@ -63,8 +63,8 @@ export const IndexPageTemplate = ({
         </div>
       </section>
       <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-tags-section"></ScrollyDo>
-      <section className="gel-home-intro-text is-centered has-text-centered"  id="gel-home-intro-section">
-        <div className="column is-10 is-offset-1 has-text-centered">
+      <section className="gel-home-intro-text is-centered"  id="gel-home-intro-section">
+        <div className="column is-10 is-offset-1">
           <p>{intro}</p>
         </div>
       </section>
