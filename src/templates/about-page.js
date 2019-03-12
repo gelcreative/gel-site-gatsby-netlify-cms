@@ -13,7 +13,7 @@ const StyledAboutPage = styled.article`
   margin-top: 200px;
 
   .gel-about-intro-section {
-    padding: 200px 0;
+    padding: 0 0 200px;
   }
 
   .gel-about-intro-text {
@@ -59,11 +59,12 @@ const StyledAboutPage = styled.article`
   }
 
   @media (max-width: 450px) {
+    margin-top: 150px;
     .gel-about-intro-text {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
     .gel-approach-section p {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
   }
 

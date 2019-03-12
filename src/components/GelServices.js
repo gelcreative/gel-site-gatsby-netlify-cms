@@ -21,9 +21,15 @@ const StyledServices = styled.section`
     transform: translateX(50%);
   }
 
-  @media (min-width: 320px) and (max-width: 489px) {
+  @media (min-width: 320px) and (max-width: 359px) {
     .gel-services-list {
       font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 360px) and (max-width: 489px) {
+    .gel-services-list {
+      font-size: 1.8rem;
     }
   }
 
