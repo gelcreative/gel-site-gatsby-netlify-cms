@@ -48,9 +48,9 @@ const StyledAboutPage = styled.article`
   }
 
   .gel-about-intro-section-text-container,
-  .gel-approach-section {
+  .gel-approach-section-text {
     max-width: 1000px;
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
   }
 
@@ -110,13 +110,13 @@ export const AboutPageTemplate = ({
             </div>
           </div>
           <div className="columns gel-bio-row">
-            <div className="column gel-bio-text">
+            <div className="column gel-bio-text push">
               <div className="section">
                 <h2>Meet Shannon</h2>
                 <p>{main.shannon.shannon_bio}</p>
               </div>
             </div>
-            <div className="column">
+            <div className="column pull">
               <PreviewCompatibleImage imageInfo={main.shannon.image2} />
             </div>
           </div>
