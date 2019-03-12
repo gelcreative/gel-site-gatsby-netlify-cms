@@ -19,6 +19,7 @@ const Styled404 = styled.article`
       font-family: ${props => props.theme.regularFont};
       font-size: 6rem;
       text-transform: uppercase;
+      line-height: 1;
   }
 
   .gel-404-columns .column:first-child p:last-child {
