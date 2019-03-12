@@ -29,6 +29,20 @@ const HeaderLogoContainer = styled.div`
       width: 100px;
     }
   }
+
+  @media (max-width: 768px) {
+    .gel-header-logo {
+      animation: gelHeaderLogo;
+      animation-duration: 1s;
+      position: relative;
+    }
+
+    .gel-header-logo #Grey_-fixed_-_heavy path,
+    .gel-header-logo #Grey_-fixed_-_heavy polygon {
+      animation: gelHoverColors;
+      animation-duration: 1s;
+    }
+  }
 `
 export default class HeaderLogo extends Component {
   render() {

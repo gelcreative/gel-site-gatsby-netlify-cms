@@ -20,6 +20,19 @@ const FooterLogoContainer = styled.div`
     animation-fill-mode: forwards;
     transform-origin: center;
   }
+
+  @media (max-width: 768px) {
+    .gel-footer-logo circle {
+      animation: gelHoverColors;
+      animation-duration: 2s;
+    }
+
+    .gel-footer-logo .gel-logo-letter {
+      animation: gelLetterScale;
+      animation-duration: 2s;
+      transform-origin: center;
+    }
+  }
 `
 
 export default class FooterLogo extends Component {
