@@ -54,6 +54,12 @@ const StyledHeader = styled.nav`
     .gel-header-logo {
       width: 100px;
     }
+
+    .navbar-item {
+        font-size: 2rem;
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
+    }
   }
 `
 
