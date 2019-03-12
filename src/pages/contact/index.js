@@ -8,7 +8,7 @@ import NewsletterForm from '../../components/NewsletterForm'
 import GelMap from '../../components/GelMap'
 
 const StyledContactPage = styled.section`
-  margin-top: 150px;
+  margin-top: 200px;
   
   address {
     font-style: normal;
@@ -16,6 +16,11 @@ const StyledContactPage = styled.section`
   }
   .column {
     padding: 2rem;
+  }
+
+  .gel-map-row {
+    position: relative;
+    z-index: 0;
   }
 
   .gel-contact-details-column {
