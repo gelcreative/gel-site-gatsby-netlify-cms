@@ -89,7 +89,7 @@ export const AboutPageTemplate = ({
       { helmet || '' }
       <div className="container">
         <section className="columns is-centered gel-about-intro-section gel-full-height-vert-align">
-          <div className="column has-text-centered">
+          <div className="column">
             <div className="gel-about-intro-section-text-container">
               <h1 className="visually-hidden">{title}</h1>
               <p className="gel-about-intro-text">{intro}</p>
