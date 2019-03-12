@@ -59,7 +59,7 @@ const StyledAboutPage = styled.article`
   }
 
   @media (max-width: 450px) {
-    margin-top: 150px;
+    margin-top: 80px;
     .gel-about-intro-text {
       font-size: 1.8rem;
     }

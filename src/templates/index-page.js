@@ -72,7 +72,7 @@ export const IndexPageTemplate = ({
         <div className="column has-text-centered">
           <h2 className="has-text-centered" style={{ marginBottom: '4rem' }}>{featuredPortfolioTitle}</h2>
           <HomePagePortfolioFeatures />
-          <Link to="/portfolio/" className="button is-dark is-large gel-button-1 gel-button-bigger">See more of our work</Link>
+          <Link to="/portfolio/" className="button is-dark is-large gel-button-1 gel-button-bigger">See more work</Link>
         </div>
       </section>
       <div className="columns is-centered">
