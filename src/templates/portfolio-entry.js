@@ -52,7 +52,7 @@ export const PortfolioEntryTemplate = ({
           </div>
         </div>
       </section>
-      <section className="section has-text-centered gel-project-intro-section">
+      <section className="section gel-project-intro-section">
         <div className="columns">
           <div className="column">
             <p>{projectIntro}</p>
