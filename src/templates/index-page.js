@@ -63,7 +63,7 @@ export const IndexPageTemplate = ({
             <img src="/img/Gel_Written_Whimsical_Colour_550x350_Transparent_Background.gif" alt="Gel Logo Animation" />
           </div>
         </section>
-        <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-tags-section"></ScrollyDo>
+        <ScrollyDo socialIcons={true} fullHeight={true} targetId="gel-home-intro-section"></ScrollyDo>
         <section className="gel-home-intro-text is-centered"  id="gel-home-intro-section">
           <div className="column is-10 is-offset-1">
             <p>{intro}</p>
