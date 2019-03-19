@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'i
+import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
