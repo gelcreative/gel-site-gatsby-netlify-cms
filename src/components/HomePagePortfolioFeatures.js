@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
-import { kebabCase } from 'lodash'
+import { Link, StaticQuery, graphql } from 'gatsby'i
 import styled from 'styled-components'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
@@ -134,6 +133,9 @@ const HomePagePortfolioFeatures = () => (
           edges {
             node {
               id
+              fields {
+                slug
+              }
               frontmatter {
                 title
                 project_type
@@ -165,7 +167,7 @@ const HomePagePortfolioFeatures = () => (
                 <PreviewCompatibleImage imageInfo={edge.node.frontmatter.home_page_featured.featured_image} className="gel-homepage-featured-image"/>
                 <div className="gel-homepage-featured-contrast-overlay"></div>
                 <div className="gel-homepage-featured-reveal-overlay"></div>
-                <Link to={`/portfolio-entries/${kebabCase(edge.node.frontmatter.title)}`} className="gel-homepage-featured-link">
+                <Link to={edge.node.fields.slug} className="gel-homepage-featured-link">
                   <div className="gel-homepage-featured-text-container">
                     <h2>{edge.node.frontmatter.project_type} <span className="visually-hidden">for </span><br/><span>{edge.node.frontmatter.title}</span></h2>
                     <button className="button gel-button-1 gel-button-bigger is-large is-light">See More</button>
