@@ -56,21 +56,10 @@ const ScrollyDoContainer = styled.div`
 class ScrollyDo extends Component {
 
   componentDidMount() {
-    this.scrollBehaviour()
+    this.windowScrollListener()
   }
 
-  scrollBehaviour() {
-    const scrollyContainer = ReactDOM.findDOMNode(this)
-    const scrollLink = scrollyContainer.querySelector('a')
-    scrollLink.addEventListener('click', e => {
-      e.preventDefault();
-      const targetContainer = document.querySelector(`#${this.props.targetId}`);
-      const targetPosition = targetContainer.offsetTop - 200;
-  
-      // Smooth scroll function
-      scrollIt(targetPosition, 1000, 'easeInOutQuint');
-      
-    })
+  windowScrollListener = () => {
     window.addEventListener('scroll', () => {
       const scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
       const scrollyDoPosition = scrollyContainer.offsetTop;
@@ -82,12 +71,21 @@ class ScrollyDo extends Component {
       }
     })
   }
+
+  scrollBehaviour(e) {
+    e.preventDefault();
+    const targetContainer = document.querySelector(`#${this.props.targetId}`);
+    const targetPosition = targetContainer.offsetTop - 200;
+
+    // Smooth scroll function
+    scrollIt(targetPosition, 1000, 'easeInOutQuint');
+  }
   
   render () {
     return (
       <ScrollyDoContainer className="scrolly-container" fullHeight={this.props.fullHeight} >
         <div className="scrolly-container-inner">
-          <a href="#next" title="Scroll to the next section. 👇">
+          <a href="#next" title="Scroll to the next section. 👇" onClick={e => scrollBehaviour(e)}>
             <img src="/img/scrolly.gif" alt="" aria-hidden="true" />
           </a>
           {!!this.props.socialIcons && <SocialIcons />}
