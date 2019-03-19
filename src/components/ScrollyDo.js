@@ -60,6 +60,7 @@ class ScrollyDo extends Component {
   }
 
   windowScrollListener = () => {
+    const scrollyContainer = ReactDOM.findDOMNode(this)
     window.addEventListener('scroll', () => {
       const scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
       const scrollyDoPosition = scrollyContainer.offsetTop;
@@ -85,7 +86,7 @@ class ScrollyDo extends Component {
     return (
       <ScrollyDoContainer className="scrolly-container" fullHeight={this.props.fullHeight} >
         <div className="scrolly-container-inner">
-          <a href="#next" title="Scroll to the next section. 👇" onClick={e => scrollBehaviour(e)}>
+          <a href="#next" title="Scroll to the next section. 👇" onClick={e => this.scrollBehaviour(e)}>
             <img src="/img/scrolly.gif" alt="" aria-hidden="true" />
           </a>
           {!!this.props.socialIcons && <SocialIcons />}
