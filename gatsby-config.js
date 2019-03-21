@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gel Marketing Agency',
-    description: 'Gel Marketing is a creative agency living in Barrie, Ontario, Canada. We are a group of hard-working, creative, and curious individuals who love a challenge.',
+    title: 'Gel Agency',
+    description: 'Full-service marketing agency specializing in strategy, branding, website design, digital advertising, and communications. Strategists, designers, and developers fuelled by creative intelligence.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
