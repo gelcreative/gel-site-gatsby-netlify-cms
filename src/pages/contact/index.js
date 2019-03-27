@@ -128,7 +128,7 @@ export const query = graphql`
     file(relativePath: {eq: "gel-boardroom.jpg"}) {
       childImageSharp {
         fluid(maxWidth: 900, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }

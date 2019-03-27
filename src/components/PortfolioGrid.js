@@ -148,7 +148,7 @@ const PortfolioGrid = () => (
                 colour_grid_image {
                   childImageSharp {
                     fluid(maxWidth: 900, quality: 100) {
-                      ...GatsbyImageSharpFluid
+                      ...GatsbyImageSharpFluid_tracedSVG
                     }
                   }
                 }
@@ -166,7 +166,7 @@ const PortfolioGrid = () => (
                 colour_grid_image {
                   childImageSharp {
                     fluid(maxWidth: 900, quality: 100, grayscale: true) {
-                      ...GatsbyImageSharpFluid
+                      ...GatsbyImageSharpFluid_tracedSVG
                     }
                   }
                 }
@@ -179,7 +179,7 @@ const PortfolioGrid = () => (
             node {
               childImageSharp {
                 fluid(maxWidth: 900, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_tracedSVG
                 }
               }
             }
