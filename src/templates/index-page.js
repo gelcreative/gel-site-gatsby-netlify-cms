@@ -15,11 +15,10 @@ const StyledHomePage = styled.article`
   }
 
   .gel-home-masthead {
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 150px;
+    padding: 20vh 0 10vh;
     .column {
       display: flex;
       align-items: center;
