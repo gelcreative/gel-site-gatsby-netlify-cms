@@ -31,7 +31,7 @@ export const PortfolioPageTemplate = ({
         <div className="container">
           <section className="columns is-centered">
             <div className="column content has-text-centered is-10 is-offset-1">
-              <h1 className>{title}</h1>
+              <h1>{title}</h1>
               <p className="gel-portfolio-intro">{portfolioIntro}</p>
             </div>
           </section>
