@@ -15,6 +15,7 @@ const StyledFeaturesSection = styled.div`
 
   > .column {
     position: relative;
+    padding: 0;
     &:hover {
       .gel-homepage-featured-reveal-overlay {
         transform: translateX(-13%) skewX(-30deg);

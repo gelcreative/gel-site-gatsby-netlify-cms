@@ -83,9 +83,9 @@ export const PortfolioEntryTemplate = ({
           <PortfolioEntryImages portfolioImages={projectImages2} />
         </section>
         <section className="columns is-centered">
-          <section className="column is-narrow">
+          <div className="column is-narrow has-text-centered">
             <Link to="/portfolio/" className="button is-large is-dark gel-button-1 gel-button-bigger">Back to Our Work</Link>
-          </section>
+          </div>
         </section>
       </div>
     </StyledPortfolioEntry>
