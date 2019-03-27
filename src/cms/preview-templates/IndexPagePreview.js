@@ -3,13 +3,10 @@ import PropTypes from 'prop-types'
 import { IndexPageTemplate } from '../../templates/index-page'
 
 const IndexPagePreview = ({ entry }) => {
-  const entryServices = entry.getIn(['data', 'services'])
-  const services = entryServices ? entryServices.toJS() : []
 
   return (
     <IndexPageTemplate
       title={entry.getIn(['data','title'])}
-      services={{services}}
       intro={entry.getIn(['data','intro'])}
       featuredPortfolioTitle={entry.getIn(['data','featuredPortfolioTitle'])}
       clientListTitle={entry.getIn(['data','clientListTitle'])}

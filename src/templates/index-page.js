@@ -107,7 +107,6 @@ const IndexPage = ({data}) => {
           </Helmet>
         }
         title={frontmatter.title}
-        services={frontmatter.services}
         intro={frontmatter.intro}
         featuredPortfolioTitle={frontmatter.featuredPortfolioTitle}
         clientListTitle={frontmatter.clientListTitle}
