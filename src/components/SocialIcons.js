@@ -63,7 +63,7 @@ const SocialIcons = class extends Component {
     return (
       <SocialIconList>
         <li className="gel-social-item">
-          <a href="https://www.instagram.com/gelcreative/" target="_blank" rel="noopener noreferrer" title="Gel on Instagram">
+          <a href="https://www.instagram.com/gelagency/" target="_blank" rel="noopener noreferrer" title="Gel on Instagram">
             <Instagram />
           </a>
         </li>
