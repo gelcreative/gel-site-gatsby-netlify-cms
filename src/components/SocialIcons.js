@@ -68,7 +68,7 @@ const SocialIcons = class extends Component {
           </a>
         </li>
         <li className="gel-social-item">
-          <a href="https://www.facebook.com/GelCreates/" target="_blank" rel="noopener noreferrer" title="Gel on Facebook">
+          <a href="https://www.facebook.com/gelagency" target="_blank" rel="noopener noreferrer" title="Gel on Facebook">
             <Facebook />
           </a>
         </li>
