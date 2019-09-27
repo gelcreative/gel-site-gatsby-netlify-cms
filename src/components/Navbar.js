@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
-import HeaderLogo from './svg/HeaderLogo'
-import FooterLogo from './svg/FooterLogo'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import HeaderLogo from './svg/HeaderLogo';
+import FooterLogo from './svg/FooterLogo';
 
 const StyledHeader = styled.nav`
   padding: 1rem;
@@ -38,33 +38,32 @@ const StyledHeader = styled.nav`
 
   .navbar-item:hover {
     text-decoration: none;
-    background-color: ${props => props.theme.lightGrey};
+    background-color: ${props => props.theme.white};
     color: ${props => props.theme.orange};
   }
 
   .navbar-burger {
-    color: ${props => props.theme.typeGrey};
+    color: ${props => props.theme.white};
     span {
-      height:3px;
+      height: 3px;
       width: 20px;
     }
   }
 
-  @media(max-width: 1087px) {
+  @media (max-width: 1087px) {
     .gel-header-logo {
       width: 100px;
     }
 
     .navbar-item {
-        font-size: 2rem;
-        padding-top: 0.75em;
-        padding-bottom: 0.75em;
+      font-size: 2rem;
+      padding-top: 0.75em;
+      padding-bottom: 0.75em;
     }
   }
-`
+`;
 
 const Navbar = class extends React.Component {
-
   componentDidMount() {
     this.navBarBurger();
     this.navBarScroll();
@@ -74,19 +73,22 @@ const Navbar = class extends React.Component {
     window.addEventListener('scroll', function() {
       const scrollFromTop = this.scrollY;
       const theNavbar = document.querySelector('.navbar');
-      if(scrollFromTop > 250) {
+      if (scrollFromTop > 250) {
         theNavbar.classList.add('scrolled');
         // theNavbar.classList.add('is-fixed-top');
       } else {
         theNavbar.classList.remove('scrolled');
         // theNavbar.classList.remove('is-fixed-top');
       }
-    })
+    });
   }
 
   navBarBurger() {
     // Get all "navbar-burger" elements
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    const $navbarBurgers = Array.prototype.slice.call(
+      document.querySelectorAll('.navbar-burger'),
+      0,
+    );
     // Need to select the navbar too, for some Gel styles
     const navBar = document.querySelector('.navbar');
     const navMenu = document.querySelector('.navbar-menu');
@@ -94,11 +96,9 @@ const Navbar = class extends React.Component {
 
     // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
-
       // Add a click event on each of them
-      $navbarBurgers.forEach( el => {
+      $navbarBurgers.forEach(el => {
         el.addEventListener('click', () => {
-
           // Get the target from the "data-target" attribute
           const target = el.dataset.target;
           const $target = document.getElementById(target);
@@ -108,53 +108,54 @@ const Navbar = class extends React.Component {
           $target.classList.toggle('is-active');
           // Toggle this class so we can select it and position it
           navBar.classList.toggle('gel-nav-active');
-
         });
       });
     }
 
     // Close menu if user hits ESC
-    window.addEventListener('keyup', (e) => {
-      if(e.keyCode === 27) {
-        if(navMenu.classList.contains('is-active')) {
+    window.addEventListener('keyup', e => {
+      if (e.keyCode === 27) {
+        if (navMenu.classList.contains('is-active')) {
           navMenu.classList.toggle('is-active');
           navBurger.classList.toggle('is-active');
           navBar.classList.toggle('gel-nav-active');
         }
       }
-    })
+    });
 
     // Close the menu if user clicks on overlay
-    window.addEventListener('click', (e) => {
-      if(e.target === navMenu && navMenu.classList.contains('is-active')) {
+    window.addEventListener('click', e => {
+      if (e.target === navMenu && navMenu.classList.contains('is-active')) {
         navMenu.classList.toggle('is-active');
         navBurger.classList.toggle('is-active');
         navBar.classList.toggle('gel-nav-active');
       }
-    })
+    });
 
     // Close menu if user clicks on a nav link for the page they are already on
-    /* This script is prob overwrought, as you could prob just close the 
+    /* This script is prob overwrought, as you could prob just close the
     menu if you click on any of the links, but I wanted to try it out */
     // 1. Select nav links
-    const navLinks = Array.prototype.slice.call(document.querySelectorAll('.navbar-start a'));
+    const navLinks = Array.prototype.slice.call(
+      document.querySelectorAll('.navbar-start a'),
+    );
     // 2. Add event listener to nav links
     navLinks.forEach(link => {
       const theLinkHref = link.href;
       link.addEventListener('click', () => {
         const windowLocationHref = window.location.href;
         // 4. If nav link and slug are the same, close the nav
-        if(theLinkHref === windowLocationHref) {
+        if (theLinkHref === windowLocationHref) {
           navMenu.classList.toggle('is-active');
           navBar.classList.toggle('gel-nav-active');
         }
-      })
-    })
+      });
+    });
   }
 
   render() {
     return (
-      <StyledHeader 
+      <StyledHeader
         className="navbar is-fixed-top"
         role="navigation"
         aria-label="main-navigation"
@@ -173,8 +174,7 @@ const Navbar = class extends React.Component {
             </div>
           </div>
           <div id="navMenu" className="navbar-menu">
-            <div className="navbar-start has-text-centered">
-            </div>
+            <div className="navbar-start has-text-centered"></div>
             <div className="navbar-end has-text-centered">
               <Link className="navbar-item" to="/about">
                 Our Story
@@ -192,8 +192,8 @@ const Navbar = class extends React.Component {
           </div>
         </div>
       </StyledHeader>
-    )
+    );
   }
-}
+};
 
-export default Navbar
+export default Navbar;

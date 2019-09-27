@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import React from 'react';
+import { Link, StaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
+import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 const StyledFeaturesSection = styled.div`
   position: relative;
@@ -28,7 +28,7 @@ const StyledFeaturesSection = styled.div`
         transform: translateY(0);
         opacity: 1;
       }
-    } 
+    }
   }
 
   .gel-homepage-featured-link {
@@ -57,7 +57,7 @@ const StyledFeaturesSection = styled.div`
     margin: 0 auto;
     transform: scale(1);
     transition: 300ms ease-in-out;
-    transition-delay: 200ms; 
+    transition-delay: 200ms;
     h2 {
       color: ${props => props.theme.orange};
       font-size: 3rem;
@@ -74,7 +74,7 @@ const StyledFeaturesSection = styled.div`
   }
 
   .gel-homepage-featured-contrast-overlay {
-    background-color: rgba(28,29,37,.7);
+    /*background-color: rgba(28, 29, 37, 0.7);*/
     position: absolute;
     top: 0;
     right: 0;
@@ -86,9 +86,24 @@ const StyledFeaturesSection = styled.div`
   .gel-homepage-featured-reveal-overlay {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#101b3b+0,143358+35,143358+35 */
     background: #101b3b; /* Old browsers */
-    background: -moz-linear-gradient(left, #101b3b 0%, #143358 35%, #143358 35%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #101b3b 0%,#143358 35%,#143358 35%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #101b3b 0%,#143358 35%,#143358 35%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(
+      left,
+      #101b3b 0%,
+      #143358 35%,
+      #143358 35%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      left,
+      #101b3b 0%,
+      #143358 35%,
+      #143358 35%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to right,
+      #101b3b 0%,
+      #143358 35%,
+      #143358 35%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#101b3b', endColorstr='#143358',GradientType=1 ); /* IE6-9 */
     position: absolute;
     top: 0;
@@ -106,30 +121,31 @@ const StyledFeaturesSection = styled.div`
       h2 {
         margin-bottom: 1em;
       }
-      
+
       button {
         opacity: 1;
         transform: translateY(0);
         font-size: 1.6rem;
       }
     }
-}
-
+  }
 
   @media (max-width: 439px) {
     .gel-homepage-featured-text-container h2 {
       font-size: 2.5rem;
     }
   }
-`
+`;
 
 const HomePagePortfolioFeatures = () => (
   <StaticQuery
     query={graphql`
       query HomePagePortfolioFeatures {
-        allMarkdownRemark (
-          filter: {frontmatter: {home_page_featured: {is_featured: {eq: true}}}}
-          sort: {fields: [frontmatter___date] order: DESC}
+        allMarkdownRemark(
+          filter: {
+            frontmatter: { home_page_featured: { is_featured: { eq: true } } }
+          }
+          sort: { fields: [frontmatter___date], order: DESC }
         ) {
           edges {
             node {
@@ -144,7 +160,7 @@ const HomePagePortfolioFeatures = () => (
                   featured_image {
                     image {
                       childImageSharp {
-                        fluid (maxWidth: 1920, quality: 100) {
+                        fluid(maxWidth: 1920, quality: 100) {
                           ...GatsbyImageSharpFluid_tracedSVG
                         }
                       }
@@ -158,29 +174,45 @@ const HomePagePortfolioFeatures = () => (
         }
       }
     `}
-    render={ data => {
-      const edges = data.allMarkdownRemark.edges
-      return (
-        edges.map(edge => {
-          return (
-            <StyledFeaturesSection key={edge.node.id} className="gel-homepage-featured columns">
-              <div className="column">
-                <PreviewCompatibleImage imageInfo={edge.node.frontmatter.home_page_featured.featured_image} className="gel-homepage-featured-image"/>
-                <div className="gel-homepage-featured-contrast-overlay"></div>
-                <div className="gel-homepage-featured-reveal-overlay"></div>
-                <Link to={edge.node.fields.slug} className="gel-homepage-featured-link">
-                  <div className="gel-homepage-featured-text-container">
-                    <h2>{edge.node.frontmatter.project_type} <span className="visually-hidden">for </span><br/><span>{edge.node.frontmatter.title}</span></h2>
-                    <button className="button gel-button-1 gel-button-bigger is-large is-light">See More</button>
-                  </div>
-                </Link>
-              </div>
-            </StyledFeaturesSection>
-          )
-        })
-      )
+    render={data => {
+      const edges = data.allMarkdownRemark.edges;
+      return edges.map(edge => {
+        return (
+          <StyledFeaturesSection
+            key={edge.node.id}
+            className="gel-homepage-featured columns"
+          >
+            <div className="column">
+              <PreviewCompatibleImage
+                imageInfo={
+                  edge.node.frontmatter.home_page_featured.featured_image
+                }
+                className="gel-homepage-featured-image"
+              />
+              <div className="gel-homepage-featured-contrast-overlay"></div>
+              <div className="gel-homepage-featured-reveal-overlay"></div>
+              <Link
+                to={edge.node.fields.slug}
+                className="gel-homepage-featured-link"
+              >
+                <div className="gel-homepage-featured-text-container">
+                  <h2>
+                    {edge.node.frontmatter.project_type}{' '}
+                    <span className="visually-hidden">for </span>
+                    <br />
+                    <span>{edge.node.frontmatter.title}</span>
+                  </h2>
+                  <button className="button gel-button-1 gel-button-bigger is-large is-light">
+                    See More
+                  </button>
+                </div>
+              </Link>
+            </div>
+          </StyledFeaturesSection>
+        );
+      });
     }}
   />
-)
+);
 
-export default HomePagePortfolioFeatures
+export default HomePagePortfolioFeatures;

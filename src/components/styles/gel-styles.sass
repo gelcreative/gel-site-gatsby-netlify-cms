@@ -10,17 +10,25 @@
 
 // 1. GLOBAL STYLES *********************
 
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700|IBM+Plex+Serif:400,500");
+// @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700|IBM+Plex+Serif:400,500");
 
-$sansFont: 'IBM Plex Sans'
-$serifFont: 'IBM Plex Serif'
+@font-face
+  font-family: 'HKGrotesk-Regular';
+  src: url('../../../static/fonts/HKGrotesk-Regular.otf') format('otf');
+@font-face
+  font-family: 'QuincyCF-Regular';
+  src: url('../../../static/fonts/QuincyCF-Regular.otf') format('otf');
 
-html 
+
+$sansFont: 'HKGrotesk-Regular'
+$serifFont: 'QuincyCF-Regular'
+
+html
   font-size: 10px
   box-sizing: border-box
 
 
-body 
+body
   padding: 0
   margin: 0
   font-size: 1.8rem
@@ -29,34 +37,34 @@ body
   color: #434244
 
 
-h2 
+h2
   font-family: $sansFont
   font-weight: 700
   font-size: 2.5rem
 
 
-*, *::before, *::after 
+*, *::before, *::after
   box-sizing: inherit
 
 
-a 
+a
   color: #434244
   transition: 300ms
 
 
-a:hover 
+a:hover
   color: #f26339
   text-decoration: underline
 
 
-.visually-hidden 
+.visually-hidden
   position: absolute !important
   clip: rect(1px 1px 1px 1px)
   clip: rect(1px, 1px, 1px, 1px)
   padding:0 !important
   border:0 !important
   height: 1px !important
-  width: 1px !important 
+  width: 1px !important
   overflow: hidden
 
 @media (max-width: 768px)
@@ -87,7 +95,7 @@ a:hover
   border: none
   border-radius: 0
 
-.gel-button-1.is-dark 
+.gel-button-1.is-dark
   background-color: #434345
   color: #fff
 
@@ -116,29 +124,29 @@ a:hover
   100%
     transform: scale(1)
 
-@keyframes gelLetterScale 
-  0% 
+@keyframes gelLetterScale
+  0%
     transform: scale(1) rotate(0deg)
-  
-  25% 
+
+  25%
     transform: scale(0) rotate(0deg)
-  
-  50% 
+
+  50%
     transform: scale(2) rotate(-15deg)
-  
-  100% 
+
+  100%
     transform: scale(1)
-    
+
 @keyframes gelHoverColors
   0%
     fill: #434345
   25%
     fill: #dde2e3
   50%
-    fill: #ffc857
+    fill: #ffc557
   75%
-    fill: #e9724c
+    fill: #e77252
   100%
-    fill: #143358
+    fill: #394f60
 
 // end animations

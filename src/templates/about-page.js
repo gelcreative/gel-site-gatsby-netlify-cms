@@ -1,13 +1,12 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-import styled from 'styled-components'
+import React from 'react';
+import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
+import styled from 'styled-components';
 
-import Layout from '../components/Layout'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
-import GelServices from '../components/GelServices'
-import markdownToHtml from '../util/markdownToHtml'
+import Layout from '../components/Layout';
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import markdownToHtml from '../util/markdownToHtml';
 
 const StyledAboutPage = styled.article`
   margin-top: 200px;
@@ -40,7 +39,7 @@ const StyledAboutPage = styled.article`
   }
 
   .gel-about-intro-text {
-      font-size: 2.5rem;
+    font-size: 2.5rem;
   }
 
   .gel-approach-section p {
@@ -68,26 +67,25 @@ const StyledAboutPage = styled.article`
     }
   }
 
-  @media(min-width: 769px) {
+  @media (min-width: 769px) {
     .gel-bio-text .section {
       padding: 3rem 10%;
     }
   }
-`
+`;
 
 export const AboutPageTemplate = ({
   id,
   title,
-  intro, 
+  intro,
   main,
   approach,
   services,
   helmet,
 }) => {
-
   return (
     <StyledAboutPage className="section section--gradient">
-      { helmet || '' }
+      {helmet || ''}
       <div className="container">
         <section className="columns is-centered gel-about-intro-section gel-full-height-vert-align">
           <div className="column">
@@ -122,23 +120,35 @@ export const AboutPageTemplate = ({
           </div>
           <div className="columns is-centered portfolio-link-row">
             <div className="column has-text-centered">
-              <Link to="/portfolio/" className="button gel-button-1 gel-button-bigger is-dark is-large">View our work</Link>
+              <Link
+                to="/portfolio/"
+                className="button gel-button-1 gel-button-bigger is-dark is-large"
+              >
+                View our work
+              </Link>
             </div>
           </div>
         </section>
-        <section className="columns is-centered gel-approach-section content" id="gel-approach-section">
+        <section
+          className="columns is-centered gel-approach-section content"
+          id="gel-approach-section"
+        >
           <div className="column">
             <div className="section">
               <h2 className="has-text-centered">{approach.heading}</h2>
-              <div className="gel-approach-section-text" dangerouslySetInnerHTML={{ __html: markdownToHtml(approach.text)}} />
+              <div
+                className="gel-approach-section-text"
+                dangerouslySetInnerHTML={{
+                  __html: markdownToHtml(approach.text),
+                }}
+              />
             </div>
           </div>
         </section>
-        <GelServices />
       </div>
     </StyledAboutPage>
-  )
-}
+  );
+};
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
@@ -157,10 +167,10 @@ AboutPageTemplate.propTypes = {
       text: PropTypes.string,
     }),
   }),
-}
+};
 
 const AboutPage = ({ data }) => {
-  const { frontmatter, id } = data.markdownRemark
+  const { frontmatter, id } = data.markdownRemark;
 
   return (
     <Layout>
@@ -170,25 +180,22 @@ const AboutPage = ({ data }) => {
         intro={frontmatter.about_intro}
         main={frontmatter.main}
         approach={frontmatter.approach}
-        services={frontmatter.services}
         helmet={
-          <Helmet 
-            titleTemplate="%s | Gel Marketing"
-          >
+          <Helmet titleTemplate="%s | Gel Marketing">
             <title>{`${frontmatter.title}`}</title>
             <meta name="description" content={`${frontmatter.about_intro}`} />
           </Helmet>
         }
       />
     </Layout>
-  )
-}
+  );
+};
 
 AboutPage.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
-export default AboutPage
+export default AboutPage;
 
 export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
@@ -229,8 +236,7 @@ export const aboutPageQuery = graphql`
           heading
           text
         }
-        services
       }
     }
   }
-`
+`;
