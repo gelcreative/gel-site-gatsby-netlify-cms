@@ -7,28 +7,28 @@ const StyledFeaturesSection = styled.div`
   position: relative;
   margin-bottom: 50px !important;
   overflow: hidden;
-
+  
   .gel-homepage-featured-text-container > button {
-    transform: translateY(100%);
-    opacity: 0;
+    // transform: translateY(100%);
+    opacity: 1;
   }
 
   > .column {
     position: relative;
     padding: 0;
-    &:hover {
-      .gel-homepage-featured-reveal-overlay {
-        transform: translateX(-13%) skewX(-30deg);
-        opacity: 0.7;
-      }
-      .gel-homepage-featured-text-container {
-        transform: scale(1.05);
-      }
-      button {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
+    // &:hover {
+    //   .gel-homepage-featured-reveal-overlay {
+    //     transform: translateX(-13%) skewX(-30deg);
+    //     opacity: 0.7;
+    //   }
+    //   .gel-homepage-featured-text-container {
+    //     transform: scale(1.05);
+    //   }
+    //   button {
+    //     transform: translateY(0);
+    //     opacity: 1;
+    //   }
+    // }
   }
 
   .gel-homepage-featured-link {
@@ -42,34 +42,117 @@ const StyledFeaturesSection = styled.div`
     left: 0;
   }
 
+  &:nth-child(2){ 
+    .gel-homepage-featured-text-container{
+      background: ${props => props.theme.orange};
+      left: 0;
+      &:after {
+        background: ${props => props.theme.orange};
+        z-index: -1;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right:-2em;
+        width:4em;
+        -webkit-transform: skew(3deg);
+        -moz-transform: skew(3deg);
+        -o-transform: skew(3deg);
+      }
+      h2 {
+        color: ${props => props.theme.darkOrange};
+      }
+      > .link {
+        color: ${props => props.theme.darkOrange};
+      }
+    }
+  }
+  &:nth-child(3){
+    .gel-homepage-featured-text-container{
+      // left:50%;
+      background: ${props => props.theme.yellow};
+      right: 0;
+      &:before {
+        background: ${props => props.theme.yellow};
+        z-index: -1;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left:-2em;
+        width:4em;
+        -webkit-transform: skew(-3deg);
+        -moz-transform: skew(-3deg);
+        -o-transform: skew(-3deg);
+      }
+      h2 {
+        color: ${props => props.theme.darkYellow};
+      }
+      > .link {
+        color: ${props => props.theme.darkYellow};
+      }
+    }
+  }
+  
+  &:nth-child(4){
+    .gel-homepage-featured-text-container{
+      background: ${props => props.theme.blue};
+      left: 0;
+      &:after {
+        background: ${props => props.theme.blue};
+        z-index: -1;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right:-2em;
+        width:4em;
+        -webkit-transform: skew(3deg);
+        -moz-transform: skew(3deg);
+        -o-transform: skew(3deg);
+      }
+      h2 {
+        color: ${props => props.theme.lightBlue};
+      }
+      > .link {
+        color: ${props => props.theme.lightBlue};
+      }
+    }
+  }
   .gel-homepage-featured-text-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
+    padding: 50px;
+    box-sizing:border-box;
     top: 0;
-    right: 0;
+    // right: 0;
     bottom: 0;
-    left: 0;
-    width: 30em;
-    max-width: 95%;
-    margin: 0 auto;
+    // left: 0;
+    width: 40em;
+    max-width: 50%;
     transform: scale(1);
     transition: 300ms ease-in-out;
     transition-delay: 200ms;
-    h2 {
-      color: ${props => props.theme.orange};
-      font-size: 3rem;
+    h2 {      
+      font-size: 2.5rem;
       font-weight: 500;
-      margin-bottom: 2em;
+      margin-bottom: 4em;
       text-align: center;
       line-height: 1.3;
       span {
-        font-size: 1.1em;
-        color: #ffffff;
+        font-size: 7rem;
+        // color: #ffffff;
         font-weight: 700;
+        display:block;
+        margin-top:2em;
       }
+    }
+    > .link {
+      font-size:2.5rem;
+      text-decoration:underline;
     }
   }
 
@@ -118,10 +201,19 @@ const StyledFeaturesSection = styled.div`
 
   @media (max-width: 768px) {
     .gel-homepage-featured-text-container {
+      padding:20px;
+      width: 30em;
       h2 {
         margin-bottom: 1em;
+        font-size:2rem;
+        span {
+          margin-top:.5em;
+          font-size:3rem;
+        }
+      } 
+      > .link {
+        font-size:2rem;
       }
-
       button {
         opacity: 1;
         transform: translateY(0);
@@ -132,7 +224,13 @@ const StyledFeaturesSection = styled.div`
 
   @media (max-width: 439px) {
     .gel-homepage-featured-text-container h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
+      span {
+        font-size:3rem;
+      }
+    }
+    > .link {
+      font-size:2rem;
     }
   }
 `;
@@ -189,8 +287,6 @@ const HomePagePortfolioFeatures = () => (
                 }
                 className="gel-homepage-featured-image"
               />
-              <div className="gel-homepage-featured-contrast-overlay"></div>
-              <div className="gel-homepage-featured-reveal-overlay"></div>
               <Link
                 to={edge.node.fields.slug}
                 className="gel-homepage-featured-link"
@@ -202,9 +298,9 @@ const HomePagePortfolioFeatures = () => (
                     <br />
                     <span>{edge.node.frontmatter.title}</span>
                   </h2>
-                  <button className="button gel-button-1 gel-button-bigger is-large is-light">
-                    See More
-                  </button>
+                  <a className="link">
+                    View Case Study
+                  </a>
                 </div>
               </Link>
             </div>

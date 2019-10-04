@@ -7,6 +7,8 @@ import { lowerCase } from 'lodash'
 const StyledLogoGrid = styled.section`
   background: #fff;
   flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto!important;
 
   .gel-client-logos-container {
     position: relative;

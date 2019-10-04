@@ -64,24 +64,29 @@ class ScrollyDo extends Component {
     window.addEventListener('scroll', () => {
       const scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
       const scrollyDoPosition = scrollyContainer.offsetTop;
-      const windowHeight = window.innerHeight;
-      if((scrollTop + windowHeight) >= scrollyDoPosition + 400) {
+      const windowHeight = window.innerHeight;        
+      if((scrollTop + windowHeight) >= scrollyDoPosition + 200) {
         scrollyContainer.style.opacity = 0;
       } else {
         scrollyContainer.style.opacity = 1;
+        if((scrollTop + windowHeight) <= scrollyDoPosition + 200) {
+          setTimeout(() => this.scrollBehaviour(), 1000);
+        }
       }
     })
   }
-
+  
   scrollBehaviour(e) {
-    e.preventDefault();
+    if(e){
+      e.preventDefault();
+    }
     const targetContainer = document.querySelector(`#${this.props.targetId}`);
     const targetPosition = targetContainer.offsetTop - 200;
 
     // Smooth scroll function
     scrollIt(targetPosition, 1000, 'easeInOutQuint');
   }
-  
+
   render () {
     return (
       <ScrollyDoContainer className="scrolly-container" fullHeight={this.props.fullHeight} >

@@ -11,21 +11,13 @@ import markdownToHtml from '../util/markdownToHtml';
 const StyledAboutPage = styled.article`
   margin-top: 200px;
 
-  .gel-about-intro-section {
-    padding: 0 0 200px;
-  }
-
   .gel-about-intro-text {
     color: ${props => props.theme.orange};
-    font-weight: 700;
+    font-weight: 300;
     /* font-style: italic; */
   }
 
   #gel-approach-section {
-    margin-bottom: 100px;
-  }
-
-  #gel-bio-section {
     margin-bottom: 100px;
   }
 
