@@ -70,7 +70,7 @@ class ScrollyDo extends Component {
       } else {
         scrollyContainer.style.opacity = 1;
         if((scrollTop + windowHeight) <= scrollyDoPosition + 200) {
-          setTimeout(() => this.scrollBehaviour(), 1000);
+          // setTimeout(() => this.scrollBehaviour(), 4000);
         }
       }
     })

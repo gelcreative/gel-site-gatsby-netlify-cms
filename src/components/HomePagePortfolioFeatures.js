@@ -153,6 +153,9 @@ const StyledFeaturesSection = styled.div`
     > .link {
       font-size:2.5rem;
       text-decoration:underline;
+      background:none;
+      border:none;
+      box-shadow:none;
     }
   }
 
@@ -298,9 +301,9 @@ const HomePagePortfolioFeatures = () => (
                     <br />
                     <span>{edge.node.frontmatter.title}</span>
                   </h2>
-                  <a className="link">
+                  <button className="link">
                     View Case Study
-                  </a>
+                  </button>
                 </div>
               </Link>
             </div>
