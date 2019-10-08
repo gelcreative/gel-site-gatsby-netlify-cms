@@ -39,6 +39,7 @@ const StyledHomePage = styled.article`
 
   .columns.gel-home-featured-section {
     margin-bottom: 10rem;
+    margin-top: 5rem;
   }
 
   @media (max-width: 450px) {
@@ -76,6 +77,15 @@ export const IndexPageTemplate = ({
           fullHeight={true}
           targetId="gel-home-intro-section"
         ></ScrollyDo>
+        <section
+          className="gel-home-intro-logo is-centered"
+          id="gel-home-intro-logo-section"
+        >
+          <div className="column is-10 is-offset-1">
+            <h2 className="outlined">HI. WE ARE</h2>
+            <h1>GEL</h1>
+          </div>
+        </section>
         <section
           className="gel-home-intro-text is-centered"
           id="gel-home-intro-section"
