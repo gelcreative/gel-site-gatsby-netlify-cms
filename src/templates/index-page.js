@@ -28,8 +28,13 @@ const StyledHomePage = styled.article`
   }
 
   .gel-home-intro-text p {
-    font-size: 1.9rem;
+    font-size: 3.5rem;
     line-height: 1.25em;
+    text-align:center;
+    color:#F36A4A;
+    font-weight:600;
+    width:55rem;
+    margin:0 auto;
   }
 
   .columns.gel-home-featured-section {
@@ -82,7 +87,7 @@ export const IndexPageTemplate = ({
         <GelServices />
         <section className="columns is-centered gel-home-featured-section">
           <div className="column has-text-centered">
-            <h2 className="has-text-centered" style={{ marginBottom: '4rem' }}>
+            <h2 className="has-text-centered" style={{ marginBottom: '-3rem' }}>
               {featuredPortfolioTitle}
             </h2>
             <HomePagePortfolioFeatures />
