@@ -87,7 +87,7 @@ export const IndexPageTemplate = ({
         <GelServices />
         <section className="columns is-centered gel-home-featured-section">
           <div className="column has-text-centered">
-            <h2 className="has-text-centered" style={{ marginBottom: '-3rem' }}>
+            <h2 className="has-text-centered outlined" style={{ marginBottom: '-3rem' }}>
               {featuredPortfolioTitle}
             </h2>
             <HomePagePortfolioFeatures />
