@@ -16,6 +16,8 @@ const StyledFeaturesSection = styled.div`
   > .column {
     position: relative;
     padding: 0;
+    max-width:88%;
+    margin: 0 auto;
   }
 
   .gel-homepage-featured-link {
@@ -26,7 +28,7 @@ const StyledFeaturesSection = styled.div`
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 0;    
   }
 
   &:nth-child(2){ 
@@ -129,7 +131,7 @@ const StyledFeaturesSection = styled.div`
       span {
         font-size: 7rem;
         // color: #ffffff;
-        font-weight: 700;
+        font-weight: 800;
         display:block;
         margin-top:1em;
       }
@@ -141,6 +143,8 @@ const StyledFeaturesSection = styled.div`
       border:none;
       box-shadow:none;
       margin-top:4em;
+      font-weight:800;
+      font-style:italic;
     }
   }
 
@@ -188,6 +192,9 @@ const StyledFeaturesSection = styled.div`
   }
 
   @media (max-width: 1215px) {
+    > .column {
+      max-width:80%;
+    }
     .gel-homepage-featured-text-container {
       padding:20px;
       h2 {
@@ -209,7 +216,23 @@ const StyledFeaturesSection = styled.div`
       }
     }
   }
-
+  @media(max-width: 768px){
+    
+    > .column {
+      max-width:75%;
+    }
+    .gel-homepage-featured-text-container {
+      h2 {
+        margin-bottom:-2rem;
+        span {
+          font-size:2rem;
+        }                                  
+      }
+      > .link {
+        font-size:1.5rem;
+      }
+    }
+  }
   @media (max-width: 439px) {
     .gel-homepage-featured-text-container h2 {
       font-size: 2rem;
@@ -283,13 +306,13 @@ const HomePagePortfolioFeatures = () => (
               >
                 <div className="gel-homepage-featured-text-container">
                   <h2>
-                    {edge.node.frontmatter.project_type}{' '}
+                    {edge.node.frontmatter.project_type.toUpperCase()}{' '}
                     <span className="visually-hidden">for </span>
                     <br />
                     <span>{edge.node.frontmatter.title}</span>
                   </h2>
                   <button className="link">
-                    View Case Study
+                    VIEW CASE STUDY
                   </button>
                 </div>
               </Link>

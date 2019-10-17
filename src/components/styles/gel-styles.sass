@@ -14,10 +14,10 @@
 
 @font-face
   font-family: 'HKGrotesk-Regular'
-  src: url('../../../static/fonts/HKGrotesk-Regular.otf') format('otf')
+  src: url('../../../static/fonts/HKGrotesk-Regular.woff') format('woff'), url('../../../static/fonts/HKGrotesk-Regular.woff2') format('woff2')
 @font-face
   font-family: 'QuincyCF-Regular'
-  src: url('../../../static/fonts/QuincyCF-Regular.otf') format('otf')
+  src: url('../../../static/fonts/QuincyCF-Regular.woff') format('woff'), url('../../../static/fonts/QuincyCF-Regular.woff') format('woff2')
 
 
 $sansFont: 'HKGrotesk-Regular'
@@ -44,15 +44,16 @@ h1
   margin-bottom: 0
   text-align: center
 h2
-  font-family: $serifFont
+  font-family: $sansFont
   font-weight: 700
   font-size: 4.5rem
-
+h2 span
+  font-family: $serifFont
 
 .outlined
   font-family: $serifFont
-  font-weight: 700
-  font-size: 6rem
+  font-weight: 600
+  font-size: 6.5rem
   color:#fff
   float: left
   text-shadow: 1px 0 0 #F36A4A, -1px 0 0 #F36A4A, 0 1px 0 #F36A4A, 0 -1px 0 #F36A4A, 1px 1px #F36A4A, -1px -1px 0 #F36A4A, 1px -1px 0 #F36A4A, -1px 1px 0 #F36A4A
@@ -66,7 +67,7 @@ h2
   font-size: 4rem
   float: none
   margin-left: -100px
-  margin-bottom: -6.75rem
+  margin-bottom: -7.85rem
   text-align: center  
 
 .gel-homepage-featured 

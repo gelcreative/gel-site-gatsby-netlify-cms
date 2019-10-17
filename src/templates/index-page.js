@@ -53,7 +53,7 @@ const StyledHomePage = styled.article`
   @media(max-width: 768px){
     .columns.gel-home-featured-section {
       h2 {
-        margin-bottom:-2rem;
+        margin-bottom:-2rem;                       
       }
     }
   }
