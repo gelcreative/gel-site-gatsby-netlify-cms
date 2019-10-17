@@ -6,4 +6,4 @@ When deciding on which tech stack to build the latest incarnation of our site on
 
 We built this site on the [Gatsby Netlify CMS starter template](https://github.com/netlify-templates/gatsby-starter-netlify-cms).
 
-Come visit us [at our new site!](https://www.gelagency.com/)
+Come visit us [at our new site!](https://www.gelagency.com/) 
