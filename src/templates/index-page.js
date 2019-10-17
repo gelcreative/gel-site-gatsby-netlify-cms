@@ -72,6 +72,7 @@ export const IndexPageTemplate = ({
   helmet,
   title,
   intro,
+  intro2,
   featuredPortfolioTitle,
   clientListTitle,
 }) => {
@@ -108,6 +109,7 @@ export const IndexPageTemplate = ({
         >
           <div className="column is-10 is-offset-1">
             <p>{intro}</p>
+            <p>{intro2}</p>
           </div>
         </section>
         <GelServices />
@@ -157,6 +159,7 @@ const IndexPage = ({ data }) => {
         }
         title={frontmatter.title}
         intro={frontmatter.intro}
+        intro2={frontmatter.intro2}
         featuredPortfolioTitle={frontmatter.featuredPortfolioTitle}
         clientListTitle={frontmatter.clientListTitle}
       />
@@ -176,6 +179,7 @@ export const indexPageQuery = graphql`
       frontmatter {
         title
         intro
+        intro2
         featuredPortfolioTitle
         clientListTitle
       }
