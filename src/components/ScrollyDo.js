@@ -70,10 +70,15 @@ class ScrollyDo extends Component {
       } else {
         scrollyContainer.style.opacity = 1;
         if((scrollTop + windowHeight) <= scrollyDoPosition + 200) {
-          // setTimeout(() => this.scrollBehaviour(), 4000);
+          // setTimeout(() => this.scrollBehaviour(), 3000);
         }
       }
     })
+    // window.addEventListener('load', () => {
+
+    //       setTimeout(() => this.scrollBehaviour(), 3000);
+      
+    // })
   }
   
   scrollBehaviour(e) {
@@ -81,7 +86,7 @@ class ScrollyDo extends Component {
       e.preventDefault();
     }
     const targetContainer = document.querySelector(`#${this.props.targetId}`);
-    const targetPosition = targetContainer.offsetTop - 200;
+    const targetPosition = targetContainer.offsetTop - 300;
 
     // Smooth scroll function
     scrollIt(targetPosition, 1000, 'easeInOutQuint');

@@ -48,14 +48,16 @@ h2
   font-weight: 700
   font-size: 4.5rem
 
+
 .outlined
   font-family: $serifFont
   font-weight: 700
   font-size: 6rem
   color:#fff
-  margin-left: 100px
   float: left
   text-shadow: 1px 0 0 #F36A4A, -1px 0 0 #F36A4A, 0 1px 0 #F36A4A, 0 -1px 0 #F36A4A, 1px 1px #F36A4A, -1px -1px 0 #F36A4A, 1px -1px 0 #F36A4A, -1px 1px 0 #F36A4A
+  @media (max-width: 768px)
+    font-size: 4rem
 
 #gel-home-intro-logo-section
   padding-bottom: 0
@@ -64,9 +66,12 @@ h2
   font-size: 4rem
   float: none
   margin-left: -100px
-  margin-bottom: -6.5rem
-  text-align: center
+  margin-bottom: -6.75rem
+  text-align: center  
 
+.gel-homepage-featured 
+  clear: left
+  
 *, *::before, *::after
   box-sizing: inherit
 
@@ -180,3 +185,32 @@ section
     fill: #394f60
 
 // end animations
+
+#gel-home-masthead-logo 
+  height: 0
+  overflow: hidden
+  opacity: 0 
+  animation: cssFade 5s, cssAnimation 8s
+  animation-delay: 0s
+
+@keyframes cssAnimation 
+    0%
+        height: 100vh
+        overflow: visible
+    50%
+        height: 100vh
+        overflow: visible
+    60%
+        height: 100vh
+        overflow: visible
+    100% 
+        height: 0
+        overflow: hidden
+
+@keyframes cssFade 
+    0%
+        opacity: 1
+    50% 
+        opacity: 1
+    100% 
+        opacity: 0

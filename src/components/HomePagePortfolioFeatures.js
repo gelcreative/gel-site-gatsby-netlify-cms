@@ -16,19 +16,6 @@ const StyledFeaturesSection = styled.div`
   > .column {
     position: relative;
     padding: 0;
-    // &:hover {
-    //   .gel-homepage-featured-reveal-overlay {
-    //     transform: translateX(-13%) skewX(-30deg);
-    //     opacity: 0.7;
-    //   }
-    //   .gel-homepage-featured-text-container {
-    //     transform: scale(1.05);
-    //   }
-    //   button {
-    //     transform: translateY(0);
-    //     opacity: 1;
-    //   }
-    // }
   }
 
   .gel-homepage-featured-link {
@@ -53,7 +40,7 @@ const StyledFeaturesSection = styled.div`
         position: absolute;
         top: 0;
         bottom: 0;
-        right:-2em;
+        right:-1em;
         width:4em;
         -webkit-transform: skew(3deg);
         -moz-transform: skew(3deg);
@@ -79,7 +66,7 @@ const StyledFeaturesSection = styled.div`
         position: absolute;
         top: 0;
         bottom: 0;
-        left:-2em;
+        left:-1em;
         width:4em;
         -webkit-transform: skew(-3deg);
         -moz-transform: skew(-3deg);
@@ -105,7 +92,7 @@ const StyledFeaturesSection = styled.div`
         position: absolute;
         top: 0;
         bottom: 0;
-        right:-2em;
+        right:-1em;
         width:4em;
         -webkit-transform: skew(3deg);
         -moz-transform: skew(3deg);
@@ -125,21 +112,18 @@ const StyledFeaturesSection = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    padding: 50px;
+    padding: 40px;
     box-sizing:border-box;
     top: 0;
-    // right: 0;
     bottom: 0;
-    // left: 0;
     width: 40em;
-    max-width: 50%;
+    max-width: 55%;
     transform: scale(1);
     transition: 300ms ease-in-out;
     transition-delay: 200ms;
     h2 {      
       font-size: 2.5rem;
       font-weight: 500;
-      margin-bottom: 4em;
       text-align: center;
       line-height: 1.3;
       span {
@@ -147,7 +131,7 @@ const StyledFeaturesSection = styled.div`
         // color: #ffffff;
         font-weight: 700;
         display:block;
-        margin-top:2em;
+        margin-top:1em;
       }
     }
     > .link {
@@ -156,6 +140,7 @@ const StyledFeaturesSection = styled.div`
       background:none;
       border:none;
       box-shadow:none;
+      margin-top:4em;
     }
   }
 
@@ -202,20 +187,20 @@ const StyledFeaturesSection = styled.div`
     transform: translateX(-100%) skewX(-30deg);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1215px) {
     .gel-homepage-featured-text-container {
       padding:20px;
-      width: 30em;
       h2 {
         margin-bottom: 1em;
         font-size:2rem;
         span {
-          margin-top:.5em;
+          margin-top:1em;
           font-size:3rem;
         }
       } 
       > .link {
         font-size:2rem;
+        margin-top: 3.5em;
       }
       button {
         opacity: 1;
@@ -229,11 +214,13 @@ const StyledFeaturesSection = styled.div`
     .gel-homepage-featured-text-container h2 {
       font-size: 2rem;
       span {
-        font-size:3rem;
+        font-size:2rem;
+        margin-top:1.75em;
       }
     }
     > .link {
-      font-size:2rem;
+      font-size:1rem;
+      margin-top:2em;
     }
   }
 `;

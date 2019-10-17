@@ -24,7 +24,15 @@ const StyledHomePage = styled.article`
       display: flex;
       align-items: center;
       justify-content: center;
-    }
+    }    
+  }
+
+  #gel-home-masthead-logo {
+    height: 100vh
+    opacity: 1;
+    // overflow: hidden;
+    // display:none;
+    // visibility: hidden    
   }
 
   .gel-home-intro-text p {
@@ -33,13 +41,21 @@ const StyledHomePage = styled.article`
     text-align:center;
     color:#F36A4A;
     font-weight:600;
-    width:55rem;
-    margin:0 auto;
   }
 
   .columns.gel-home-featured-section {
     margin-bottom: 10rem;
     margin-top: 5rem;
+    h2 {
+      margin-bottom:-3rem;      
+    }
+  }
+  @media(max-width: 768px){
+    .columns.gel-home-featured-section {
+      h2 {
+        margin-bottom:-2rem;
+      }
+    }
   }
 
   @media (max-width: 450px) {
@@ -63,11 +79,11 @@ export const IndexPageTemplate = ({
     <StyledHomePage className="section">
       {helmet || ''}
       <div className="container">
-        <section className="gel-home-masthead columns is-centered">
+        <section id="gel-home-masthead-logo" className="gel-home-masthead columns is-centered">
           <div className="column has-text-centered">
             <h1 className="visually-hidden">{title}</h1>
             <img
-              src="/img/Gel_Written_Whimsical_Colour_550x350_Transparent_Background.gif"
+              src="/img/Gel_Whimsical_550x350_white_Background.gif"
               alt="Gel Logo Animation"
             />
           </div>
@@ -97,7 +113,7 @@ export const IndexPageTemplate = ({
         <GelServices />
         <section className="columns is-centered gel-home-featured-section">
           <div className="column has-text-centered">
-            <h2 className="has-text-centered outlined" style={{ marginBottom: '-3rem' }}>
+            <h2 className="has-text-centered outlined">
               {featuredPortfolioTitle}
             </h2>
             <HomePagePortfolioFeatures />

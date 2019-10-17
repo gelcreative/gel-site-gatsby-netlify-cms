@@ -7,7 +7,7 @@ import { lowerCase } from 'lodash'
 const StyledLogoGrid = styled.section`
   background: #fff;
   flex-wrap: wrap;
-  max-width: 1100px;
+  max-width: 800px;
   margin: 0 auto!important;
 
   .gel-client-logos-container {
@@ -41,6 +41,9 @@ const StyledLogoGrid = styled.section`
 
   .gel-client-logos-container:hover .gel-client-logo-grayscale {
       opacity: 0;
+  }
+  @media(max-width: 768px) {
+    max-width:300px;
   }
 `
 

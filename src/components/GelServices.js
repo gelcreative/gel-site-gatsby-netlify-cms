@@ -6,6 +6,8 @@ const StyledServices = styled.section`
     font-size: 4rem;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 
   .gel-services-list li {

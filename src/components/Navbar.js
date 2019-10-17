@@ -43,7 +43,7 @@ const StyledHeader = styled.nav`
   }
 
   .navbar-burger {
-    color: ${props => props.theme.white};
+    color: ${props => props.theme.black};
     span {
       height: 3px;
       width: 20px;
