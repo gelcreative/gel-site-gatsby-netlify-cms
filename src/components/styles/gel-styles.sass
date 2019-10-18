@@ -18,10 +18,14 @@
 @font-face
   font-family: 'QuincyCF-Regular'
   src: url('../../../static/fonts/QuincyCF-Regular.woff') format('woff'), url('../../../static/fonts/QuincyCF-Regular.woff') format('woff2')
+@font-face
+  font-family: 'QuincyCF-Bold'
+  src: url('../../../static/fonts/QuincyCF-Bold.woff') format('woff'), url('../../../static/fonts/QuincyCF-Bold.woff') format('woff2')
 
 
 $sansFont: 'HKGrotesk-Regular'
 $serifFont: 'QuincyCF-Regular'
+$serifFontBold: 'QuincyCF-Bold'
 
 html
   font-size: 10px
@@ -43,6 +47,10 @@ h1
   color: #F36A4A
   margin-bottom: 0
   text-align: center
+  
+h1.siteTitle
+    font-family: $serifFontBold
+    font-weight: 800
 h2
   font-family: $sansFont
   font-weight: 700

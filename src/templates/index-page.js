@@ -100,7 +100,7 @@ export const IndexPageTemplate = ({
         >
           <div className="column is-10 is-offset-1">
             <h2 className="outlined">HI. WE ARE</h2>
-            <h1>GEL</h1>
+            <h1 className="siteTitle">GEL</h1>
           </div>
         </section>
         <section
