@@ -129,7 +129,7 @@ export const BlogPostTemplate = ({
         </section>
         <section className="columns blog-newsletter-form-section is-centered">
           <div className="column has-text-centered">
-          <h2>Get our markteing blog post straight to your inbox.</h2>
+          <h2>Picking up what we're putting down? Get our marketing blog straight to your inbox.</h2>
             <NewsletterForm />
           </div>
         </section>
