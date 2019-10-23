@@ -113,9 +113,9 @@ export const BlogPostTemplate = ({
                   <span className="styled-slashes">&#47;&#47;</span>
                   <br />
                   <span>Author: </span>{author}
-                  <span className="styled-slashes">&#47;&#47;</span>
+                  {/*<span className="styled-slashes">&#47;&#47;</span>
                   <br />
-                  {/* <span>Date </span>{date} */}
+                   <span>Date </span>{date} */}
                 </p>
             </div>
             <p className="gel-blog-post-description">{description}</p>
