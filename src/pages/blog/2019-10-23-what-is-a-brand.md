@@ -5,7 +5,7 @@ author: Shannon Ambeau
 date: 2019-10-23T13:25:47.071Z
 featured_image:
   alt: What is a brand?
-  image: /img/what_is_a_brand_gel_blog_featured_1280x641_2019.jpg
+  image: /img/what_is_a_brand_gel_blog_feature_1920x800_2019.jpg
 banner_image:
   alt: What is a brand?
   image: /img/what_is_a_brand_gel_blog_cover_1920x800_2019.jpg
@@ -13,7 +13,6 @@ description: >-
   What is a brand? You’ve likely asked yourself this question a few times and
   maybe even gone down a rabbit hole searching for the answer on Google.
 tags:
-  - portfolio
   - what is a brand
   - branding
   - professional logo
