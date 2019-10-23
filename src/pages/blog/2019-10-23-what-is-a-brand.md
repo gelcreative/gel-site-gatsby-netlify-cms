@@ -70,7 +70,13 @@ It’s tempting to jump into designing a high quality logo and selecting fonts �
 
 The goal is to come up with a few phrases that articulate not what you do, but why you do it. 
 
-Once you set the brand vision and define the elements, then you build out the brand identity. The visual identity is what people see – the logomark and all of the visual elements, including things like fonts, a colour pallette, and media specifications, to name a few. You also need to get clear on what people hear — **the voice and tone** and all of the written word guidelines for your brand.  
+Once you set the brand vision and define the elements, then you build out the brand identity. The visual identity is what people see – the logomark and all of the visual elements, including things like fonts, a colour pallette, and media specifications, to name a few. You also need to get clear on what people hear — **the voice and tone** and all of the written word guidelines for your brand.
+
+
+
+![brand diagram](/img/brand_diagram.jpg)
+
+  
 
 The final step is pulling it all together in a comprehensive **brand guide**. Packaging it all up in a brand guide gives you and your staff a reference book, ensuring everyone stays on brand, no matter the content being created or the channel it’s being created for. If the brand guide is doing its job, your team will achieve consistency, whether running an ad campaign,writing a blog post, issuing a press release, or crafting a post for social media. 
 
