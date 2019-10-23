@@ -106,16 +106,16 @@ export const BlogPostTemplate = ({
                 <p className="gel-blog-meta">  
                   {tags && tags.length ? (
                     <>
-                      <span>Category </span>
+                      <span>Category: </span>
                         <Link key={tags[0] + `tag`} to={`/tags/${kebabCase(tags[0])}/`}>{tags[0]}</Link>
                     </>
                   ) : null}
                   <span className="styled-slashes">&#47;&#47;</span>
                   <br />
-                  <span>Author </span>{author}
+                  <span>Author: </span>{author}
                   <span className="styled-slashes">&#47;&#47;</span>
                   <br />
-                  <span>Date </span>{date}
+                  {/* <span>Date </span>{date} */}
                 </p>
             </div>
             <p className="gel-blog-post-description">{description}</p>
@@ -129,7 +129,7 @@ export const BlogPostTemplate = ({
         </section>
         <section className="columns blog-newsletter-form-section is-centered">
           <div className="column has-text-centered">
-          <h2>Picking up what we’re putting down? Get it straight to your inbox.</h2>
+          <h2>Get our markteing blog post straight to your inbox.</h2>
             <NewsletterForm />
           </div>
         </section>
