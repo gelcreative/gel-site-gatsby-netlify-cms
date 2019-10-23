@@ -27,7 +27,7 @@ tags:
 ---
 You may have heard that “your brand is not a logo” before. It’s understandable that most people confuse a logo with a brand. The **logo** is what gets the most attention. It’s the first thing people see — it’s front and center on your website and on your **product packaging**. So if a brand is more than just a logo, then what exactly is it?
 
-At Gel, we like [Seth Godin’s definition.](https://seths.blog/2009/12/define-brand/) 
+At Gel, we like [Seth Godin’s definition](https://seths.blog/2009/12/define-brand/). 
 
 > “A brand is the set of expectations, memories, stories and relationships that, taken together, account for a consumer's decision to choose one product or service over another.” - Seth Godin, Author
 
