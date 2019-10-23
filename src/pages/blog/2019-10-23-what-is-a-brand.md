@@ -74,7 +74,7 @@ Once you set the brand vision and define the elements, then you build out the br
 
 
 
-![brand diagram](/img/brand_diagram.jpg)
+![brand diagram](/img/brand_diagram.jpg "Brand Diagram")
 
   
 
