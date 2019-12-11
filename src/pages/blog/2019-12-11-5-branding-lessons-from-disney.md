@@ -9,7 +9,9 @@ featured_image:
 banner_image:
   alt: 5 Branding Lessons From Disney+
   image: /img/gel_blog_cover_artboard-3.jpg
-description: "What is it about Disney that compels over 10M\_people to subscribe to Disney+, their video streaming service on the first day? We can learn a few important branding lessons from Disney+.\_"
+description: >-
+  Disney+ may be the most successful SaaS launch in recent years. Why did over
+  10M people subscribe on the first day? In a word — branding.
 tags:
   - Disney+
   - DisneyPlus
