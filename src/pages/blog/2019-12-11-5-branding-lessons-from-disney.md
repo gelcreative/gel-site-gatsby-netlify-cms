@@ -39,7 +39,7 @@ Whether it’s Disney, Pixar, Marvel, or Star Wars, they all do one thing very w
 
 It’s every marketer’s dream — universal appeal. From toddlers to grandparents, Disney breaks all the brand targeting rules. How many times have you been told that you need to get very specific about which customer you want to attract — right down to the shoes they wear and the car they drive? Not Disney. They flip this rule on its head. It’s in the ​[Disney+ tagline​](https://www.disneyplus.com/en-ca/welcome) and they’re  absolutely right.  
 
-> _**“Where timeless characters meet the heroes of today. From Mickey Mouse to Iron Man, Snow White to Moana, Luke Skywalker to Thor - there's  something for everyone.”**_
+> **_“Where timeless characters meet the heroes of today. From Mickey Mouse to Iron Man, Snow White to Moana, Luke Skywalker to Thor - there's  something for everyone.”_**
 
 Disney+ is there to entertain us during every transition and milestone of life as well. Most products are relevant to the consumer during a life phase — high school, getting married, having babies, moving out, buying a first home. What does this mean for the brand? Lifelong customer loyalty. 
 
@@ -77,15 +77,15 @@ What’s going on here? In a word, nostalgia. There have been studies done on th
 
 When brands evoke happy memories of childhood, we buy. Add to that adorable animated characters and enemy fighting superheroes and we buy with conviction. We buy whatever you’re selling. That’s the value of the Disney brand. It’s money in the bank.  
 
-![5 Marketing Lessons From Disney+](/img/gel_blog_cover_artboard-5.jpg "5 Marketing Lessons From Disney+")
+![5 Marketing Lessons From Disney+](/img/gel_blog_5things_artboard-5.jpg "5 Marketing Lessons From Disney+")
 
 ## 4. Forget User-Generated Content. It’s About User-Generated ​Conversations​.
 
-Check out the ​[Disney+ Instagram feed​](https://www.instagram.com/disneyplus/?hl=en). There are posts with 1+ million views and some with over 5000 comments. What’s going on here? The ultimate community engagement. They’re excited and they want to talk about it. Disney superfans of the world unite. ​_**The ultimate community engagement. Branded content eliciting user-generated conversations**_. ​Much more impactful than a like, a comment or a share. Conversations between superfans hosted in the comments section of the Disney+ posts.  
+Check out the ​[Disney+ Instagram feed​](https://www.instagram.com/disneyplus/?hl=en). There are posts with 1+ million views and some with over 5000 comments. What’s going on here? The ultimate community engagement. They’re excited and they want to talk about it. Disney superfans of the world unite. ​**_The ultimate community engagement. Branded content eliciting user-generated conversations_**. ​Much more impactful than a like, a comment or a share. Conversations between superfans hosted in the comments section of the Disney+ posts.  
 
 ## 5. Right Product Mix. Not too Much.
 
-Content overwhelm is a thing. _**The volume of content being published on the daily makes it hard for brands to rise above the noise.**_ By making the content exclusive to Disney+ and jumping on the coattails of Netflix Originals, Disney+ appeals to everyone. Capitalizing on  classic content, they’re generating revenue on content that paid for itself decades ago. They’ve included National Geographic to expand the offer beyond pure entertainment into education and creating original content keeps consumers interested. 
+Content overwhelm is a thing. **_The volume of content being published on the daily makes it hard for brands to rise above the noise._** By making the content exclusive to Disney+ and jumping on the coattails of Netflix Originals, Disney+ appeals to everyone. Capitalizing on  classic content, they’re generating revenue on content that paid for itself decades ago. They’ve included National Geographic to expand the offer beyond pure entertainment into education and creating original content keeps consumers interested. 
 
 Disney+ will beat Netflix in the original content arena. They have an unfair advantage — proof in the form of a long track record of master storytellers overdelivering value for more than a century. Consumers trust Disney. There’s no proving anything. Just delivering the magic  kingdom we know and love. Keeping it exclusive to subscribers makes Disney+ bulletproof. 
 
