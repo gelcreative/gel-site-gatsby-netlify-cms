@@ -12,7 +12,7 @@ banner_image:
 description: >-
   Disney+ may be the most successful video-on-demand service launch in recent
   years. Why did over 10M people subscribe on the first day? In a word —
-  branding.
+  marketing.
 tags:
   - Disney+
   - DisneyPlus
