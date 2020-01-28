@@ -5,7 +5,7 @@ author: Shannon Ambeau
 date: 2020-01-27T20:41:42.390Z
 featured_image:
   alt: So You Want to be an Entrepreneur
-  image: /img/gel_blog_cover-02.jpg
+  image: /img/2020_gel_blog_social_template_featured-banner.jpg
 banner_image:
   alt: So You Want to be an Entrepreneur
   image: /img/2020_gel_blog_social_template_banner.jpg
