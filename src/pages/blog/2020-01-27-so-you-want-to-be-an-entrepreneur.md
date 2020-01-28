@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: So You Want to be an Entrepreneur
+title: Do You Have What it Takes to be an Entrepreneur?
 author: Shannon Ambeau
 date: 2020-01-27T20:41:42.390Z
 featured_image:
