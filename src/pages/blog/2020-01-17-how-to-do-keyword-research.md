@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: 'How to do keyword research '
+title: How to do Keyword Research
 author: Shannon Ambeau
 date: 2020-01-16T21:39:21.837Z
 featured_image:
