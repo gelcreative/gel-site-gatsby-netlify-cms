@@ -5,10 +5,10 @@ author: Shannon Ambeau
 date: 2020-01-16T21:39:21.837Z
 featured_image:
   alt: 'How to do keyword research '
-  image: /img/gel_blog_2_artboard-4.jpg
+  image: /img/gel_blog_feature_banner.jpg
 banner_image:
   alt: 'How to do keyword research '
-  image: /img/gel_blog_2_artboard-3.jpg
+  image: /img/gel_blog_banner.jpg
 description: >-
   You know it’s something you should do. You probably know it’s important for
   your website. What you may not know is that before you produce any piece of
