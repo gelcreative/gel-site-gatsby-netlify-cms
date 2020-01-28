@@ -8,7 +8,7 @@ featured_image:
   image: /img/gel_blog_cover-02.jpg
 banner_image:
   alt: So You Want to be an Entrepreneur
-  image: /img/gel_blog_cover-01.jpg
+  image: /img/2020_gel_blog_social_template_banner.jpg
 description: >-
   Billionaires are good for business. Richard Branson and Sarah Blakely look
   like they’re having a good time. Elon Musk and Jeff Bezos are heading into
