@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: What is a brand?
+title: What is a Brand?
 author: Shannon Ambeau
 date: 2019-10-23T13:25:47.071Z
 featured_image:
