@@ -12,13 +12,18 @@ const BlogSection = styled.section`
     }
   }
 
-  .column:first-of-type {
-    height: 640px;
+  .column {
+    justify-content: stretch;
   }
 
-  .column {
-    height: 420px;
-    justify-content: stretch;
+  @media print,screen and (min-width:769px) {
+    .column:first-of-type {
+      height: 640px;
+    }
+
+    .column {
+      height: 420px;
+    }
   }
 
   .column:nth-child(odd) .gel-blog-item-inner {
@@ -74,7 +79,7 @@ const BlogSection = styled.section`
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: rgba(28,29,37,.7);
+      background-color: rgba(28,29,37,.3);
       z-index: 1;
       transition: 300ms ease-in-out;
   }

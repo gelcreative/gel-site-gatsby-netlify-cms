@@ -60,7 +60,8 @@ const StyledBlogPost = styled.article`
   }
 
   .send-button button[type="submit"] {
-    background-color: #00adc8;
+    background-color: #f26339;
+    font-family: HKGrotesk-Regular;
     width: 100%;
   }
 
@@ -107,7 +108,7 @@ export const BlogPostTemplate = ({
                   {tags && tags.length ? (
                     <>
                       <span>Category: </span>
-                        <Link key={tags[0] + `tag`} to={`/tags/${kebabCase(tags[0])}/`}>{tags[0]}</Link>
+                        <Link key={tags[0] + `tag`} to="/blog/">{tags[0]}</Link>
                     </>
                   ) : null}
                   <span className="styled-slashes">&#47;&#47;</span>
@@ -129,7 +130,7 @@ export const BlogPostTemplate = ({
         </section>
         <section className="columns blog-newsletter-form-section is-centered">
           <div className="column has-text-centered">
-          <h2>Get our marketing blog straight to your inbox.</h2>
+          <h2>Get our marketing insights straight to your inbox.</h2>
             <NewsletterForm />
           </div>
         </section>
