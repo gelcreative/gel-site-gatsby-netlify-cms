@@ -12,7 +12,7 @@ banner_image:
 description: >-
   When a crisis hits, your amygdala kicks into overdrive. It’s fight or
   flight—that survival mechanism in our brains that helped our ancestors outrun
-  sabre-toothed tigers. There’s another lesser-known response
+  sabre-toothed tigers. There’s another lesser-known response.
 tags:
   - branding
   - brand messaging
