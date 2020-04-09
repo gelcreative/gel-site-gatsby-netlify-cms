@@ -121,7 +121,7 @@ const BlogPage = ({data}) => {
                       })`,
                   }}>
                     <Link to={edge.node.fields.slug}>
-                      <h2>{edge.node.frontmatter.title}</h2>
+                      <!--<h2>{edge.node.frontmatter.title}</h2>-->
                     </Link>
                   </div>
                 </article>
