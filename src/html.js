@@ -35,9 +35,10 @@ export default function HTML(props) {
                             if (cookies.indexOf("c19popup") == -1) {
                                 var popupEl = document.createElement("div");
                                 popupEl.innerHTML = "<img src='/img/2020_gel_popup-01-01.jpg' alt='Gel is Open' style='height:739px; max-height:100%; margin:0 auto;' />";
-                                popupEl.style = "position:fixed; top:0; width:100%; height:100%; z-index:999; display:grid; justify-content:center; align-content:center; background:rgba(0, 0, 0, 0.35);";
+                                popupEl.style = "position:fixed; top:0; width:100%; height:100%; z-index:999; display:grid; justify-content:center; align-content:center; background:rgba(0, 0, 0, 0.35); opacity:0; transition:opacity 0.5s;";
 
                                 document.body.appendChild(popupEl);
+                                popupEl.style.opacity = 1;
                             }
 
                             // Set expiry for cookie.
