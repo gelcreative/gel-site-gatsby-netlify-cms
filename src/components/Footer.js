@@ -97,7 +97,6 @@ const Footer = () => (
         <FooterItemContainer>
           <SocialIcons />
         </FooterItemContainer>
-        <script type='text/javascript' src='../src/util/c19popup.js'></script>
       </StyledFooterInner>
     </div>
   </StyledFooter>
