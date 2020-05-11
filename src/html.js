@@ -26,20 +26,16 @@ export default function HTML(props) {
                         // COVID-19 Popup
 
                         window.onload = function () {
-                            // Grab cookie and split into individual KVPs.
-                            var cookie = decodeURIComponent(document.cookie);
-                            var cookieArray = cookie.split(';');
+                            // Grab cookies.
+                            var cookies = decodeURIComponent(document.cookie);
 
-                            // Loop through cookies.
-                            for (var i = 0; i < cookieArray.length; i++) {
-                                // If we can't find the popup cookie, create and show the popup.
-                                if (cookieArray[i].indexOf("c19popup") == -1) {
-                                    var popupEl = document.createElement("div");
-                                    popupEl.innerHTML = "<img src='/img/2020_gel_popup-01-01.jpg' alt='Gel is Open' style='max-height: 100%; margin: 0 auto;' />";
-                                    popupEl.style = "position: fixed; top: 0; width: 100%; height: 100%; z-index: 999; display: grid; justify-content: center; background: rgba(0, 0, 0, 0.35);";
+                            // If we can't find the popup cookie, create and show the popup.
+                            if (cookies.indexOf("c19popup") == -1) {
+                                var popupEl = document.createElement("div");
+                                popupEl.innerHTML = "<img src='/img/2020_gel_popup-01-01.jpg' alt='Gel is Open' style='max-height: 100%; margin: 0 auto;' />";
+                                popupEl.style = "position: fixed; top: 0; width: 100%; height: 100%; z-index: 999; display: grid; justify-content: center; background: rgba(0, 0, 0, 0.35);";
 
-                                    document.body.appendChild(popupEl);
-                                }
+                                document.body.appendChild(popupEl);
                             }
 
                             // Set expiry for cookie.
