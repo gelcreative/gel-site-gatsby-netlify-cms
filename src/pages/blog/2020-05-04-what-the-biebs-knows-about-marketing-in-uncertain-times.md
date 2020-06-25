@@ -13,9 +13,15 @@ description: >-
   Justin Bieber knows a thing or two about marketing. And no. I’m not talking
   about the monkey on the airplane stunt. I mean pure brand-building marketing.
 tags:
-  - >-
-    #branding #brandstrategy #personalbranding #marketing #marketingstrategy
-    #justinbieber # business #COVID19 #coronavirus
+  - branding
+  - brand strategy
+  - personal branding
+  - marketing
+  - marketing strategy
+  - justin bieber
+  - business
+  - COVID19
+  - coronavirus
 ---
 I love music and I ❤️ musicians even more. I’ve been watching them on IG and some of them are killing it right now. Eddie Vedder, Chris Martin, Jack Johnson, John Legend and, of course, the Biebs. They’re doing it by going live and responding to, engaging with, and inviting some of their fans into the video with them. They’re welcoming their fans literally into their homes and their lives for no reason other than to connect. No selling. No promo. Just connection. 💥
 
