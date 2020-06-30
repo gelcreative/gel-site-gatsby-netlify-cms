@@ -24,7 +24,7 @@ tags:
 ---
 We can take a few lessons from our friends in the financial sector. Managing the marketing mix and managing an investment portfolio have a lot in common. 
 
-## 1.Balance your portfolio 
+## 1.Balance your portfolio
 
 > With the volume of content being published on the daily, it’s easy for a brand manager to lose sight of how content is being distributed. Just like a good financial advisor recommends balancing the investment portfolio every year, it’s critical that you take stock of the distribution of your content across marketing channels. 
 
