@@ -81,6 +81,7 @@ const BlogSection = styled.section`
       left: 0;
       background-color: rgba(28,29,37,.3);
       z-index: 1;
+      pointer-events: none
       transition: 300ms ease-in-out;
   }
 
