@@ -26,6 +26,10 @@ const BlogSection = styled.section`
     }
   }
 
+  .column {
+    height: 300px;
+  }
+
   .column:nth-child(odd) .gel-blog-item-inner {
     background-color: ${props => props.theme.typeGrey};
   }
@@ -69,20 +73,6 @@ const BlogSection = styled.section`
 
   .gel-blog-item-inner:hover {
     transform: scale(1.1);
-  }
-
-  .gel-blog-item-inner::before {
-      content: '';
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(28,29,37,.3);
-      z-index: 1;
-      pointer-events: none;
-      transition: 300ms ease-in-out;
   }
 
   .gel-blog-item-inner > a {
