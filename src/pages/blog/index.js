@@ -26,13 +26,13 @@ const BlogSection = styled.section`
     }
   }
 
-  @media print,screen and (min-width:600px) {
+  @media print,screen and (max-width:600px) {
     .column {
       height: 300px;
     }
   }
 
-  @media print,screen and (min-width:400px) {
+  @media print,screen and (max-width:400px) {
     .column {
       height: 200px;
     }
