@@ -22,7 +22,7 @@ const BlogSection = styled.section`
     }
 
     .column {
-      height: 420px;
+      height: 500px;
     }
   }
 
