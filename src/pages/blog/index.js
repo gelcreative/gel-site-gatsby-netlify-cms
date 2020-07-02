@@ -26,8 +26,20 @@ const BlogSection = styled.section`
     }
   }
 
+  @media print,screen and (min-width:600px) {
+    .column {
+      height: 300px;
+    }
+  }
+
+  @media print,screen and (min-width:400px) {
+    .column {
+      height: 200px;
+    }
+  }
+
   .column {
-    height: 300px;
+    height: 100px;
   }
 
   .column:nth-child(odd) .gel-blog-item-inner {
