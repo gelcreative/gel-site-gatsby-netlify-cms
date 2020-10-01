@@ -54,24 +54,6 @@ const Footer = () => (
     <div className="container">
       <StyledFooterInner>
         <FooterItemContainer>
-          <StyledAddress>
-            <a
-              href="https://www.google.com/maps/place/89+Collier+St,+Barrie,+ON+L4M+1H2/@44.3902458,-79.6868214,17z/data=!3m1!4b1!4m5!3m4!1s0x882aa32e300f8edf:0x696f3192d7cd8c25!8m2!3d44.3902458!4d-79.6846327"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              89 Collier Street, Suite 201 <br />
-              Barrie, ON L4M 1H2
-            </a>
-          </StyledAddress>
-          <div>
-            <a href="mailto:info@gelcreative.ca">info@gelcreative.ca</a>
-          </div>
-          <div>
-            <a href="tel:+17057277980">705.727.7980</a>
-          </div>
-        </FooterItemContainer>
-        <FooterItemContainer>
           <StyledFooterNav>
             <div>
               <ul>
@@ -96,6 +78,30 @@ const Footer = () => (
               </ul>
             </div>
           </StyledFooterNav>
+        </FooterItemContainer>
+        <FooterItemContainer>
+          <StyledAddress>
+            <a
+              href="https://www.google.com/maps/place/89+Collier+St,+Barrie,+ON+L4M+1H2/@44.3902458,-79.6868214,17z/data=!3m1!4b1!4m5!3m4!1s0x882aa32e300f8edf:0x696f3192d7cd8c25!8m2!3d44.3902458!4d-79.6846327"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              89 Collier Street, Suite 201 <br />
+              Barrie, ON L4M 1H2
+            </a>
+          </StyledAddress>
+          <div>
+            <a href="mailto:info@gelcreative.ca">info@gelcreative.ca</a>
+          </div>
+          <div>
+            <a href="tel:+17057277980">705.727.7980</a>
+          </div>
+        </FooterItemContainer>
+        <FooterItemContainer>
+          <img
+            src="/img/gel-logo-header.svg"
+            alt="Gel Logo"
+          />
         </FooterItemContainer>
         <FooterItemContainer>
           <SocialIcons />
