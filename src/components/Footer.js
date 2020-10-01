@@ -79,18 +79,21 @@ const Footer = () => (
                   <Link to="/">home</Link>
                 </li>
                 <li>
-                  <Link to="/about/">our story</Link>
+                  <Link to="/about/">about</Link>
+                </li>
+                <li>
+                  <Link to="/services/">services</Link>
                 </li>
                 <li>
                   <Link to="/portfolio/">our work</Link>
                 </li>
                 <li>
+                  <Link to="/blog/">blog</Link>
+                </li>
+                <li>
                   <Link to="/contact/">connect</Link>
                 </li>
               </ul>
-            </div>
-            <div>
-              <ul>{/* <li><Link to="/blog/">blog</Link></li> */}</ul>
             </div>
           </StyledFooterNav>
         </FooterItemContainer>
