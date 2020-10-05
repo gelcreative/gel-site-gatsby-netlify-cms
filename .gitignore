@@ -9,3 +9,6 @@ static/admin/*.bundle.*
 yarn-error.log
 password.txt
 Gel website development.lnk
+
+# Local Netlify folder
+.netlify
