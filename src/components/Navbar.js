@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import HeaderLogo from './svg/HeaderLogo';
 import FooterLogo from './svg/FooterLogo';
-import CallButton from 'CallButton.js';
+import CallButton from '../components/CallButton';
 
 const StyledHeader = styled.nav`
   padding: 1rem;
