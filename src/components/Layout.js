@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+
 import './styles/all.sass';
 import './styles/gel-styles.sass';
 
@@ -26,6 +27,7 @@ const theme = {
   chineseRed: '#9D4223',
   metallicSunburst: '#987d44',
   wildBlueYonder: '#9db6d1',
+
   regularFont: 'HKGrotesk-Regular',
   boldFont: 'HKGrotesk-Regular',
 };
