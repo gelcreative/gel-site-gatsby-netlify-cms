@@ -1,40 +1,28 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import HeaderLogo from './svg/HeaderLogo';
-import FooterLogo from './svg/FooterLogo';
+import Logo from '../img/Gel Logo Circle Full Word-max-01.png';
 import CallButton from '../components/CallButton';
+import SocialIcons from './SocialIcons';
+import NewsletterForm from './NewsletterForm';
 
 const StyledHeader = styled.nav`
-  padding: 1rem;
+  padding: 5rem;
 
   .gel-header-logo-link {
-    display: flex;
-    > div {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  .gel-footer-logo {
-    opacity: 0;
-    width: 70px;
-  }
-
-  &.scrolled {
-    .gel-header-logo {
-      opacity: 0;
-      width: 0;
-    }
-
-    .gel-footer-logo {
-      opacity: 1;
-    }
+    width: 118px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .navbar-brand {
     align-items: center;
+    justify-content: flex-end;
+  }
+
+  .button.call {
+    margin-left: auto;
   }
 
   .navbar-item:hover {
@@ -44,16 +32,30 @@ const StyledHeader = styled.nav`
   }
 
   .navbar-burger {
-    color: ${props => props.theme.black};
-    span {
-      height: 3px;
-      width: 20px;
-    }
+    margin-left: 20px;
+
+    background: url(/img/Group-704b.png) center no-repeat;
+    background-size: contain;
+  }
+
+  .navbar-search {    
+    position: relative;
+    width: 3.25rem;
+    height: 3.25rem;
+
+    margin-left: 20px;
+
+    background: url(/img/noun_Search_3122418b.png) center no-repeat;
+    background-size: contain;
+
+    cursor: pointer;
+  }
+
   }
 
   @media (max-width: 1087px) {
-    .gel-header-logo {
-      width: 100px;
+    .gel-header-logo-link {
+      width: 60px;
     }
 
     .navbar-item {
@@ -61,6 +63,10 @@ const StyledHeader = styled.nav`
       padding-top: 0.75em;
       padding-bottom: 0.75em;
     }
+  }
+
+  @media (max-width: 768px) {
+    .button.call { display: none; }
   }
 `;
 
@@ -164,16 +170,12 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link className="gel-header-logo-link" to="/" title="Logo">
-              <HeaderLogo />
-              <FooterLogo />
+              <img src="/img/Gel Logo Circle Full Word-max-01.png" alt="Gel Logo" />
             </Link>
             <CallButton />
             {/* Hamburger menu */}
-            <div className="navbar-burger burger" data-target="navMenu">
-              <span />
-              <span />
-              <span />
-            </div>
+            <div className="navbar-burger burger" data-target="navMenu"></div>
+            <div className="navbar-search search"></div>
           </div>
           <div id="navMenu" className="navbar-menu">
             <div className="navbar-start has-text-centered"></div>
