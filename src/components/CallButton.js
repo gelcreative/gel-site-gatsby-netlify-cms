@@ -3,29 +3,29 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const StyledCallButton = styled.span`
-  display: inline-block;
-  padding: 8px 30px;
 
-  font-size: 20px;
-  color: white;
 
-  background: #E77252;
-  border-radius: 6px;
+  > a {
+    font-size: 18px;
+    color: ${props => props.theme.white};
+  }
 
-  a { display: none; }
+  > a:hover { color: ${props => props.theme.white}; }
 
-  @media (max-width: 899px) {
-    Link { display: none; }
-    a { display: initial; }
+  > a.make { display: none; }
+
+  @media (max-width: 768px) {
+    > a.book { display: none; }
+    > a.make { display: initial; }
   }
 `;
 
 const CallButton = class extends Component {
   render() {
     return (
-      <StyledCallButton className="button gel-button-2 call">
-        <Link to="/contact/">Book A Call</Link>
-        <a href="tel:+1705.727.7980">Make A Call</a>
+      <StyledCallButton className="button gel-button-2 is-primary call">
+        <Link to="/contact/" className="book">Book A Call</Link>
+        <a href="tel:+1705.727.7980" class="make">Make A Call</a>
       </StyledCallButton>
     );
   }
