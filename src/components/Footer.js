@@ -58,22 +58,22 @@ const Footer = () => (
             <div>
               <ul>
                 <li>
-                  <Link to="/">home</Link>
+                  <Link to="/">           home          </Link>
                 </li>
                 <li>
-                  <Link to="/about/">about</Link>
+                  <Link to="/about/">     about         </Link>
                 </li>
                 <li>
-                  <Link to="/services/">services</Link>
+                  <Link to="/services/">  our services  </Link>
                 </li>
                 <li>
-                  <Link to="/portfolio/">our work</Link>
+                  <Link to="/portfolio/"> our work      </Link>
                 </li>
                 <li>
-                  <Link to="/blog/">blog</Link>
+                  <Link to="/blog/">      blog          </Link>
                 </li>
                 <li>
-                  <Link to="/contact/">connect</Link>
+                  <Link to="/contact/">   contact       </Link>
                 </li>
               </ul>
             </div>
