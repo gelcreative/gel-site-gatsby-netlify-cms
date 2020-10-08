@@ -30,6 +30,8 @@ const theme = {
 
   regularFont: 'HKGrotesk-Regular',
   boldFont: 'HKGrotesk-Regular',
+  secondaryFont: 'QuincyCF-Regular',
+  secondaryBoldFont: 'QuincyCF-Bold',
 };
 
 const TemplateWrapper = ({ children }) => (
