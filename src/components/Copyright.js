@@ -3,21 +3,9 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const StyledCopyright = styled.span`
-
-
-  > a {
-    font-size: 18px;
-    color: ${props => props.theme.white};
-  }
-
-  > a:hover { color: ${props => props.theme.white}; }
-
-  > a.make { display: none; }
-
-  @media (max-width: 768px) {
-    > a.book { display: none; }
-    > a.make { display: initial; }
-  }
+  font-size: 14px;
+  font-weight: light;
+  font-family: ${props => props.theme.secondaryFont};
 `;
 
 const Copyright = class extends Component {
