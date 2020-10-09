@@ -11,36 +11,69 @@ import ClientLogoGrid from '../components/ClientLogoGrid';
 import GelServices from '../components/GelServices';
 
 const StyledHomePage = styled.article`
-  #gel-home-intro-section {
-    padding: 10rem 0;
-  }
 
-  .gel-home-masthead {
+  #gel-home-masthead {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20vh 0 10vh;
-    .column {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }    
+    flex-direction: column-reverse;
+    
+    height: 65vh;
+    padding: 10rem 0;
+
+    background: url(/img/5S0A7042.png) center / cover no-repeat;
   }
 
-  #gel-home-masthead-logo {
-    height: 100vh
-    opacity: 1;
-    // overflow: hidden;
-    // display:none;
-    // visibility: hidden    
+  #gel-home-masthead h1 {
+  
+    max-width: 12em;
+
+    color: ${props => props.theme.white};
+    text-align: left;
+    letter-spacing: 1.63px;
+
+    font-size: 6.5rem;
+    font-weight: bold;
+    font-family: ${props => props.theme.secondaryBoldFont};
+
+    :before {
+      content: "";
+      display: block;
+      width: 15%;
+      height: 4px;
+  
+      margin-bottom: 20px;
+      background: ${props => props.theme.white};
+    }
   }
 
-  .gel-home-intro-text p {
-    font-size: 3.5rem;
-    line-height: 1.25em;
-    text-align:center;
-    color:#F36A4A;
-    font-weight:600;
+  #gel-home-intro-section {
+    height: 35vh;
+    padding-top: 3rem;
+
+    h2 {
+      margin-bottom: 15px;
+
+      font-size: 5.4rem;
+      font-weight: lighter;
+      font-family: ${props => props.theme.secondaryFont};
+    }
+
+    p {
+      max-width: 50rem;
+      margin: auto;
+
+      font-size: 2.0rem;
+      font-family: ${props => props.theme.regularFont};
+
+      :before {
+        content: "";
+        display: block;
+        width: 15%;
+        height: 4px;
+    
+        margin: 0 auto 20px;
+        background: ${props => props.theme.black};
+      }
+    }
   }
 
   .columns.gel-home-featured-section {
@@ -71,7 +104,7 @@ const StyledHomePage = styled.article`
 export const IndexPageTemplate = ({
   helmet,
   title,
-  intro,
+  intro1,
   intro2,
   featuredPortfolioTitle,
   clientListTitle,
@@ -79,36 +112,21 @@ export const IndexPageTemplate = ({
   return (
     <StyledHomePage className="section">
       {helmet || ''}
-      <div className="container">
-        <section id="gel-home-masthead-logo" className="gel-home-masthead columns is-centered">
-          <div className="column has-text-centered">
-            <h1 className="visually-hidden">{title}</h1>
-            <img
-              src="/img/Gel_Whimsical_550x350_white_Background.gif"
-              alt="Gel Logo Animation"
-            />
-          </div>
-        </section>
-        <ScrollyDo
-          socialIcons={true}
-          fullHeight={true}
-          targetId="gel-home-intro-section"
-        ></ScrollyDo>
+      <div>
         <section
-          className="gel-home-intro-logo is-centered"
-          id="gel-home-intro-logo-section"
+          className="gel-home-masthead"
+          id="gel-home-masthead"
         >
           <div className="column is-10 is-offset-1">
-            <h2 className="outlined">HI. WE ARE</h2>
-            <h1 className="siteTitle">GEL</h1>
+            <h1>{title}</h1>
           </div>
         </section>
         <section
-          className="gel-home-intro-text is-centered"
+          className="gel-home-intro-text has-text-centered"
           id="gel-home-intro-section"
         >
           <div className="column is-10 is-offset-1">
-            <p>{intro}</p>
+            <h2>{intro1}</h2>
             <p>{intro2}</p>
           </div>
         </section>
@@ -140,7 +158,8 @@ IndexPageTemplate.propTypes = {
   helmet: PropTypes.object,
   title: PropTypes.string,
   services: PropTypes.array,
-  intro: PropTypes.string,
+  intro1: PropTypes.string,
+  intro2: PropTypes.string,
   featuredPortfolioTitle: PropTypes.string,
   clientListTitle: PropTypes.string,
 };
@@ -150,7 +169,7 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <Layout>
+    <Layout pageType="home">
       <IndexPageTemplate
         helmet={
           <Helmet title={`${metadata.title}`}>
@@ -158,7 +177,7 @@ const IndexPage = ({ data }) => {
           </Helmet>
         }
         title={frontmatter.title}
-        intro={frontmatter.intro}
+        intro1={frontmatter.intro1}
         intro2={frontmatter.intro2}
         featuredPortfolioTitle={frontmatter.featuredPortfolioTitle}
         clientListTitle={frontmatter.clientListTitle}
@@ -178,7 +197,7 @@ export const indexPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        intro
+        intro1
         intro2
         featuredPortfolioTitle
         clientListTitle
