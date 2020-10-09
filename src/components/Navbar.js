@@ -220,12 +220,12 @@ const StyledHeader = styled.nav`
   }
 
   /* Homepage styles */
-  &[data-page-type="home"]:not(.gel-nav-active) {
+  &[data-page-type="home"]:not(.gel-nav-active):not(.scrolled) {
     .gel-header-logo-link .logo-light { opacity: 1; pointer-events: all; }
     .gel-header-logo-link .logo-dark  { opacity: 0; }
   }
 
-  &[data-page-type="home"] {
+  &[data-page-type="home"]:not(.scrolled) {
     background-color: unset;
 
     .button.call {
