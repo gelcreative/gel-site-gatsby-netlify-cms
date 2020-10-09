@@ -11,19 +11,26 @@ import './styles/gel-styles.sass';
 
 // Gel site theme settings
 const theme = {
-  typeGrey: '#434244',
+  white: '#ffffff',
+  grey: '#aaaaaa',
+  lightGrey: '#dde2e3',
   darkGrey: '#434345',
+  typeGrey: '#434244',
+  black: '#000000',
+
   //orange: '#e9724c',
   orange: '#e77252',
+  lightOrange: '#ff9b7f',
   darkOrange: '#9D4223',
+
   //blue: '#143358',
-  lightBlue: '#9DB6D1',
   blue: '#394f60',
+  lightBlue: '#9DB6D1',
+
   //yellow: '#ffc857',
   yellow: '#ffc557',
   darkYellow: '#987D44',
-  lightGrey: '#dde2e3',
-  white: '#ffffff',
+  
   chineseRed: '#9D4223',
   metallicSunburst: '#987d44',
   wildBlueYonder: '#9db6d1',
@@ -34,7 +41,7 @@ const theme = {
   secondaryBoldFont: 'QuincyCF-Bold',
 };
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, pageType }) => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -89,17 +96,17 @@ const TemplateWrapper = ({ children }) => (
 
           {/* <link rel="stylesheet" href="https://use.typekit.net/hfk4yqa.css" /> */}
         </Helmet>
-        <Navbar />
+        <Navbar pageType={pageType} />
         <main role="main">{children}</main>
-        <Footer />
+        <Footer pageType={pageType} />
       </>
     )}
   />
 );
 
-const WrappedWithThemeProvider = ({ children }) => (
+const WrappedWithThemeProvider = ({ children, pageType }) => (
   <ThemeProvider theme={theme}>
-    <TemplateWrapper children={children} />
+    <TemplateWrapper children={children} pageType={pageType} />
   </ThemeProvider>
 );
 
