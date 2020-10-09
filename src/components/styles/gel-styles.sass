@@ -40,6 +40,9 @@ body
   font-family: $sansFont
   color: #434244
 
+main > article.section
+  padding: 0
+
 h1
   font-family: $serifFont
   font-weight: 700
@@ -139,7 +142,6 @@ section
 
 .button a:hover
   text-decoration: none
-  font-weight: bold
 
 .gel-button-1
   border: none
@@ -189,7 +191,7 @@ section
   100%
     transform: scale(1)
 
-@keyframes gelHoverColors
+@keyframes gelHoverColorsOld
   0%
     fill: #434345
   25%
@@ -200,6 +202,12 @@ section
     fill: #e77252
   100%
     fill: #394f60
+
+@keyframes gelHoverColors
+  0%
+    fill: #363636
+  100%
+    fill: #e77252
 
 // end animations
 
