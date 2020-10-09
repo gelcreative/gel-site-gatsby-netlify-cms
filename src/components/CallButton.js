@@ -3,13 +3,14 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const StyledCallButton = styled.span`
-
-
   > a {
     font-size: 18px;
     color: ${props => props.theme.white};
+
+    
   }
 
+  &:hover { background-color: ${props => props.theme.darkOrange} !important; }
   > a:hover { color: ${props => props.theme.white}; }
 
   > a.make { display: none; }
