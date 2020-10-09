@@ -1,19 +1,34 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Logo from '../img/Gel Logo Circle Full Word-max-01.png';
 import CallButton from '../components/CallButton';
 import SocialIcons from './SocialIcons';
 import NewsletterForm from './NewsletterForm';
+import Copyright from './Copyright';
 
 const StyledHeader = styled.nav`
-  padding: 5rem;
+  padding: 3rem;
 
   .gel-header-logo-link {
-    width: 118px;
+    width:  118px;
+    height: 118px;
+    
     position: absolute;
+    top: 0px;
     left: 50%;
     transform: translateX(-50%);
+
+    z-index: 999;
+
+    @media (max-width: 1087px) {
+      width:  60px;
+      height: 60px;
+    }
+
+    img { position: absolute; transition: opacity 0.4s, filter 0.3s; }
+    .logo-light { opacity: 0; pointer-events: none; }
+    img.logo-dark:hover  { filter: brightness(175%); }
+    img.logo-light:hover { filter: brightness(85%); }
   }
 
   .navbar-brand {
@@ -23,19 +38,23 @@ const StyledHeader = styled.nav`
 
   .button.call {
     margin-left: auto;
-  }
 
-  .navbar-item:hover {
-    text-decoration: none;
-    background-color: ${props => props.theme.white};
-    color: ${props => props.theme.orange};
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   .navbar-burger {
     margin-left: 20px;
 
-    background: url(/img/Group-704b.png) center no-repeat;
-    background-size: contain;
+    background: url(/img/Group-704b.png) center / contain no-repeat;
+
+    transition: filter 0.3s;
+
+    :hover {
+      background-color: unset;
+      filter: blur(.75px);
+    }
   }
 
   .navbar-search {    
@@ -45,29 +64,185 @@ const StyledHeader = styled.nav`
 
     margin-left: 20px;
 
-    background: url(/img/noun_Search_3122418b.png) center no-repeat;
-    background-size: contain;
+    background: url(/img/noun_Search_3122418b.png) center / contain no-repeat;
 
     cursor: pointer;
-  }
+    transition: filter 0.3s;
 
-  }
-
-  @media (max-width: 1087px) {
-    .gel-header-logo-link {
-      width: 60px;
-    }
-
-    .navbar-item {
-      font-size: 2rem;
-      padding-top: 0.75em;
-      padding-bottom: 0.75em;
+    :hover {
+      background-color: unset;
+      filter: blur(.75px);
     }
   }
 
-  @media (max-width: 768px) {
-    .button.call { display: none; }
+  .navbar-menu.is-active { transform: translateY(0%); }
+
+  .navbar-menu {
+    display: flex !important;
+    max-height: unset !important;
+    padding: 175px 4% 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background: #DDDDDD;
+
+    transform: translateY(-100%);
+    transition: transform 0.4s;
+
+    .gel-header-logo-link { top: 3rem; }
+
+    .delete {
+      position: absolute;
+      top: 80px;
+      right: 80px;
+
+      width:  100px;
+        max-width:  100px;
+      height: 100px;
+        max-height: 100px;
+      
+      cursor: pointer;
+
+      background-color: unset;
+      :before, :after { background-color: ${props => props.theme.black}; transition: height 0.3s, width 0.3s; }
+
+      :hover :before { height: 4px; }
+      :hover :after  { width: 4px; }
+    }
+
+    .navbar-start {
+      flex-basis: 45%;
+
+      > ul {
+        margin-bottom: 4%;
+
+        .navbar-item {
+          @media (max-width: 1087px) {
+            font-size: 2rem;
+            padding-top: 0.75em;
+            padding-bottom: 0.75em;
+          }
+        }
+
+        .navbar-item a {
+          padding: 0 5px; 
+          font-family: ${props => props.theme.secondaryFont};
+          font-weight: lighter;
+          font-size: 42px;
+          color: ${props => props.theme.darkGrey};
+
+          :hover {
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+
+        .navbar-item a[aria-current="page"] {
+          background: ${props => props.theme.orange};
+        }
+      }
+
+      > ul.socialicons {
+        justify-content: flex-start;
+      }
+
+      > form.gel-newsletter-form {
+        display: flex;
+        align-items: center;
+        margin-bottom: 4%;
+
+        div.email-input {
+          margin-bottom: 0;
+
+          input#email {
+            max-width: 380px;
+            padding: 10px;
+        
+            font-family: ${props => props.theme.regularFont};
+            font-size: 24px;
+        
+            border: 1px solid ${props => props.theme.black};
+            background: none;
+          }
+        }
+
+        div.send-button {
+          margin-top: -17px;
+          margin-left: 20px;
+
+          .gel-button-1.is-dark:hover {
+            color: ${props => props.theme.white};
+            background-color: ${props => props.theme.darkOrange};
+          }
+        }
+      }
+    }
+
+    .navbar-end {
+      flex-basis: 55%;
+
+      > img {
+        display: block;
+        margin-left: auto;
+      }
+
+      > img#showoff {
+        max-height: 66%;
+        margin-bottom: 4%;
+      }
+
+      > img.stayintouch {
+        max-height: 60px;
+        margin-bottom: 10px;
+      }
+
+      a {
+        color: ${props => props.theme.black};
+
+        :hover {
+          color: ${props => props.theme.orange};
+          text-decoration: none;
+        }
+      }
+    }
+
+    .copyright {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
   }
+
+  /* Homepage styles */
+  &[data-page-type="home"]:not(.gel-nav-active) {
+    .gel-header-logo-link .logo-light { opacity: 1; pointer-events: all; }
+    .gel-header-logo-link .logo-dark  { opacity: 0; }
+  }
+
+  &[data-page-type="home"] {
+    background-color: unset;
+
+    .button.call {
+      background-color: ${props => props.theme.white};
+      a { color: ${props => props.theme.orange}; }
+
+      :hover { background-color: ${props => props.theme.lightGrey} !important; }
+      a:hover { color: ${props => props.theme.darkOrange}; }
+    }
+
+    .navbar-burger { background-image: url(/img/Group-704.png); }
+    .navbar-search { background-image: url(/img/noun_Search_3122418.png); }
+  }
+`;
+
+const StyledAddress = styled.address`
+  font-style: normal;
 `;
 
 const Navbar = class extends React.Component {
@@ -100,6 +275,7 @@ const Navbar = class extends React.Component {
     const navBar = document.querySelector('.navbar');
     const navMenu = document.querySelector('.navbar-menu');
     const navBurger = document.querySelector('.navbar-burger');
+    const navClose = document.querySelector('.delete');
 
     // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
@@ -113,6 +289,7 @@ const Navbar = class extends React.Component {
           // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
           el.classList.toggle('is-active');
           $target.classList.toggle('is-active');
+          $target.setAttribute("aria-hidden", "false");
           // Toggle this class so we can select it and position it
           navBar.classList.toggle('gel-nav-active');
         });
@@ -124,24 +301,40 @@ const Navbar = class extends React.Component {
       if (e.keyCode === 27) {
         if (navMenu.classList.contains('is-active')) {
           navMenu.classList.toggle('is-active');
+          navMenu.setAttribute("aria-hidden", "true");
           navBurger.classList.toggle('is-active');
           navBar.classList.toggle('gel-nav-active');
         }
       }
     });
 
-    // Close the menu if user clicks on overlay
+    // Close the menu if user clicks on the Close button
     window.addEventListener('click', e => {
-      if (e.target === navMenu && navMenu.classList.contains('is-active')) {
+      if (e.target === navClose) {
         navMenu.classList.toggle('is-active');
+        navMenu.setAttribute("aria-hidden", "true");
         navBurger.classList.toggle('is-active');
         navBar.classList.toggle('gel-nav-active');
       }
     });
 
+    // Close menu if user clicks on a nav link
+    const navLinks = Array.prototype.slice.call(
+      document.querySelectorAll('.navbar-start a'),
+    );
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          navMenu.classList.toggle('is-active');
+          navMenu.setAttribute("aria-hidden", "true");
+          navBurger.classList.toggle('is-active');
+          navBar.classList.toggle('gel-nav-active');
+      });
+    });
+
     // Close menu if user clicks on a nav link for the page they are already on
     /* This script is prob overwrought, as you could prob just close the
-    menu if you click on any of the links, but I wanted to try it out */
+    menu if you click on any of the links, but I wanted to try it out
     // 1. Select nav links
     const navLinks = Array.prototype.slice.call(
       document.querySelectorAll('.navbar-start a'),
@@ -157,7 +350,7 @@ const Navbar = class extends React.Component {
           navBar.classList.toggle('gel-nav-active');
         }
       });
-    });
+    });*/
   }
 
   render() {
@@ -166,33 +359,69 @@ const Navbar = class extends React.Component {
         className="navbar is-fixed-top"
         role="navigation"
         aria-label="main-navigation"
+        data-page-type={this.props.pageType}
       >
         <div className="container">
           <div className="navbar-brand">
             <Link className="gel-header-logo-link" to="/" title="Logo">
-              <img src="/img/Gel Logo Circle Full Word-max-01.png" alt="Gel Logo" />
+              <img class="logo-dark" src="/img/Gel-Logo-Circle-Full-Word-max-01.png" alt="Gel Logo Dark" />
+              <img class="logo-light" src="/img/Gel-Logo-Circle-Full-Word-max-01-white.png" alt="Gel Logo Light" />
             </Link>
             <CallButton />
             {/* Hamburger menu */}
             <div className="navbar-burger burger" data-target="navMenu"></div>
             <div className="navbar-search search"></div>
           </div>
-          <div id="navMenu" className="navbar-menu">
-            <div className="navbar-start has-text-centered"></div>
-            <div className="navbar-end has-text-centered">
-              <Link className="navbar-item" to="/about">
-                Our Story
-              </Link>
-              <Link className="navbar-item" to="/portfolio">
-                Our Work
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Connect
-              </Link>
+          <div id="navMenu" className="navbar-menu" aria-hidden="true">
+            <a class="delete"></a>
+            <div className="navbar-start has-text-left">
+              <ul>
+                <li class="navbar-item">
+                  <Link to="/">           Home          </Link>
+                </li>
+                <li class="navbar-item">
+                  <Link to="/about">      About         </Link>
+                </li>
+                <li class="navbar-item">
+                  <Link to="/services">   Our Services  </Link>
+                </li>
+                <li class="navbar-item">
+                  <Link to="/portfolio">  Our Work      </Link>
+                </li>
+                <li class="navbar-item">
+                  <Link to="/blog">       Blog          </Link>
+                </li>
+                <li class="navbar-item">
+                  <Link to="/contact">    Contact       </Link>
+                </li>
+              </ul>
+
+              <SocialIcons />
+              <NewsletterForm />
+              <CallButton />
             </div>
+
+            <div className="navbar-end has-text-right">
+              <img src="/img/2020_OBIAA_website_mockup_macbook2.jpg" id="showoff" alt="OBIAA Website Mockup Showoff" />
+              <img src="/img/stay in touch.png" class="fancytext stayintouch" alt="Stay In Touch" />
+              <StyledAddress>
+                <a
+                  href="https://www.google.com/maps/place/89+Collier+St,+Barrie,+ON+L4M+1H2/@44.3902458,-79.6868214,17z/data=!3m1!4b1!4m5!3m4!1s0x882aa32e300f8edf:0x696f3192d7cd8c25!8m2!3d44.3902458!4d-79.6846327"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  89 Collier Street, Suite 201 <br />
+                  Barrie, ON L4M 1H2
+                </a>
+              </StyledAddress>
+              <div>
+                <a href="mailto:info@gelcreative.ca">info@gelcreative.ca</a>
+              </div>
+              <div>
+                <a href="tel:+17057277980">705.727.7980</a>
+              </div>
+            </div>
+            <Copyright />
           </div>
         </div>
       </StyledHeader>
