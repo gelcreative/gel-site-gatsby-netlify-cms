@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import SocialIcons from './SocialIcons';
 
 const StyledFooter = styled.footer`
+  position: relative;
   margin-bottom: 50px;
   margin-top: 100px;
 `;
@@ -19,14 +20,36 @@ const StyledFooter = styled.footer`
 // `;
 const StyledFooterInner = styled.div`
   display: flex;
-  justify-content: space-between;
+  align-items: last baseline;
   flex-wrap: wrap;
 `;
 const FooterItemContainer = styled.div`
   margin: 1em;
-  min-width: 30%;
-  max-width: 300px;
-  flex-grow: 1;
+
+  a {
+    font-family: ${props => props.theme.secondaryFont};
+    font-weight: normal;
+    font-size: 1.7rem;
+    color: ${props => props.theme.typeGrey};
+
+    :hover {
+      text-decoration: none;
+    }
+  }
+
+  a[aria-current="page"] { color: ${props => props.theme.orange}; }
+
+  &#footer-container-social { margin-left: auto; }
+  &#footer-logo-small {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+    text-align: center;
+    img { max-width: 40px; }
+  }
 `;
 
 const StyledAddress = styled.address`
@@ -34,24 +57,24 @@ const StyledAddress = styled.address`
 `;
 
 const StyledFooterNav = styled.div`
-  display: flex;
-  justify-content: space-between;
-  div {
-    margin: 0 30px;
-  }
-  @media (max-width: 440px) {
-    justify-content: space-between;
-    div {
-      flex-grow: 1;
-      flex-shrink: 1;
-      margin: 0 30px 0 0;
+    a {
+      padding: 0 5px; 
+      font-size: 2.1rem;
+
+      :hover {
+        text-shadow: 0 0 1px ${props => props.theme.typeGrey};
+      }
+    }
+
+    a[aria-current="page"]:hover {
+      text-shadow: 0 0 1px ${props => props.theme.orange};
     }
   }
 `;
 
 const Footer = () => (
   <StyledFooter>
-    <div className="container">
+      <div class="container">
       <StyledFooterInner>
         <FooterItemContainer>
           <StyledFooterNav>
@@ -97,17 +120,15 @@ const Footer = () => (
             <a href="tel:+17057277980">705.727.7980</a>
           </div>
         </FooterItemContainer>
-        <FooterItemContainer>
-          <img
-            src="/img/gel-logo-header.svg"
-            alt="Gel Logo"
-          />
-        </FooterItemContainer>
-        <FooterItemContainer>
+        <FooterItemContainer id="footer-container-social">
           <SocialIcons />
         </FooterItemContainer>
+        <FooterItemContainer id="footer-logo-small">
+          <img src="/img/Gel-Logo-G-Circle-01.png" alt="Gel Logo" />
+          <p>Designed by Gel</p>
+        </FooterItemContainer>
       </StyledFooterInner>
-    </div>
+      </div>
   </StyledFooter>
 );
 
