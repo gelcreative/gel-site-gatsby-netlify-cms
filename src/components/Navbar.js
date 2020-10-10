@@ -132,12 +132,15 @@ const StyledHeader = styled.nav`
           padding: 0 5px; 
           font-family: ${props => props.theme.secondaryFont};
           font-weight: lighter;
-          font-size: 42px;
-          color: ${props => props.theme.darkGrey};
+          font-size: 4.2rem;
+          color: ${props => props.theme.typeGrey};
 
           :hover {
             text-decoration: none;
-            font-weight: bold;
+            text-shadow: 0   .5px  1px ${props => props.theme.typeGrey},
+                         0   -.5px 1px ${props => props.theme.typeGrey},
+                         .5px 0    1px ${props => props.theme.typeGrey},
+                         -.5px 0   1px ${props => props.theme.typeGrey};
           }
         }
 
@@ -163,7 +166,7 @@ const StyledHeader = styled.nav`
             padding: 10px;
         
             font-family: ${props => props.theme.regularFont};
-            font-size: 24px;
+            font-size: 2.4rem;
         
             border: 1px solid ${props => props.theme.black};
             background: none;
@@ -201,7 +204,7 @@ const StyledHeader = styled.nav`
       }
 
       a {
-        color: ${props => props.theme.black};
+        color: ${props => props.theme.typeGrey};
 
         :hover {
           color: ${props => props.theme.orange};
@@ -228,7 +231,7 @@ const StyledHeader = styled.nav`
   &[data-page-type="home"]:not(.scrolled) {
     background-color: unset;
 
-    .button.call {
+    .navbar-brand .button.call {
       background-color: ${props => props.theme.white};
       a { color: ${props => props.theme.orange}; }
 
