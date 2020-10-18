@@ -157,8 +157,6 @@ export const AboutPageTemplate = ({
   allInstaNodeEdges,
 }) => {
 
-  console.log(allInstaNodeEdges);
-
   const instaFeed = allInstaNodeEdges.map((edge) =>
     <li key={edge.node.id}>
       <a href={edge.node.preview} style={{backgroundImage: 'url(' + edge.node.preview + ')'}} title={edge.node.caption}></a>
