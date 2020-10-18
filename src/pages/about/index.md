@@ -1,62 +1,50 @@
 ---
 templateKey: about-page
-title: About
-about_intro: >-
-  When we started Gel 15 years ago, we knew the type of agency we wanted to
-  create. One that nurtures relationships, fosters creativity, innovates
-  constantly, balances fun with profit and makes time for an "a-pint-ment" or
-  two along the way. It’s our team of strategists, marketers, designers, and
-  developers who breathe the creative intelligence into our campaigns. 
+title: Let's Gel
+about_intro1: >
+  Are we the right agency for you? We value long term relationships. We embody creativity. We balance fun with profit and we make time for an “a-pint-ment” or two along the way. 20 years later, we’re still gelling.
+about_intro2: >
+  Our approach to marketing is our own—it’s grounded in Creative Intelligence. This means starting every project with strategy, regardless of scope, before we discuss tactics.
+about_intro3: >
+  It also means that we aren’t afraid to ask the tough questions. We challenge you. We test your assumptions and sometimes take the contrarian view. We do this to fully understand your marketing challenge and diagnose the root cause in order to design the best solution. 
 main:
-  shannon:
-    image2:
-      alt: Shannon Ambeau
-      image: /img/shannon-ambeau-headshot-1.jpg
-    shannon_bio: >-
-      After 20 years of corporate sales and marketing in the pharmaceutical
-      sector, Shannon decided to step out. Leaving at the top of her game,
-      having been part of the marketing team that launched the most successful
-      product in industry history, Shannon Ambeau joined Gel as the strategy
-      partner. She holds an MBA from the Schulich School of Business, a BSc in
-      Kinesiology from the University of Waterloo and is faculty at the Georgian
-      College Business and Management School. Shannon’s a blogger, writing about
-      life, love, and tacos on the weekly. 
   tom:
     image1:
       alt: Tom Ambeau
-      image: /img/tom-ambeau-headshot.jpg
+      image: /img/about/about-tom.png
     tom_bio: >
-      Tom Ambeau is Gel's founder and managing partner. He is the source of the
-      creative intelligence here. He’s the main reason our clients choose to
-      work with us. He just gets it. He’s been an entrepreneur for over 25
-      years. He co-launched a startup, took it public, got squeezed out, bought
-      an agency, and the beat goes on. Tom holds a BA in Political Science from
-      the University of Western Ontario. He has public company Board experience
-      as well as volunteer Board experience with the Downtown Barrie BIA. Tom’s
-      that guy who plays any sport well, has mastered freelance cooking, and
-      anyone who knows him knows he’s a die hard Leafs fan.  
-approach:
-  heading: Our Approach
-  text: >-
-    Our approach to marketing is different. It’s grounded in Creative
-    Intelligence. This means beginning every project, regardless of scope, with
-    a strategy discussion before we think about crafting solutions. We challenge
-    you. We get to the root cause of your pain. We aren’t afraid to test your
-    assumptions, to ask the tough questions and at times, to be the contrarian.
-    This allows us to build better brands.
-
-
-    Whether we’re helping you discover or refine your story, unlock untapped
-    value in your brand to grow your business or trying new methods of
-    communication to deepen the connection with your audience, we partner with
-    you throughout the process so that we get it right.
-
-
-    We invite you to explore our work, discover our culture and connect with our
-    story.
-services:
-  - strategy
-  - branding
-  - marketing
+      I’ve had my share of good fortune in business
+      over the past 30 years—record-beating
+      quarters, successful product launches,
+      shattering a fundraising milestone, and the
+      thrill of taking a company public. They say
+      that fortune (I don’t believe in luck) is where
+      hard work and opportunity meet. I’ve also had
+      some challenges in business. And so I should.
+      That’s undeniably part of the growth equation.
+      The Creative Intelligence I share with our
+      clients is the sum of these parts.
+    tom_website: https://www.gelagency.com/
+    tom_website_name: www.gelagency.com
+    tom_linkedin: https://www.linkedin.com/in/tom-ambeau-a257a412/
+  shannon:
+    image2:
+      alt: Shannon Ambeau
+      image: /img/about/about-shannon.png
+    shannon_bio: >
+      I left a 20 year corporate sales and
+      marketing career with multinationals to join
+      Gel and become a partner in my own agency.
+      While in corporate, I earned an MBA from
+      the Schulich School of Business. As the
+      strategy lead, I leverage my corporate
+      experience and business education in all our
+      client engagements. I teach Marketing and
+      PR at Georgian College and I’m a writer.
+      You’ll find my writing on our blog and at
+    shannon_website: https://shannonambeau.com/
+    shannon_website_name: shannonambeau.com
+    shannon_linkedin: https://www.linkedin.com/in/shannonambeau/
+insta:
+  heading: Follow us on
 ---
-
