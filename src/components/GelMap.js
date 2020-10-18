@@ -12,7 +12,7 @@ class GelMap extends Component {
           center={position}
           zoom={16}
           maxZoom={18}
-          style={{ height: '300px' }}
+          style={{ height: '370px' }}
         >
           <TileLayer
             id='mapbox.streets'
