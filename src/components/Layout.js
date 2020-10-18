@@ -22,6 +22,7 @@ const theme = {
   orange: '#e77252',
   lightOrange: '#ff9b7f',
   darkOrange: '#9D4223',
+  neonOrange: '#F17256',
 
   //blue: '#143358',
   blue: '#394f60',
