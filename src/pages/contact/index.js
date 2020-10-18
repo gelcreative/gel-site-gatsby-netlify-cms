@@ -5,49 +5,132 @@ import styled from 'styled-components';
 
 import Layout from '../../components/Layout';
 import NewsletterForm from '../../components/NewsletterForm'
+import ContactForm from '../../components/ContactForm'
 import GelMap from '../../components/GelMap'
 
 const StyledContactPage = styled.section`
   margin-top: 200px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  .content {
+
+    h1 {
+      margin-bottom: 0;
+      font-size: 5.4rem;
+      font-weight: lighter;
+    
+      + h1 {
+        margin-top: 10px;
+
+        :after {
+          content: "";
+          display: block;
+          width: 5%;
+          height: 4px;
+      
+          margin: 30px auto 50px;
+          background: ${props => props.theme.black};
+        }
+      }
+    }
+
+    form.gel-enquiry {
+      max-width: 50rem;
+      margin: auto;
+
+      input, textarea {
+        margin: 12px auto;
+        padding: 15px;
+        
+        font-size: 2.0rem;
+        color: ${props => props.theme.black};
+
+        border: 1px solid ${props => props.theme.grey};
+        border-radius: 0;
+
+        ::placeholder { color: ${props => props.theme.black}; }
+      }
+
+      textarea { height: 150px; }
+
+      .send-button {
+        text-align: center;
+
+        button {
+          color: ${props => props.theme.white};
+          text-transform: uppercase;
+          font-size: 1.8rem;
+
+          background: ${props => props.theme.orange};
+          border-radius: 6px;
+
+          :hover {
+            background: ${props => props.theme.darkOrange};
+          }
+        }
+      }
+    }
+
+    .gel-newsletter {
+      padding-top: 175px;
+      background: url(/img/orange_background-01.png) center top repeat-y;
   
-  address {
-    font-style: normal;
-    margin-top: 2rem;
-  }
-  .column {
-    padding: 2rem;
-  }
-
-  .gel-map-row {
-    position: relative;
-    z-index: 0;
-  }
-
-  .gel-contact-details-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+      color: ${props => props.theme.white};
+      text-align: center;
   
-  .gel-contact-details {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    line-height: 1.3;
-  }
-
-  .gel-contact-details h2 {
-    font-size: 2rem;
-    margin-bottom: 0;
-  }
-
-  .gel-newsletter-form [type="email"] {
-    border: unset;
-    box-shadow: unset;
-    border-bottom: 1px solid ${props => props.theme.typeGrey};
-    border-radius: 0;
-    margin-bottom: 10px;
-    font-size: 2rem;
-    padding-left: 0;
+      h2 {
+        color: ${props => props.theme.white};
+        font-family: ${props => props.theme.secondaryFont};
+        font-weight: lighter;
+        font-size: 4.1rem;
+      }
+  
+      p {
+        max-width: 45rem;
+        margin: auto;
+        font-size: 2.0rem;
+      }
+  
+      .gel-newsletter-form {
+        max-width: 60rem;
+        margin: 20px auto 0;
+      
+        [type="email"] {
+          border: unset;
+          box-shadow: unset;
+          margin-bottom: 10px;
+          font-size: 2rem;
+        }
+  
+        button {
+          color: ${props => props.theme.orange};
+          text-transform: uppercase;
+          font-size: 1.8rem;
+  
+          background: ${props => props.theme.white};
+          border-radius: 6px;
+  
+          :hover {
+            background: ${props => props.theme.lightGrey};
+          }
+        }
+      }
+    }
+  
+    .gel-newsletter:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 50px;
+  
+      background: ${props => props.theme.neonOrange};
+    }
+  
+    .gel-map {
+      position: relative;
+      z-index: 0;
+    }
   }
 
   @media (max-width: 768px) {
@@ -75,46 +158,19 @@ export default class Index extends React.Component {
     return (
       <Layout>
         <StyledContactPage className="section">
-          <div className="container">
-            <div className="content">
-              <div className="columns gel-map-row">
-                <div className="column">
-                  <GelMap />
-                </div>
-              </div>
-              <div className="columns">
-                <h1 className="visually-hidden">Contact Gel</h1>
-                <div className="column gel-contact-image-row">
-                  <a href="https://goo.gl/maps/ST3VQzgpiqP2" target="_blank" rel="noopener noreferrer">
-                    <Img fluid={data.file.childImageSharp.fluid} />
-                  </a>
-                </div>
-                <div className="column gel-contact-details-column">
-                  <div className="gel-contact-details">
-                    <h2>Become a client</h2>
-                    <a href="mailto:info@gelcreative.ca" className="button is-large is-dark gel-button-1" style={{ marginTop: '1em' }}>Email Us</a>
-                  </div>
-                  <div className="gel-contact-details">
-                    <h2>Contact us</h2>
-                    <a href="tel:+17057277980">705.727.7980</a>
-                    <address>
-                      <a
-                        href="https://www.google.com/maps/place/89+Collier+St,+Barrie,+ON+L4M+1H2/@44.3902458,-79.6868214,17z/data=!3m1!4b1!4m5!3m4!1s0x882aa32e300f8edf:0x696f3192d7cd8c25!8m2!3d44.3902458!4d-79.6846327"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >  
-                        89 Collier Street, Suite 201 <br />
-                        Barrie, ON L4M 1H2
-                      </a>
-                    </address>
-                  </div>
-                  <div className="gel-contact-details">
-                    <h2>Get on the list</h2>
-                    <p>Find out what we're working on, <br />get event invites, and other fun things.</p>
-                  </div>
-                  <NewsletterForm />
-                </div>
-              </div>
+          <div className="content">
+            <h1>Looking to grow your business?</h1>
+            <h1>We can help.</h1>
+            <form className="gel-enquiry">
+              <ContactForm />
+            </form>
+            <div className="gel-newsletter">
+              <h2>Because Marketing Matters.</h2>
+              <p>Sign up for marketing insights, early access to coaching programs and online courses, and a bevvie for anyone who drops by the office!</p>
+              <NewsletterForm />
+            </div>
+            <div className="gel-map">
+              <GelMap />
             </div>
           </div>
         </StyledContactPage>
