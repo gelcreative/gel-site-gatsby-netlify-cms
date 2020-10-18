@@ -4,14 +4,13 @@ import styled from 'styled-components';
 
 const StyledCallButton = styled.span`
   > a {
-    font-size: 18px;
+    font-size: 1.8rem;
     color: ${props => props.theme.white};
 
-    
+    :hover {
+      color: ${props => props.theme.white};
+    }
   }
-
-  &:hover { background-color: ${props => props.theme.darkOrange} !important; }
-  > a:hover { color: ${props => props.theme.white}; }
 
   > a.make { display: none; }
 
