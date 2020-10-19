@@ -3,6 +3,20 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../../components/Layout'
 
+import SearchForm from '../../components/SearchForm'
+
+const BlogHeader = styled.header`
+  margin-top: 200px;
+
+  h1 {
+    flex-basis: 100%;
+
+    color: ${props => props.theme.typeGrey};
+    font-size: 5.4rem;
+    font-weight: lighter;
+  }
+`
+
 const BlogSection = styled.section`
   flex-wrap: wrap;
   &.gel-blog-container-outer {
@@ -110,6 +124,10 @@ const BlogPage = ({data}) => {
   return (
     <Layout>
       <div className="container">
+        <BlogHeader>
+          <h1>Our Blog</h1>
+          <SearchForm />
+        </BlogHeader>
         <BlogSection className="columns gel-blog-container-outer">
           <h1 className="visually-hidden">Gel's Blog</h1>
             {posts.map(edge => {
