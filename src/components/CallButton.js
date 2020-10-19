@@ -25,7 +25,7 @@ const CallButton = class extends Component {
     return (
       <StyledCallButton className="button gel-button-2 is-primary call">
         <Link to="/contact/" className="book">Book A Call</Link>
-        <a href="tel:+1705.727.7980" class="make">Make A Call</a>
+        <a href="tel:+1705.727.7980" className="make">Make A Call</a>
       </StyledCallButton>
     );
   }

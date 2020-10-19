@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+
 import CallButton from '../components/CallButton';
 import SocialIcons from './SocialIcons';
 import NewsletterForm from './NewsletterForm';
@@ -367,8 +368,8 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link className="gel-header-logo-link" to="/" title="Logo">
-              <img class="logo-dark" src="/img/Gel-Logo-Circle-Full-Word-max-01.png" alt="Gel Logo Dark" />
-              <img class="logo-light" src="/img/Gel-Logo-Circle-Full-Word-max-01-white.png" alt="Gel Logo Light" />
+              <img className="logo-dark" src="/img/Gel-Logo-Circle-Full-Word-max-01.png" alt="Gel Logo Dark" />
+              <img className="logo-light" src="/img/Gel-Logo-Circle-Full-Word-max-01-white.png" alt="Gel Logo Light" />
             </Link>
             <CallButton />
             {/* Hamburger menu */}
@@ -376,25 +377,25 @@ const Navbar = class extends React.Component {
             <div className="navbar-search search"></div>
           </div>
           <div id="navMenu" className="navbar-menu" aria-hidden="true">
-            <a class="delete"></a>
+            <a className="delete"></a>
             <div className="navbar-start has-text-left">
               <ul>
-                <li class="navbar-item">
+                <li className="navbar-item">
                   <Link to="/">           Home          </Link>
                 </li>
-                <li class="navbar-item">
+                <li className="navbar-item">
                   <Link to="/about">      About         </Link>
                 </li>
-                <li class="navbar-item">
+                <li className="navbar-item">
                   <Link to="/services">   Our Services  </Link>
                 </li>
-                <li class="navbar-item">
+                <li className="navbar-item">
                   <Link to="/portfolio">  Our Work      </Link>
                 </li>
-                <li class="navbar-item">
+                <li className="navbar-item">
                   <Link to="/blog">       Blog          </Link>
                 </li>
-                <li class="navbar-item">
+                <li className="navbar-item">
                   <Link to="/contact">    Contact       </Link>
                 </li>
               </ul>
@@ -406,7 +407,7 @@ const Navbar = class extends React.Component {
 
             <div className="navbar-end has-text-right">
               <img src="/img/2020_OBIAA_website_mockup_macbook2.jpg" id="showoff" alt="OBIAA Website Mockup Showoff" />
-              <img src="/img/stay in touch.png" class="fancytext stayintouch" alt="Stay In Touch" />
+              <img src="/img/stay in touch.png" className="fancytext stayintouch" alt="Stay In Touch" />
               <StyledAddress>
                 <a
                   href="https://www.google.com/maps/place/89+Collier+St,+Barrie,+ON+L4M+1H2/@44.3902458,-79.6868214,17z/data=!3m1!4b1!4m5!3m4!1s0x882aa32e300f8edf:0x696f3192d7cd8c25!8m2!3d44.3902458!4d-79.6846327"

@@ -74,7 +74,7 @@ const StyledFooterNav = styled.div`
 
 const Footer = () => (
   <StyledFooter>
-      <div class="container">
+      <div className="container">
       <StyledFooterInner>
         <FooterItemContainer>
           <StyledFooterNav>
