@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import COVID19Modal from './COVID19Modal';
 
 import './styles/all.sass';
 import './styles/gel-styles.sass';
@@ -100,6 +101,7 @@ const TemplateWrapper = ({ children, pageType }) => (
         <Navbar pageType={pageType} />
         <main role="main">{children}</main>
         <Footer pageType={pageType} />
+        <COVID19Modal />
       </>
     )}
   />
