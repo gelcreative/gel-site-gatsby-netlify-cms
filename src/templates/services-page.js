@@ -171,8 +171,8 @@ export const ServicesPageTemplate = ({
 }) => {
 
   function tagsLoop(tagsArray) {
-    const tagsList = [];
-    for (var i = 0; i < tagsArray.length; i++) {
+    var tagsList = [];
+    for (let i = 0; i < tagsArray.length; i++) {
       tagsList.push(createElement("li", "", tagsArray[i]));
     }
     return createElement("ul", "", tagsList);
