@@ -10,14 +10,15 @@ class GelMap extends Component {
       return (
         <LeafletMap
           center={position}
+          tileSize={512}
           zoom={16}
           maxZoom={18}
           style={{ height: '300px' }}
         >
           <TileLayer
-            id='mapbox.streets'
+            id='mapbox/streets-v11'
             accessToken={accessToken}
-            url='https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}'
+            url='https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}'
             attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
           />
           <Marker
