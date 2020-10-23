@@ -106,6 +106,7 @@ const StyledHeader = styled.nav`
       height: 100px;
         max-height: 100px;
       
+      font-size: 0;
       cursor: pointer;
 
       background-color: unset;
@@ -377,7 +378,7 @@ const Navbar = class extends React.Component {
             <Link className="navbar-search search" to="/blog/"></Link>
           </div>
           <div id="navMenu" className="navbar-menu" aria-hidden="true">
-            <a className="delete"></a>
+            <a className="delete">X</a>
             <div className="navbar-start has-text-left">
               <ul>
                 <li className="navbar-item">
