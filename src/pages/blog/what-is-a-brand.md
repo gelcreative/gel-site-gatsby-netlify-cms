@@ -9,6 +9,9 @@ featured_image:
 banner_image:
   alt: What is a brand?
   image: /img/what_is_a_brand_gel_blog_cover_1920x800_2019.jpg
+thumbnail_image:
+  alt: What is a brand?
+  image: /img/what_is_a_brand_gel_blog_thumbnail.png
 description: >-
   What is a brand? You’ve likely asked yourself this question a few times and
   maybe even gone down a rabbit hole searching for the answer on Google.

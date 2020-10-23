@@ -9,6 +9,9 @@ featured_image:
 banner_image:
   alt: 'How to do keyword research '
   image: /img/gel_blog_banner.jpg
+thumbnail_image:
+  alt: 'How to do keyword research '
+  image: /img/2020_Gel_blog_social__linkedin 2.png
 description: >-
   You know it’s something you should do. You probably know it’s important for
   your website. What you may not know is that before you produce any piece of

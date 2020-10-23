@@ -9,6 +9,9 @@ featured_image:
 banner_image:
   alt: 5 Marketing Lessons From Disney+
   image: /img/gel_blog_cover_artboard-3.jpg
+thumbnail_image:
+  alt: 5 Marketing Lessons From Disney+
+  image: /img/gel_blog_cover_Artboard-7.png
 description: >-
   Disney+ may be the most successful video-on-demand service launch in recent
   years. Why did over 10M people subscribe on the first day? In a word —

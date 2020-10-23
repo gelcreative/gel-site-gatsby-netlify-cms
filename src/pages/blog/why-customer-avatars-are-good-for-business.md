@@ -9,6 +9,9 @@ featured_image:
 banner_image:
   alt: Why Customer Avatars are Good for Business
   image: /img/2020_gel_blog_social_template-avatar.jpg
+thumbnail_image:
+  alt: Why Customer Avatars are Good for Business
+  image: /img/2020_Gel_blog_social_template_linkedin.png
 description: >-
   Imagine you’ve been told to sell a product or a service, but they left out all
   the details about the buyer. “Just sell it to everyone and see who buys”.

@@ -9,6 +9,9 @@ featured_image:
 banner_image:
   alt: '5 Ways to Master Your Marketing Mix '
   image: /img/2020_gel_5ways_to_master_your_marketing_mix_post_banner.png
+thumbnail_image:
+  alt: '5 Ways to Master Your Marketing Mix '
+  image: /img/2020_gel_5ways_to_master_your_marketing_mix_post_banner.png
 description: >
   Marketing is like investing. Endless options in a changing sea. How do you
   know when you’ve got it right? Where should you invest your time and money?

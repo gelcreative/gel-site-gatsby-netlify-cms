@@ -9,6 +9,9 @@ featured_image:
 banner_image:
   alt: Entrepreneurs are a Rare Breed
   image: /img/2020_gel_blog_social_template2_banner.jpg
+thumbnail_image:
+  alt: Entrepreneurs are a Rare Breed
+  image: /img/2020_Gel_blog_social_template2_linkedin.png
 description: >-
   Billionaires are good for business. Richard Branson and Sarah Blakely look
   like they’re having a good time. Elon Musk and Jeff Bezos are heading into

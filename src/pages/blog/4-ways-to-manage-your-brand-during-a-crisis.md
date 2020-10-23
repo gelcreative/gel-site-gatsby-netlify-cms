@@ -9,6 +9,9 @@ featured_image:
 banner_image:
   alt: 4 Ways to Manage Your Brand During a Crisis
   image: /img/2020_gel_blog_4ways_featuredbanner.jpg
+thumbnail_image:
+  alt: 4 Ways to Manage Your Brand During a Crisis
+  image: /img/2020_gel_blog_4ways_banner.jpg
 description: >-
   When a crisis hits, your amygdala kicks into overdrive. It’s fight or
   flight—that survival mechanism in our brains that helped our ancestors outrun

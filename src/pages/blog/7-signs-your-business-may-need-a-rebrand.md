@@ -9,6 +9,9 @@ featured_image:
 banner_image:
   alt: 7 Signs Your Business May Need a Rebrand
   image: /img/gel_blog_-blog-cover.jpg
+thumbnail_image:
+  alt: 7 Signs Your Business May Need a Rebrand
+  image: /img/gel_rebrand_social-02.png
 description: >
   How do you know when it’s time for a rebrand? Like anything, as brands grow up
   and mature, they evolve. A brand doesn’t exist in a bubble, but rather within
