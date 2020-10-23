@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../../components/Layout'
 
-import SearchForm from '../../components/SearchForm'
+import Search from '../../components/Search'
 
 const BlogHeader = styled.header`
   margin-top: 200px;
@@ -152,6 +152,13 @@ const BlogPage = ({data}) => {
     return createElement("ul", "", tagsList);
   }
 
+  // Function to automatically fill in the search box for the user
+  function tagSearch(term) {
+    let searchForm = document.querySelector("#blog-search > input")
+    searchForm.value = term;
+    // (the search form is set to search on input and on focus,
+    //  so this will perform the search after filling in the field)
+    searchForm.focus()
   }
 
   return (
@@ -159,8 +166,17 @@ const BlogPage = ({data}) => {
       <div className="container">
         <BlogHeader>
           <h1>Our Blog</h1>
+          <ul id="tags-filter">
+            <li><a onClick={tagSearch.bind(this, "Branding")} >Branding</a></li>
+            <li><a onClick={tagSearch.bind(this, "Marketing")}>Marketing</a></li>
+            <li><a onClick={tagSearch.bind(this, "Strategy")} >Strategy</a></li>
+            <li><a onClick={tagSearch.bind(this, "Design")}   >Design</a></li>
+            <li><a onClick={tagSearch.bind(this, "Business")} >Business</a></li>
+          </ul>
         </BlogHeader>
         <BlogSection>
+          {/* Blog section for searches */}
+          <Search searchIndex={data.siteSearchIndex.index} id="blog-search" />
           {/* Blog section for all posts (only one will be visible at a time) */}
           <section id="blog-posts-all" className="blog-section columns gel-blog-container-outer">
             {posts.map((edge, index) => {
@@ -227,6 +243,9 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    siteSearchIndex {
+      index
     }
   }
 `

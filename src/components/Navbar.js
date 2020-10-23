@@ -374,7 +374,7 @@ const Navbar = class extends React.Component {
             <CallButton />
             {/* Hamburger menu */}
             <div className="navbar-burger burger" data-target="navMenu"></div>
-            <div className="navbar-search search"></div>
+            <Link className="navbar-search search" to="/blog/"></Link>
           </div>
           <div id="navMenu" className="navbar-menu" aria-hidden="true">
             <a className="delete"></a>

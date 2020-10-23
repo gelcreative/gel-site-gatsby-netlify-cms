@@ -89,13 +89,16 @@ module.exports = {
         resolvers: {
           // For any node of type MarkdownRemark, list how to resolve the fields` values
           MarkdownRemark: {
+            id: node => node.id,
             title: node => node.frontmatter.title,
             tags: node => node.frontmatter.tags,
-            path: node => node.frontmatter.path,
+            image: node => node.frontmatter.thumbnail_image,
+            path: node => node.fields.slug,
           },
         },
         // Optional filter to limit indexed nodes
-        filter: (node, getNode) => node.frontmatter.tags !== "exempt",
+        // (Only get blog post nodes)
+        filter: (node, getNode) => node.frontmatter.templateKey == "blog-post",
       },
     },
     {
