@@ -6,8 +6,7 @@ import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
-import markdownToHtml from '../util/markdownToHtml';
-import Instagram from '../components/svg/Instagram';
+//import markdownToHtml from '../util/markdownToHtml';
 
 const StyledServicesPage = styled.article`
   margin-top: 200px;

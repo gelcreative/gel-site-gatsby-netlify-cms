@@ -5,7 +5,7 @@ import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
-import ScrollyDo from '../components/ScrollyDo';
+//import ScrollyDo from '../components/ScrollyDo';
 import HomePagePortfolioFeatures from '../components/HomePagePortfolioFeatures';
 import ClientLogoGrid from '../components/ClientLogoGrid';
 import GelServices from '../components/GelServices';
