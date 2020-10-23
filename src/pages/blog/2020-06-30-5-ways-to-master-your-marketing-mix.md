@@ -32,7 +32,7 @@ We can take a few lessons from our friends in the financial sector. Managing the
 
 ## 1.Balance your portfolio
 
-> With the volume of content being published on the daily, it’s easy for a brand manager to lose sight of how content is being distributed. Just like a good financial advisor recommends balancing the investment portfolio every year, it’s critical that you take stock of the distribution of your content across marketing channels. 
+With the volume of content being published on the daily, it’s easy for a brand manager to lose sight of how content is being distributed. Just like a good financial advisor recommends balancing the investment portfolio every year, it’s critical that you take stock of the distribution of your content across marketing channels. 
 
 Like a good investor, a brand manager balances the marketing mix. The marketing budget should be distributed across paid, owned, earned, and shared media to distribute effort, absorb failures, and protect against disruptions. 
 
@@ -44,7 +44,7 @@ Simply put,
 
 Paid media is advertising in all its forms, traditional and digital. You pay to distribute your content through their channel.
 
-Earned is media coverage. Their/your content on their network. Think news coverage, guest blogging, and podcast interviews.
+> Earned is media coverage. Their/your content on their network. Think news coverage, guest blogging, and podcast interviews.
 
 Shared is social media. Your content on someone else’s network.
 
