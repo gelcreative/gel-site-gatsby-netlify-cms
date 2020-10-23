@@ -99,7 +99,7 @@ const TemplateWrapper = ({ children, pageType }) => (
           {/* <link rel="stylesheet" href="https://use.typekit.net/hfk4yqa.css" /> */}
         </Helmet>
         <Navbar pageType={pageType} />
-        <main role="main">{children}</main>
+        <main role="main" data-page-type={pageType}>{children}</main>
         <Footer pageType={pageType} />
         <COVID19Modal />
       </>
