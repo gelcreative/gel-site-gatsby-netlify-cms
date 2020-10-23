@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
+import { graphql, Link, navigate } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
@@ -105,12 +106,6 @@ export const BlogPostTemplate = ({
                 {title}
               </h1>
                 <p className="gel-blog-meta">  
-                  {tags && tags.length ? (
-                    <>
-                      <span>Category: </span>
-                        <Link key={tags[0] + `tag`} to="/blog/">{tags[0]}</Link>
-                    </>
-                  ) : null}
                   <span className="styled-slashes">&#47;&#47;</span>
                   <br />
                   <span>Author: </span>{author}
@@ -118,6 +113,17 @@ export const BlogPostTemplate = ({
                   <br />
                    <span>Date </span>{date} */}
                 </p>
+                {tags && tags.length ? (
+                  <>
+                    <p>Category:
+                      <span key={tags[0] + `tag`} onClick={event => {
+                        // Navigate to blog page and pass tag to pre-fill search box
+                        event.preventDefault()
+                        navigate("/blog/", {state: {search: tags[0]}})
+                      }}>{tags[0]}</span>
+                    </p>
+                  </>
+                ) : null}
             </div>
             <p className="gel-blog-post-description">{description}</p>
           </div>

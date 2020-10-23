@@ -133,7 +133,7 @@ const BlogSection = styled.section`
   form.active + section { display: none; }
 `
 
-const BlogPage = ({data}) => {
+const BlogPage = ({data, location}) => {
 
   const { edges: posts } = data.allMarkdownRemark
 
@@ -154,11 +154,11 @@ const BlogPage = ({data}) => {
 
   // Function to automatically fill in the search box for the user
   function tagSearch(term) {
-    let searchForm = document.querySelector("#blog-search > input")
+    let searchForm = document.querySelector("#blog-search > input");
     searchForm.value = term;
     // (the search form is set to search on input and on focus,
     //  so this will perform the search after filling in the field)
-    searchForm.focus()
+    searchForm.focus();
   }
 
   return (
@@ -176,7 +176,7 @@ const BlogPage = ({data}) => {
         </BlogHeader>
         <BlogSection>
           {/* Blog section for searches */}
-          <Search searchIndex={data.siteSearchIndex.index} id="blog-search" />
+          <Search searchIndex={data.siteSearchIndex.index} id="blog-search" prefill={location.state.search} />
           {/* Blog section for all posts (only one will be visible at a time) */}
           <section id="blog-posts-all" className="blog-section columns gel-blog-container-outer">
             {posts.map((edge, index) => {

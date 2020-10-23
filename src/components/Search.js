@@ -36,7 +36,7 @@ export default class Search extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      query: ``,
+      query: this.props.prefill,
       results: [],
       active: "",
     }
