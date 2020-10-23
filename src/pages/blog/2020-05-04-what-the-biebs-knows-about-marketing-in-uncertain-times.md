@@ -1,8 +1,11 @@
 ---
 templateKey: blog-post
 title: What the Biebs Knows About Marketing in Uncertain Times
-author: ' Shannon Ambeau'
+author: Shannon Ambeau
 date: 2020-05-04T19:46:27.252Z
+authorPic:
+  alt: Shannon Ambeau
+  image: /img/author_shannon.png
 featured_image:
   alt: What the Biebs Knows About Marketing in Uncertain Times
   image: /img/2020_gel_social_whatbiebsfeature-banner.jpg
@@ -21,7 +24,7 @@ tags:
   - personal branding
   - marketing
   - marketing strategy
-  - justin bieber
+  - Justin Bieber
   - business
   - COVID19
   - coronavirus

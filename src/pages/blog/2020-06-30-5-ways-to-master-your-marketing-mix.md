@@ -1,8 +1,11 @@
 ---
 templateKey: blog-post
 title: '5 Ways to Master Your Marketing Mix '
-author: ' Shannon Ambeau'
+author: Shannon Ambeau
 date: 2020-06-30T15:29:10.812Z
+authorPic:
+  alt: Shannon Ambeau
+  image: /img/author_shannon.png
 featured_image:
   alt: '5 Ways to Master Your Marketing Mix '
   image: /img/2020_gel_5ways_to_master_your_marketing_mix_post_feature.png

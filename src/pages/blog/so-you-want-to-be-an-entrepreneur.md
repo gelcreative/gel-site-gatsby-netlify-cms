@@ -3,6 +3,9 @@ templateKey: blog-post
 title: Entrepreneurs are a Rare Breed
 author: Shannon Ambeau
 date: 2020-01-27T20:41:42.390Z
+authorPic:
+  alt: Shannon Ambeau
+  image: /img/author_shannon.png
 featured_image:
   alt: Entrepreneurs are a Rare Breed
   image: /img/2020_gel_blog_social_template2_featured-banner.jpg
@@ -20,7 +23,7 @@ description: >-
   paying himself £20 per week in the early days. Sarah Blakely packaging Spanx
   up in the living room of her rented apartment. 
 tags:
-  - Entrepreneurs
+  - entrepreneurs
   - business
   - how to be an entrepreneur
   - professional development
