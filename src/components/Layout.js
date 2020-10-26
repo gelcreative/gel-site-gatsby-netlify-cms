@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import COVID19Modal from './COVID19Modal';
+import COVID19Modal from '../components/COVID19Modal';
 
 import './styles/all.sass';
 import './styles/gel-styles.sass';
