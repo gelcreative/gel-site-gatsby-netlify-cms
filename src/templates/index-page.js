@@ -7,8 +7,10 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 //import ScrollyDo from '../components/ScrollyDo';
 import HomePagePortfolioFeatures from '../components/HomePagePortfolioFeatures';
-import ClientLogoGrid from '../components/ClientLogoGrid';
-import GelServices from '../components/GelServices';
+import HomePageBlogFeatures from '../components/HomePageBlogFeatures';
+//import ClientLogoGrid from '../components/ClientLogoGrid';
+//import GelServices from '../components/GelServices';
+import CallButton from '../components/CallButton';
 
 const StyledHomePage = styled.article`
 
@@ -77,10 +79,63 @@ const StyledHomePage = styled.article`
   }
 
   .columns.gel-home-featured-section {
-    margin-bottom: 10rem;
-    margin-top: 5rem;
+    padding: 200px 0 350px;
+    margin: 10px 0 -250px;
+
+    background: url(/img/homepage_blue_background.png) center / cover no-repeat;
+    color: ${props => props.theme.white};
+
     h2 {
-      margin-bottom:-3rem;      
+      font-family: ${props => props.theme.secondaryFont};
+      font-weight: lighter;
+      font-size: 5.4rem;
+    }
+
+    .gel-portfolio-section, & + .gel-home-blog-section {
+      display: flex;
+      justify-content: space-between;
+
+      max-width: 1700px;
+      margin: 30px auto;
+    }
+
+    h3 {
+      font-family: ${props => props.theme.secondaryFont};
+      font-weight: bold;
+      font-size: 3.2rem;
+    }
+
+    p {
+      max-width: 65rem;
+      margin: 30px auto;
+      font-size: 2.0rem;
+
+      + cite {
+        font-family: ${props => props.theme.secondaryFont};
+        font-weight: lighter;
+        font-style: normal;
+        font-size: 2.4rem;
+  
+        span { display: block; font-size: 1.8rem; }
+      }
+    }
+
+    p + cite + h2 {
+      font-family: ${props => props.theme.secondaryFont};
+      font-weight: bold;
+      font-size: 4.8rem;
+
+      :before {
+        content: "";
+        display: block;
+        width: 5%;
+        height: 4px;
+    
+        margin: 75px auto 20px;
+        background: ${props => props.theme.white};
+      }
+
+      + p { max-width: 25rem; }
     }
   }
   @media(max-width: 768px){
@@ -107,7 +162,13 @@ export const IndexPageTemplate = ({
   intro1,
   intro2,
   featuredPortfolioTitle,
-  clientListTitle,
+  featuredPortfolioTestimonialTitle,
+  featuredPortfolioTestimonialContent1,
+  featuredPortfolioTestimonialContent2,
+  featuredPortfolioTestimonialAuthor1,
+  featuredPortfolioTestimonialAuthor2,
+  featuredPortfolioSubtitle,
+  featuredPortfolioCTA,
 }) => {
   return (
     <StyledHomePage className="section">
@@ -130,25 +191,28 @@ export const IndexPageTemplate = ({
             <p>{intro2}</p>
           </div>
         </section>
-        <GelServices />
         <section className="columns is-centered gel-home-featured-section">
           <div className="column has-text-centered">
-            <h2 className="has-text-centered outlined">
+            <h2 className="has-text-centered">
               {featuredPortfolioTitle}
             </h2>
-            <HomePagePortfolioFeatures />
-            <Link
-              to="/portfolio/"
-              className="button is-dark is-large gel-button-1 gel-button-bigger"
-            >
-              See more work
-            </Link>
+            <section className="gel-portfolio-section"><HomePagePortfolioFeatures /></section>
+            <h3>{featuredPortfolioTestimonialTitle}</h3>
+            <p className="has-text-left">{featuredPortfolioTestimonialContent1}</p>
+            <p className="has-text-left">{featuredPortfolioTestimonialContent2}</p>
+            <cite>
+              {featuredPortfolioTestimonialAuthor1}
+              <span>{featuredPortfolioTestimonialAuthor2}</span>
+            </cite>
+
+            <h2>{featuredPortfolioSubtitle}</h2>
+            <p>{featuredPortfolioCTA}</p>
+            <CallButton />
           </div>
         </section>
-        <div className="columns is-centered">
-          <h2 className="column has-text-centered">{clientListTitle}</h2>
+        <div className="columns is-centered gel-home-blog-section">
+          <HomePageBlogFeatures />
         </div>
-        <ClientLogoGrid />
       </div>
     </StyledHomePage>
   );
@@ -161,7 +225,13 @@ IndexPageTemplate.propTypes = {
   intro1: PropTypes.string,
   intro2: PropTypes.string,
   featuredPortfolioTitle: PropTypes.string,
-  clientListTitle: PropTypes.string,
+  featuredPortfolioTestimonialTitle: PropTypes.string,
+  featuredPortfolioTestimonialContent1: PropTypes.string,
+  featuredPortfolioTestimonialContent2: PropTypes.string,
+  featuredPortfolioTestimonialAuthor1: PropTypes.string,
+  featuredPortfolioTestimonialAuthor2: PropTypes.string,
+  featuredPortfolioSubtitle: PropTypes.string,
+  featuredPortfolioCTA: PropTypes.string,
 };
 
 const IndexPage = ({ data }) => {
@@ -180,7 +250,13 @@ const IndexPage = ({ data }) => {
         intro1={frontmatter.intro1}
         intro2={frontmatter.intro2}
         featuredPortfolioTitle={frontmatter.featuredPortfolioTitle}
-        clientListTitle={frontmatter.clientListTitle}
+        featuredPortfolioTestimonialTitle={frontmatter.featuredPortfolioTestimonialTitle}
+        featuredPortfolioTestimonialContent1={frontmatter.featuredPortfolioTestimonialContent1}
+        featuredPortfolioTestimonialContent2={frontmatter.featuredPortfolioTestimonialContent2}
+        featuredPortfolioTestimonialAuthor1={frontmatter.featuredPortfolioTestimonialAuthor1}
+        featuredPortfolioTestimonialAuthor2={frontmatter.featuredPortfolioTestimonialAuthor2}
+        featuredPortfolioSubtitle={frontmatter.featuredPortfolioSubtitle}
+        featuredPortfolioCTA={frontmatter.featuredPortfolioCTA}
       />
     </Layout>
   );
@@ -200,7 +276,13 @@ export const indexPageQuery = graphql`
         intro1
         intro2
         featuredPortfolioTitle
-        clientListTitle
+        featuredPortfolioTestimonialTitle
+        featuredPortfolioTestimonialContent1
+        featuredPortfolioTestimonialContent2
+        featuredPortfolioTestimonialAuthor1
+        featuredPortfolioTestimonialAuthor2
+        featuredPortfolioSubtitle
+        featuredPortfolioCTA
       }
     }
     site {
