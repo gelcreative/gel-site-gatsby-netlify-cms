@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
 import { graphql, Link, navigate } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
@@ -14,64 +13,145 @@ const StyledBlogPost = styled.article`
   margin-top: 200px;
 
   .gel-blog-post-info {
-    margin-bottom: 4rem;
+
+    h1 {
+      text-align: left;
+
+      font-family: ${props => props.theme.secondaryFont};
+      font-weight: lighter;
+      font-size: 5.4rem;
+    }
+
+    .gel-blog-meta {
+      font-family: ${props => props.theme.secondaryFont};
+      font-weight: lighter;
+      font-size: 2.4rem;
+      color: ${props => props.theme.typeGrey};
+
+      .gatsby-image-wrapper {
+        width: 56px;
+        float: left;
+        margin: 0 10px 0 0;
+      }
+
+      p { margin: 0; }
+      p ~ p { font-size: 1.6rem; }
+
+      span {
+        margin-left: 6px;
+        color: ${props => props.theme.typeGrey};
+        font-weight: lighter;
+        
+        cursor: pointer;
+        transition: 300ms;
+
+        :hover {
+          text-decoration: none;
+          color: ${props => props.theme.black};
+          text-shadow: 0px 0px 0px ${props => props.theme.black};
+        }
+      }
+    }
   }
-  .gel-blog-meta span {
-    font-family: ${props => props.theme.boldFont};
+
+  .gel-blog-content {
+    font-family: ${props => props.theme.regularFont};
+    font-weight: lighter;
+    font-size: 2.4rem;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: ${props => props.theme.secondaryFont};
+      font-weight: lighter;
+    }
+
+    blockquote {
+      margin: 4rem auto !important;
+      text-align: center;
+      line-height: normal;
+
+      font-family: ${props => props.theme.secondaryFont};
+      font-weight: bold;
+      font-size: 0;
+      color: ${props => props.theme.orange};
+
+      background: none;
+      border: none;
+
+      p, ::before, ::after { font-size: 2.8rem; }
+
+      p { display: inline; }
+
+      ::before { content: '"' } 
+      ::after { content: '"' } 
+    }
   }
-  .styled-slashes {
-    color: ${props => props.theme.orange};
-    margin: 0 2%;
-  }
-  .gel-blog-post-description {
-    font-size: 2.5rem;
-    line-height: 1.5;
-  }
+
   .gatsby-image-wrapper {
     margin-top: 4rem;
     margin-bottom: 4rem;
+
+    &.gel-blog-banner { margin-top: 0; }
   }
 
   .blog-newsletter-form-section {
-    margin-top: 50px;
-    background-color: #e6e7e8;
-    padding: 30px 7%;
-  }
+    background: url(/img/blu_background-02-02.png) top center / cover no-repeat;
+    padding: 175px 0 0;
+    color: ${props => props.theme.white};
 
-  .gel-newsletter-form {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 500px;
-    margin: 0 auto;
-  }
+    h2 { font-family:  ${props => props.theme.secondaryFont}; }
+    h2 + h2::after {
+      content: "";
+      display: block;
+      width: 5%;
+      height: 4px;
+      
+      margin: 20px auto 50px;
+      background: ${props => props.theme.white};
+    }
 
-  .field {
-    display: inline-block;
-  }
+    .gel-newsletter-form {
+      display: flex;
+      justify-content: space-between;
+      max-width: 550px;
+      margin: 0 auto;
 
-  .email-input {
-    flex-grow: 2;
-    margin: 5px;
-  }
+      .field {
+        display: inline-block;
+      }
+    
+      .email-input {
+        flex-grow: 2;
+        margin: 5px;
+      }
+    
+      .send-button {
+        flex-grow: 1;
+        margin: 5px;
+      }
+    
+      .send-button button[type="submit"] {
+        background-color: ${props => props.theme.orange};
+        font-family: ${props => props.theme.secondaryFont};
+        font-size: 2.4rem;
+        width: 100%;
+      }
+    
+      [type="email"] {
+        max-width: 380px;
+        padding: 2px 10px;
+        margin: 0 0 10px;
+    
+        font-family: ${props => props.theme.secondaryFont};
+        font-size: 2.4rem;
+        color: ${props => props.theme.white};
+    
+        border: 1px solid ${props => props.theme.white};
+        border-radius: 0;
+        background: none;
 
-  .send-button {
-    flex-grow: 1;
-    margin: 5px;
-  }
-
-  .send-button button[type="submit"] {
-    background-color: #f26339;
-    font-family: HKGrotesk-Regular;
-    width: 100%;
-  }
-
-  [type="email"] {
-    border-radius: 0;
-    height: 40px;
-    font-size: 1.6rem;
-    color: #434244;
-    text-transform: uppercase;
+        ::placeholder { color: ${props => props.theme.white}; }
+      }
+    }
   }
 
   @media(min-width: 601px) {
@@ -89,6 +169,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   author,
+  authorPic,
   date,
   bannerImage,
   helmet,
@@ -100,19 +181,14 @@ export const BlogPostTemplate = ({
       {helmet || ''}
       <div className="container content">
         <section className="columns">
-          <div className="column is-10 is-offset-1 has-text-centered">
+          <div className="column is-10 is-offset-1 has-text-left">
             <div className="gel-blog-post-info">
-              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+              <h1 className="title">
                 {title}
               </h1>
-                <p className="gel-blog-meta">  
-                  <span className="styled-slashes">&#47;&#47;</span>
-                  <br />
-                  <span>Author: </span>{author}
-                  {/*<span className="styled-slashes">&#47;&#47;</span>
-                  <br />
-                   <span>Date </span>{date} */}
-                </p>
+              <aside className="gel-blog-meta">
+                <PreviewCompatibleImage imageInfo={authorPic} />
+                <p>By {author}</p>
                 {tags && tags.length ? (
                   <>
                     <p>Category:
@@ -124,23 +200,27 @@ export const BlogPostTemplate = ({
                     </p>
                   </>
                 ) : null}
+                
+                {/*<p>Date: {date}</p> */}
+              </aside>
             </div>
-            <p className="gel-blog-post-description">{description}</p>
           </div>
         </section>
-        <PreviewCompatibleImage imageInfo={bannerImage} />
+        <PreviewCompatibleImage imageInfo={bannerImage} className="gel-blog-banner" />
         <section className="columns">
-          <div className="column is-10 is-offset-1">
+          <div className="column is-10 is-offset-1 gel-blog-content">
+            <p className="gel-blog-post-description">{description}</p>
             <PostContent content={content} />
           </div>
         </section>
-        <section className="columns blog-newsletter-form-section is-centered">
-          <div className="column has-text-centered">
-          <h2>Get our marketing insights straight to your inbox.</h2>
-            <NewsletterForm />
-          </div>
-        </section>
       </div>
+      <section className="columns blog-newsletter-form-section is-centered">
+        <div className="column has-text-centered">
+          <h2>Looking to grow your business?</h2>
+          <h2>We can help.</h2>
+          <NewsletterForm />
+        </div>
+      </section>
     </StyledBlogPost>
   )
 }
@@ -157,7 +237,7 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout>
+    <Layout pageType="blog-post">
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
@@ -173,6 +253,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         author={post.frontmatter.author}
+        authorPic={post.frontmatter.authorPic}
         date={post.frontmatter.date}
         bannerImage={post.frontmatter.banner_image}
       />
@@ -197,6 +278,16 @@ export const pageQuery = graphql`
         date(formatString: "MM.DD.YY")
         title
         author
+        authorPic {
+          alt
+          image {
+            childImageSharp {
+              fluid(maxWidth: 56, quality: 100) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+        }
         banner_image {
           alt
           image {
