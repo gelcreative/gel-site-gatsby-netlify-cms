@@ -74,7 +74,7 @@ const StyledContactPage = styled.section`
 
     .gel-newsletter {
       padding-top: 175px;
-      background: url(/img/orange_background-01.png) center top repeat-y;
+      background: url(/img/orange_background-01.png) center top no-repeat;
   
       color: ${props => props.theme.white};
       text-align: center;
