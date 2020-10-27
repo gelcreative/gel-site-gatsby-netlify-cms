@@ -66,11 +66,10 @@ class COVID19Modal extends React.Component {
 
   render() {
     return (
-      <C19Modal id="gel-c19modal" className={`${this.state.active ? "active" : "inactive"}`}>
+      <C19Modal id="gel-c19modal" className={`${this.state.active ? "active" : "inactive"}`} onClick={this.hide.bind(this)}>
         <img
           src='/img/2020_gel_popup-01-01.jpg'
           alt='Gel is Open. To our valued partners, we hope that you and your family are healthy and safe during this trying time. Life and business have been disrupted by the pandemic and we understand this firsthand. We are committed to serving you. We understand that advancing your business - even in a time of uncertainty - is important. We are open. Working remotely to serve you. Looking forward to working through this together. -Tom and Shannon'
-          onClick={this.hide.bind(this)}
         />
       </C19Modal>
     )
