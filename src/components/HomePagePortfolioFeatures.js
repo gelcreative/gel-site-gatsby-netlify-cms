@@ -9,11 +9,13 @@ const StyledFeaturesSection = styled.div`
 
   a {
     display: block;
-    margin-top: 50px;
-
     color: ${props => props.theme.white};
 
+    .gel-homepage-thumbnail-image { max-height: 320px }
+
     h2 {
+      margin-top: 50px;
+
       font-family: ${props => props.theme.secondaryFont};
       font-weight: lighter;
       font-size: 3.8rem;
