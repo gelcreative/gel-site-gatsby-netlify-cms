@@ -62,19 +62,39 @@ const StyledPortfolioEntry = styled.article`
       }
 
       .gel-portfolio-entry-main-images {
-        position: relative;
 
-        .gel-project-image-inner {
-          width: 50%;
+        &.website {
           position: relative;
-          top: 100px;
-          left: 50px;
 
-          + .gel-project-image-inner {
-            position: absolute;
-            top: 0px;
-            left: unset;
-            right: 50px;
+          .gel-project-image-inner {
+            width: 50%;
+            position: relative;
+            top: 100px;
+            left: 50px;
+
+            + .gel-project-image-inner {
+              position: absolute;
+              top: 0px;
+              left: unset;
+              right: 50px;
+            }
+          }
+        }
+
+        &.brand {
+          display: grid;
+          grid-template-columns: 60% 35%;
+          justify-content: space-between;
+          direction: rtl;
+
+          .gel-project-image-inner {
+            grid-row-start: 1;
+            grid-row-end: 4;
+
+            + .gel-project-image-inner {
+              grid-row-start: unset;
+              grid-row-end: unset;
+            }
           }
         }
       }
@@ -264,7 +284,7 @@ export const PortfolioEntryTemplate = ({
         </section>
         <section className="gel-portfolio-entry-main">
           {mainColumns}
-          <div className="gel-portfolio-entry-main-images">
+          <div className={`gel-portfolio-entry-main-images ${projectType}`}>
             {mainImages}
           </div>
         </section>
