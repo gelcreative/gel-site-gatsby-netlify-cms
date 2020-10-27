@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import COVID19Modal from '../components/COVID19Modal';
+import AvatarModal from '../components/AvatarModal';
 
 import './styles/all.sass';
 import './styles/gel-styles.sass';
@@ -56,6 +57,8 @@ const TemplateWrapper = ({ children, pageType }) => (
         }
       }
     `}
+
+
     render={data => (
       <>
         <Helmet>
@@ -103,6 +106,7 @@ const TemplateWrapper = ({ children, pageType }) => (
         <main role="main" data-page-type={pageType}>{children}</main>
         <Footer pageType={pageType} />
         <COVID19Modal />
+        <AvatarModal pageType={pageType} />
       </>
     )}
   />
