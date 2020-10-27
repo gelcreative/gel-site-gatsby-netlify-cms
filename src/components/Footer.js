@@ -61,7 +61,8 @@ const StyledFooter = styled.footer`
     }
   }
 
-  &[data-page-type="blog-post"] {
+  &[data-page-type="blog-post"],
+  &[data-page-type="portfolio-entry"] {
     background: ${props => props.theme.darkBlue};
     color: ${props => props.theme.white};
 
