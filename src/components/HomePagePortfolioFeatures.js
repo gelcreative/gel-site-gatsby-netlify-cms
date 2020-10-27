@@ -40,9 +40,10 @@ const HomePagePortfolioFeatures = () => (
       query HomePagePortfolioFeatures {
         allMarkdownRemark(
           filter: {
-            frontmatter: { home_page_featured: { is_featured: { eq: true } } }
+            frontmatter: { templateKey: { eq: "portfolio-entry" } }
           }
           sort: { fields: [frontmatter___date], order: DESC }
+          limit: 3
         ) {
           edges {
             node {
@@ -52,18 +53,16 @@ const HomePagePortfolioFeatures = () => (
               }
               frontmatter {
                 title
-                project_type
-                home_page_featured {
-                  featured_image {
-                    image {
-                      childImageSharp {
-                        fluid(maxWidth: 1920, quality: 100) {
-                          ...GatsbyImageSharpFluid_tracedSVG
-                        }
+                services
+                thumbnail_image {
+                  image {
+                    childImageSharp {
+                      fluid(maxWidth: 1920, quality: 100) {
+                        ...GatsbyImageSharpFluid_tracedSVG
                       }
                     }
-                    alt
                   }
+                  alt
                 }
               }
             }
@@ -73,26 +72,34 @@ const HomePagePortfolioFeatures = () => (
     `}
     render={data => {
       const edges = data.allMarkdownRemark.edges;
+
       return edges.map(edge => {
+        // Create services list
+        let servicesList = edge.node.frontmatter.services.map((service, index) => {
+          if (!index) { return <span>{service}</span> }
+          else {        return <span> &#47;&#47; {service}</span> }
+        })
+
         return (
           <StyledFeaturesSection
             key={edge.node.id}
             className="gel-homepage-featured"
           >
             <div className="">
-              <PreviewCompatibleImage
-                imageInfo={
-                  edge.node.frontmatter.home_page_featured.featured_image
-                }
-                className="gel-homepage-featured-image"
-              />
               <Link
                 to={edge.node.fields.slug}
                 className="gel-homepage-featured-link"
               >
+                <PreviewCompatibleImage
+                  imageInfo={
+                    edge.node.frontmatter.thumbnail_image
+                  }
+                  className="gel-homepage-thumbnail-image"
+                />
+
                 <div className="gel-homepage-featured-text-container">
                   <h2>{edge.node.frontmatter.title}</h2>
-                  <p>{edge.node.frontmatter.project_type}</p>
+                  <p>{servicesList}</p>
                 </div>
               </Link>
             </div>
