@@ -136,6 +136,10 @@ const BlogSection = styled.section`
 const BlogPage = ({data, location}) => {
 
   const { edges: posts } = data.allMarkdownRemark
+  var searchPrefill = ""
+  if (typeof location.state != "undefined") {
+    searchPrefill = location.state.search;
+  }
 
   // Get tags list for the tag filter
   function tagsLoop() {
@@ -176,7 +180,7 @@ const BlogPage = ({data, location}) => {
         </BlogHeader>
         <BlogSection>
           {/* Blog section for searches */}
-          <Search searchIndex={data.siteSearchIndex.index} id="blog-search" prefill={location.state.search} />
+          <Search searchIndex={data.siteSearchIndex.index} id="blog-search" prefill={searchPrefill} />
           {/* Blog section for all posts (only one will be visible at a time) */}
           <section id="blog-posts-all" className="blog-section columns gel-blog-container-outer">
             {posts.map((edge, index) => {
