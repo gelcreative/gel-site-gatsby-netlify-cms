@@ -35,9 +35,9 @@ header_image:
   image: /img/portfolio/curb-appeal/full_website.png
   alt: Curb Appeal
 brand_images:
+  - image: /img/portfolio/curb-appeal/Screenshot_2019-07-05-Home.png
   - image: /img/portfolio/curb-appeal/2019_Curb_Appeal_insta.png
   - image: /img/portfolio/curb-appeal/2019_Curb_Appeal_socialannouncement-ig.png
   - image: /img/portfolio/curb-appeal/2019_curbappeal_Rackcard_mockup.png
-  - image: /img/portfolio/curb-appeal/Screenshot_2019-07-05-Home.png
 ---
 

@@ -31,9 +31,9 @@ header_image:
   image: /img/portfolio/curb-appeal/mortgage-wellness-stationary2.png
   alt: Mortgage Wellness
 brand_images:
-  - image: /img/portfolio/curb-appeal/pexels-photo-127246.png
-  - image: /img/portfolio/curb-appeal/mortgage-wellness-front-entrance.png
   - image: /img/portfolio/curb-appeal/mortgage_wellness_guide2.png
+  - image: /img/portfolio/curb-appeal/mortgage-wellness-front-entrance.png
+  - image: /img/portfolio/curb-appeal/pexels-photo-127246.png
   - image: /img/portfolio/curb-appeal/alev-takil-3syTDiVAc7w-unsplash.png
 ---
 
