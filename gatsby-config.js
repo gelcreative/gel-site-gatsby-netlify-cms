@@ -27,6 +27,7 @@ module.exports = {
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
+        ignore: [`**/trash_bin/**`]
       },
     },
     {
