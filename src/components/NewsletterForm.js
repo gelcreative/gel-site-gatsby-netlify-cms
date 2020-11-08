@@ -18,7 +18,10 @@ function encode(data) {
 class NewsletterForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isValidated: false };
+    this.state = {
+      isValidated: false,
+      layout: props.layout,
+    };
   }
 
   handleChange = e => {
@@ -41,6 +44,12 @@ class NewsletterForm extends React.Component {
   };
 
   render() {
+    // Handle layout here
+    let emailOrder = 0;
+    if (this.state.layout === "alt") emailOrder = 1;
+    let submitText = "Subscribe"
+    if (this.state.layout === "alt") submitText = "Sign me up!";
+
     return (
       <StyledContactForm
         name="contact"
@@ -59,7 +68,7 @@ class NewsletterForm extends React.Component {
             <input name="bot-field" onChange={this.handleChange} />
           </label>
         </div>
-        <div className="field email-input">
+        <div className="field email-input" style={{order: emailOrder}}>
           <label className="label visually-hidden" htmlFor={"email"}>Email</label>
             <div className="control">
               <label htmlFor={"email"} className="visually-hidden">Your Email Address</label>
@@ -71,7 +80,7 @@ class NewsletterForm extends React.Component {
             </div>
         </div>
         <div className="field send-button">
-          <button className="button is-dark is-large gel-button-1" type="submit">Subscribe</button>
+          <button className="button is-dark is-large gel-button-1" type="submit">{submitText}</button>
         </div>
       </StyledContactForm>
     )
