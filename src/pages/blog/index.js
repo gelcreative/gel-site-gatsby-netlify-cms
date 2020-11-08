@@ -58,6 +58,7 @@ const BlogSection = styled.section`
     }
     
     .column {
+      padding: 2rem;
       justify-content: stretch;
     }
 
@@ -114,6 +115,7 @@ const BlogSection = styled.section`
 
     .gel-blog-item-inner:hover {
       transform: scale(1.1);
+      z-index: 10;
     }
 
     .gel-blog-item-inner > a {
@@ -169,14 +171,14 @@ const BlogPage = ({data, location}) => {
     <Layout pageType="blog">
       <div className="container">
         <BlogHeader>
-          <h1>Our Blog</h1>
-          <ul id="tags-filter">
+          <h1>Marketing Blog</h1>
+       {/*<ul id="tags-filter">
             <li><a onClick={tagSearch.bind(this, "Branding")} >Branding</a></li>
             <li><a onClick={tagSearch.bind(this, "Marketing")}>Marketing</a></li>
             <li><a onClick={tagSearch.bind(this, "Strategy")} >Strategy</a></li>
             <li><a onClick={tagSearch.bind(this, "Design")}   >Design</a></li>
             <li><a onClick={tagSearch.bind(this, "Business")} >Business</a></li>
-          </ul>
+          </ul>*/}
         </BlogHeader>
         <BlogSection>
           {/* Blog section for searches */}
