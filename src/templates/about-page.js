@@ -37,36 +37,40 @@ const StyledAboutPage = styled.article`
     }
   }
 
-  .gel-bio-row:nth-last-child(2) {
+  .gel-bio-row {
     margin-bottom: 10rem !important;
-  }
 
-  .gel-bio-row#tom     { background: ${props => props.theme.blue}; }
-  .gel-bio-row#shannon { background: ${props => props.theme.orange}; }
+    &#tom     { background: ${props => props.theme.blue}; }
+    &#shannon { background: ${props => props.theme.orange}; }
 
-  .gel-bio-text {
-    display: flex;
-    align-items: center;
+    &#tom .gatsby-image-wrapper { transform: scale(1.12); }
 
-    color: ${props => props.theme.white};
-
-    h2 {
-      font-family: ${props => props.theme.secondaryFont};
-      letter-spacing: 1px;
-
-      span { text-shadow: 1px  1px  0px ${props => props.theme.white},
-                          1px -1px  0px ${props => props.theme.white},
-                          -1px 1px  0px ${props => props.theme.white},
-                          -1px -1px 0px ${props => props.theme.white}; }
-    }
-
-    a {
+    .gel-bio-text {
+      display: flex;
+      align-items: center;
+  
       color: ${props => props.theme.white};
-      font-weight: normal;
-    }
+  
+      h2 {
+        font-family: ${props => props.theme.secondaryFont};
+        letter-spacing: 1px;
+  
+        span { text-shadow: 1px  1px  0px ${props => props.theme.white},
+                            1px -1px  0px ${props => props.theme.white},
+                            -1px 1px  0px ${props => props.theme.white},
+                            -1px -1px 0px ${props => props.theme.white}; }
+      }
 
-    .button.gel-button-2 { margin-top: 20px; }
-  }
+      .gel-bio-content { max-width: 40rem; }
+  
+      a {
+        color: ${props => props.theme.white};
+        font-weight: normal;
+      }
+  
+      .button.gel-button-2 { margin-top: 20px; }
+    }
+  }  
 
   #tom     .gel-bio-text h2 > span { color: ${props => props.theme.blue} }
   #shannon .gel-bio-text h2 > span { color: ${props => props.theme.orange} }
@@ -85,7 +89,7 @@ const StyledAboutPage = styled.article`
 
   #gel-insta-section {
     margin-bottom: 0;
-    padding-bottom: 0;
+    padding: 0;
 
     h2 {
       font-family: ${props => props.theme.secondaryFont};
@@ -111,8 +115,8 @@ const StyledAboutPage = styled.article`
       li {
         position: relative;
         display: inline-block;
-        width: 16vw;
-        height: 16vw;
+        width: 16.5vw;
+        height: 16.5vw;
 
         list-style: none;
 
@@ -185,9 +189,9 @@ export const AboutPageTemplate = ({
             <div className="column gel-bio-text">
               <div className="section">
                 <h2><span>Meet</span> Tom</h2>
-                <p>{main.tom.tom_bio}</p>
+                <p className="gel-bio-content">{main.tom.tom_bio}</p>
               {/*<p><a href={main.tom.tom_website} target="_blank" rel="noopener noreferrer">{main.tom.tom_website_name}</a></p>*/}
-                <p><a class="button gel-button-2" href={main.tom.tom_linkedin} target="_blank" rel="noopener noreferrer">Follow me on Linkedin</a></p>
+                <p><a className="button gel-button-2" href={main.tom.tom_linkedin} target="_blank" rel="noopener noreferrer">Follow me on Linkedin</a></p>
               </div>
             </div>
           </div>
@@ -195,9 +199,9 @@ export const AboutPageTemplate = ({
             <div className="column gel-bio-text push">
               <div className="section">
                 <h2><span>Meet</span> Shannon</h2>
-                <p>{main.shannon.shannon_bio}</p>
+                <p className="gel-bio-content">{main.shannon.shannon_bio}</p>
                 <p><a href={main.shannon.shannon_website} target="_blank" rel="noopener noreferrer">{main.shannon.shannon_website_name}</a></p>
-                <p><a class="button gel-button-2" href={main.shannon.shannon_linkedin} target="_blank" rel="noopener noreferrer">Follow me on Linkedin</a></p>
+                <p><a className="button gel-button-2" href={main.shannon.shannon_linkedin} target="_blank" rel="noopener noreferrer">Follow me on Linkedin</a></p>
               </div>
             </div>
             <div className="column pull">
@@ -206,20 +210,16 @@ export const AboutPageTemplate = ({
           </div>
         </section>
       </div>
-      <section className="columns is-centered gel-insta-section content" id="gel-insta-section">
-        <div className="column">
-          <div className="section">
-            <h2 className="has-text-centered">{insta.heading}
-            <a  href="https://www.instagram.com/gelagency/"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Gel on Instagram">
-                <Instagram />
-              </a>
-            </h2>
-            <ul className="gel-insta-section-feed">{instaFeed}</ul>
-          </div>
-        </div>
+      <section className="is-centered gel-insta-section content" id="gel-insta-section">
+        <h2 className="has-text-centered">{insta.heading}
+          <a  href="https://www.instagram.com/gelagency/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Gel on Instagram">
+            <Instagram />
+          </a>
+        </h2>
+        <ul className="gel-insta-section-feed">{instaFeed}</ul>
       </section>
     </StyledAboutPage>
   );
