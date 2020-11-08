@@ -31,7 +31,8 @@ const StyledPortfolioEntry = styled.article`
       .columns { justify-content: space-between; }
 
       .project-info {
-        max-width: 400px;
+        flex-basis: 35%;
+        padding-right: 60px;
 
         h6 {
           margin: 30px 0 0px;
@@ -40,7 +41,7 @@ const StyledPortfolioEntry = styled.article`
       }
 
       .project-intro {
-        max-width: 620px;
+        flex-basis: 65%;
 
         p { margin-bottom: 20px;}
       }
@@ -167,7 +168,11 @@ const StyledPortfolioEntry = styled.article`
 
       font-family: ${props => props.theme.secondaryFont};
       font-style: lighter;
-      font-size: 5.4rem;
+      font-size: 4.5rem;
+    }
+
+    p {
+      font-size: 1.6rem;
     }
 
     > div {
@@ -181,6 +186,7 @@ const StyledPortfolioEntry = styled.article`
 `
 
 export const PortfolioEntryTemplate = ({
+  id,
   projectType,
   title,
   client,
@@ -302,11 +308,14 @@ export const PortfolioEntryTemplate = ({
         <section className="gel-portfolio-images-2">
           <PortfolioEntryImages portfolioImages={projectImages2} />
         </section>
+        <section className="gel-portfolio-back has-text-centered">
+          <Link to="/portfolio/" className="button gel-button-2">Back to Our Work</Link>
+        </section>
       </div>
       <section className="gel-portfolio-morework-section is-centered has-text-centered">
         <h2>See More Work</h2>
         <div>
-          <HomePagePortfolioFeatures />
+          <HomePagePortfolioFeatures current={id} />
         </div>
       </section>
     </StyledPortfolioEntry>
@@ -314,6 +323,7 @@ export const PortfolioEntryTemplate = ({
 }
 
 PortfolioEntryTemplate.propTypes = {
+  id: PropTypes.string,
   projectType: PropTypes.string,
   title: PropTypes.string,
   client: PropTypes.string,
@@ -336,9 +346,11 @@ PortfolioEntryTemplate.propTypes = {
 
 const PortfolioEntry = ({ data }) => {
   const { frontmatter } = data.markdownRemark
+  const { id } = data.markdownRemark
   return (
     <Layout pageType="portfolio-entry">
       <PortfolioEntryTemplate
+        id={id}
         projectType={frontmatter.project_type}
         title={frontmatter.title}
         client={frontmatter.client}
@@ -372,6 +384,7 @@ const PortfolioEntry = ({ data }) => {
 PortfolioEntry.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
+      id: PropTypes.string,
       frontmatter: PropTypes.object,
     }),
   })
@@ -382,89 +395,89 @@ export default PortfolioEntry
 export const pageQuery = graphql`
   query PortfolioEntryByID($id: String!) {
     markdownRemark(id: {eq: $id}) {
-    id
-    frontmatter {
-      project_type
-      title
-      client
+      id
+      frontmatter {
+        project_type
+        title
+        client
 
-      services
-      project_intro
-      project_main
-      project_secondary
-      testimonial {
-        content
-        credit
-      }
+        services
+        project_intro
+        project_main
+        project_secondary
+        testimonial {
+          content
+          credit
+        }
 
-      featured_image {
-        image {
-          childImageSharp {
-            fluid (maxWidth: 500, quality: 100) {
-              ...GatsbyImageSharpFluid_tracedSVG
+        featured_image {
+          image {
+            childImageSharp {
+              fluid (maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
             }
           }
         }
-      }
-      logo_image {
-        image {
-          childImageSharp {
-            fluid (maxWidth: 500, quality: 100) {
-              ...GatsbyImageSharpFluid_tracedSVG
+        logo_image {
+          image {
+            childImageSharp {
+              fluid (maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
             }
           }
         }
-      }
-      header_image {
-        image {
-          childImageSharp {
-            fluid (maxWidth: 500, quality: 100) {
-              ...GatsbyImageSharpFluid_tracedSVG
+        header_image {
+          image {
+            childImageSharp {
+              fluid (maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
             }
           }
         }
-      }
-      website_images {
-        image {
-          id
-          childImageSharp {
-            fluid(maxWidth: 1920, quality: 100) {
-              ...GatsbyImageSharpFluid_tracedSVG
+        website_images {
+          image {
+            id
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
             }
           }
         }
-      }
-      brand_images {
-        image {
-          id
-          childImageSharp {
-            fluid(maxWidth: 1920, quality: 100) {
-              ...GatsbyImageSharpFluid_tracedSVG
+        brand_images {
+          image {
+            id
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
             }
           }
         }
-      }
-      project_images_1 {
-        image {
-          id
-          childImageSharp {
-            fluid(maxWidth: 1920, quality: 100) {
-              ...GatsbyImageSharpFluid_tracedSVG
+        project_images_1 {
+          image {
+            id
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
             }
           }
         }
-      }
-      project_images_2 {
-        image {
-          id
-          childImageSharp {
-            fluid(maxWidth: 1920, quality: 100) {
-              ...GatsbyImageSharpFluid_tracedSVG
+        project_images_2 {
+          image {
+            id
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
             }
           }
         }
       }
     }
-  }
   }
 `;
