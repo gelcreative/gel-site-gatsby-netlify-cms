@@ -1,6 +1,6 @@
 ---
 templateKey: services-page
-title: Our Services
+title: Services
 subtitle1: Branding & marketing fuelled by 
 subtitle2: creative intelligence.
 main:
@@ -12,13 +12,13 @@ main:
       alt: Branding
       image: /img/services/Branding.png
     content: >
-      Has your brand lost direction/Is your brand all over the place/unclear/out of alignment or are you looking to establish or restore a clear brand direction? Establishing or refreshing your brand doesn’t have to be overwhelming. The Brand Builder Method is our proven 5 step process that meets you where you are in the life cycle of your brand. Whether it’s a couple of strategy sessions or a full rebranding, you will feel confident in your newfound brand clarity.
+      Looking to establish or restore a clear brand direction? Building a new brand or refreshing your brand doesn’t have to be overwhelming. The Brand Builder Method is our proven 5 step process that meets you where your brand is in its life cycle. Whether it’s a couple of strategy sessions or a full rebranding, you’ll feel confident in your newfound brand clarity.
     tags:
       - Brand Consulting
       - Brand Discovery
-      - Naming & Messaging
       - Brand Identity
-      - Visual Brand Assets
+      - Naming & Messaging
+      - Brand Asset Design
       - Brand Guidelines
       - Brand Audit
   section2:
@@ -29,7 +29,7 @@ main:
       alt: Digital Marketing
       image: /img/services/Digital Marketing.png
     content: >
-      It’s hard to keep up with marketing today. The decision to outsource is a big, but important step in scaling your business. You’ll find peace of mind in knowing you have the right agency partner supporting your team.
+      It’s hard to keep up with marketing today. If you need help defining a strategy, you’ve come to the right place. You’ll find peace of mind knowing you have the right agency partner supporting your team.
     tags:
       - Marketing Strategy
       - Integrated Campaigns
@@ -47,7 +47,7 @@ main:
       alt: Website Design & Development
       image: /img/services/Website Design & Development.png
     content: >
-      You have clear business objectives and you need a website that delivers. We’ll integrate the website into your greater marketing strategy to amplify your efforts. Creative Intelligence at work.
+      You have clear business objectives and you need a website that delivers. For 20 years, we’ve been doing just that. Building custom sites that integrate into the greater marketing strategy. Creative Intelligence at work.
     tags:
       - Website Planning & Strategy
       - UI & UX Design
@@ -64,7 +64,7 @@ main:
       alt: Creative Services
       image: /img/services/Creative Services.png
     content: >
-      Scroll-stopping visuals designed to grab your audience’s attention so your brand messages get seen. Creative Intelligence means our designs deliver business results.
+      Scroll-stopping visuals designed to grab your audience’s attention so your brand messages get seen. Creative Intelligence means that our designs deliver business results.
     tags:
       - Art Direction
       - Graphic Design
