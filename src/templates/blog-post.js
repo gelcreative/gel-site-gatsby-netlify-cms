@@ -109,6 +109,12 @@ const StyledBlogPost = styled.article`
       background: ${props => props.theme.white};
     }
 
+    p {
+      max-width: 75rem;
+      margin: 10px auto 20px;
+      font-family:  ${props => props.theme.secondaryFont};
+    }
+
     .gel-newsletter-form {
       display: flex;
       justify-content: space-between;
@@ -216,9 +222,9 @@ export const BlogPostTemplate = ({
       </div>
       <section className="columns blog-newsletter-form-section is-centered">
         <div className="column has-text-centered">
-          <h2>Looking to grow your business?</h2>
-          <h2>We can help.</h2>
-          <NewsletterForm />
+          <p>Sign up now to receive our blog posts straight to your inbox. You’ll be first to know of promos 
+             and early access to new branding masterclasses and marketing challenges.</p>
+          <NewsletterForm layout="alt" />
         </div>
       </section>
     </StyledBlogPost>
