@@ -31,6 +31,7 @@ const StyledHomePage = styled.article`
     color: ${props => props.theme.white};
     text-align: left;
     letter-spacing: 1.63px;
+    line-height: 7.5rem;
 
     font-size: 6.5rem;
     font-weight: bold;
@@ -79,8 +80,8 @@ const StyledHomePage = styled.article`
   }
 
   .columns.gel-home-featured-section {
-    padding: 200px 0 350px;
-    margin: 10px 0 -250px;
+    padding: 200px 0 400px;
+    margin: 10px 0 -50px;
 
     background: url(/img/homepage_blue_background.png) center / cover no-repeat;
     color: ${props => props.theme.white};
@@ -88,13 +89,14 @@ const StyledHomePage = styled.article`
     h2 {
       font-family: ${props => props.theme.secondaryFont};
       font-weight: lighter;
-      font-size: 5.4rem;
+      font-size: 4.5rem;
     }
 
-    .gel-portfolio-section, & + .gel-home-blog-section {
+    .gel-portfolio-section {
       display: flex;
       justify-content: space-between;
 
+      width: 90%;
       max-width: 1700px;
       margin: 30px auto;
     }
@@ -108,7 +110,7 @@ const StyledHomePage = styled.article`
     p {
       max-width: 65rem;
       margin: 30px auto;
-      font-size: 2.0rem;
+      font-size: 1.6rem;
 
       + cite {
         font-family: ${props => props.theme.secondaryFont};
@@ -138,6 +140,25 @@ const StyledHomePage = styled.article`
       + p { max-width: 25rem; }
     }
   }
+
+  .gel-home-blog {
+    
+    > h2 {
+      font-family: ${props => props.theme.secondaryFont};
+      font-weight: lighter;
+      font-size: 4.5rem;
+    }
+
+    .gel-home-blog-section {
+      display: flex;
+      justify-content: space-between;
+
+      width: 90%;
+      max-width: 1700px;
+      margin: 30px auto;
+    }
+  }
+
   @media(max-width: 768px){
     .columns.gel-home-featured-section {
       h2 {
@@ -210,9 +231,10 @@ export const IndexPageTemplate = ({
             <CallButton />
           </div>
         </section>
-        <div className="columns is-centered gel-home-blog-section">
-          <HomePageBlogFeatures />
-        </div>
+        <section className="gel-home-blog has-text-centered">
+          <h2>Featured Blog Posts</h2>
+          <div className="columns is-centered gel-home-blog-section has-text-left"><HomePageBlogFeatures /></div>
+        </section>
       </div>
     </StyledHomePage>
   );
