@@ -98,7 +98,7 @@ const StyledHeader = styled.nav`
 
     .delete {
       position: absolute;
-      top: 80px;
+      top: 40px;
       right: 80px;
 
       width:  100px;
@@ -388,7 +388,7 @@ const Navbar = class extends React.Component {
                   <Link to="/about">      About         </Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/services">   Our Services  </Link>
+                  <Link to="/services">   Services      </Link>
                 </li>
                 <li className="navbar-item">
                   <Link to="/portfolio">  Our Work      </Link>
@@ -402,7 +402,7 @@ const Navbar = class extends React.Component {
               </ul>
 
               <SocialIcons />
-              <NewsletterForm />
+           {/*<NewsletterForm />*/}
               <CallButton />
             </div>
 
