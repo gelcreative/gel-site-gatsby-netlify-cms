@@ -12,8 +12,8 @@ services:
   - Advertising
   - Signage
 project_intro:
-  - Mortgage Wellness Group is a fast-growing residential mortgage brokerage providing premium client services. They approached Gel to rebrand the business to attract a new demographic, to strengthen the brand and further the business growth into a new segment of the market.
-  - Gel guided the Mortgage Wellness team through a rebrand to reach a new customer segment. Beginning with The Brand Exploration, part of The Brand Builder Method, Gel’s proprietary process, we clarified the essence of the company’s value proposition — the brand experience they wanted to provide their clients and defined the brand attributes, values, and messaging.
+  - Mortgage Wellness Group is a fast-growing residential mortgage brokerage providing premium client services. They approached Gel to rebrand the business to attract a new demographic and strengthen the brand to further grow the business.
+  - Gel guided the Mortgage Wellness team through a rebrand to reach a new customer segment. Beginning with a brand exploration, part of the broader brand building process, we clarified the essence of the company’s value proposition — the brand experience they wanted to provide their clients and defined the brand attributes, values, and messaging.
 project_main:
   - With a clear direction for the new brand, we designed a new logomark and built a complete suite of branded collaterals. We also designed advertising creative and both interior and exterior building signage.
   - Mortgage Wellness is now Simcoe County’s largest residential mortgage brokerage! We’d like to think the rebrand played a part in positioning the company as a market leader.
