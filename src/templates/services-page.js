@@ -36,6 +36,7 @@ const StyledServicesPage = styled.article`
 
       + h1 {
         margin-bottom: 50px;
+        line-height: 6.4rem;
 
         :after { content: none; }
       }
@@ -81,7 +82,7 @@ const StyledServicesPage = styled.article`
 
     h1 {
       margin: 0 auto;
-      line-height: 5.0rem;
+      line-height: 5.4rem;
 
       color: ${props => props.theme.white};
       font-size: 5.4rem;
@@ -90,7 +91,19 @@ const StyledServicesPage = styled.article`
       + h1 { margin-bottom: 15px; }
     }
 
+    h2 {
+      margin: 30px auto 10px;
+      line-height: 5.4rem;
+
+      color: ${props => props.theme.white};
+      font-size: 4.4rem;
+      font-weight: lighter;
+      font-family: ${props => props.theme.secondaryFont};
+    }
+
     p {
+      max-width: 75rem;
+      margin: 10px auto;
       color: ${props => props.theme.white};
       font-family: ${props => props.theme.secondaryFont};
     }
@@ -108,6 +121,14 @@ const StyledServicesPage = styled.article`
     font-family: ${props => props.theme.secondaryFont};
     font-weight: lighter;
 
+    h1 {
+      margin: 0 auto 30px;
+
+      color: ${props => props.theme.orange};
+      font-weight: bold;
+      font-size: 4.4rem;
+    }
+
     h2 {
       margin: 0 auto;
       text-align: center;
@@ -116,27 +137,25 @@ const StyledServicesPage = styled.article`
       font-family: ${props => props.theme.secondaryFont};
       font-weight: lighter;
       font-size: 4.4rem;
+    }
 
-      + h1 {
-        margin: 0 auto 30px;
+    .columns {
+      max-width: 75rem;
+      margin: auto;
+      flex-wrap: wrap;
 
-        color: ${props => props.theme.orange};
-        font-weight: bold;
-        font-size: 4.4rem;
+      p, ul {
+        text-align: left;
+        font-size: 2.0rem;
       }
-    }
 
-    p, ul {
-      text-align: left;
-      font-size: 2.8rem;
-    }
+      p { flex-basis: 100%; }
 
-    p { flex-basis: 45%; }
-
-    ul {
-      flex-basis: 27.5%;
-      padding-left: 40px;
-      list-style-image: url(/img/Path-2442.png);
+      ul {
+        flex-basis: 27.5%;
+        padding-left: 40px;
+        list-style-image: url(/img/Path-2442.png);
+      }
     }
 
     a {
@@ -243,12 +262,16 @@ export const ServicesPageTemplate = ({
       <div id="gel-masterclass">
         <h1>Brand Builder</h1>
         <h1>Masterclass</h1>
-        <p>Group Coaching Launches Soon!</p>
-        <a className="button gel-button-2">Join the Waitlist</a>
+        <p>If you have a business idea you want to launch, but aren’t sure how to build, you’ve come to the right place.
+           Branding can get a little overwhelming if you’re just starting out. We feel your pain! That’s why we created
+           this 4-week Branding Masterclass. We’ll guide you through the brand discovery — the most difficult part of the
+           brand building process. You’ll come away with clarity and you’ll be one step closer to bringing your brand to market!</p>
+        <p>Course Launches February 2020.</p>
+        <h2>Sign up for course details, promos, and early access</h2>
+        <a className="button gel-button-2">Join the Waitlist!</a>
       </div>
       <div className="container">
         <div id="gel-onlinecourses">
-          <h2>Online Courses</h2>
           <h1>Online Marketing Fundamentals Course</h1>
           <div className="columns">
             <p className="column">Get the knowledge you need to grow your business faster with over 10+ hours of video instruction on digital marketing covering:</p>
