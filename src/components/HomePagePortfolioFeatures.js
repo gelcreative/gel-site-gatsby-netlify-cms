@@ -36,16 +36,17 @@ const StyledFeaturesSection = styled.div`
   }
 `;
 
-const HomePagePortfolioFeatures = () => (
+const HomePagePortfolioFeatures = props => (
   <StaticQuery
     query={graphql`
       query HomePagePortfolioFeatures {
         allMarkdownRemark(
           filter: {
-            frontmatter: { templateKey: { eq: "portfolio-entry" } }
+            frontmatter: { templateKey: { eq: "portfolio-entry" } },
+            id: { ne: "" }
           }
           sort: { fields: [frontmatter___date], order: DESC }
-          limit: 3
+          limit: 4
         ) {
           edges {
             node {
@@ -72,41 +73,51 @@ const HomePagePortfolioFeatures = () => (
         }
       }
     `}
+
     render={data => {
       const edges = data.allMarkdownRemark.edges;
+      var skipped = false;
 
-      return edges.map(edge => {
+      return edges.map((edge, edgeIndex) => {
         // Create services list
         let servicesList = edge.node.frontmatter.services.map((service, index) => {
           if (!index) { return <span>{service}</span> }
           else {        return <span> &#47;&#47; {service}</span> }
         })
 
-        return (
-          <StyledFeaturesSection
-            key={edge.node.id}
-            className="gel-homepage-featured"
-          >
-            <div className="">
-              <Link
-                to={edge.node.fields.slug}
-                className="gel-homepage-featured-link"
-              >
-                <PreviewCompatibleImage
-                  imageInfo={
-                    edge.node.frontmatter.thumbnail_image
-                  }
-                  className="gel-homepage-thumbnail-image"
-                />
+        // Skip this post if it's the current post,
+        // or if we're at the last one and haven't skipped one
+        // (the query pulls 4 posts but only needs 3)
+        if (edge.node.id == props.current || (skipped === false && edgeIndex > 2)) {
+          skipped = true;
+          return(null);
+        } else {
+          return (
+            <StyledFeaturesSection
+              key={edge.node.id}
+              className="gel-homepage-featured"
+            >
+              <div className="">
+                <Link
+                  to={edge.node.fields.slug}
+                  className="gel-homepage-featured-link"
+                >
+                  <PreviewCompatibleImage
+                    imageInfo={
+                      edge.node.frontmatter.thumbnail_image
+                    }
+                    className="gel-homepage-thumbnail-image"
+                  />
 
-                <div className="gel-homepage-featured-text-container">
-                  <h2>{edge.node.frontmatter.title}</h2>
-                  <p>{servicesList}</p>
-                </div>
-              </Link>
-            </div>
-          </StyledFeaturesSection>
-        );
+                  <div className="gel-homepage-featured-text-container">
+                    <h2>{edge.node.frontmatter.title}</h2>
+                    <p>{servicesList}</p>
+                  </div>
+                </Link>
+              </div>
+            </StyledFeaturesSection>
+          );  
+        }
       });
     }}
   />
