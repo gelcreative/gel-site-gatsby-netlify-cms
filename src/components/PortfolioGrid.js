@@ -13,13 +13,13 @@ const StyledPortfolioGrid = styled.section`
       flex-shrink: 0;
 
       .gel-portfolio-grid-item {
-        margin: 0 auto 40px;
+        margin: 0 auto 60px;
 
         a {
           color: ${props => props.theme.black};
 
           h2 {
-            margin: 10px 0 0;
+            margin: 25px 0 0;
             font-family: ${props => props.theme.secondaryFont};
             font-weight: lighter;
             font-size: 3.8rem;
@@ -29,6 +29,19 @@ const StyledPortfolioGrid = styled.section`
             font-weight: lighter;
             font-size: 2.0rem;
           }
+
+          :hover {
+            text-decoration: none;
+          }
+        }
+
+        .gel-portfolio-item-image {
+          transition: transform 300ms;
+        }
+
+        .gel-portfolio-item-image:hover {
+          transform: scale(1.1);
+          z-index: 10;
         }
       }
       
