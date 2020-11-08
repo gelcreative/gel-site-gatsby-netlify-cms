@@ -17,6 +17,8 @@ const StyledFooter = styled.footer`
     div.footerItem {
       margin: 1em;
 
+      &:first-of-type { margin-right: 4em; }
+
       a {
         font-family: ${props => props.theme.secondaryFont};
         font-weight: normal;
@@ -97,7 +99,7 @@ const Footer = class extends React.Component {
                     <Link to="/about/">     about         </Link>
                   </li>
                   <li>
-                    <Link to="/services/">  our services  </Link>
+                    <Link to="/services/">  services      </Link>
                   </li>
                   <li>
                     <Link to="/portfolio/"> our work      </Link>
@@ -123,7 +125,7 @@ const Footer = class extends React.Component {
                 </a>
               </address>
               <div>
-                <a href="mailto:info@gelcreative.ca">info@gelcreative.ca</a>
+                <a href="mailto:info@gelagency.com">info@gelagency.com</a>
               </div>
               <div>
                 <a href="tel:+17057277980">705.727.7980</a>
@@ -132,10 +134,10 @@ const Footer = class extends React.Component {
             <div className="footerItem" id="footer-container-social">
               <SocialIcons />
             </div>
-            <div className="footerItem" id="footer-logo-small">
+         {/*<div className="footerItem" id="footer-logo-small">
               <img src="/img/Gel-Logo-G-Circle-01.png" alt="Gel Logo" />
               <p>Designed by Gel</p>
-            </div>
+            </div>*/}
           </div>
         </div>
     </StyledFooter>
