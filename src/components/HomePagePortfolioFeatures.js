@@ -24,7 +24,7 @@ const StyledFeaturesSection = styled.div`
     p {
       font-family: ${props => props.theme.regularFont};
       font-weight: lighter;
-      font-size: 2.4rem;
+      font-size: 1.6rem;
     }
 
     :hover {
