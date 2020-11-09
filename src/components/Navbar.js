@@ -89,7 +89,7 @@ const StyledHeader = styled.nav`
     bottom: 0;
     right: 0;
 
-    background: #DDDDDD;
+    background: ${props => props.theme.lightGrey};
 
     transform: translateY(-100%);
     transition: transform 0.4s;
@@ -111,9 +111,6 @@ const StyledHeader = styled.nav`
 
       background-color: unset;
       :before, :after { background-color: ${props => props.theme.black}; transition: height 0.3s, width 0.3s; }
-
-      :hover :before { height: 4px; }
-      :hover :after  { width: 4px; }
     }
 
     .navbar-start {
@@ -131,23 +128,44 @@ const StyledHeader = styled.nav`
         }
 
         .navbar-item a {
-          padding: 0 5px; 
+          position: relative;
+          padding: 0 5px;
+
           font-family: ${props => props.theme.secondaryFont};
           font-weight: lighter;
           font-size: 4.2rem;
           color: ${props => props.theme.typeGrey};
 
+          ::after {
+            content: " ";
+
+            position: absolute;
+            top: 50%;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            background: ${props => props.theme.lightGrey};
+            transition: 0.2s;
+            z-index: -1;
+          }
+
           :hover {
             text-decoration: none;
-            text-shadow: 0   .5px  1px ${props => props.theme.typeGrey},
-                         0   -.5px 1px ${props => props.theme.typeGrey},
-                         .5px 0    1px ${props => props.theme.typeGrey},
-                         -.5px 0   1px ${props => props.theme.typeGrey};
+
+            &::after { background: ${props => props.theme.orange}; }
           }
         }
 
         .navbar-item a[aria-current="page"] {
-          background: ${props => props.theme.orange};
+          font-weight: bold;
+          text-decoration: underline;
+
+          :hover {
+            cursor: default;
+
+            &::after { background: ${props => props.theme.lightGrey}; }
+          }
         }
       }
 
