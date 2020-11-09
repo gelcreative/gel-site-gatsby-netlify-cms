@@ -12,7 +12,7 @@ const Copyright = class extends Component {
   render() {
     return (
       <StyledCopyright className="copyright">
-        &copy; 2020 Gel Agency | Privacy Policy
+        &copy; 2020 Gel Agency
       </StyledCopyright>
     );
   }
