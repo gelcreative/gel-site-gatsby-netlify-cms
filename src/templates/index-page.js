@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
@@ -80,7 +80,7 @@ const StyledHomePage = styled.article`
   }
 
   .columns.gel-home-featured-section {
-    padding: 200px 0 400px;
+    padding: 200px 0 200px;
     margin: 10px 0 -50px;
 
     background: url(/img/homepage_blue_background.png) center / cover no-repeat;
@@ -101,28 +101,56 @@ const StyledHomePage = styled.article`
       margin: 30px auto;
     }
 
-    h3 {
-      font-family: ${props => props.theme.secondaryFont};
-      font-weight: bold;
-      font-size: 3.2rem;
-    }
+    .gel-testimonial-section {
 
-    p {
-      max-width: 65rem;
-      margin: 30px auto;
-      font-size: 1.6rem;
 
-      + cite {
+      h3 {
         font-family: ${props => props.theme.secondaryFont};
-        font-weight: lighter;
-        font-style: normal;
-        font-size: 2.4rem;
-  
-        span { display: block; font-size: 1.8rem; }
+        font-weight: bold;
+        font-size: 3.2rem;
+      }
+
+      .gel-testimonial-item {
+        max-height: 0px;
+        transition: 0.4s;
+        overflow: hidden;
+
+        &.active { max-height: 500px; }
+
+        p {
+          max-width: 65rem;
+          margin: 30px auto;
+          font-size: 1.6rem;
+    
+        }
+    
+        cite p {
+          margin: 5px auto;
+          font-family: ${props => props.theme.secondaryFont};
+          font-weight: lighter;
+          font-style: normal;
+          font-size: 2.4rem;
+    
+          & + p { font-size: 1.8rem; }
+        }
+      }
+
+      .gel-testimonial-timebar {
+        max-width: 65rem;
+        height: 2px;
+        margin: 5px auto 0;
+
+        background: ${props => props.theme.orange};
+        animation: timebar 15s linear infinite;
+      }
+
+      @keyframes timebar {
+        from { width: 65rem; }
+        to   { width: 0rem; }
       }
     }
 
-    p + cite + h2 {
+    .gel-testimonial-section + h2 {
       font-family: ${props => props.theme.secondaryFont};
       font-weight: bold;
       font-size: 4.8rem;
@@ -137,7 +165,7 @@ const StyledHomePage = styled.article`
         background: ${props => props.theme.white};
       }
 
-      + p { max-width: 25rem; }
+      + p { max-width: 25rem; margin: 10px auto 30px; }
     }
   }
 
@@ -185,12 +213,57 @@ export const IndexPageTemplate = ({
   featuredPortfolioTitle,
   featuredPortfolioTestimonialTitle,
   featuredPortfolioTestimonialContent1,
-  featuredPortfolioTestimonialContent2,
   featuredPortfolioTestimonialAuthor1,
+  featuredPortfolioTestimonialContent2,
   featuredPortfolioTestimonialAuthor2,
+  featuredPortfolioTestimonialContent3,
+  featuredPortfolioTestimonialAuthor3,
   featuredPortfolioSubtitle,
   featuredPortfolioCTA,
 }) => {
+
+  // Parse testimonial content
+  // Testimonial 1
+  let testimonialContent1 = featuredPortfolioTestimonialContent1.map((paragraph, index) => {
+    return <p key={index} className="has-text-left">{paragraph}</p>
+  })
+  let testimonialAuthor1Titles = featuredPortfolioTestimonialAuthor1.map((paragraph, index) => {
+    return <p key={index}>{paragraph}</p>
+  })
+  let testimonialAuthor1 = createElement("cite", { key: 'author1'}, testimonialAuthor1Titles)
+
+  // Testimonial 2
+  let testimonialContent2 = featuredPortfolioTestimonialContent2.map((paragraph, index) => {
+    return <p key={index} className="has-text-left">{paragraph}</p>
+  })
+  let testimonialAuthor2Titles = featuredPortfolioTestimonialAuthor2.map((paragraph, index) => {
+    return <p key={index}>{paragraph}</p>
+  })
+  let testimonialAuthor2 = createElement("cite", { key: 'author2'}, testimonialAuthor2Titles)
+
+  // Testimonial 3
+  let testimonialContent3 = featuredPortfolioTestimonialContent3.map((paragraph, index) => {
+    return <p key={index} className="has-text-left">{paragraph}</p>
+  })
+  let testimonialAuthor3Titles = featuredPortfolioTestimonialAuthor3.map((paragraph, index) => {
+    return <p key={index}>{paragraph}</p>
+  })
+  let testimonialAuthor3 = createElement("cite", { key: 'author3'}, testimonialAuthor3Titles)
+
+  // Assemble testimonials
+  let testimonialAssembled1 = createElement("div", { key: 'testimonial1', id: 'testimonial1', className: 'gel-testimonial-item active'}, [testimonialContent1, testimonialAuthor1])
+  let testimonialAssembled2 = createElement("div", { key: 'testimonial2', id: 'testimonial2', className: 'gel-testimonial-item'}, [testimonialContent2, testimonialAuthor2])
+  let testimonialAssembled3 = createElement("div", { key: 'testimonial3', id: 'testimonial3', className: 'gel-testimonial-item'}, [testimonialContent3, testimonialAuthor3])
+
+  // Create testimonial timer
+  let testimonialIndex = 1;
+  setInterval(() => {
+    document.querySelector('#testimonial' + testimonialIndex).classList.remove("active");
+    if (testimonialIndex < 3) testimonialIndex += 1;
+      else testimonialIndex = 1;
+    document.querySelector('#testimonial' + testimonialIndex).classList.add("active");
+  }, 15000);
+
   return (
     <StyledHomePage className="section">
       {helmet || ''}
@@ -218,13 +291,13 @@ export const IndexPageTemplate = ({
               {featuredPortfolioTitle}
             </h2>
             <section className="gel-portfolio-section"><HomePagePortfolioFeatures /></section>
-            <h3>{featuredPortfolioTestimonialTitle}</h3>
-            <p className="has-text-left">{featuredPortfolioTestimonialContent1}</p>
-            <p className="has-text-left">{featuredPortfolioTestimonialContent2}</p>
-            <cite>
-              {featuredPortfolioTestimonialAuthor1}
-              <span>{featuredPortfolioTestimonialAuthor2}</span>
-            </cite>
+            <section className="gel-testimonial-section">
+              <h3>{featuredPortfolioTestimonialTitle}</h3>
+              {testimonialAssembled1}
+              {testimonialAssembled2}
+              {testimonialAssembled3}
+              <aside className="gel-testimonial-timebar"></aside>
+            </section>
 
             <h2>{featuredPortfolioSubtitle}</h2>
             <p>{featuredPortfolioCTA}</p>
@@ -249,9 +322,11 @@ IndexPageTemplate.propTypes = {
   featuredPortfolioTitle: PropTypes.string,
   featuredPortfolioTestimonialTitle: PropTypes.string,
   featuredPortfolioTestimonialContent1: PropTypes.string,
-  featuredPortfolioTestimonialContent2: PropTypes.string,
   featuredPortfolioTestimonialAuthor1: PropTypes.string,
+  featuredPortfolioTestimonialContent2: PropTypes.string,
   featuredPortfolioTestimonialAuthor2: PropTypes.string,
+  featuredPortfolioTestimonialContent3: PropTypes.string,
+  featuredPortfolioTestimonialAuthor3: PropTypes.string,
   featuredPortfolioSubtitle: PropTypes.string,
   featuredPortfolioCTA: PropTypes.string,
 };
@@ -274,9 +349,11 @@ const IndexPage = ({ data }) => {
         featuredPortfolioTitle={frontmatter.featuredPortfolioTitle}
         featuredPortfolioTestimonialTitle={frontmatter.featuredPortfolioTestimonialTitle}
         featuredPortfolioTestimonialContent1={frontmatter.featuredPortfolioTestimonialContent1}
-        featuredPortfolioTestimonialContent2={frontmatter.featuredPortfolioTestimonialContent2}
         featuredPortfolioTestimonialAuthor1={frontmatter.featuredPortfolioTestimonialAuthor1}
+        featuredPortfolioTestimonialContent2={frontmatter.featuredPortfolioTestimonialContent2}
         featuredPortfolioTestimonialAuthor2={frontmatter.featuredPortfolioTestimonialAuthor2}
+        featuredPortfolioTestimonialContent3={frontmatter.featuredPortfolioTestimonialContent3}
+        featuredPortfolioTestimonialAuthor3={frontmatter.featuredPortfolioTestimonialAuthor3}
         featuredPortfolioSubtitle={frontmatter.featuredPortfolioSubtitle}
         featuredPortfolioCTA={frontmatter.featuredPortfolioCTA}
       />
@@ -300,9 +377,11 @@ export const indexPageQuery = graphql`
         featuredPortfolioTitle
         featuredPortfolioTestimonialTitle
         featuredPortfolioTestimonialContent1
-        featuredPortfolioTestimonialContent2
         featuredPortfolioTestimonialAuthor1
+        featuredPortfolioTestimonialContent2
         featuredPortfolioTestimonialAuthor2
+        featuredPortfolioTestimonialContent3
+        featuredPortfolioTestimonialAuthor3
         featuredPortfolioSubtitle
         featuredPortfolioCTA
       }
