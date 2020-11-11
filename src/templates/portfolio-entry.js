@@ -176,11 +176,9 @@ const StyledPortfolioEntry = styled.article`
     }
 
     > div {
-      display: flex;
       justify-content: space-between;
 
-      max-width: 1700px;
-      margin: 0 auto;
+      margin: 30px auto 0;
     }
   }
 `
@@ -314,7 +312,7 @@ export const PortfolioEntryTemplate = ({
       </div>
       <section className="gel-portfolio-morework-section is-centered has-text-centered">
         <h2>See More Work</h2>
-        <div>
+        <div className="columns container">
           <HomePagePortfolioFeatures current={id} />
         </div>
       </section>
