@@ -11,11 +11,11 @@ const StyledHeader = styled.nav`
   padding: 3rem;
 
   .gel-header-logo-link {
-    width:  118px;
-    height: 118px;
+    width:  80px;
+    height: 80px;
     
     position: absolute;
-    top: 0px;
+    top: -15px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -240,6 +240,15 @@ const StyledHeader = styled.nav`
       transform: translateX(-50%);
     }
 
+  }
+
+  /* Make logo bigger when at the top of the page //
+  // or when the nav menu is open                 */
+  &.gel-nav-active, &:not(.scrolled) {
+    .gel-header-logo-link {
+      width: 118px;
+      height: 118px;
+    }
   }
 
   /* Homepage styles */
