@@ -8,6 +8,7 @@ import Layout from '../components/Layout';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 import markdownToHtml from '../util/markdownToHtml';
 import Instagram from '../components/svg/Instagram';
+import LinkedIn from '../components/svg/LinkedIn';
 
 const StyledAboutPage = styled.article`
   margin-top: 200px;
@@ -76,9 +77,9 @@ const StyledAboutPage = styled.article`
   #shannon .gel-bio-text h2 > span { color: ${props => props.theme.orange} }
 
   #shannon .gel-bio-text .button.gel-button-2 {
-    background: ${props => props.theme.darkGrey};
+    background: ${props => props.theme.typeGrey};
   
-    :hover { background: ${props => props.theme.black} !important; }
+    :hover { background: ${props => props.theme.darkGrey} !important; }
   }
 
   .gel-about-intro-section-text-container {
@@ -92,12 +93,13 @@ const StyledAboutPage = styled.article`
     padding: 0;
 
     h2 {
+      margin: 0 auto 60px;
       font-family: ${props => props.theme.secondaryFont};
 
       a {
         display: inline-block;
         width: 25px;
-        margin-left: 10px;
+        margin: 0 10px;
 
         :hover svg path,
         :hover svg circle {
@@ -130,6 +132,12 @@ const StyledAboutPage = styled.article`
           display: block;
 
           background: center / cover no-repeat;
+          transition: transform 300ms;
+
+          :hover {
+            transform: scale(1.1);
+            z-index: 10;
+          }
         }
       }
     }
@@ -163,7 +171,7 @@ export const AboutPageTemplate = ({
 
   const instaFeed = allInstaNodeEdges.map((edge) =>
     <li key={edge.node.id}>
-      <a href={edge.node.preview} style={{backgroundImage: 'url(' + edge.node.preview + ')'}} title={edge.node.caption}></a>
+      <a href={edge.node.preview} style={{backgroundImage: 'url(' + edge.node.preview + ')'}}></a>
     </li>
   );
 
@@ -211,12 +219,19 @@ export const AboutPageTemplate = ({
         </section>
       </div>
       <section className="is-centered gel-insta-section content" id="gel-insta-section">
-        <h2 className="has-text-centered">{insta.heading}
+        <h2 className="has-text-centered">Follow us on
           <a  href="https://www.instagram.com/gelagency/"
             target="_blank"
             rel="noopener noreferrer"
             title="Gel on Instagram">
             <Instagram />
+          </a>
+          and
+          <a  href="https://www.linkedin.com/company/gel-creative/?originalSubdomain=ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Gel on Linkedin">
+            <LinkedIn />
           </a>
         </h2>
         <ul className="gel-insta-section-feed">{instaFeed}</ul>
