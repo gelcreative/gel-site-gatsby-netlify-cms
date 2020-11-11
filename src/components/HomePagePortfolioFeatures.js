@@ -4,14 +4,21 @@ import styled from 'styled-components';
 import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 const StyledFeaturesSection = styled.div`
-  max-width: 530px;
-  flex-basis: 32%;
+  padding: 0 20px !important;
 
   a {
     display: block;
     color: ${props => props.theme.white};
 
-    .gel-homepage-thumbnail-image { max-height: 320px }
+    .gel-homepage-thumbnail-image {
+      height: 320px;
+      transition: transform 300ms;
+
+      :hover {
+        transform: scale(1.1);
+        z-index: 10;
+      }
+    }
 
     h2 {
       margin-top: 50px;
@@ -30,8 +37,6 @@ const StyledFeaturesSection = styled.div`
     :hover {
       text-decoration: none;
       color: ${props => props.theme.white};
-      text-shadow:  0.5px 0px 0px ${props => props.theme.white},
-                   -0.5px 0px 0px ${props => props.theme.white};
     }
   }
 `;
@@ -79,10 +84,10 @@ const HomePagePortfolioFeatures = props => (
       var skipped = false;
 
       return edges.map((edge, edgeIndex) => {
-        // Create services list
+        // Create services list. Only use the first 3 tags
         let servicesList = edge.node.frontmatter.services.map((service, index) => {
-          if (!index) { return <span>{service}</span> }
-          else {        return <span> &#47;&#47; {service}</span> }
+          if (!index) { return <span key={index}>{service}</span> }
+          else if (index <= 2) {        return <span key={index}> &#47;&#47; {service}</span> }
         })
 
         // Skip this post if it's the current post,
@@ -95,7 +100,7 @@ const HomePagePortfolioFeatures = props => (
           return (
             <StyledFeaturesSection
               key={edge.node.id}
-              className="gel-homepage-featured"
+              className="gel-homepage-featured column"
             >
               <div className="">
                 <Link
