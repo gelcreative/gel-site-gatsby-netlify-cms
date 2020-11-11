@@ -14,7 +14,7 @@ banner_image:
   image: /img/2020_gel_social_whatbiebsbanner.jpg
 thumbnail_image:
   alt: What the Biebs Knows About Marketing in Uncertain Times
-  image: /img/2020_gel_social_whatbiebsbanner.jpg
+  image: /img/2020_Gel_Social_WhatBiebs.jpg
 description: >-
   Justin Bieber knows a thing or two about marketing. And no. I’m not talking
   about the monkey on the airplane stunt. I mean pure brand-building marketing.
