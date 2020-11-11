@@ -23,7 +23,7 @@ project_main:
   - The promotion resulted in an 80% increase in attendance and a 50% increase in revenue generated for the downtown businesses.
 testimonial:
   content: >
-    I highly recommend Gel for marketing, branding, social media, and especially website design. Tom and Shannon were a pleasure to deal with and delivered a very comprehensive Brand Strategy and easy to implement Marketing Plan. The Social Media Audit outlined exactly what we needed to do to improve our social media presence. Gel built our new website and the end result is amazing
+    I highly recommend Gel for marketing, branding, social media, and especially website design. Tom and Shannon were a pleasure to deal with and delivered a very comprehensive Brand Strategy and easy to implement Marketing Plan. The Social Media Audit outlined exactly what we needed to do to improve our social media presence. Gel built our new website and the end result is amazing.
   credit:
     - Susan Hrycyna,
     - Former Executive Director, PSDBA

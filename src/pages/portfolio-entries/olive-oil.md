@@ -29,7 +29,7 @@ thumbnail_image:
   image: /img/portfolio/olive-oil/BarrieOliveOil_085.jpg
   alt: Olive Oil Co.
 logo_image:
-  image: /img/portfolio/olive-oil/Group-670.png
+  image: /img/portfolio/olive-oil/Olive_oil_logo.png
   alt: Olive Oil Co.
 header_image:
   image: /img/portfolio/olive-oil/2020_OliveOil_Web_mockup2.png

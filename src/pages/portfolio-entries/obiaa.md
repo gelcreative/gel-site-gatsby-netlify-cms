@@ -1,7 +1,7 @@
 ---
 templateKey: portfolio-entry
 project_type: website
-title: The Ontario Business Improvement Area Association (OBIAA)
+title: Ontario Business Improvement Area Association
 client: The Ontario Business Improvement Area Association (OBIAA)
 date: 2020-10-10T17:00:05.799Z
 
@@ -31,7 +31,7 @@ featured_image:
   image: /img/portfolio/obiaa/Uxbridge.JPG
   alt: OBIAA
 thumbnail_image:
-  image: /img/portfolio/obiaa/2020_OBIAA_website_mockup_macbook2.jpg
+  image: /img/portfolio/obiaa/heritage_estate_website_mockup.jpg
   alt: OBIAA
 logo_image:
   image: /img/portfolio/obiaa/Group-670.png
