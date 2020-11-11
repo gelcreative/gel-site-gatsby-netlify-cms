@@ -11,6 +11,7 @@ import HomePageBlogFeatures from '../components/HomePageBlogFeatures';
 //import ClientLogoGrid from '../components/ClientLogoGrid';
 //import GelServices from '../components/GelServices';
 import CallButton from '../components/CallButton';
+import NewsletterForm from '../components/NewsletterForm'
 
 const StyledHomePage = styled.article`
 
@@ -79,8 +80,8 @@ const StyledHomePage = styled.article`
     }
   }
 
-  .columns.gel-home-featured-section {
-    padding: 200px 0 200px;
+  .gel-home-featured-section {
+    padding: 300px 0 300px;
     margin: 10px 0 -50px;
 
     background: url(/img/homepage_blue_background.png) center / cover no-repeat;
@@ -93,12 +94,9 @@ const StyledHomePage = styled.article`
     }
 
     .gel-portfolio-section {
-      display: flex;
       justify-content: space-between;
 
-      width: 90%;
-      max-width: 1700px;
-      margin: 30px auto;
+      margin: 30px auto 0;
     }
 
     .gel-testimonial-section {
@@ -111,11 +109,11 @@ const StyledHomePage = styled.article`
       }
 
       .gel-testimonial-item {
-        max-height: 0px;
+        height: 0px;
         transition: 0.4s;
         overflow: hidden;
 
-        &.active { max-height: 500px; }
+        &.active { height: 500px; }
 
         p {
           max-width: 65rem;
@@ -135,13 +133,14 @@ const StyledHomePage = styled.article`
         }
       }
 
-      .gel-testimonial-timebar {
+      #gel-testimonial-timebar {
+        width: 0rem;
         max-width: 65rem;
         height: 2px;
         margin: 5px auto 0;
 
         background: ${props => props.theme.orange};
-        animation: timebar 15s linear infinite;
+        animation: timebar 15s linear;
       }
 
       @keyframes timebar {
@@ -178,17 +177,81 @@ const StyledHomePage = styled.article`
     }
 
     .gel-home-blog-section {
-      display: flex;
       justify-content: space-between;
 
-      width: 90%;
-      max-width: 1700px;
-      margin: 30px auto;
+      margin: 30px auto 0;
+    }
+  }
+
+  .gel-newsletter-form-section {
+    background: url(/img/blu_background-02-02.png) top center / cover no-repeat;
+    padding: 175px 0 0;
+    color: ${props => props.theme.white};
+
+    h2 { font-family:  ${props => props.theme.secondaryFont}; }
+    h2 + h2::after {
+      content: "";
+      display: block;
+      width: 5%;
+      height: 4px;
+      
+      margin: 20px auto 50px;
+      background: ${props => props.theme.white};
+    }
+
+    p {
+      max-width: 75rem;
+      margin: 10px auto 20px;
+      font-family:  ${props => props.theme.secondaryFont};
+    }
+
+    .gel-newsletter-form {
+      display: flex;
+      justify-content: space-between;
+      max-width: 550px;
+      margin: 0 auto;
+
+      .field {
+        display: inline-block;
+      }
+    
+      .email-input {
+        flex-grow: 2;
+        margin: 5px;
+      }
+    
+      .send-button {
+        flex-grow: 1;
+        margin: 5px;
+      }
+    
+      .send-button button[type="submit"] {
+        background-color: ${props => props.theme.orange};
+        font-family: ${props => props.theme.secondaryFont};
+        font-size: 2.4rem;
+        width: 100%;
+      }
+    
+      [type="email"] {
+        max-width: 380px;
+        padding: 2px 10px;
+        margin: 0 0 10px;
+    
+        font-family: ${props => props.theme.secondaryFont};
+        font-size: 2.4rem;
+        color: ${props => props.theme.white};
+    
+        border: 1px solid ${props => props.theme.white};
+        border-radius: 0;
+        background: none;
+
+        ::placeholder { color: ${props => props.theme.white}; }
+      }
     }
   }
 
   @media(max-width: 768px){
-    .columns.gel-home-featured-section {
+    .gel-home-featured-section {
       h2 {
         margin-bottom:-2rem;                       
       }
@@ -250,19 +313,35 @@ export const IndexPageTemplate = ({
   })
   let testimonialAuthor3 = createElement("cite", { key: 'author3'}, testimonialAuthor3Titles)
 
-  // Assemble testimonials
-  let testimonialAssembled1 = createElement("div", { key: 'testimonial1', id: 'testimonial1', className: 'gel-testimonial-item active'}, [testimonialContent1, testimonialAuthor1])
-  let testimonialAssembled2 = createElement("div", { key: 'testimonial2', id: 'testimonial2', className: 'gel-testimonial-item'}, [testimonialContent2, testimonialAuthor2])
-  let testimonialAssembled3 = createElement("div", { key: 'testimonial3', id: 'testimonial3', className: 'gel-testimonial-item'}, [testimonialContent3, testimonialAuthor3])
+  // Assemble testimonials.
+  let testimonialAssembled1 = createElement("div", { key: 'testimonial1', id: 'testimonial1', className: 'gel-testimonial-item active' }, [testimonialContent1, testimonialAuthor1])
+  let testimonialAssembled2 = createElement("div", { key: 'testimonial2', id: 'testimonial2', className: 'gel-testimonial-item'        }, [testimonialContent2, testimonialAuthor2])
+  let testimonialAssembled3 = createElement("div", { key: 'testimonial3', id: 'testimonial3', className: 'gel-testimonial-item'        }, [testimonialContent3, testimonialAuthor3])
 
-  // Create testimonial timer
+  // Create testimonial timer. (make sure it's not already running)
+  clearInterval(testimonialTimer);  
+  let testimonialTimer = setInterval(testimonialSwap, 15000);
+
+  // Track which testimonial is currently displayed.
   let testimonialIndex = 1;
-  setInterval(() => {
-    document.querySelector('#testimonial' + testimonialIndex).classList.remove("active");
-    if (testimonialIndex < 3) testimonialIndex += 1;
-      else testimonialIndex = 1;
-    document.querySelector('#testimonial' + testimonialIndex).classList.add("active");
-  }, 15000);
+
+  // Create timebar element.
+  let testimonialTimebar = document.createElement("aside");
+  testimonialTimebar.id = "gel-testimonial-timebar";
+
+  function testimonialSwap () {
+    if (document.querySelector('#testimonial1') != null) {
+      // Switch classes on the last and next testimonials.
+      document.querySelector('#testimonial' + testimonialIndex).classList.remove("active");
+      if (testimonialIndex < 3) testimonialIndex += 1;
+        else testimonialIndex = 1;
+      document.querySelector('#testimonial' + testimonialIndex).classList.add("active");
+
+      // Remove and re-create the timebar. This will cleanly reset the animation.
+      document.querySelector('.gel-testimonial-section > #gel-testimonial-timebar').remove();
+      document.querySelector('.gel-testimonial-section').append(testimonialTimebar);
+    }
+  }
 
   return (
     <StyledHomePage className="section">
@@ -285,29 +364,33 @@ export const IndexPageTemplate = ({
             <p>{intro2}</p>
           </div>
         </section>
-        <section className="columns is-centered gel-home-featured-section">
-          <div className="column has-text-centered">
-            <h2 className="has-text-centered">
-              {featuredPortfolioTitle}
-            </h2>
-            <section className="gel-portfolio-section"><HomePagePortfolioFeatures /></section>
-            <section className="gel-testimonial-section">
-              <h3>{featuredPortfolioTestimonialTitle}</h3>
-              {testimonialAssembled1}
-              {testimonialAssembled2}
-              {testimonialAssembled3}
-              <aside className="gel-testimonial-timebar"></aside>
-            </section>
-
-            <h2>{featuredPortfolioSubtitle}</h2>
-            <p>{featuredPortfolioCTA}</p>
-            <CallButton />
-          </div>
+        <section className="is-centered has-text-centered gel-home-featured-section">
+          <h2 className="has-text-centered">
+            {featuredPortfolioTitle}
+          </h2>
+          <section className="gel-portfolio-section container columns"><HomePagePortfolioFeatures /></section>
+          <section className="gel-testimonial-section container ">
+            <h3>{featuredPortfolioTestimonialTitle}</h3>
+            {testimonialAssembled1}
+            {testimonialAssembled2}
+            {testimonialAssembled3}
+            <aside id="gel-testimonial-timebar"></aside>
+          </section>
+          <h2>{featuredPortfolioSubtitle}</h2>
+          <p>{featuredPortfolioCTA}</p>
+          <CallButton layout="alt" />
         </section>
         <section className="gel-home-blog has-text-centered">
           <h2>Featured Blog Posts</h2>
-          <div className="columns is-centered gel-home-blog-section has-text-left"><HomePageBlogFeatures /></div>
+          <div className="gel-home-blog-section container columns is-centered has-text-left"><HomePageBlogFeatures /></div>
         </section>
+        <section className="gel-newsletter-form-section is-centered">
+        <div className="container has-text-centered">
+          <p>Sign up now to receive our blog posts straight to your inbox. You’ll be first to know of promos 
+             and early access to new branding masterclasses and marketing challenges.</p>
+          <NewsletterForm layout="alt" />
+        </div>
+      </section>
       </div>
     </StyledHomePage>
   );
@@ -321,12 +404,12 @@ IndexPageTemplate.propTypes = {
   intro2: PropTypes.string,
   featuredPortfolioTitle: PropTypes.string,
   featuredPortfolioTestimonialTitle: PropTypes.string,
-  featuredPortfolioTestimonialContent1: PropTypes.string,
-  featuredPortfolioTestimonialAuthor1: PropTypes.string,
-  featuredPortfolioTestimonialContent2: PropTypes.string,
-  featuredPortfolioTestimonialAuthor2: PropTypes.string,
-  featuredPortfolioTestimonialContent3: PropTypes.string,
-  featuredPortfolioTestimonialAuthor3: PropTypes.string,
+  featuredPortfolioTestimonialContent1: PropTypes.array,
+  featuredPortfolioTestimonialAuthor1: PropTypes.array,
+  featuredPortfolioTestimonialContent2: PropTypes.array,
+  featuredPortfolioTestimonialAuthor2: PropTypes.array,
+  featuredPortfolioTestimonialContent3: PropTypes.array,
+  featuredPortfolioTestimonialAuthor3: PropTypes.array,
   featuredPortfolioSubtitle: PropTypes.string,
   featuredPortfolioCTA: PropTypes.string,
 };
