@@ -7,6 +7,8 @@ import styled from 'styled-components'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Content, { HTMLContent } from '../components/Content'
+
+import HomePageBlogFeatures from '../components/HomePageBlogFeatures';
 import NewsletterForm from '../components/NewsletterForm'
 
 const StyledBlogPost = styled.article`
@@ -93,8 +95,40 @@ const StyledBlogPost = styled.article`
     &.gel-blog-banner { margin-top: 0; }
   }
 
-  .blog-newsletter-form-section {
+  .gel-blog-moreposts-section {
     background: url(/img/blu_background-02-02.png) top center / cover no-repeat;
+    padding: 175px 0 0;
+    color: ${props => props.theme.white};
+
+    > h2 {
+      margin-bottom: 40px;
+
+      font-family: ${props => props.theme.secondaryFont};
+      font-style: lighter;
+      font-size: 4.5rem;
+    }
+
+    > p {
+      font-size: 1.6rem;
+    }
+
+    > div {
+      justify-content: space-between;
+
+      margin: 30px auto 0;
+
+      a {
+        color: ${props => props.theme.white};
+
+        :hover {
+          color: ${props => props.theme.white};
+        }
+      }
+    }
+  }
+
+  .blog-newsletter-form-section {
+    background: ${props => props.theme.darkBlue};
     padding: 175px 0 0;
     color: ${props => props.theme.white};
 
@@ -219,9 +253,18 @@ export const BlogPostTemplate = ({
             <PostContent content={content} />
           </div>
         </section>
+        <section className="gel-blog-back has-text-centered">
+          <Link to="/blog/" className="button gel-button-2">Back to Blog</Link>
+        </section>
       </div>
-      <section className="columns blog-newsletter-form-section is-centered">
-        <div className="column has-text-centered">
+      <section className="gel-blog-moreposts-section">
+        <h2 className="has-text-centered">Recent Blog Posts</h2>
+        <div className="container columns">
+          <HomePageBlogFeatures current={id} />
+        </div>
+      </section>
+      <section className="blog-newsletter-form-section is-centered">
+        <div className="container has-text-centered">
           <p>Sign up now to receive our blog posts straight to your inbox. You’ll be first to know of promos 
              and early access to new branding masterclasses and marketing challenges.</p>
           <NewsletterForm layout="alt" />
@@ -232,6 +275,7 @@ export const BlogPostTemplate = ({
 }
 
 BlogPostTemplate.propTypes = {
+  id: PropTypes.string,
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
@@ -240,28 +284,31 @@ BlogPostTemplate.propTypes = {
 }
 
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { id } = data.markdownRemark
+  const { html } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark
 
   return (
     <Layout pageType="blog-post">
       <BlogPostTemplate
-        content={post.html}
+        id={id}
+        content={html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
+        description={frontmatter.description}
         helmet={
           <Helmet
             titleTemplate="%s | Blog"
           >
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta name="description" content={`${post.frontmatter.description}`} />
+            <title>{`${frontmatter.title}`}</title>
+            <meta name="description" content={`${frontmatter.description}`} />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
-        author={post.frontmatter.author}
-        authorPic={post.frontmatter.authorPic}
-        date={post.frontmatter.date}
-        bannerImage={post.frontmatter.banner_image}
+        tags={frontmatter.tags}
+        title={frontmatter.title}
+        author={frontmatter.author}
+        authorPic={frontmatter.authorPic}
+        date={frontmatter.date}
+        bannerImage={frontmatter.banner_image}
       />
     </Layout>
   )
@@ -269,6 +316,8 @@ const BlogPost = ({ data }) => {
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
+    id: PropTypes.string,
+    html: PropTypes.node.isRequired,
     markdownRemark: PropTypes.object,
   }),
 }
