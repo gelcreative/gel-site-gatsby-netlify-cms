@@ -3,6 +3,41 @@ import { navigate } from "gatsby-link";
 import styled from 'styled-components'
 
 const StyledEnquiryForm = styled.form`
+  max-width: 50rem;
+  margin: auto;
+
+  input, textarea {
+    margin: 12px auto;
+    padding: 15px;
+    
+    font-size: 2.0rem;
+    color: ${props => props.theme.black};
+
+    border: 1px solid ${props => props.theme.grey};
+    border-radius: 0;
+
+    ::placeholder { color: ${props => props.theme.black}; }
+  }
+
+  textarea { height: 150px; }
+
+  .send-button {
+    text-align: center;
+
+    button {
+      color: ${props => props.theme.white};
+      text-transform: uppercase;
+      font-size: 1.8rem;
+
+      background: ${props => props.theme.orange};
+      border-radius: 6px;
+
+      :hover {
+        background: ${props => props.theme.darkOrange};
+      }
+    }
+  }
+  
   [name="opt-in"] {
     margin-right: 0.5em;
     vertical-align: middle;
