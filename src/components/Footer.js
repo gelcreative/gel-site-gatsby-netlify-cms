@@ -27,10 +27,18 @@ const StyledFooter = styled.footer`
 
         :hover {
           text-decoration: none;
+          color: ${props => props.theme.orange};
         }
       }
 
-      a[aria-current="page"] { color: ${props => props.theme.orange}; }
+      a[aria-current="page"] {
+        font-weight: bold;
+        text-decoration: underline;
+
+        :hover {
+          color: ${props => props.theme.typeGrey};
+        }
+      }
 
       address { font-style: normal; }
 
@@ -38,14 +46,6 @@ const StyledFooter = styled.footer`
         a {
           padding: 0 5px; 
           font-size: 2.1rem;
-    
-          :hover {
-            text-shadow: 0 0 1px ${props => props.theme.typeGrey};
-          }
-        }
-    
-        a[aria-current="page"]:hover {
-          text-shadow: 0 0 1px ${props => props.theme.orange};
         }
       }
 
@@ -64,7 +64,8 @@ const StyledFooter = styled.footer`
   }
 
   &[data-page-type="blog-post"],
-  &[data-page-type="portfolio-entry"] {
+  &[data-page-type="portfolio-entry"],
+  &[data-page-type="home"] {
     background: ${props => props.theme.darkBlue};
     color: ${props => props.theme.white};
 
