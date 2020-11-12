@@ -10,6 +10,7 @@ import Content, { HTMLContent } from '../components/Content'
 
 import HomePageBlogFeatures from '../components/HomePageBlogFeatures';
 import NewsletterForm from '../components/NewsletterForm'
+import AvatarButton from '../components/AvatarButton'
 
 const StyledBlogPost = styled.article`
   margin-top: 200px;
@@ -212,9 +213,18 @@ export const BlogPostTemplate = ({
   authorPic,
   date,
   bannerImage,
+  avatarButton,
   helmet,
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
+
+  let avatarButtonElement = ``;
+  if (avatarButton) {
+    avatarButtonElement = <section className="gel-blog-avatar has-text-centered">
+                            <AvatarButton />
+                            <hr />
+                          </section>;
+  }
 
   return (
     <StyledBlogPost className="section">
@@ -251,8 +261,10 @@ export const BlogPostTemplate = ({
           <div className="column is-10 is-offset-1 gel-blog-content">
             <p className="gel-blog-post-description">{description}</p>
             <PostContent content={content} />
+            
           </div>
         </section>
+        {avatarButtonElement}
         <section className="gel-blog-back has-text-centered">
           <Link to="/blog/" className="button gel-button-2">Back to Blog</Link>
         </section>
@@ -309,6 +321,7 @@ const BlogPost = ({ data }) => {
         authorPic={frontmatter.authorPic}
         date={frontmatter.date}
         bannerImage={frontmatter.banner_image}
+        avatarButton={frontmatter.avatarButton}
       />
     </Layout>
   )
@@ -355,6 +368,7 @@ export const pageQuery = graphql`
         }
         description
         tags
+        avatarButton
       }
     }
   }
