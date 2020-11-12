@@ -109,8 +109,9 @@ const StyledHomePage = styled.article`
       }
 
       .gel-testimonial-item {
+        position: relative;
         height: 0px;
-        transition: 0.4s;
+        transition: 0.4s ease-out;
         overflow: hidden;
 
         &.active { height: 500px; }
@@ -133,19 +134,40 @@ const StyledHomePage = styled.article`
         }
       }
 
-      #gel-testimonial-timebar {
-        width: 0rem;
-        max-width: 65rem;
-        height: 2px;
-        margin: 5px auto 0;
+      #gel-testimonial-controls {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        max-width: 75rem;
+        margin: 0 auto -22px;
 
-        background: ${props => props.theme.orange};
+        button {
+          width: 40px;
+          height: 40px;
+
+          border: none;
+          background: url(/img/icon_arrow_left2.png) center / contain no-repeat;
+
+          + button { background-image: url(/img/icon_arrow_right2.png); }
+        }
+      }
+
+      #gel-testimonial-timebar {
+        width: 90%;
+        max-width: 75rem;
+        height: 3px;
+        border: 50px solid ${props => props.theme.darkBlue};
+        border-top: 0px;
+        border-bottom: 0px;
+        margin: 0 auto 0;
+
+        background: ${props => props.theme.typeGrey} url(/img/orange.png) center / 0% 100% no-repeat;
         animation: timebar 15s linear;
       }
 
       @keyframes timebar {
-        from { width: 65rem; }
-        to   { width: 0rem; }
+        from { background-size: 100% 100%; }
+        to   { background-size: 0% 100%; }
       }
     }
 
@@ -314,32 +336,49 @@ export const IndexPageTemplate = ({
   let testimonialAuthor3 = createElement("cite", { key: 'author3'}, testimonialAuthor3Titles)
 
   // Assemble testimonials.
-  let testimonialAssembled1 = createElement("div", { key: 'testimonial1', id: 'testimonial1', className: 'gel-testimonial-item active' }, [testimonialContent1, testimonialAuthor1])
-  let testimonialAssembled2 = createElement("div", { key: 'testimonial2', id: 'testimonial2', className: 'gel-testimonial-item'        }, [testimonialContent2, testimonialAuthor2])
-  let testimonialAssembled3 = createElement("div", { key: 'testimonial3', id: 'testimonial3', className: 'gel-testimonial-item'        }, [testimonialContent3, testimonialAuthor3])
+  let testimonialAssembled1 = createElement("div", { key: 'testimonial1', id: 'testimonial1', className: 'gel-testimonial-item' }, [testimonialContent1, testimonialAuthor1])
+  let testimonialAssembled2 = createElement("div", { key: 'testimonial2', id: 'testimonial2', className: 'gel-testimonial-item' }, [testimonialContent2, testimonialAuthor2])
+  let testimonialAssembled3 = createElement("div", { key: 'testimonial3', id: 'testimonial3', className: 'gel-testimonial-item' }, [testimonialContent3, testimonialAuthor3])
 
   // Create testimonial timer. (make sure it's not already running)
-  clearInterval(testimonialTimer);  
-  let testimonialTimer = setInterval(testimonialSwap, 15000);
+  clearInterval(testimonialTimer);
+  let testimonialTimer = setTimeout(testimonialSwap, 1);
 
   // Track which testimonial is currently displayed.
-  let testimonialIndex = 1;
+  let testimonialIndex = 0;
 
   // Create timebar element.
   let testimonialTimebar = document.createElement("aside");
   testimonialTimebar.id = "gel-testimonial-timebar";
 
-  function testimonialSwap () {
+  function testimonialSwap (reverse = false) {
     if (document.querySelector('#testimonial1') != null) {
-      // Switch classes on the last and next testimonials.
-      document.querySelector('#testimonial' + testimonialIndex).classList.remove("active");
-      if (testimonialIndex < 3) testimonialIndex += 1;
-        else testimonialIndex = 1;
+      // Stop timer if it's still running (just in case).
+      clearTimeout(testimonialTimer);
+
+      // Remove class from the current testimonial (if there is one).
+      if (testimonialIndex) {
+        document.querySelector('#testimonial' + testimonialIndex).classList.remove("active");
+      }
+
+      // Check which direction we're going in (used by control buttons)
+      if (reverse) {
+        if (testimonialIndex > 1) testimonialIndex -= 1;
+          else testimonialIndex = 3;
+      } else {
+        if (testimonialIndex < 3) testimonialIndex += 1;
+          else testimonialIndex = 1;
+      }
+
+      // Add class to the next testimonial.
       document.querySelector('#testimonial' + testimonialIndex).classList.add("active");
 
       // Remove and re-create the timebar. This will cleanly reset the animation.
       document.querySelector('.gel-testimonial-section > #gel-testimonial-timebar').remove();
       document.querySelector('.gel-testimonial-section').append(testimonialTimebar);
+
+      // Reset timer.
+      testimonialTimer = setTimeout(testimonialSwap, 15000);
     }
   }
 
@@ -374,6 +413,10 @@ export const IndexPageTemplate = ({
             {testimonialAssembled1}
             {testimonialAssembled2}
             {testimonialAssembled3}
+            <aside id="gel-testimonial-controls">
+              <button id="gel-testimonial-control-back"    onClick={testimonialSwap.bind(this, true)}></button>
+              <button id="gel-testimonial-control-forward" onClick={testimonialSwap.bind(this, false)}></button>
+            </aside>
             <aside id="gel-testimonial-timebar"></aside>
           </section>
           <h2>{featuredPortfolioSubtitle}</h2>
