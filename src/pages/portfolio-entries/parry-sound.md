@@ -1,7 +1,7 @@
 ---
 templateKey: portfolio-entry
 project_type: website
-title: The Parry Sound Downtown Business Association (DBA)
+title: Parry Sound DBA
 client: The Parry Sound Downtown Business Association (DBA)
 date: 2020-10-10T17:00:05.799Z
 

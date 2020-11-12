@@ -31,13 +31,13 @@ featured_image:
   image: /img/portfolio/obiaa/Uxbridge.JPG
   alt: OBIAA
 thumbnail_image:
-  image: /img/portfolio/obiaa/heritage_estate_website_mockup.jpg
+  image: /img/portfolio/obiaa/2020_OBIAA_website_mockup_macbook2.jpg
   alt: OBIAA
 logo_image:
   image: /img/portfolio/obiaa/Group-670.png
   alt: OBIAA
 header_image:
-  image: /img/portfolio/obiaa/2020_OBIAA_website_mockup_macbook2.jpg
+  image: /img/portfolio/obiaa/heritage_estate_website_mockup.jpg
   alt: OBIAA
 website_images:
   - image: /img/portfolio/obiaa/Screenshot_2019-12-23-Start-A-BIA-OBIAA.png
