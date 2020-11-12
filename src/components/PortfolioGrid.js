@@ -41,7 +41,7 @@ const StyledPortfolioGrid = styled.section`
 
         .gel-portfolio-item-image:hover {
           transform: scale(1.1);
-          z-index: 10;
+          z-index: 2;
         }
       }
       
@@ -56,6 +56,20 @@ const StyledPortfolioGrid = styled.section`
 
         .gel-portfolio-item-image { height: 660px; }
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .gel-portfolio-grid .column.thin,
+    .gel-portfolio-grid .column.wide {
+      .gel-portfolio-item-image { height: 400px; }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .gel-portfolio-grid .column.thin,
+    .gel-portfolio-grid .column.wide {
+      .gel-portfolio-item-image { height: 300px; }
     }
   }
 `

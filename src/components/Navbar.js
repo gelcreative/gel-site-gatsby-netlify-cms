@@ -19,7 +19,7 @@ const StyledHeader = styled.nav`
     left: 50%;
     transform: translateX(-50%);
 
-    z-index: 999;
+    z-index: 990;
 
     @media (max-width: 1087px) {
       width:  60px;

@@ -19,7 +19,7 @@ const C19Modal = styled.div`
   transition: opacity 0.5s;
 
   pointer-events: none;
-  z-index: 999;
+  z-index: 900;
 
   img {
     max-height: 100%;

@@ -165,16 +165,12 @@ const StyledServicesPage = styled.article`
     }
   }
 
-  @media (max-width: 450px) {
-    margin-top: 80px;
-    .gel-services-intro-text {
-      font-size: 1.8rem;
-    }
-  }
+  @media (max-width: 769px) {
+    #gel-services-section .columns {
+      display: flex;
+      flex-direction: column;
 
-  @media (min-width: 769px) {
-    .gel-bio-text .section {
-      padding: 3rem 10%;
+      .services-content { order: 2; }
     }
   }
 `;

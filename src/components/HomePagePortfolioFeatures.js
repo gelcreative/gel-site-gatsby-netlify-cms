@@ -16,7 +16,7 @@ const StyledFeaturesSection = styled.div`
 
       :hover {
         transform: scale(1.1);
-        z-index: 10;
+        z-index: 2;
       }
     }
 
@@ -38,6 +38,22 @@ const StyledFeaturesSection = styled.div`
       text-decoration: none;
       color: ${props => props.theme.white};
     }
+  }
+
+  @media (max-width: 1024px) {
+    a .gatsby-image-wrapper { height: 200px; }
+  }
+
+  @media (max-width: 768px) {
+    :not(:last-of-type) {
+      margin-bottom: 30px;
+    }
+
+    a .gatsby-image-wrapper { height: 400px; }
+  }
+
+  @media (max-width: 600px) {
+    a .gatsby-image-wrapper { height: 320px; }
   }
 `;
 

@@ -272,20 +272,28 @@ const StyledHomePage = styled.article`
     }
   }
 
-  @media(max-width: 768px){
-    .gel-home-featured-section {
-      h2 {
-        margin-bottom:-2rem;                       
+  @media (max-width: 768px) {
+    #gel-home-masthead {
+      height: 55vh;
+      padding: 7rem 1rem;
+
+      div {
+        text-align: center;
+        
+        h1 {
+          margin: auto;
+          font-size: 4.6rem;
+          line-height: 4.6rem;
+          text-align: center;
+
+          ::before { width: 80%; margin: 0 auto 20px; }
+        }
       }
     }
-  }
 
-  @media (max-width: 450px) {
-    .gel-home-intro-text .column {
-      max-width: 90%;
-    }
-    .gel-home-intro-text p {
-      font-size: 1.8rem;
+    #gel-home-intro-section {
+      height: 45vh;
+      padding: 2rem 1rem 0;
     }
   }
 `;
@@ -390,7 +398,7 @@ export const IndexPageTemplate = ({
           className="gel-home-masthead"
           id="gel-home-masthead"
         >
-          <div className="column is-10 is-offset-1">
+          <div>
             <h1>{title}</h1>
           </div>
         </section>
@@ -398,7 +406,7 @@ export const IndexPageTemplate = ({
           className="gel-home-intro-text has-text-centered"
           id="gel-home-intro-section"
         >
-          <div className="column is-10 is-offset-1">
+          <div>
             <h2>{intro1}</h2>
             <p>{intro2}</p>
           </div>

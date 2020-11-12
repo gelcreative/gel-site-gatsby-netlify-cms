@@ -111,14 +111,15 @@ const StyledAboutPage = styled.article`
     }
 
     ul {
+      display: flex;
       margin-left: 0;
       text-align: center;
 
       li {
         position: relative;
-        display: inline-block;
-        width: 16.5vw;
-        height: 16.5vw;
+        flex-basis: 16.6%;
+        height: 16.6vw;
+        margin: 0;
 
         list-style: none;
 
@@ -136,23 +137,25 @@ const StyledAboutPage = styled.article`
 
           :hover {
             transform: scale(1.1);
-            z-index: 10;
+            z-index: 2;
           }
         }
       }
     }
   }
 
-  @media (max-width: 450px) {
-    margin-top: 80px;
-    .gel-about-intro-text {
-      font-size: 1.8rem;
+  @media (max-width: 1024px) {
+    #gel-insta-section ul { flex-wrap: wrap; }
+    #gel-insta-section ul li {
+      flex-basis: 33.3%;
+      height: 33.3vw;
     }
   }
 
-  @media (min-width: 769px) {
-    .gel-bio-text .section {
-      padding: 3rem 10%;
+  @media (max-width: 768px) {
+    #gel-insta-section ul li {
+      flex-basis: 50%;
+      height: 50vw;
     }
   }
 `;
@@ -212,7 +215,7 @@ export const AboutPageTemplate = ({
                 <p><a className="button gel-button-2" href={main.shannon.shannon_linkedin} target="_blank" rel="noopener noreferrer">Follow me on Linkedin</a></p>
               </div>
             </div>
-            <div className="column pull">
+            <div className="column">
               <PreviewCompatibleImage imageInfo={main.shannon.image2} />
             </div>
           </div>
