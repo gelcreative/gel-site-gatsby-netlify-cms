@@ -30,6 +30,7 @@ tags:
   - brand consulting
   - brand identity
   - ''
+avatarButton: true
 ---
 It’s the casting-a-wide-net approach to marketing. Hardly effective and definitely not efficient, yet this is what happens when you write brand messages without a clear understanding of your ideal customer — what we like to refer to in marketing speak as your “customer avatar”. 
 

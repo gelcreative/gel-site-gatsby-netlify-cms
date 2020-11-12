@@ -13,13 +13,38 @@ const StyledAvatarModal = styled.div`
   justify-content: center;
   align-content: center;
 
-  background: rgba(0, 0, 0, 0.35);
-
-  opacity: 0;
-  transition: opacity 0.5s;
-
   pointer-events: none;
-  z-index: 999;
+  z-index: 900;
+
+  &.obnoxious {
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  &.gentle {
+    justify-content: end;
+    z-index: 20;
+
+    > div {
+      pointer-events: auto;
+
+      transition: margin 0.3s;
+      margin-right: -100%;
+
+      padding: 20px 50px 0;
+
+      .delete { top: 0px; right: 0px; }
+
+      h2 { font-size: 2.4rem; }
+
+      p,
+      form input,
+      form button { font-size: 1.2rem; }
+
+      img { display: none; }
+    }
+  }
 
   > div {
     position: relative;
@@ -103,10 +128,34 @@ const StyledAvatarModal = styled.div`
   }
 
   &.active {
-    opacity: 1;
-    pointer-events: auto;
 
     .delete { display: initial; }
+
+    &.obnoxious {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &.gentle {
+
+      > div { margin-right: 0%; }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &.active.gentle > div {
+      margin-bottom: 0%;
+    }
+
+    &.gentle {
+      justify-content: center;
+      align-content: end;
+
+      > div {
+        margin-right: auto;
+        margin-bottom: -100%;
+      }
+    }
   }
 `
 
@@ -121,6 +170,7 @@ class AvatarModal extends React.Component {
     super(props)
     this.state = {
       active: false,
+      type: 'gentle',
       isValidated: false,
     }
   }
@@ -144,10 +194,9 @@ class AvatarModal extends React.Component {
       .catch(error => alert(error));
   };
 
-
   componentDidMount() {
-    // Only do this on the homepage
-    if (this.props.pageType == "home") {
+    // Only do this on the homepage, blog, or blog posts.
+    if (this.props.pageType == "home" || this.props.pageType == "blog") {
       setTimeout(() => {
         // Grab cookies.
         var cookies = cookie.parse(document.cookie);
@@ -163,18 +212,19 @@ class AvatarModal extends React.Component {
 
   hide = () => {
     // Set expiry for cookie.
-    var exDays = 7; // Expires in 7 days
+    var exDays = 1; // Expires in 1 day
     var expiry = new Date();
     expiry.setTime(expiry.getTime() + (exDays * 24 * 60 * 60 * 1000));
 
     // Set cookie so it doesn't pop up again until expiry.
     document.cookie = "avatarmodal=closed;expires=" + expiry.toUTCString() + ";path=/";
     this.setState({active: false});
+    this.setState({type: 'gentle'});
   }
 
   render() {
     return (
-      <StyledAvatarModal id="gel-avatarmodal" className={`has-text-centered ${this.state.active ? "active" : "inactive"}`}>
+      <StyledAvatarModal id="gel-avatarmodal" className={`has-text-centered ${this.state.type} ${this.state.active ? "active" : "inactive"}`}>
         <div>
           <a className="delete" onClick={this.hide.bind(this)}>X</a>
           <h2>Customer Avatar Template</h2>
