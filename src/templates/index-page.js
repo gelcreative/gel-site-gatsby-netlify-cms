@@ -360,11 +360,12 @@ export const IndexPageTemplate = ({
   // Track which testimonial is currently displayed.
   let testimonialIndex = 0;
 
-  // Create timebar element.
-  let testimonialTimebar = createElement("aside", { key: 'gel-testimonial-timebar', id: 'gel-testimonial-timebar' });
-
   function testimonialSwap (reverse = false) {
     if (document.querySelector('#testimonial1') != null) {
+      // Create timebar element.
+      let testimonialTimebar = document.createElement("aside");
+      testimonialTimebar.id = "gel-testimonial-timebar";
+      
       // Stop timer if it's still running (just in case).
       clearTimeout(testimonialTimer);
 
