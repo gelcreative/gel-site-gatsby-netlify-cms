@@ -355,7 +355,7 @@ export const IndexPageTemplate = ({
   let testimonialAssembled3 = createElement("div", { key: 'testimonial3', id: 'testimonial3', className: 'gel-testimonial-item' }, [testimonialContent3, testimonialAuthor3])
 
   // Create testimonial timer. (make sure it's not already running)
-  if (testimonialTimer) clearTimeout(testimonialTimer);
+  if (typeof testimonialTimer !== "undefined") clearTimeout(testimonialTimer);
   let testimonialTimer = setTimeout(testimonialSwap, 1);
 
   // Track which testimonial is currently displayed.
