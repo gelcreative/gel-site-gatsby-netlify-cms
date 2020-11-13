@@ -361,7 +361,7 @@ export const IndexPageTemplate = ({
   let testimonialIndex = 0;
 
   // Create timebar element.
-  let testimonialTimebar = document.createElement("aside");
+  let testimonialTimebar = createElement("aside");
   testimonialTimebar.id = "gel-testimonial-timebar";
 
   function testimonialSwap (reverse = false) {
