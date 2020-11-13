@@ -106,6 +106,11 @@ const StyledAvatarModal = styled.div`
         background: none;
 
         ::placeholder { color: ${props => props.theme.white}; }
+
+        &[type=checkbox] {
+          margin: 0 5px 0 0;
+          vertical-align: sub;
+        }
       }
 
       button {
@@ -173,6 +178,9 @@ class AvatarModal extends React.Component {
       type: 'gentle',
       isValidated: false,
     }
+    this.fadeTimerDur = 8000;
+    this.initialTimerDur = 5000;
+    this.cookieExpiry = 0.04166667; // Expires in 1 hour
   }
 
   handleChange = e => {
@@ -192,45 +200,81 @@ class AvatarModal extends React.Component {
     })
       .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error));
+
+    // Show thank you text and hide form.
+    document.querySelector("#gel-avatarmodal p").innerHTML = "Thank you for subscribing. Enjoy your template!";
+    document.querySelector("#gel-avatarmodal form").innerHTML = "";
+
+    // Set expiry for cookie.
+    var exDays = this.cookieExpiry; 
+    var expiry = new Date();
+    expiry.setTime(expiry.getTime() + (exDays * 24 * 60 * 60 * 1000));
+    // Set cookie so it doesn't pop up again until expiry.
+    document.cookie = "avatarmodal=closed;expires=" + expiry.toUTCString() + ";path=/";
   };
 
   componentDidMount() {
-    // Only do this on the homepage, blog, or blog posts.
+    // Run the initial timer when the user scrolls down.
+    window.addEventListener("scroll", this.initialTimer);
+  }
+
+  // Timer for showing the modal automatically.
+  initialTimer = () => {
+    // Only do this on the home page or blog page.
     if (this.props.pageType == "home" || this.props.pageType == "blog") {
       setTimeout(() => {
         // Grab cookies.
         var cookies = cookie.parse(document.cookie);
 
-        // If we can't find the popup cookie, create and show the popup.
-        if (typeof(cookies.avatarmodal) == "undefined") {
+        // If we can't find the 'closed' avatarmodal cookie, create and show the popup.
+        if (typeof(cookies.avatarmodal) === "undefined") {
           this.setState({active: true});
+          this.fadeTimer = setTimeout(() => {this.hide(false)}, this.fadeTimerDur);
         }
 
-      }, 5000);
+      }, this.initialTimerDur);
     }
+
+    // Remove this event listener, so the timer only runs once
+    // and doesn't make unnecessary calls.
+    window.removeEventListener("scroll", this.initialTimer);
   }
 
-  hide = () => {
-    // Set expiry for cookie.
-    var exDays = 1; // Expires in 1 day
-    var expiry = new Date();
-    expiry.setTime(expiry.getTime() + (exDays * 24 * 60 * 60 * 1000));
+  // Function to hide the modal.
+  hide = (setCookie = true) => {
+    // Set the cookie if it was requested, and the type is 'gentle'
+    // (if the type is not 'gentle' then the user manually summoned it)
+    if (setCookie && this.state.type == 'gentle') {
+      // Set expiry for cookie.
+      var exDays = this.cookieExpiry;
+      var expiry = new Date();
+      expiry.setTime(expiry.getTime() + (exDays * 24 * 60 * 60 * 1000));
+      // Set cookie so it doesn't pop up again until expiry.
+      document.cookie = "avatarmodal=closed;expires=" + expiry.toUTCString() + ";path=/";
+    }
 
-    // Set cookie so it doesn't pop up again until expiry.
-    document.cookie = "avatarmodal=closed;expires=" + expiry.toUTCString() + ";path=/";
     this.setState({active: false});
     this.setState({type: 'gentle'});
   }
 
+  // Function to fade the modal (close itself when not interacted with)
+  fadeToggle = (reset = false) => {
+    if (reset) {
+      window.clearTimeout(this.fadeTimer);
+    } else {
+      this.fadeTimer = setTimeout(() => {this.hide(false)}, this.fadeTimerDur);
+    }
+  }
+
   render() {
     return (
-      <StyledAvatarModal id="gel-avatarmodal" className={`has-text-centered ${this.state.type} ${this.state.active ? "active" : "inactive"}`}>
+      <StyledAvatarModal id="gel-avatarmodal" className={`has-text-centered ${this.state.type} ${this.state.active ? "active" : "inactive"}`} onMouseEnter={this.fadeToggle.bind(this, true)} onMouseLeave={this.fadeToggle.bind(this, false)} >
         <div>
-          <a className="delete" onClick={this.hide.bind(this)}>X</a>
+          <a className="delete" onClick={this.hide.bind(this, true)}>X</a>
           <h2>Customer Avatar Template</h2>
-          <p>Your ideal customer is a click away!</p>
+          <p>Subscribe to our newsletter to get a free template!</p>
           <form
-            name="avatarmodal"
+            name="contact"
             method="post"
             action="/"
             data-netlify="true"
@@ -239,36 +283,26 @@ class AvatarModal extends React.Component {
             className="gel-avatarmodal-form"
           >
             {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-            <input type="hidden" name="form-name" value="avatarmodal" />
+            <input type="hidden" name="form-name" value="contact" />
             <div hidden>
               <label>
                 Don’t fill this out:{" "}
                 <input name="bot-field" onChange={this.handleChange} />
               </label>
             </div>
-            <div className="field fname-input">
-              <label className="label visually-hidden" htmlFor={"fname"}>First Name</label>
-                <div className="control">
-                  <label htmlFor={"fname"} className="visually-hidden">Your First Name</label>
-                  <input className="input" type={"fname"} name={"fname"} onChange={this.handleChange} id={"fname"} placeholder={"First Name"} required={true} />
-                </div>
-            </div>
-            <div className="field lname-input">
-              <label className="label visually-hidden" htmlFor={"lname"}>Last Name</label>
-                <div className="control">
-                  <label htmlFor={"lname"} className="visually-hidden">Your Last Name</label>
-                  <input className="input" type={"lname"} name={"lname"} onChange={this.handleChange} id={"lname"} placeholder={"Last Name"} required={true} />
-                </div>
-            </div>
             <div className="field email-input">
               <label className="label visually-hidden" htmlFor={"email"}>Email</label>
                 <div className="control">
                   <label htmlFor={"email"} className="visually-hidden">Your Email Address</label>
                   <input className="input" type={"email"} name={"email"} onChange={this.handleChange} id={"email"} placeholder={"Email Address"} required={true} />
+                  <div className="gel-checkbox-container">
+                    <input type={"checkbox"} value={"true"} name={"opt-in"} onChange={this.handleChange} id={"opt-in"} required={true} />
+                    <label htmlFor={"opt-in"} className="gel-optin-label"><small>By checking this box, I consent to receiving email communication from Gel Agency.</small></label>
+                  </div>
                 </div>
             </div>
             <div className="field send-button">
-              <button className="button gel-button-2" type="submit">Download Now</button>
+              <button className="button gel-button-2" type="submit">Opt In</button>
             </div>
           </form>
           <img src="/img/Shannon-Avatar.png" alt="Shannon Avatar" />
