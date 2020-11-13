@@ -361,8 +361,7 @@ export const IndexPageTemplate = ({
   let testimonialIndex = 0;
 
   // Create timebar element.
-  let testimonialTimebar = createElement("aside");
-  testimonialTimebar.id = "gel-testimonial-timebar";
+  let testimonialTimebar = createElement("aside", { key: 'gel-testimonial-timebar', id: 'gel-testimonial-timebar' });
 
   function testimonialSwap (reverse = false) {
     if (document.querySelector('#testimonial1') != null) {
@@ -421,7 +420,7 @@ export const IndexPageTemplate = ({
             {featuredPortfolioTitle}
           </h2>
           <section className="gel-portfolio-section container columns"><HomePagePortfolioFeatures /></section>
-          <section className="gel-testimonial-section container ">
+          <section className="gel-testimonial-section container">
             <h3>{featuredPortfolioTestimonialTitle}</h3>
             {testimonialAssembled1}
             {testimonialAssembled2}
