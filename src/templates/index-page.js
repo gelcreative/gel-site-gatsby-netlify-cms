@@ -361,37 +361,39 @@ export const IndexPageTemplate = ({
   let testimonialIndex = 0;
 
   function testimonialSwap (reverse = false) {
-    if (document.querySelector('#testimonial1') != null) {
-      // Create timebar element.
-      let testimonialTimebar = document.createElement("aside");
-      testimonialTimebar.id = "gel-testimonial-timebar";
-      
-      // Stop timer if it's still running (just in case).
-      clearTimeout(testimonialTimer);
+    if (typeof document !== "undefined") {
+      if (document.querySelector('#testimonial1') != null) {
+        // Create timebar element.
+        let testimonialTimebar = document.createElement("aside");
+        testimonialTimebar.id = "gel-testimonial-timebar";
+        
+        // Stop timer if it's still running (just in case).
+        clearTimeout(testimonialTimer);
 
-      // Remove class from the current testimonial (if there is one).
-      if (testimonialIndex) {
-        document.querySelector('#testimonial' + testimonialIndex).classList.remove("active");
+        // Remove class from the current testimonial (if there is one).
+        if (testimonialIndex) {
+          document.querySelector('#testimonial' + testimonialIndex).classList.remove("active");
+        }
+
+        // Check which direction we're going in (used by control buttons)
+        if (reverse) {
+          if (testimonialIndex > 1) testimonialIndex -= 1;
+            else testimonialIndex = 3;
+        } else {
+          if (testimonialIndex < 3) testimonialIndex += 1;
+            else testimonialIndex = 1;
+        }
+
+        // Add class to the next testimonial.
+        document.querySelector('#testimonial' + testimonialIndex).classList.add("active");
+
+        // Remove and re-create the timebar. This will cleanly reset the animation.
+        document.querySelector('.gel-testimonial-section > #gel-testimonial-timebar').remove();
+        document.querySelector('.gel-testimonial-section').append(testimonialTimebar);
+
+        // Reset timer.
+        testimonialTimer = setTimeout(testimonialSwap, 15000);
       }
-
-      // Check which direction we're going in (used by control buttons)
-      if (reverse) {
-        if (testimonialIndex > 1) testimonialIndex -= 1;
-          else testimonialIndex = 3;
-      } else {
-        if (testimonialIndex < 3) testimonialIndex += 1;
-          else testimonialIndex = 1;
-      }
-
-      // Add class to the next testimonial.
-      document.querySelector('#testimonial' + testimonialIndex).classList.add("active");
-
-      // Remove and re-create the timebar. This will cleanly reset the animation.
-      document.querySelector('.gel-testimonial-section > #gel-testimonial-timebar').remove();
-      document.querySelector('.gel-testimonial-section').append(testimonialTimebar);
-
-      // Reset timer.
-      testimonialTimer = setTimeout(testimonialSwap, 15000);
     }
   }
 
