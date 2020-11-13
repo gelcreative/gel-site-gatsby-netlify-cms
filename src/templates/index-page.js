@@ -23,6 +23,11 @@ const StyledHomePage = styled.article`
     padding: 10rem 0;
 
     background: url(/img/5S0A7042.png) center / cover no-repeat;
+
+    div {
+      width: 80%;
+      margin: 0 auto;
+    }
   }
 
   #gel-home-masthead h1 {
@@ -278,6 +283,7 @@ const StyledHomePage = styled.article`
       padding: 7rem 1rem;
 
       div {
+        width: 100%;
         text-align: center;
         
         h1 {
@@ -349,7 +355,7 @@ export const IndexPageTemplate = ({
   let testimonialAssembled3 = createElement("div", { key: 'testimonial3', id: 'testimonial3', className: 'gel-testimonial-item' }, [testimonialContent3, testimonialAuthor3])
 
   // Create testimonial timer. (make sure it's not already running)
-  clearInterval(testimonialTimer);
+  if (testimonialTimer) clearTimeout(testimonialTimer);
   let testimonialTimer = setTimeout(testimonialSwap, 1);
 
   // Track which testimonial is currently displayed.
