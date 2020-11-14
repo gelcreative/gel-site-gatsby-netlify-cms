@@ -1,5 +1,4 @@
 import React from "react";
-import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
@@ -116,7 +115,7 @@ export default class Index extends React.Component {
   }
 
   render() {
-    const {data} = this.props
+  /*const {data} = this.props*/
 
     return (
       <Layout>

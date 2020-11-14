@@ -1,12 +1,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
-import markdownToHtml from '../util/markdownToHtml';
 import Instagram from '../components/svg/Instagram';
 import LinkedIn from '../components/svg/LinkedIn';
 
@@ -131,6 +130,7 @@ const StyledAboutPage = styled.article`
           right: 0;
 
           display: block;
+          font-size: 0;
 
           background: center / cover no-repeat;
           transition: transform 300ms;
@@ -174,7 +174,7 @@ export const AboutPageTemplate = ({
 
   const instaFeed = allInstaNodeEdges.map((edge) =>
     <li key={edge.node.id}>
-      <a href={edge.node.preview} style={{backgroundImage: 'url(' + edge.node.preview + ')'}}></a>
+      <a href={edge.node.preview} style={{backgroundImage: 'url(' + edge.node.preview + ')'}}>Gel Instagram Post</a>
     </li>
   );
 

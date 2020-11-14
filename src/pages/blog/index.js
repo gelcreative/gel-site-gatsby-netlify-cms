@@ -1,4 +1,4 @@
-import React, { createElement } from 'react'
+import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../../components/Layout'
@@ -138,29 +138,14 @@ const BlogPage = ({data, location}) => {
     searchPrefill = location.state.search;
   }
 
-  // Get tags list for the tag filter
-  function tagsLoop() {
-    var tagsList = [];
-    
-    posts.map((edge) => {  
-      for (let i = 0; i < edge.node.frontmatter.tags.length; i++) {
-        if (tagsList.findIndex(obj => obj.props.children === edge.node.frontmatter.tags[i]) === -1) {
-          tagsList.push(createElement("li", { key: edge.node.frontmatter.tags[i] }, edge.node.frontmatter.tags[i]));
-        }
-      }
-    })
-
-    return createElement("ul", "", tagsList);
-  }
-
-  // Function to automatically fill in the search box for the user
+  /* Function to automatically fill in the search box for the user
   function tagSearch(term) {
     let searchForm = document.querySelector("#blog-search > input");
     searchForm.value = term;
     // (the search form is set to search on input and on focus,
     //  so this will perform the search after filling in the field)
     searchForm.focus();
-  }
+  }*/
 
   return (
     <Layout pageType="blog">

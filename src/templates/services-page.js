@@ -264,7 +264,7 @@ export const ServicesPageTemplate = ({
            brand building process. You’ll come away with clarity and you’ll be one step closer to bringing your brand to market!</p>
         <p>Course Launches February 2020.</p>
         <h2>Sign up for course details, promos, and early access</h2>
-        <a className="button gel-button-2">Join the Waitlist!</a>
+        <Link className="button gel-button-2" to="/">Join the Waitlist!</Link>
       </div>
       <div className="container">
         <div id="gel-onlinecourses">
@@ -283,7 +283,7 @@ export const ServicesPageTemplate = ({
               <li>SEO</li>
             </ul>
           </div>
-          <a className="button gel-button-2">Get Early Access</a>
+          <Link className="button gel-button-2" to="/">Get Early Access</Link>
         </div>
       </div>
     </StyledServicesPage>
@@ -323,7 +323,7 @@ ServicesPageTemplate.propTypes = {
 };
 
 const ServicesPage = ({ data }) => {
-  const { markdownRemark, allInstaNode } = data;
+  const { markdownRemark } = data;
 
   return (
     <Layout>

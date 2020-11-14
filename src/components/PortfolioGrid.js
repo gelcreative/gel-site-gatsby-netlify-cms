@@ -1,7 +1,6 @@
-import React, { createElement } from 'react'
+import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import { create } from 'lodash'
 import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 const StyledPortfolioGrid = styled.section`
@@ -119,7 +118,6 @@ const PortfolioGrid = () => (
     }
     render={data=> {
       const { edges: portfolioEntries } = data.mainPortfolioQuery
-      const defaults = data.allFile.edges
 
       let columnCounter = 1
 
@@ -134,7 +132,7 @@ const PortfolioGrid = () => (
               // Create services list
               let servicesList = portfolioEntry.node.frontmatter.services.map((service, index) => {
                 if (!index) { return <span>{service}</span> }
-                else {        return <span> &#47;&#47; {service}</span> }
+                return <span> &#47;&#47; {service}</span>;
               })
 
               let gridItem = (
@@ -160,7 +158,7 @@ const PortfolioGrid = () => (
               // This will alternate columns, until it reaches 5,
               // where it will add an extra post to the wide column
               // to keep the layout even
-              if (columnCounter == 0 || columnCounter % 2) {
+              if (columnCounter === 0 || columnCounter % 2) {
                 columnListWide.push(gridItem);
               } else {
                 columnListThin.push(gridItem);
@@ -170,8 +168,9 @@ const PortfolioGrid = () => (
                 columnCounter = 0
               }
 
-              columnCounter++
+              columnCounter++;
 
+              return null;
             })}
             <section className="column wide">{columnListWide}</section>
             <section className="column thin">{columnListThin}</section>

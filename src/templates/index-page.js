@@ -1,7 +1,7 @@
 import React, { createElement } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';

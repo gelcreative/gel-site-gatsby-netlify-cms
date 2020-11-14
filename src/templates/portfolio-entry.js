@@ -208,7 +208,7 @@ export const PortfolioEntryTemplate = ({
   // Assemble project type-specific content
   let mainImages = ""
   let testimonialContent = ""
-  if (projectType == "website") {
+  if (projectType === "website") {
     mainImages = <PortfolioEntryImages portfolioImages={websiteImages} />
     let testimonialCredit = testimonial.credit.map((credit, index) => <p key={index}>{credit}</p>)
     testimonialContent = (
@@ -218,7 +218,7 @@ export const PortfolioEntryTemplate = ({
         <cite>{testimonialCredit}</cite>
       </section>
     )
-  } else if (projectType == "brand") {
+  } else if (projectType === "brand") {
     mainImages = <PortfolioEntryImages portfolioImages={brandImages} />
     testimonialContent = ""
   }
@@ -248,6 +248,8 @@ export const PortfolioEntryTemplate = ({
       } else {
         content2.push(createElement("p", { key: index }, paragraph));
       }
+
+      return null;
     })
 
     let col1 = createElement("div", { key: 'col1', className: 'column'}, content1)

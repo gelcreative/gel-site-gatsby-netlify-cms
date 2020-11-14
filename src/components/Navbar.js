@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 import CallButton from '../components/CallButton';
 import SocialIcons from './SocialIcons';
-import NewsletterForm from './NewsletterForm';
 import Copyright from './Copyright';
 
 const StyledHeader = styled.nav`
@@ -405,7 +404,7 @@ const Navbar = class extends React.Component {
             <Link className="navbar-search search" to="/blog/"></Link>
           </div>
           <div id="navMenu" className="navbar-menu" aria-hidden="true">
-            <a className="delete">X</a>
+            <button className="delete">X</button>
             <div className="navbar-start has-text-left">
               <ul>
                 <li className="navbar-item">

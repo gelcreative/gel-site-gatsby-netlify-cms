@@ -83,6 +83,7 @@ const StyledFooter = styled.footer`
 const Footer = class extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {}
   }
 
   render() {

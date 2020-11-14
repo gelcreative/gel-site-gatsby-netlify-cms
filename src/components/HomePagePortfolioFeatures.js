@@ -104,12 +104,13 @@ const HomePagePortfolioFeatures = props => (
         let servicesList = edge.node.frontmatter.services.map((service, index) => {
           if (!index) { return <span key={index}>{service}</span> }
           else if (index <= 2) {        return <span key={index}> &#47;&#47; {service}</span> }
+          return null;
         })
 
         // Skip this post if it's the current post,
         // or if we're at the last one and haven't skipped one
         // (the query pulls 4 posts but only needs 3)
-        if (edge.node.id == props.current || (skipped === false && edgeIndex > 2)) {
+        if (edge.node.id === props.current || (skipped === false && edgeIndex > 2)) {
           skipped = true;
           return(null);
         } else {

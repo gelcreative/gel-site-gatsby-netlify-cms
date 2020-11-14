@@ -113,7 +113,7 @@ const StyledAvatarModal = styled.div`
         }
       }
 
-      button {
+      .button {
         font-weight: bold;
         font-size: 1.6rem;
         text-transform: uppercase;
@@ -221,7 +221,7 @@ class AvatarModal extends React.Component {
   // Timer for showing the modal automatically.
   initialTimer = () => {
     // Only do this on the home page or blog page.
-    if (this.props.pageType == "home" || this.props.pageType == "blog") {
+    if (this.props.pageType === "home" || this.props.pageType === "blog") {
       setTimeout(() => {
         // Grab cookies.
         var cookies = cookie.parse(document.cookie);
@@ -244,7 +244,7 @@ class AvatarModal extends React.Component {
   hide = (setCookie = true) => {
     // Set the cookie if it was requested, and the type is 'gentle'
     // (if the type is not 'gentle' then the user manually summoned it)
-    if (setCookie && this.state.type == 'gentle') {
+    if (setCookie && this.state.type === 'gentle') {
       // Set expiry for cookie.
       var exDays = this.cookieExpiry;
       var expiry = new Date();
@@ -270,7 +270,7 @@ class AvatarModal extends React.Component {
     return (
       <StyledAvatarModal id="gel-avatarmodal" className={`has-text-centered ${this.state.type} ${this.state.active ? "active" : "inactive"}`} onMouseEnter={this.fadeToggle.bind(this, true)} onMouseLeave={this.fadeToggle.bind(this, false)} >
         <div>
-          <a className="delete" onClick={this.hide.bind(this, true)}>X</a>
+          <button className="delete" onClick={this.hide.bind(this, true)}>X</button>
           <h2>Customer Avatar Template</h2>
           <p>Subscribe to our newsletter to get a free template!</p>
           <form
