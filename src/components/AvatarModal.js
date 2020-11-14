@@ -118,7 +118,7 @@ const StyledAvatarModal = styled.div`
         font-size: 1.6rem;
         text-transform: uppercase;
 
-        ::before {
+        &.download::before {
           content: "";
 
           width: 30px;
@@ -201,9 +201,9 @@ class AvatarModal extends React.Component {
       .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error));
 
-    // Show thank you text and hide form.
+    // Show thank you text and replace form with PDF download.
     document.querySelector("#gel-avatarmodal p").innerHTML = "Thank you for subscribing. Enjoy your template!";
-    document.querySelector("#gel-avatarmodal form").innerHTML = "";
+    document.querySelector("#gel-avatarmodal form").innerHTML = "<a class='button gel-button-2 download' href='/files/2020_Gel_Customer_Avatar_Template.pdf' download='Gel Customer Avatar Template.pdf' target='_blank' rel='noopener noreferrer'>Download</a>";
 
     // Set expiry for cookie.
     var exDays = this.cookieExpiry; 
