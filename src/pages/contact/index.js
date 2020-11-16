@@ -37,7 +37,7 @@ const StyledContactPage = styled.section`
 
   .gel-newsletter {
     padding-top: 175px;
-    background: url(/img/orange_background-01.png) center top no-repeat;
+    background: url(/img/orange_background-01.png) center top / cover no-repeat;
 
     color: ${props => props.theme.white};
     text-align: center;
@@ -58,15 +58,9 @@ const StyledContactPage = styled.section`
     .gel-newsletter-form {
       max-width: 60rem;
       margin: 20px auto 0;
-    
-      [type="email"] {
-        border: unset;
-        box-shadow: unset;
-        margin-bottom: 10px;
-        font-size: 2rem;
-      }
 
       button {
+        padding: 13px 30px;
         color: ${props => props.theme.orange};
         text-transform: uppercase;
         font-size: 1.8rem;

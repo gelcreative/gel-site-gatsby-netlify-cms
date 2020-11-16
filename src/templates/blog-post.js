@@ -148,50 +148,6 @@ const StyledBlogPost = styled.article`
       margin: 10px auto 20px;
       font-family:  ${props => props.theme.secondaryFont};
     }
-
-    .gel-newsletter-form {
-      display: flex;
-      justify-content: space-between;
-      max-width: 550px;
-      margin: 0 auto;
-
-      .field {
-        display: inline-block;
-      }
-    
-      .email-input {
-        flex-grow: 2;
-        margin: 5px;
-      }
-    
-      .send-button {
-        flex-grow: 1;
-        margin: 5px;
-      }
-    
-      .send-button button[type="submit"] {
-        background-color: ${props => props.theme.orange};
-        font-family: ${props => props.theme.secondaryFont};
-        font-size: 2.4rem;
-        width: 100%;
-      }
-    
-      [type="email"] {
-        max-width: 380px;
-        padding: 2px 10px;
-        margin: 0 0 10px;
-    
-        font-family: ${props => props.theme.secondaryFont};
-        font-size: 2.4rem;
-        color: ${props => props.theme.white};
-    
-        border: 1px solid ${props => props.theme.white};
-        border-radius: 0;
-        background: none;
-
-        ::placeholder { color: ${props => props.theme.white}; }
-      }
-    }
   }
 
   @media(min-width: 601px) {
