@@ -92,6 +92,13 @@ const StyledAvatarModal = styled.div`
     form {
       margin: 30px auto;
 
+      .name-input {
+        display: flex;
+        justify-content: space-between;
+
+        > * { flex-basis: 48%; }
+      }
+
       input {
         max-width: 375px;
         margin: 0 auto 15px;
@@ -271,8 +278,10 @@ class AvatarModal extends React.Component {
       <StyledAvatarModal id="gel-avatarmodal" className={`has-text-centered ${this.state.type} ${this.state.active ? "active" : "inactive"}`} onMouseEnter={this.fadeToggle.bind(this, true)} onMouseLeave={this.fadeToggle.bind(this, false)} >
         <div>
           <button className="delete" onClick={this.hide.bind(this, true)}>X</button>
-          <h2>Customer Avatar Template</h2>
-          <p>Subscribe to our newsletter to get a free template!</p>
+          <h2>Free Customer Avatar Template</h2>
+          <p>You're ready to build your brand and grow your business.<br/>
+             Sign up to receive a free Customer Avatar Template,<br/>
+             marketing insights and our blog posts straight to your inbox.</p>
           <form
             name="contact"
             method="post"
@@ -289,6 +298,17 @@ class AvatarModal extends React.Component {
                 Don’t fill this out:{" "}
                 <input name="bot-field" onChange={this.handleChange} />
               </label>
+            </div>
+            <div className="field name-input">
+              <label className="label visually-hidden" htmlFor={"fname"}>Name</label>
+                <div className="control">
+                  <label htmlFor={"fname"} className="visually-hidden">Your First Name</label>
+                  <input className="input" type={"text"} name={"fname"} onChange={this.handleChange} id={"fname"} placeholder={"First Name"} required={true} />
+                </div>
+                <div className="control">
+                  <label htmlFor={"lname"} className="visually-hidden">Your Last Name</label>
+                  <input className="input" type={"text"} name={"lname"} onChange={this.handleChange} id={"lname"} placeholder={"Last Name"} required={true} />
+                </div>
             </div>
             <div className="field email-input">
               <label className="label visually-hidden" htmlFor={"email"}>Email</label>
