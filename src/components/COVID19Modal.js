@@ -45,7 +45,7 @@ class COVID19Modal extends React.Component {
       var cookies = cookie.parse(document.cookie);
 
       // If we can't find the popup cookie, create and show the popup.
-      if (typeof(cookies.c19modal) == "undefined") {
+      if (typeof(cookies.c19modal) === "undefined") {
         this.setState({active: true});
       }
 

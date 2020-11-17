@@ -187,7 +187,7 @@ class AvatarModal extends React.Component {
     }
     this.fadeTimerDur = 8000;
     this.initialTimerDur = 5000;
-    this.cookieExpiry = 0.04166667; // Expires in 1 hour
+    this.cookieExpiry = 1; // Expires in 1 day
   }
 
   handleChange = e => {
@@ -213,9 +213,8 @@ class AvatarModal extends React.Component {
     document.querySelector("#gel-avatarmodal form").innerHTML = "<a class='button gel-button-2 download' href='/files/2020_Gel_Customer_Avatar_Template.pdf' download='Gel Customer Avatar Template.pdf' target='_blank' rel='noopener noreferrer'>Download</a>";
 
     // Set expiry for cookie.
-    var exDays = this.cookieExpiry; 
     var expiry = new Date();
-    expiry.setTime(expiry.getTime() + (exDays * 24 * 60 * 60 * 1000));
+    expiry.setTime(expiry.getTime() + (this.cookieExpiry * 24 * 60 * 60 * 1000));
     // Set cookie so it doesn't pop up again until expiry.
     document.cookie = "avatarmodal=closed;expires=" + expiry.toUTCString() + ";path=/";
   };
@@ -275,7 +274,7 @@ class AvatarModal extends React.Component {
 
   render() {
     return (
-      <StyledAvatarModal id="gel-avatarmodal" className={`has-text-centered ${this.state.type} ${this.state.active ? "active" : "inactive"}`} onMouseEnter={this.fadeToggle.bind(this, true)} onMouseLeave={this.fadeToggle.bind(this, false)} >
+      <StyledAvatarModal id="gel-avatarmodal" className={`${this.state.type} ${this.state.active ? "active" : "inactive"}`} onMouseEnter={this.fadeToggle.bind(this, true)} onMouseLeave={this.fadeToggle.bind(this, false)} >
         <div>
           <button className="delete" onClick={this.hide.bind(this, true)}>X</button>
           <h2>Free Customer Avatar Template</h2>
@@ -289,7 +288,7 @@ class AvatarModal extends React.Component {
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             onSubmit={this.handleSubmit}
-            className="gel-avatarmodal-form"
+            className="gel-avatarmodal-form has-text-centered"
           >
             {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
             <input type="hidden" name="form-name" value="contact" />
