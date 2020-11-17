@@ -3,12 +3,18 @@ templateKey: blog-post
 title: How to do Keyword Research
 author: Shannon Ambeau
 date: 2020-01-16T21:39:21.837Z
+authorPic:
+  alt: Shannon Ambeau
+  image: /img/author_shannon.png
 featured_image:
   alt: 'How to do keyword research '
   image: /img/gel_blog_feature_banner.jpg
 banner_image:
   alt: 'How to do keyword research '
   image: /img/gel_blog_banner.jpg
+thumbnail_image:
+  alt: 'How to do keyword research '
+  image: /img/2020_Gel_blog_social__linkedin 2.png
 description: >-
   You know it’s something you should do. You probably know it’s important for
   your website. What you may not know is that before you produce any piece of
@@ -16,14 +22,14 @@ description: >-
   certainly before you launch a campaign of any kind — you need to do keyword
   research.
 tags:
-  - Keywords
+  - keywords
   - google search
   - keyword strategy
   - search engine
   - niche keywords
   - strategy sessions
   - business planning
-  - Keyword research
+  - keyword research
 ---
 > _**We must carefully select the subjects that we communicate about, and specifically, the words we use to target our market, considering the ever-changing search engine algorithms and the increasing volume of data available to us.**_
 

@@ -1,129 +1,74 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 const StyledPortfolioGrid = styled.section`
   .gel-portfolio-grid {
-    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .column {
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      .gel-portfolio-grid-item {
+        margin: 0 auto 60px;
+
+        a {
+          color: ${props => props.theme.black};
+
+          h2 {
+            margin: 25px 0 0;
+            font-family: ${props => props.theme.secondaryFont};
+            font-weight: lighter;
+            font-size: 3.8rem;
+          }
+
+          p {
+            font-weight: lighter;
+            font-size: 2.0rem;
+          }
+
+          :hover {
+            text-decoration: none;
+          }
+        }
+
+        .gel-portfolio-item-image {
+          transition: transform 300ms;
+        }
+
+        .gel-portfolio-item-image:hover {
+          transform: scale(1.1);
+          z-index: 2;
+        }
+      }
+      
+      &.wide {
+        flex-basis: 55%;
+
+        .gel-portfolio-item-image { height: 420px; }
+      }
+
+      &.thin {
+        flex-basis: 40%;
+
+        .gel-portfolio-item-image { height: 660px; }
+      }
+    }
   }
 
-  .gel-portfolio-grid-item {
-    position: relative;
+  @media (max-width: 768px) {
+    .gel-portfolio-grid .column.thin,
+    .gel-portfolio-grid .column.wide {
+      .gel-portfolio-item-image { height: 400px; }
+    }
   }
 
-  .column:first-of-type {
-    height: 640px;
-  }
-
-  .column {
-    height: 420px;
-    justify-content: stretch;
-  }
-
-  .gel-portfolio-item-inner {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 30px 3%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: 300ms;
-    overflow: hidden;
-  }
-
-  .gel-portfolio-item-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    padding: 30px 3%;
-    background: center no-repeat;
-    background-size: cover;
-  }
-
-  .column:nth-child(odd) .gel-portfolio-item-image {
-    background-color: ${props => props.theme.typeGrey};
-  }
-
-  .column:nth-child(odd) .gel-portfolio-item-image:hover {
-    background-color: ${props => props.theme.blue};
-  }
-
-  .column:nth-child(even) .gel-portfolio-item-image {
-    background-color: ${props => props.theme.lightGrey};
-  }
-
-  .column:nth-child(even) .gel-portfolio-item-image:hover {
-    background-color: ${props => props.theme.orange};
-  }
-
-  .gel-portfolio-grid-gel-portfolio-item-image:nth-of-type(2) {
-      position: absolute !important;
-      left: 0;
-      right: 0;
-      top: 0;
-      transition: 300ms;
-      opacity: 1;
-  }
-
-  .gel-portfolio-grid-item a {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-  }
-
-  .gel-portfolio-item-text-container {
-    background-color: rgba(28,29,37,.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 300ms;
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    padding: 15px;
-  }
-
-  .gel-portfolio-item-text-container span {
-    font-size: 1.1em;
-    font-weight: 700;
-    color: #ffffff;
-    transition: 300ms ease-in-out;
-  }
-
-  .gel-portfolio-item-text-container p {
-    color: ${props => props.theme.orange};
-    font-size: 3rem;
-    text-align: center;
-    line-height: 1.2;
-    width: 80%;
-    transition: 300ms ease-in-out;
-  }
-
-  .gel-portfolio-grid-item .gel-portfolio-item-colour-image {
-      opacity: 1;
-  }
-
-  .gel-portfolio-grid-item:hover .gel-portfolio-item-colour-image {
-      opacity: 0;
-  }
-
-  .gel-portfolio-grid-item:hover .gel-portfolio-item-text-container {
-    transform: scale(1.1);
-    p, span {
-      color: #ffc857;
+  @media (max-width: 600px) {
+    .gel-portfolio-grid .column.thin,
+    .gel-portfolio-grid .column.wide {
+      .gel-portfolio-item-image { height: 300px; }
     }
   }
 `
@@ -144,11 +89,13 @@ const PortfolioGrid = () => (
               }
               frontmatter {
                 title
-                project_type
-                colour_grid_image {
-                  childImageSharp {
-                    fluid(maxWidth: 900, quality: 100) {
-                      ...GatsbyImageSharpFluid_tracedSVG
+                services
+                thumbnail_image {
+                  image {
+                    childImageSharp {
+                      fluid(maxWidth: 900, quality: 100) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                      }
                     }
                   }
                 }
@@ -156,24 +103,6 @@ const PortfolioGrid = () => (
             }
           }
         }
-        grayscaleGridImageQuery: allMarkdownRemark (
-            filter: {frontmatter: {templateKey: {eq: "portfolio-entry"}}}, 
-            sort: {order: DESC, fields: [frontmatter___date]}
-          ) {
-          edges {
-            node {
-              frontmatter {
-                colour_grid_image {
-                  childImageSharp {
-                    fluid(maxWidth: 900, quality: 100, grayscale: true) {
-                      ...GatsbyImageSharpFluid_tracedSVG
-                    }
-                  }
-                }
-              }
-            }
-          }
-        } 
         allFile(filter: {name: {regex: "/gel-logo-circle/"}}) {
           edges {
             node {
@@ -189,73 +118,62 @@ const PortfolioGrid = () => (
     }
     render={data=> {
       const { edges: portfolioEntries } = data.mainPortfolioQuery
-      const { edges: grayscaleGridImages } = data.grayscaleGridImageQuery
-      const defaults = data.allFile.edges
 
-      let columnClass = ""
       let columnCounter = 1
+
+      let columnListWide = [];
+      let columnListThin = [];
 
       return (
         <StyledPortfolioGrid>
           <div className="gel-portfolio-grid columns">
             {portfolioEntries.map((portfolioEntry, i) => {
 
-              if(columnCounter > 5) {
-                columnCounter = 1
-              }
+              // Create services list
+              let servicesList = portfolioEntry.node.frontmatter.services.map((service, index) => {
+                if (!index) { return <span>{service}</span> }
+                return <span> &#47;&#47; {service}</span>;
+              })
 
-              switch(columnCounter) {
-                case 1:
-                  columnClass = " is-full"
-                  break;
-                case 2:
-                  columnClass = " is-one-third"
-                  break;
-                case 3:
-                  columnClass = " is-two-thirds"
-                  break;
-                case 4:
-                  columnClass = " is-two-thirds"
-                  break;
-                case 5:
-                  columnClass = " is-one-third"
-                  break;
-                default:
-                  columnClass = " is-full"
-              }
-
-              columnCounter++
-
-              return (
-                <div key={portfolioEntry.node.id} className={`column gel-portfolio-grid-item${columnClass}`}>
+              let gridItem = (
+                <div key={portfolioEntry.node.id} className={`gel-portfolio-grid-item`}>
                   <div className="gel-portfolio-item-inner">
-                    <div 
-                      className="gel-portfolio-item-grayscale-image gel-portfolio-item-image" 
-                      style={{
-                        backgroundImage: `url(${
-                          grayscaleGridImages[i].node.frontmatter.colour_grid_image.childImageSharp
-                            ? grayscaleGridImages[i].node.frontmatter.colour_grid_image.childImageSharp.fluid.src
-                            : defaults[0].node
-                        })`,
-                    }}></div>
-                    <div 
-                      className="gel-portfolio-item-colour-image gel-portfolio-item-image" 
-                      style={{
-                        backgroundImage: `url(${
-                          portfolioEntry.node.frontmatter.colour_grid_image.childImageSharp
-                            ? portfolioEntry.node.frontmatter.colour_grid_image.childImageSharp.fluid.src
-                            : defaults[1].node
-                        })`,
-                    }}></div>
                     <Link to={portfolioEntry.node.fields.slug}>
+                      <PreviewCompatibleImage
+                        imageInfo={
+                          portfolioEntry.node.frontmatter.thumbnail_image
+                        }
+                        className="gel-portfolio-item-image"
+                      />
+                    
                       <div className="gel-portfolio-item-text-container">
-                        <p>{portfolioEntry.node.frontmatter.project_type} <span className="visually-hidden">for </span><br /><span>{portfolioEntry.node.frontmatter.title}</span></p>
+                        <h2>{portfolioEntry.node.frontmatter.title}</h2>
+                        <p>{servicesList}</p>
                       </div>
                     </Link>
                   </div>
                 </div>
               )
+
+              // This will alternate columns, until it reaches 5,
+              // where it will add an extra post to the wide column
+              // to keep the layout even
+              if (columnCounter === 0 || columnCounter % 2) {
+                columnListWide.push(gridItem);
+              } else {
+                columnListThin.push(gridItem);
+              }
+
+              if(columnCounter >= 5) {
+                columnCounter = 0
+              }
+
+              columnCounter++;
+
+              return null;
             })}
+            <section className="column wide">{columnListWide}</section>
+            <section className="column thin">{columnListThin}</section>
           </div>
         </StyledPortfolioGrid>
       )

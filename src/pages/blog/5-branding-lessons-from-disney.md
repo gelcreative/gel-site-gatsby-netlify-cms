@@ -3,12 +3,18 @@ templateKey: blog-post
 title: 5 Marketing Lessons From Disney+
 author: Shannon Ambeau
 date: 2019-12-11T16:01:25.455Z
+authorPic:
+  alt: Shannon Ambeau
+  image: /img/author_shannon.png
 featured_image:
   alt: 5 Marketing Lessons From Disney+
   image: /img/gel_blog_cover_artboard-4.jpg
 banner_image:
   alt: 5 Marketing Lessons From Disney+
   image: /img/gel_blog_cover_artboard-3.jpg
+thumbnail_image:
+  alt: 5 Marketing Lessons From Disney+
+  image: /img/gel_blog_cover_Artboard-7.png
 description: >-
   Disney+ may be the most successful video-on-demand service launch in recent
   years. Why did over 10M people subscribe on the first day? In a word —

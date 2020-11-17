@@ -3,12 +3,18 @@ templateKey: blog-post
 title: What is a Brand?
 author: Shannon Ambeau
 date: 2019-10-23T13:25:47.071Z
+authorPic:
+  alt: Shannon Ambeau
+  image: /img/author_shannon.png
 featured_image:
   alt: What is a brand?
   image: /img/what_is_a_brand_gel_blog_feature_1920x800_2019.jpg
 banner_image:
   alt: What is a brand?
   image: /img/what_is_a_brand_gel_blog_cover_1920x800_2019.jpg
+thumbnail_image:
+  alt: What is a brand?
+  image: /img/what_is_a_brand_gel_blog_thumbnail.png
 description: >-
   What is a brand? You’ve likely asked yourself this question a few times and
   maybe even gone down a rabbit hole searching for the answer on Google.

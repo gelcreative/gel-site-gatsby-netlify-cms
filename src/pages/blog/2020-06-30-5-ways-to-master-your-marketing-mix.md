@@ -1,14 +1,20 @@
 ---
 templateKey: blog-post
 title: '5 Ways to Master Your Marketing Mix '
-author: ' Shannon Ambeau'
+author: Shannon Ambeau
 date: 2020-06-30T15:29:10.812Z
+authorPic:
+  alt: Shannon Ambeau
+  image: /img/author_shannon.png
 featured_image:
   alt: '5 Ways to Master Your Marketing Mix '
   image: /img/2020_gel_5ways_to_master_your_marketing_mix_post_feature.png
 banner_image:
   alt: '5 Ways to Master Your Marketing Mix '
   image: /img/2020_gel_5ways_to_master_your_marketing_mix_post_banner.png
+thumbnail_image:
+  alt: '5 Ways to Master Your Marketing Mix '
+  image: /img/2020_Gel_Social_5marketing.jpg
 description: >
   Marketing is like investing. Endless options in a changing sea. How do you
   know when you’ve got it right? Where should you invest your time and money?
@@ -26,7 +32,7 @@ We can take a few lessons from our friends in the financial sector. Managing the
 
 ## 1.Balance your portfolio
 
-> With the volume of content being published on the daily, it’s easy for a brand manager to lose sight of how content is being distributed. Just like a good financial advisor recommends balancing the investment portfolio every year, it’s critical that you take stock of the distribution of your content across marketing channels. 
+With the volume of content being published on the daily, it’s easy for a brand manager to lose sight of how content is being distributed. Just like a good financial advisor recommends balancing the investment portfolio every year, it’s critical that you take stock of the distribution of your content across marketing channels. 
 
 Like a good investor, a brand manager balances the marketing mix. The marketing budget should be distributed across paid, owned, earned, and shared media to distribute effort, absorb failures, and protect against disruptions. 
 
@@ -38,7 +44,7 @@ Simply put,
 
 Paid media is advertising in all its forms, traditional and digital. You pay to distribute your content through their channel.
 
-Earned is media coverage. Their/your content on their network. Think news coverage, guest blogging, and podcast interviews.
+> Earned is media coverage. Their/your content on their network. Think news coverage, guest blogging, and podcast interviews.
 
 Shared is social media. Your content on someone else’s network.
 

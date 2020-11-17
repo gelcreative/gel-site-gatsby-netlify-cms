@@ -25,8 +25,16 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        path: `${__dirname}/static/files`,
+        name: 'files',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
+        ignore: [`**/trash_bin/**`]
       },
     },
     {
@@ -78,6 +86,33 @@ module.exports = {
             }
           }
         ],
+      },
+    },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        // Fields to index
+        fields: [`title`, `tags`],
+        // How to resolve each field`s value for a supported node type
+        resolvers: {
+          // For any node of type MarkdownRemark, list how to resolve the fields` values
+          MarkdownRemark: {
+            id: node => node.id,
+            title: node => node.frontmatter.title,
+            tags: node => node.frontmatter.tags,
+            image: node => node.frontmatter.thumbnail_image,
+            path: node => node.fields.slug,
+          },
+        },
+        // Optional filter to limit indexed nodes
+        // (Only get blog post nodes)
+        filter: (node, getNode) => node.frontmatter.templateKey == "blog-post",
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `1532385372`,
       },
     },
     {

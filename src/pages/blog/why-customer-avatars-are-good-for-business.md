@@ -3,27 +3,34 @@ templateKey: blog-post
 title: Why Customer Avatars are Good for Business
 author: Shannon Ambeau
 date: 2020-02-27T16:56:06.975Z
+authorPic:
+  alt: Shannon Ambeau
+  image: /img/author_shannon.png
 featured_image:
   alt: Why Customer Avatars are Good for Business
   image: /img/2020_gel_blog_avatar_featuredbanner.jpg
 banner_image:
   alt: Why Customer Avatars are Good for Business
   image: /img/2020_gel_blog_social_template-avatar.jpg
+thumbnail_image:
+  alt: Why Customer Avatars are Good for Business
+  image: /img/2020_Gel_blog_social_template_linkedin.png
 description: >-
   Imagine you’ve been told to sell a product or a service, but they left out all
   the details about the buyer. “Just sell it to everyone and see who buys”.
 tags:
-  - Brand Strategy
-  - Marketing
-  - Customer Avatars
-  - Grow your business
+  - brand strategy
+  - marketing
+  - customer avatars
+  - grow your business
   - ideal customer
-  - Elements of a Customer Avatar
+  - elements of a customer avatar
   - user experience
   - branding
   - brand consulting
   - brand identity
   - ''
+avatarButton: true
 ---
 It’s the casting-a-wide-net approach to marketing. Hardly effective and definitely not efficient, yet this is what happens when you write brand messages without a clear understanding of your ideal customer — what we like to refer to in marketing speak as your “customer avatar”. 
 

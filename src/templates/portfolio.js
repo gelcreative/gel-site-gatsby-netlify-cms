@@ -6,15 +6,36 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import PortfolioGrid from '../components/PortfolioGrid'
-import GelServices from '../components/GelServices'
 
 const StyledPortfolioPage = styled.article`
   > .container {
     margin-top: 150px;
+
+    > section.columns .column {
+
+      h1 {
+        font-family: ${props => props.theme.secondaryFont};
+        font-weight: lighter;
+        font-size: 5.4rem;
+        color: ${props => props.theme.black};
+
+        ::after {
+          content: "";
+          display: block;
+          width: 8%;
+          height: 4px;
+      
+          margin: 30px auto 75px;
+          background: ${props => props.theme.black};
+        }
+      }
+
+      .gel-portfolio-intro {
+        font-size: 2rem;
+      }
+    }
   }
-  .gel-portfolio-intro {
-    font-size: 2rem;
-  }
+
   .gel-portfolio-grid-section {
     margin-bottom: 5rem;
   }
@@ -30,7 +51,7 @@ export const PortfolioPageTemplate = ({
         { helmet || '' }
         <div className="container">
           <section className="columns is-centered">
-            <div className="column content has-text-centered is-10 is-offset-1">
+            <div className="column has-text-centered">
               <h1>{title}</h1>
               <p className="gel-portfolio-intro">{portfolioIntro}</p>
             </div>
@@ -38,7 +59,6 @@ export const PortfolioPageTemplate = ({
           <section className="gel-portfolio-grid-section">
             <PortfolioGrid />
           </section>
-          <GelServices />
         </div>
       </StyledPortfolioPage>
   )

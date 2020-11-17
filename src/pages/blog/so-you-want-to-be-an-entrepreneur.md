@@ -3,12 +3,18 @@ templateKey: blog-post
 title: Entrepreneurs are a Rare Breed
 author: Shannon Ambeau
 date: 2020-01-27T20:41:42.390Z
+authorPic:
+  alt: Shannon Ambeau
+  image: /img/author_shannon.png
 featured_image:
   alt: Entrepreneurs are a Rare Breed
   image: /img/2020_gel_blog_social_template2_featured-banner.jpg
 banner_image:
   alt: Entrepreneurs are a Rare Breed
   image: /img/2020_gel_blog_social_template2_banner.jpg
+thumbnail_image:
+  alt: Entrepreneurs are a Rare Breed
+  image: /img/2020_Gel_blog_social_template2_linkedin.png
 description: >-
   Billionaires are good for business. Richard Branson and Sarah Blakely look
   like they’re having a good time. Elon Musk and Jeff Bezos are heading into
@@ -17,7 +23,7 @@ description: >-
   paying himself £20 per week in the early days. Sarah Blakely packaging Spanx
   up in the living room of her rented apartment. 
 tags:
-  - Entrepreneurs
+  - entrepreneurs
   - business
   - how to be an entrepreneur
   - professional development
