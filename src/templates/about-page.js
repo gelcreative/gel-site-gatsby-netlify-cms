@@ -174,7 +174,7 @@ export const AboutPageTemplate = ({
 
   const instaFeed = allInstaNodeEdges.map((edge) =>
     <li key={edge.node.id}>
-      <a href={edge.node.preview} style={{backgroundImage: 'url(' + edge.node.preview + ')'}}>Gel Instagram Post</a>
+      <a href={`https://www.instagram.com/p/${edge.node.id}/`} target="_blank" rel="noopener noreferrer" style={{backgroundImage: 'url(' + edge.node.preview + ')'}}>Gel Instagram Post</a>
     </li>
   );
 
