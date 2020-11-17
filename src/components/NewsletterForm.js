@@ -107,8 +107,8 @@ class NewsletterForm extends React.Component {
 
   render() {
     // Handle layout here
-    let emailOrder = 0;
-    if (this.state.layout === "alt") emailOrder = 1;
+  /*let emailOrder = 0;
+    if (this.state.layout === "alt") emailOrder = 1;*/
     let submitText = "Subscribe"
     if (this.state.layout === "alt") submitText = "Sign me up!";
 
