@@ -8,3 +8,8 @@ static/admin/*.bundle.*
 .DS_Store
 yarn-error.log
 password.txt
+Gel website development.lnk
+
+# Local Netlify folder
+.netlify
+gel.code-workspace

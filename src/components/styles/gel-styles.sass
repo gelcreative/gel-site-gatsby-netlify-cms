@@ -40,6 +40,9 @@ body
   font-family: $sansFont
   color: #434244
 
+main > article.section
+  padding: 0
+
 h1
   font-family: $serifFont
   font-weight: 700
@@ -111,6 +114,9 @@ section
 
 @media (max-width: 768px)
 
+  .container
+    padding: 0 1rem
+
   .push
     display: table-footer-group !important
 
@@ -125,13 +131,24 @@ section
 .gel-bio-row .column
     padding: 0
 
+/* Blog Page */
+main[data-page-type="blog"]
+  background: url(/img/grey_background-cropped.png) left top / contain no-repeat;
+
 // BUTTONS
 
 .button
-  text-transform: uppercase
-  padding: 0.5em 5%
+  padding: 8px 30px
+  background-color: #E77252
   transition: 300ms ease-in-out
+  border-radius: 6px;
   height: unset
+
+.button a
+  font-weight: normal
+
+.button a:hover
+  text-decoration: none
 
 .gel-button-1
   border: none
@@ -150,6 +167,17 @@ section
 .gel-button-1.is-light:hover
   color: #ffffff
   background-color: #e9724c
+
+.gel-button-2
+  border: none
+  color: #ffffff
+  font-size: 1.8rem
+  font-weight: normal
+  
+.gel-button-2:hover
+  color: #ffffff !important
+  text-decoration: none
+  background-color: #9D4223 !important
 
 .button.gel-button-bigger
   font-size: 2rem
@@ -181,7 +209,7 @@ section
   100%
     transform: scale(1)
 
-@keyframes gelHoverColors
+@keyframes gelHoverColorsOld
   0%
     fill: #434345
   25%
@@ -192,6 +220,12 @@ section
     fill: #e77252
   100%
     fill: #394f60
+
+@keyframes gelHoverColors
+  0%
+    fill: #363636
+  100%
+    fill: #e77252
 
 // end animations
 

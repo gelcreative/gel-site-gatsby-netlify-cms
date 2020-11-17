@@ -61,7 +61,7 @@ const SocialIcons = class extends Component {
   }
   render() {
     return (
-      <SocialIconList>
+      <SocialIconList className="socialicons">
         <li className="gel-social-item">
           <a
             href="https://www.instagram.com/gelagency/"

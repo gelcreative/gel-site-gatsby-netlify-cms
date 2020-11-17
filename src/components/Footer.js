@@ -5,101 +5,146 @@ import styled from 'styled-components';
 import SocialIcons from './SocialIcons';
 
 const StyledFooter = styled.footer`
-  margin-bottom: 50px;
-  margin-top: 100px;
-`;
-// Removed this code for changes 9-27-19
-// const FooterTop = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: flex-start;
-//   @media (max-width: 400px) {
-//     justify-content: center;
-//   }
-// `;
-const StyledFooterInner = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-`;
-const FooterItemContainer = styled.div`
-  margin: 1em;
-  min-width: 30%;
-  max-width: 300px;
-  flex-grow: 1;
-`;
+  position: relative;
+  padding-bottom: 50px;
+  padding-top: 100px;
 
-const StyledAddress = styled.address`
-  font-style: normal;
-`;
+  div.inner {
+    display: flex;
+    align-items: last baseline;
+    flex-wrap: wrap;
 
-const StyledFooterNav = styled.div`
-  display: flex;
-  justify-content: space-between;
-  div {
-    margin: 0 30px;
-  }
-  @media (max-width: 440px) {
-    justify-content: space-between;
-    div {
-      flex-grow: 1;
-      flex-shrink: 1;
-      margin: 0 30px 0 0;
+    div.footerItem {
+      margin: 1em;
+
+      &:first-of-type { margin-right: 4em; }
+
+      a {
+        font-family: ${props => props.theme.secondaryFont};
+        font-weight: normal;
+        font-size: 1.7rem;
+        color: ${props => props.theme.typeGrey};
+
+        :hover {
+          text-decoration: none;
+          color: ${props => props.theme.orange};
+        }
+      }
+
+      a[aria-current="page"] {
+        font-weight: bold;
+        text-decoration: underline;
+
+        :hover {
+          color: ${props => props.theme.typeGrey};
+        }
+      }
+
+      address { font-style: normal; }
+
+      div.footerNav {
+        a {
+          padding: 0 5px; 
+          font-size: 2.1rem;
+        }
+      }
+
+      &#footer-container-social { margin-left: auto; }
+      &#footer-logo-small {
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+
+        text-align: center;
+        img { max-width: 40px; }
+      }
     }
   }
+
+  &[data-page-type="blog-post"],
+  &[data-page-type="portfolio-entry"],
+  &[data-page-type="home"] {
+    background: ${props => props.theme.darkBlue};
+    color: ${props => props.theme.white};
+
+    a {
+      color: ${props => props.theme.white} !important;
+
+      :hover { color: ${props => props.theme.grey} !important; }
+    }
+
+    svg path,       svg circle       { fill: ${props => props.theme.white} !important; }
+    svg:hover path, svg:hover circle { fill: ${props => props.theme.grey} !important; }
+  }
 `;
 
-const Footer = () => (
-  <StyledFooter>
-    <div className="container">
-      <StyledFooterInner>
-        <FooterItemContainer>
-          <StyledAddress>
-            <a
-              href="https://www.google.com/maps/place/89+Collier+St,+Barrie,+ON+L4M+1H2/@44.3902458,-79.6868214,17z/data=!3m1!4b1!4m5!3m4!1s0x882aa32e300f8edf:0x696f3192d7cd8c25!8m2!3d44.3902458!4d-79.6846327"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              89 Collier Street, Suite 201 <br />
-              Barrie, ON L4M 1H2
-            </a>
-          </StyledAddress>
-          <div>
-            <a href="mailto:info@gelcreative.ca">info@gelcreative.ca</a>
-          </div>
-          <div>
-            <a href="tel:+17057277980">705.727.7980</a>
-          </div>
-        </FooterItemContainer>
-        <FooterItemContainer>
-          <StyledFooterNav>
-            <div>
-              <ul>
-                <li>
-                  <Link to="/">home</Link>
-                </li>
-                <li>
-                  <Link to="/about/">our story</Link>
-                </li>
-                <li>
-                  <Link to="/portfolio/">our work</Link>
-                </li>
-                <li>
-                  <Link to="/contact/">connect</Link>
-                </li>
-              </ul>
+const Footer = class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+
+  render() {
+    return (
+      <StyledFooter data-page-type={this.props.pageType}>
+        <div className="container">
+          <div className="inner">
+            <div className="footerItem">
+              <div className="footerNav">
+                <ul>
+                  <li>
+                    <Link to="/">           home          </Link>
+                  </li>
+                  <li>
+                    <Link to="/about/">     about         </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/">  services      </Link>
+                  </li>
+                  <li>
+                    <Link to="/portfolio/"> our work      </Link>
+                  </li>
+                  <li>
+                    <Link to="/blog/">      blog          </Link>
+                  </li>
+                  <li>
+                    <Link to="/contact/">   contact       </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <ul>{/* <li><Link to="/blog/">blog</Link></li> */}</ul>
+            <div className="footerItem">
+              <address>
+                <a
+                  href="https://www.google.com/maps/place/89+Collier+St,+Barrie,+ON+L4M+1H2/@44.3902458,-79.6868214,17z/data=!3m1!4b1!4m5!3m4!1s0x882aa32e300f8edf:0x696f3192d7cd8c25!8m2!3d44.3902458!4d-79.6846327"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  89 Collier Street, Suite 201 <br />
+                  Barrie, ON L4M 1H2
+                </a>
+              </address>
+              <div>
+                <a href="mailto:info@gelagency.com">info@gelagency.com</a>
+              </div>
+              <div>
+                <a href="tel:+17057277980">705.727.7980</a>
+              </div>
             </div>
-          </StyledFooterNav>
-        </FooterItemContainer>
-        <FooterItemContainer>
-          <SocialIcons />
-        </FooterItemContainer>
-      </StyledFooterInner>
-    </div>
-  </StyledFooter>
-);
+            <div className="footerItem" id="footer-container-social">
+              <SocialIcons />
+            </div>
+         {/*<div className="footerItem" id="footer-logo-small">
+              <img src="/img/Gel-Logo-G-Circle-01.png" alt="Gel Logo" />
+              <p>Designed by Gel</p>
+            </div>*/}
+          </div>
+        </div>
+    </StyledFooter>
+    )
+  }
+}
 
 export default Footer;

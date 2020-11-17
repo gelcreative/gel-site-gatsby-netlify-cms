@@ -5,32 +5,47 @@ import { ThemeProvider } from 'styled-components';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import COVID19Modal from '../components/COVID19Modal';
+import AvatarModal from '../components/AvatarModal';
+
 import './styles/all.sass';
 import './styles/gel-styles.sass';
 
 // Gel site theme settings
 const theme = {
+  white: '#ffffff',
+  grey: '#aaaaaa',
+  lightGrey: '#dde2e3',
+  darkGrey: '#222222',
   typeGrey: '#434244',
-  darkGrey: '#434345',
+  black: '#000000',
+
   //orange: '#e9724c',
   orange: '#e77252',
+  lightOrange: '#ff9b7f',
   darkOrange: '#9D4223',
+  neonOrange: '#F17256',
+
   //blue: '#143358',
-  lightBlue: '#9DB6D1',
   blue: '#394f60',
+  lightBlue: '#9DB6D1',
+  darkBlue: '#365160',
+
   //yellow: '#ffc857',
   yellow: '#ffc557',
   darkYellow: '#987D44',
-  lightGrey: '#dde2e3',
-  white: '#ffffff',
+  
   chineseRed: '#9D4223',
   metallicSunburst: '#987d44',
   wildBlueYonder: '#9db6d1',
+
   regularFont: 'HKGrotesk-Regular',
   boldFont: 'HKGrotesk-Regular',
+  secondaryFont: 'QuincyCF-Regular',
+  secondaryBoldFont: 'QuincyCF-Bold',
 };
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, pageType }) => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -42,6 +57,8 @@ const TemplateWrapper = ({ children }) => (
         }
       }
     `}
+
+
     render={data => (
       <>
         <Helmet>
@@ -85,17 +102,19 @@ const TemplateWrapper = ({ children }) => (
 
           {/* <link rel="stylesheet" href="https://use.typekit.net/hfk4yqa.css" /> */}
         </Helmet>
-        <Navbar />
-        <main role="main">{children}</main>
-        <Footer />
+        <Navbar pageType={pageType} />
+        <main role="main" data-page-type={pageType}>{children}</main>
+        <Footer pageType={pageType} />
+        <COVID19Modal />
+        <AvatarModal pageType={pageType} />
       </>
     )}
   />
 );
 
-const WrappedWithThemeProvider = ({ children }) => (
+const WrappedWithThemeProvider = ({ children, pageType }) => (
   <ThemeProvider theme={theme}>
-    <TemplateWrapper children={children} />
+    <TemplateWrapper children={children} pageType={pageType} />
   </ThemeProvider>
 );
 

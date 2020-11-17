@@ -1,14 +1,20 @@
 ---
 templateKey: blog-post
 title: What the Biebs Knows About Marketing in Uncertain Times
-author: ' Shannon Ambeau'
+author: Shannon Ambeau
 date: 2020-05-04T19:46:27.252Z
+authorPic:
+  alt: Shannon Ambeau
+  image: /img/author_shannon.png
 featured_image:
   alt: What the Biebs Knows About Marketing in Uncertain Times
   image: /img/2020_gel_social_whatbiebsfeature-banner.jpg
 banner_image:
   alt: What the Biebs Knows About Marketing in Uncertain Times
   image: /img/2020_gel_social_whatbiebsbanner.jpg
+thumbnail_image:
+  alt: What the Biebs Knows About Marketing in Uncertain Times
+  image: /img/2020_Gel_Social_WhatBiebs.jpg
 description: >-
   Justin Bieber knows a thing or two about marketing. And no. I’m not talking
   about the monkey on the airplane stunt. I mean pure brand-building marketing.
@@ -18,7 +24,7 @@ tags:
   - personal branding
   - marketing
   - marketing strategy
-  - justin bieber
+  - Justin Bieber
   - business
   - COVID19
   - coronavirus
