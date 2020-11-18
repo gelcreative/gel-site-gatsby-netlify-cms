@@ -236,7 +236,7 @@ const StyledHomePage = styled.article`
   @media (max-width: 768px) {
     #gel-home-masthead {
       height: 55vh;
-      padding: 7rem 1rem;
+      padding: 15rem 1rem 5rem;
 
       div {
         width: 100%;
@@ -244,8 +244,8 @@ const StyledHomePage = styled.article`
         
         h1 {
           margin: auto;
-          font-size: 4.6rem;
-          line-height: 4.6rem;
+          font-size: 4.0rem;
+          line-height: 4.0rem;
           text-align: center;
 
           ::before { width: 80%; margin: 0 auto 20px; }
