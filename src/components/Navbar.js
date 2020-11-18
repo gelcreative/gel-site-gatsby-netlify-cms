@@ -245,8 +245,8 @@ const StyledHeader = styled.nav`
   // or when the nav menu is open                 */
   &.gel-nav-active, &:not(.scrolled) {
     .gel-header-logo-link {
-      width: 118px;
-      height: 118px;
+      width: 120px;
+      height: 120px;
     }
   }
 
@@ -269,6 +269,20 @@ const StyledHeader = styled.nav`
 
     .navbar-burger { background-image: url(/img/Group-704.png); }
     .navbar-search { background-image: url(/img/noun_Search_3122418.png); }
+  }
+
+  @media screen and (max-width: 600px) {
+    .gel-header-logo-link {
+      width:  60px;
+      height: 60px;
+    }
+
+    &.gel-nav-active, &:not(.scrolled) {
+      .gel-header-logo-link {
+        width: 90px;
+        height: 90px;
+      }
+    }
   }
 `;
 
