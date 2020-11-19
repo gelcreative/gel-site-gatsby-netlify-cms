@@ -57,7 +57,7 @@ const StyledHeader = styled.nav`
     }
   }
 
-  .navbar-search {    
+  .navbar-search {
     position: relative;
     width: 3.25rem;
     height: 3.25rem;
@@ -73,6 +73,8 @@ const StyledHeader = styled.nav`
       background-color: unset;
       filter: blur(.75px);
     }
+
+    display: none !important;
   }
 
   .navbar-menu.is-active { transform: translateY(0%); }
