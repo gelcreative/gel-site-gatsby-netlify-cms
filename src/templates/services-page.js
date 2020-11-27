@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import NewsletterForm from '../components/NewsletterForm';
 //import markdownToHtml from '../util/markdownToHtml';
 
 const StyledServicesPage = styled.article`
@@ -75,10 +76,11 @@ const StyledServicesPage = styled.article`
   }
 
   #gel-masterclass {
-    padding: 250px 0 350px;
+    padding: 250px 0 400px;
     background: url(/img/Untitled-7-01.png) center / cover repeat-y;
 
     text-align: center;
+    color: ${props => props.theme.white};
 
     h1 {
       margin: 0 auto;
@@ -92,10 +94,9 @@ const StyledServicesPage = styled.article`
     }
 
     h2 {
-      margin: 30px auto 10px;
+      margin: 30px auto 20px;
       line-height: 5.4rem;
 
-      color: ${props => props.theme.white};
       font-size: 4.4rem;
       font-weight: lighter;
       font-family: ${props => props.theme.secondaryFont};
@@ -104,7 +105,6 @@ const StyledServicesPage = styled.article`
     p {
       max-width: 75rem;
       margin: 10px auto;
-      color: ${props => props.theme.white};
       font-family: ${props => props.theme.secondaryFont};
     }
 
@@ -130,13 +130,12 @@ const StyledServicesPage = styled.article`
     }
 
     h2 {
-      margin: 0 auto;
-      text-align: center;
-      line-height: 3.9rem;
+      margin: 30px auto 20px;
+      line-height: 5.4rem;
 
-      font-family: ${props => props.theme.secondaryFont};
-      font-weight: lighter;
       font-size: 4.4rem;
+      font-weight: lighter;
+      font-family: ${props => props.theme.secondaryFont};
     }
 
     .columns {
@@ -162,6 +161,13 @@ const StyledServicesPage = styled.article`
       margin-top: 40px;
       text-transform: uppercase;
       font-family: ${props => props.theme.regularFont};
+    }
+
+    .gel-newsletter-form {
+      color: ${props => props.theme.orange};
+
+      input::placeholder { color: ${props => props.theme.orange}; }
+      .input { box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.5) }
     }
   }
 
@@ -263,8 +269,10 @@ export const ServicesPageTemplate = ({
            this 4-week Branding Masterclass. We’ll guide you through the brand discovery — the most difficult part of the
            brand building process. You’ll come away with clarity and you’ll be one step closer to bringing your brand to market!</p>
         <p>Course Launches February 2020.</p>
-        <h2>Sign up for course details, promos, and early access</h2>
-        <Link className="button gel-button-2" to="/">Join the Waitlist!</Link>
+        <h2>Sign up to our newsletter for<br/>
+            course details, promos, and early access</h2>
+     {/*<Link className="button gel-button-2" to="/">Join the Waitlist!</Link>*/}
+        <NewsletterForm />
       </div>
       <div className="container">
         <div id="gel-onlinecourses">
@@ -282,8 +290,11 @@ export const ServicesPageTemplate = ({
               <li>Content Marketing</li>
               <li>SEO</li>
             </ul>
+            <h2>Sign up to our newsletter for<br/>
+            course details, promos, and early access</h2>
           </div>
-          <Link className="button gel-button-2" to="/">Get Early Access</Link>
+       {/*<Link className="button gel-button-2" to="/">Get Early Access</Link>*/}
+          <NewsletterForm />
         </div>
       </div>
     </StyledServicesPage>
