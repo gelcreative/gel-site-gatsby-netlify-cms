@@ -14,6 +14,32 @@ import CallButton from '../components/CallButton';
 import NewsletterForm from '../components/NewsletterForm'
 
 const StyledHomePage = styled.article`
+  #gel-home-masthead-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: 0;
+    background: ${props => props.theme.white};
+
+    animation: gelGifFade 5s;
+    animation-delay: 0s;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 100;
+  }
+
+  @keyframes gelGifFade {
+    0%   { opacity: 1}
+    75%  { opacity: 1}
+    100% { opacity: 0}
+  }
 
   #gel-home-masthead {
     display: flex;
@@ -357,10 +383,10 @@ export const IndexPageTemplate = ({
     <StyledHomePage className="section">
       {helmet || ''}
       <div>
-        <section
-          className="gel-home-masthead"
-          id="gel-home-masthead"
-        >
+        <section className="gel-home-masthead-logo" id="gel-home-masthead-logo">
+          <img src="/img/Gel_Whimsical_550x350_white_Background.gif" alt="Gel Logo Animation" />
+        </section>
+        <section className="gel-home-masthead" id="gel-home-masthead">
           <div>
             <h1>{title}</h1>
           </div>
