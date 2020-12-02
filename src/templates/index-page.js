@@ -32,13 +32,15 @@ const StyledHomePage = styled.article`
     animation-delay: 0s;
     overflow: hidden;
     opacity: 0;
+
+    pointer-events: none;
     z-index: 100;
   }
 
   @keyframes gelGifFade {
-    0%   { opacity: 1}
-    75%  { opacity: 1}
-    100% { opacity: 0}
+    0%   { opacity: 1; }
+    75%  { opacity: 1; }
+    100% { opacity: 0; }
   }
 
   #gel-home-masthead {
