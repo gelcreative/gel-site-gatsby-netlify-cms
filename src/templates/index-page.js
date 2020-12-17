@@ -255,7 +255,7 @@ const StyledHomePage = styled.article`
     }
 
     p {
-      max-width: 75rem;
+      max-width: 85rem;
       margin: 10px auto 20px;
       font-family:  ${props => props.theme.secondaryFont};
     }
@@ -428,8 +428,9 @@ export const IndexPageTemplate = ({
         </section>
         <section className="gel-newsletter-form-section is-centered">
         <div className="container has-text-centered">
-          <p>Sign up now to receive our blog posts straight to your inbox. You’ll be first to know of promos 
-             and early access to new branding masterclasses and marketing challenges.</p>
+          <h2>Because Marketing Matters.</h2>
+          <p>Sign up now to receive our marketing blog posts straight to your inbox.</p>
+          <p>You'll be the first to know of promotions and will receive early access to branding & marketing masterclasses.</p>
           <NewsletterForm layout="alt" />
         </div>
       </section>
