@@ -55,6 +55,7 @@ const StyledAvatarModal = styled.div`
 
     background: ${props => props.theme.blue};
     color: ${props => props.theme.white};
+    text-align: center;
 
     overflow: hidden;
 
@@ -113,6 +114,8 @@ const StyledAvatarModal = styled.div`
         background: none;
 
         ::placeholder { color: ${props => props.theme.white}; }
+
+        &[type=email] { max-width: none; }
 
         &[type=checkbox] {
           margin: 0 5px 0 0;
@@ -232,9 +235,10 @@ class AvatarModal extends React.Component {
         // Grab cookies.
         var cookies = cookie.parse(document.cookie);
 
-        // If we can't find the 'closed' avatarmodal cookie, create and show the popup.
+        // If we can't find the 'closed' avatarmodal cookie, create and show the modal.
         if (typeof(cookies.avatarmodal) === "undefined") {
           this.setState({active: true});
+          // Set fade timer.
           this.fadeTimer = setTimeout(() => {this.hide(false)}, this.fadeTimerDur);
         }
 
@@ -267,7 +271,8 @@ class AvatarModal extends React.Component {
   fadeToggle = (reset = false) => {
     if (reset) {
       window.clearTimeout(this.fadeTimer);
-    } else {
+    } else if (this.state.type === 'gentle') {
+      // Only set the fade timer for 'gentle'-type modal.
       this.fadeTimer = setTimeout(() => {this.hide(false)}, this.fadeTimerDur);
     }
   }
