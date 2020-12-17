@@ -127,9 +127,14 @@ const StyledBlogPost = styled.article`
     }
   }
 
+  .gel-blog-back {
+    background: ${props => props.theme.darkBlue};
+    padding: 75px 0;
+  }
+
   .blog-newsletter-form-section {
     background: ${props => props.theme.darkBlue};
-    padding: 175px 0 0;
+    padding: 75px 0 0;
     color: ${props => props.theme.white};
 
     h2 { font-family:  ${props => props.theme.secondaryFont}; }
@@ -177,7 +182,6 @@ export const BlogPostTemplate = ({
   if (avatarButton) {
     avatarButtonElement = <section className="gel-blog-avatar has-text-centered">
                             <AvatarButton />
-                            <hr />
                           </section>;
   }
 
@@ -220,15 +224,15 @@ export const BlogPostTemplate = ({
           </div>
         </section>
         {avatarButtonElement}
-        <section className="gel-blog-back has-text-centered">
-          <Link to="/blog/" className="button gel-button-2">Back to Blog</Link>
-        </section>
       </div>
       <section className="gel-blog-moreposts-section">
         <h2 className="has-text-centered">Recent Blog Posts</h2>
         <div className="container columns">
           <HomePageBlogFeatures current={id} />
         </div>
+      </section>
+      <section className="gel-blog-back has-text-centered">
+        <Link to="/blog/" className="button gel-button-2">Back to Blog</Link>
       </section>
       <section className="blog-newsletter-form-section is-centered">
         <div className="container has-text-centered">
