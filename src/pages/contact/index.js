@@ -121,7 +121,8 @@ export default class Index extends React.Component {
           </div>
           <div className="gel-newsletter">
             <h2>Because Marketing Matters.</h2>
-            <p>Sign up for marketing insights, early access to coaching programs and online courses, and a bevvie for anyone who drops by the office!</p>
+            <p>Sign up for marketing insights and early access to coaching programs and online courses!</p>
+         {/*<p>Sign up for marketing insights, early access to coaching programs and online courses, and a bevvie for anyone who drops by the office!</p>*/}
             <NewsletterForm />
           </div>
           <div className="gel-map">
