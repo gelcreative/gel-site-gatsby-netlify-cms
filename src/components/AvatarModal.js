@@ -86,6 +86,7 @@ const StyledAvatarModal = styled.div`
     }
 
     p {
+      max-width: 55rem;
       font-weight: bold;
       font-size: 1.8rem;
     }
@@ -158,6 +159,21 @@ const StyledAvatarModal = styled.div`
   }
 
   @media (max-width: 767px) {
+    &.active.obnoxious > div {
+      padding: 50px 50px 0;
+
+      form { margin: 15px auto; }
+
+      .delete {
+        top: 10px;
+        right: 10px;
+        width: 50px;
+        max-width: 50px;
+        height: 50px;
+        max-height: 50px;
+      }
+    }
+    
     &.active.gentle > div {
       margin-bottom: 0%;
     }
@@ -283,8 +299,8 @@ class AvatarModal extends React.Component {
         <div>
           <button className="delete" onClick={this.hide.bind(this, true)}>X</button>
           <h2>Free Customer Avatar Template</h2>
-          <p>You're ready to build your brand and grow your business.<br/>
-             Sign up to receive a free Customer Avatar Template,<br/>
+          <p>You're ready to build your brand and grow your business.
+             Sign up to receive a free Customer Avatar Template,
              marketing insights and our blog posts straight to your inbox.</p>
           <form
             name="contact"
