@@ -181,7 +181,7 @@ export const BlogPostTemplate = ({
   let avatarButtonElement = ``;
   if (avatarButton) {
     avatarButtonElement = <section className="gel-blog-avatar has-text-centered">
-                            <AvatarButton />
+                            <AvatarButton text="Download Customer Avatar Template Now" />
                           </section>;
   }
 

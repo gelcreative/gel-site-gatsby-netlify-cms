@@ -44,7 +44,7 @@ const AvatarDownloadPage = () => (
         </section>
         <section className="gel-avatar-download-content">
           <div className="">
-            <AvatarButton />
+            <AvatarButton text="DOWNLOAD NOW" />
           </div>
         </section>
       </section>

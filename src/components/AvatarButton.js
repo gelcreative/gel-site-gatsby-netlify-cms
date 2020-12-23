@@ -37,7 +37,7 @@ const AvatarButton = class extends Component {
 
   render() {
     return (
-      <StyledAvatarButton className="button gel-button-2 is-primary" onClick={this.summonModal.bind(this)}>Download Customer Avatar Template Now</StyledAvatarButton>
+      <StyledAvatarButton className="button gel-button-2 is-primary" onClick={this.summonModal.bind(this)}>{this.props.text}</StyledAvatarButton>
     );
   }
 };
