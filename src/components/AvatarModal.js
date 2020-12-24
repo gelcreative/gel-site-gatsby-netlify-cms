@@ -228,8 +228,9 @@ class AvatarModal extends React.Component {
       .catch(error => alert(error));
 
     // Show thank you text and replace form with PDF download.
-    document.querySelector("#gel-avatarmodal p").innerHTML = "Thank you for subscribing. Enjoy your template!";
-    document.querySelector("#gel-avatarmodal form").innerHTML = "<a class='button gel-button-2 download' href='/files/2020_Gel_Customer_Avatar_Template.pdf' download='Gel Customer Avatar Template.pdf' target='_blank' rel='noopener noreferrer'>Download</a>";
+    document.querySelector("#gel-avatarmodal h2").innerHTML = "";
+    document.querySelector("#gel-avatarmodal p").innerHTML = "Thank you for subscribing.";
+    document.querySelector("#gel-avatarmodal form").innerHTML = "<a class='button gel-button-2 download' href='/files/2020_Gel_Customer_Avatar_Template.pdf' download='Gel Customer Avatar Template.pdf' target='_blank' rel='noopener noreferrer'>DOWNLOAD NOW</a>";
 
     // Set expiry for cookie.
     var expiry = new Date();
