@@ -3,12 +3,18 @@ templateKey: blog-post
 title: 3 Ways MINI Wins the Marketing War
 author: ' Shannon Ambeau'
 date: 2021-01-05T19:29:00.000Z
+authorPic:
+  alt: Shannon Ambeau
+  image: /img/author_shannon.png
 featured_image:
   alt: 3 Ways MINI Wins the Marketing War
   image: /img/2020_gel_blog_miniwars_featured-banner.png
 banner_image:
   alt: 3 Ways MINI Wins the Marketing War
   image: /img/2020_gel_blog_miniwars_banner.png
+  thumbnail_image:
+  alt: 3 Ways MINI Wins the Marketing War
+  image: /img/2020_gel_blog_miniwars_thumbnail.png
 description: >
   Ever wonder what it’s like to manage a global brand? We did too so we decided
   to find out. Enjoy our interview with Steve Ambeau, Chief Marketing Officer,
