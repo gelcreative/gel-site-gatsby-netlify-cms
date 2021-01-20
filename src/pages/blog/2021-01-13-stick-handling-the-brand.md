@@ -3,10 +3,16 @@ templateKey: blog-post
 title: Stick Handling the Brand
 author: ' Shannon Ambeau'
 date: 2021-01-13T21:29:00.000Z
+authorPic:
+  alt: Shannon Ambeau
+  image: /img/author_shannon.png
 featured_image:
   alt: Stick Handling the Brand
   image: /img/2020_gel_blog_stickhandlingthebrand_featured-banner.png
 banner_image:
+  alt: Stick Handling the Brand
+  image: /img/2020_gel_blog_stickhandlingthebrand_banner.png
+thumbnail_image:
   alt: Stick Handling the Brand
   image: /img/2020_gel_blog_stickhandlingthebrand_banner.png
 description: >-
