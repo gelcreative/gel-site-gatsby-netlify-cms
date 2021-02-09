@@ -11,7 +11,7 @@ banner_image:
   image: /img/2020_gel_blog_miniwars_banner.png
 featured_image:
   alt: 3 Ways MINI Wins the Marketing War
-  image: /img/2020_gel_blog_miniwars_featured-banner.png
+  image: /img/2020_gel_blog_miniwars_linkedin.png
 thumbnail_image:
   alt: 3 Ways MINI Wins the Marketing War
   image: /img/2020_gel_blog_miniwars_ig.png
