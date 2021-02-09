@@ -14,7 +14,7 @@ featured_image:
   image: /img/2020_gel_blog_stickhandlingthebrand_featured-banner.png
 thumbnail_image:
   alt: Stick Handling the Brand
-  image: /img/stick_handling_the-brand.png
+  image: /img/2020_gel_blog_stickhandlingthebrand_pinterest.png
 description: >-
   One of my favourite times of the year is Christmas. Yes, I love the season for
   all the traditional trappings but it also happens that my birthday is on
