@@ -2,16 +2,16 @@
 templateKey: blog-post
 title: 5 Marketing Lessons From Disney+
 author: Shannon Ambeau
-date: 2019-12-11T16:01:25.455Z
 authorPic:
   alt: Shannon Ambeau
   image: /img/author_shannon.png
-featured_image:
-  alt: 5 Marketing Lessons From Disney+
-  image: /img/gel_blog_cover_artboard-4.jpg
+date: 2019-12-11T16:01:25.455Z
 banner_image:
   alt: 5 Marketing Lessons From Disney+
   image: /img/gel_blog_cover_artboard-3.jpg
+featured_image:
+  alt: 5 Marketing Lessons From Disney+
+  image: /img/gel_blog_cover_artboard-9.png
 thumbnail_image:
   alt: 5 Marketing Lessons From Disney+
   image: /img/gel_blog_cover_Artboard-7.png
