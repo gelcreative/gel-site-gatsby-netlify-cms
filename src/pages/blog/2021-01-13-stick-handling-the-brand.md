@@ -2,19 +2,19 @@
 templateKey: blog-post
 title: Stick Handling the Brand
 author: ' Shannon Ambeau'
-date: 2021-01-13T21:29:00.000Z
 authorPic:
   alt: Shannon Ambeau
   image: /img/author_shannon.png
-featured_image:
-  alt: Stick Handling the Brand
-  image: /img/2020_gel_blog_stickhandlingthebrand_featured-banner.png
+date: 2021-01-13T21:29:00.000Z
 banner_image:
   alt: Stick Handling the Brand
   image: /img/2020_gel_blog_stickhandlingthebrand_banner.png
+featured_image:
+  alt: Stick Handling the Brand
+  image: /img/2020_gel_blog_stickhandlingthebrand_featured-banner.png
 thumbnail_image:
   alt: Stick Handling the Brand
-  image: /img/2020_gel_blog_stickhandlingthebrand_banner.png
+  image: /img/stick_handling_the-brand.png
 description: >-
   One of my favourite times of the year is Christmas. Yes, I love the season for
   all the traditional trappings but it also happens that my birthday is on
