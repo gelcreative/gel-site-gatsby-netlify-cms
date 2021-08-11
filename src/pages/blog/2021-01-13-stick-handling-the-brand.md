@@ -11,7 +11,7 @@ banner_image:
   image: /img/2020_gel_blog_stickhandlingthebrand_banner.png
 featured_image:
   alt: Stick Handling the Brand
-  image: /img/stick_handling.png
+  image: /img/stick_handling_feature.png
 thumbnail_image:
   alt: Stick Handling the Brand
   image: /img/2020_gel_blog_stickhandlingthebrand_pinterest.png
